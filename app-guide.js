@@ -1,6 +1,7 @@
 /**
  * アプリ登録・操作 図解ガイド
  * highlights: top/left/width/height は画像に対する百分率（%）
+ * 赤枠のみ表示（ラベル文面なし）
  */
 var APP_REGISTRATION_GUIDE = {
   title: 'APP登録方法',
@@ -22,7 +23,7 @@ var APP_REGISTRATION_GUIDE = {
       text: 'QRコードが表示されたら、カメラで読み取る必要はありません。水色の「アプリアクティベート」をタップしてください。JOYFITアプリが起動し、登録が完了するとホーム画面（トップ）が表示されます。',
       image: 'images/app-guide/08-app-link-qr.png',
       highlights: [
-        { label: 'タップ', top: 59.5, left: 26, width: 48, height: 4.5 }
+        { top: 59.5, left: 26, width: 48, height: 4.5 }
       ]
     }
   ],
@@ -35,7 +36,7 @@ var APP_REGISTRATION_GUIDE = {
       text: 'JOYFITアプリのホーム画面が表示されたら、右上の「サービス」をタップしてください。',
       image: 'images/app-guide/01-home.png',
       highlights: [
-        { label: 'サービス', top: 5.8, left: 79, width: 18, height: 6.5 }
+        { top: 5.8, left: 79, width: 18, height: 6.5 }
       ]
     },
     {
@@ -44,7 +45,7 @@ var APP_REGISTRATION_GUIDE = {
       text: 'サービス一覧画面に切り替わります。「店舗」セクションの「各種お手続き」をタップしてください。',
       image: 'images/app-guide/02-service-list.png',
       highlights: [
-        { label: '各種お手続き', top: 48.5, left: 35, width: 24, height: 11 }
+        { top: 48.5, left: 35, width: 24, height: 11 }
       ]
     },
     {
@@ -53,7 +54,7 @@ var APP_REGISTRATION_GUIDE = {
       text: '「店舗」の「各種お手続き」をタップすると次の画面が開きます。「各種関連手続き」をタップしてください。',
       image: 'images/app-guide/03-procedures-menu.png',
       highlights: [
-        { label: '各種関連手続き', top: 27.5, left: 10, width: 80, height: 8.5 }
+        { top: 27.5, left: 10, width: 80, height: 8.5 }
       ]
     },
     {
@@ -62,8 +63,8 @@ var APP_REGISTRATION_GUIDE = {
       text: 'ご契約の変更・休会は「ご契約変更について」をタップ。プログラム予約は「ご予約について」をタップしてください（→ 6番へ）。',
       image: 'images/app-guide/04-procedures-top.png',
       highlights: [
-        { label: 'ご予約 → 6番', top: 16, left: 8, width: 84, height: 7.5 },
-        { label: 'ご契約変更 → 5番', top: 27, left: 8, width: 84, height: 7.5, labelBelow: true }
+        { top: 16, left: 8, width: 84, height: 7.5 },
+        { top: 27, left: 8, width: 84, height: 7.5 }
       ]
     },
     {
@@ -72,8 +73,8 @@ var APP_REGISTRATION_GUIDE = {
       text: 'ご契約変更画面から、お手続き内容を選んでください。',
       image: 'images/app-guide/05-contract-change.png',
       highlights: [
-        { label: 'クレジットカード変更', top: 14.5, left: 8, width: 84, height: 7.5 },
-        { label: '休会', top: 25, left: 8, width: 84, height: 7.5, labelBelow: true }
+        { top: 14.5, left: 8, width: 84, height: 7.5 },
+        { top: 25, left: 8, width: 84, height: 7.5 }
       ]
     }
   ],
@@ -83,7 +84,7 @@ var APP_REGISTRATION_GUIDE = {
     text: '4番で「ご予約について」を選んだ場合、この画面から各プログラムの予約ができます。「パーソナルトレーニング予約」をタップしてください。',
     image: 'images/app-guide/06-program-reservation.png',
     highlights: [
-      { label: 'パーソナルトレーニング予約', top: 31, left: 7, width: 86, height: 7 }
+      { top: 31, left: 7, width: 86, height: 7 }
     ]
   }
 };
