@@ -307,32 +307,14 @@
         .phone-screen {
             position: relative;
             border-radius: 1.35rem;
-            overflow: visible;
+            overflow: hidden;
             background: #000;
             line-height: 0;
-        }
-        .phone-screen-inner {
-            border-radius: 1.35rem;
-            overflow: hidden;
         }
         .phone-screen img {
             width: 100%;
             height: auto;
             display: block;
-        }
-        .phone-highlight {
-            position: absolute;
-            border: 3px solid var(--brand-red);
-            border-radius: 8px;
-            box-shadow:
-                0 0 0 2px rgba(255, 255, 255, 0.95),
-                0 0 16px rgba(220, 38, 38, 0.55);
-            animation: guide-pulse 2.2s ease-in-out infinite;
-            pointer-events: none;
-        }
-        @keyframes guide-pulse {
-            0%, 100% { box-shadow: 0 0 0 2px rgba(255,255,255,0.95), 0 0 12px rgba(220,38,38,0.4); }
-            50% { box-shadow: 0 0 0 2px rgba(255,255,255,0.95), 0 0 22px rgba(220,38,38,0.75); }
         }
         .guide-branch {
             margin-top: 0.5rem;
@@ -407,26 +389,11 @@
                 frame.innerHTML = '<div class="phone-notch" aria-hidden="true"></div>';
                 var screen = document.createElement('div');
                 screen.className = 'phone-screen';
-                var inner = document.createElement('div');
-                inner.className = 'phone-screen-inner';
-                inner.style.position = 'relative';
                 var img = document.createElement('img');
                 img.src = step.image;
                 img.alt = step.title;
                 img.loading = 'lazy';
-                inner.appendChild(img);
-                if (step.highlights && step.highlights.length) {
-                    step.highlights.forEach(function (h) {
-                        var box = document.createElement('div');
-                        box.className = 'phone-highlight';
-                        box.style.top = h.top + '%';
-                        box.style.left = h.left + '%';
-                        box.style.width = h.width + '%';
-                        box.style.height = h.height + '%';
-                        inner.appendChild(box);
-                    });
-                }
-                screen.appendChild(inner);
+                screen.appendChild(img);
                 frame.appendChild(screen);
                 wrap.appendChild(frame);
                 return wrap;
