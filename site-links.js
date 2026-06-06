@@ -20,6 +20,8 @@ var SITE_LINKS = {
   referralForm: '',
   transferForm: '',
   continuationForm: '',
+  /** 会員検索・アプリ連携（経堂） */
+  memberSearch: 'https://procedure.joyfit.jp/qrcode2/index.html',
   /** 学校関係者割（Googleフォーム・経堂） */
   studentForm: 'https://forms.gle/PCrYhsMrFGtQocZe6',
   /** オプション解約方法（YouTube Shorts） */
