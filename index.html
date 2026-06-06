@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOYFIT24経堂 | よくあるご質問・各種手続き</title>
+    <meta name="description" content="JOYFIT24経堂のよくあるご質問。アプリ入会、オプション、契約変更、法人契約、学割・紹介・乗り換えキャンペーンの申請方法をまとめています。">
+    <meta property="og:title" content="JOYFIT24経堂 | よくあるご質問・各種手続き">
+    <meta property="og:description" content="お問い合わせの多い内容をカテゴリ別にまとめたQ&Aページです。">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ja_JP">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --page-bg: #F3F4F6;
+            --logo-wine-bg: #A63646;
+            --brand-red: #DC2626;
+            --brand-red-dark: #B91C1C;
+            --brand-red-soft: rgba(220, 38, 38, 0.14);
+            --ink: #111827;
+            --muted: #6B7280;
+            --line: #E5E7EB;
+            --surface: #FFFFFF;
+        }
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            color: var(--ink);
+            background-color: var(--page-bg);
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            background:
+                radial-gradient(1200px 600px at 50% -10%, rgba(220, 38, 38, 0.07), transparent 60%),
+                radial-gradient(900px 500px at 10% 20%, rgba(255, 255, 255, 0.9), transparent 55%),
+                radial-gradient(900px 500px at 90% 20%, rgba(255, 255, 255, 0.7), transparent 55%);
+        }
+        main, header, footer { position: relative; z-index: 1; }
+        .hero-brand-line {
+            display: inline-flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 0.45rem;
+            line-height: 1.1;
+        }
+        .hero-brand-main {
+            font-weight: 900;
+            letter-spacing: 0.04em;
+            font-size: clamp(1.8rem, 4.6vw, 2.4rem);
+        }
+        .hero-brand-sub {
+            font-weight: 800;
+            color: var(--brand-red);
+            letter-spacing: 0.12em;
+            font-size: clamp(1.2rem, 3.6vw, 1.65rem);
+        }
+        .page-title-card {
+            margin-top: 1rem;
+            background: var(--surface);
+            border: 1px solid rgba(17, 24, 39, 0.10);
+            border-radius: 1rem;
+            padding: 1rem 1.5rem;
+            box-shadow: 0 10px 22px rgba(17, 24, 39, 0.08);
+        }
+        .text-brand-red { color: var(--brand-red); }
+        .nav-pill {
+            display: block;
+            padding: 0.65rem 1rem;
+            border-radius: 9999px;
+            border: 1px solid var(--line);
+            background: var(--surface);
+            font-size: 0.875rem;
+            font-weight: 700;
+            color: var(--muted);
+            transition: all 0.2s ease;
+        }
+        .nav-pill:hover {
+            border-color: var(--brand-red);
+            color: var(--brand-red);
+        }
+        .related-link {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.4rem 0.85rem;
+            border-radius: 9999px;
+            border: 1px solid rgba(220, 38, 38, 0.35);
+            background: #fff;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--brand-red);
+            transition: all 0.2s ease;
+        }
+        .related-link:hover {
+            background: var(--brand-red-soft);
+        }
+        .qa-section {
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 1rem;
+            padding: 1.25rem 1.25rem 0.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 8px 20px rgba(17, 24, 39, 0.06);
+        }
+        .section-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 2.25rem;
+            height: 2.25rem;
+            border-radius: 9999px;
+            background: var(--brand-red);
+            color: #fff;
+            font-weight: 900;
+            font-size: 0.875rem;
+            margin-right: 0.5rem;
+        }
+        details {
+            border-top: 1px solid var(--line);
+            padding: 0.75rem 0;
+        }
+        details:first-of-type { border-top: none; }
+        summary {
+            cursor: pointer;
+            list-style: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            padding-right: 1.5rem;
+            position: relative;
+        }
+        summary::-webkit-details-marker { display: none; }
+        summary::after {
+            content: "+";
+            position: absolute;
+            right: 0;
+            top: 0;
+            color: var(--brand-red);
+            font-weight: 900;
+            font-size: 1.1rem;
+        }
+        details[open] summary::after { content: "−"; }
+        .qa-answer {
+            margin-top: 0.75rem;
+            color: #374151;
+            font-size: 0.925rem;
+            line-height: 1.75;
+            white-space: pre-wrap;
+        }
+        .qa-link {
+            display: inline-block;
+            margin-top: 0.75rem;
+            color: var(--brand-red);
+            font-weight: 700;
+            font-size: 0.875rem;
+            text-decoration: underline;
+        }
+        .section-links {
+            margin-top: 1rem;
+            padding-top: 0.75rem;
+            border-top: 1px dashed var(--line);
+            margin-bottom: 0.75rem;
+        }
+        .contact-box {
+            background: #FEF2F2;
+            border: 1px solid rgba(220, 38, 38, 0.2);
+            border-radius: 1rem;
+            padding: 1.25rem;
+        }
+        .site-footer-bar {
+            background-color: var(--logo-wine-bg);
+            padding: 1.25rem 1rem;
+        }
+        .site-footer-bar .footer-logo-img {
+            height: 2rem;
+            width: auto;
+            max-width: min(100%, 220px);
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="w-full">
+        <div class="container mx-auto px-4 sm:px-6 pt-12 pb-6 flex flex-col items-center text-center">
+            <h1 class="hero-brand-line">
+                <span class="hero-brand-main">JOYFIT24</span>
+                <span class="hero-brand-sub">経堂</span>
+            </h1>
+            <div class="page-title-card max-w-2xl w-full">
+                <h2 class="text-xl sm:text-2xl font-black text-brand-red leading-tight">
+                    よくあるご質問・各種手続き
+                </h2>
+                <p class="text-sm sm:text-base text-gray-600 font-semibold mt-2">
+                    お問い合わせの多い内容をまとめています
+                </p>
+            </div>
+            <nav id="related-pages" class="flex flex-wrap justify-center gap-2 mt-4 max-w-2xl w-full" aria-label="関連ページ"></nav>
+        </div>
+    </header>
+
+    <main class="pb-16">
+        <div class="container mx-auto px-4 sm:px-6 max-w-3xl">
+            <nav id="qa-nav" class="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-8"></nav>
+            <div id="qa-sections"></div>
+            <div id="qa-contact" class="contact-box mt-4"></div>
+            <p id="qa-updated" class="text-center text-xs text-gray-400 mt-6"></p>
+        </div>
+    </main>
+
+    <footer class="site-footer-bar">
+        <img src="joyfit_logo.png" alt="JOYFIT24" class="footer-logo-img">
+    </footer>
+
+    <script src="site-links.js"></script>
+    <script src="qa-content.js"></script>
+    <script>
+        (function () {
+            var nav = document.getElementById('qa-nav');
+            var sectionsEl = document.getElementById('qa-sections');
+            var contactEl = document.getElementById('qa-contact');
+            var updatedEl = document.getElementById('qa-updated');
+            var relatedEl = document.getElementById('related-pages');
+
+            function hrefFor(item) {
+                if (item.linkKey) return resolveSiteLink(item.linkKey);
+                return item.linkUrl || item.url || '#';
+            }
+
+            if (typeof RELATED_PAGES !== 'undefined' && relatedEl) {
+                RELATED_PAGES.forEach(function (p) {
+                    var url = resolveSiteLink(p.key);
+                    if (!url || url === '#') return;
+                    var a = document.createElement('a');
+                    a.className = 'related-link';
+                    a.href = url;
+                    a.textContent = p.label;
+                    if (url.indexOf('http') === 0) {
+                        a.target = '_blank';
+                        a.rel = 'noopener';
+                    }
+                    relatedEl.appendChild(a);
+                });
+            }
+
+            if (SITE_LINKS.qaSelf && SITE_LINKS.qaSelf.indexOf('http') === 0) {
+                var canonical = document.createElement('link');
+                canonical.rel = 'canonical';
+                canonical.href = SITE_LINKS.qaSelf;
+                document.head.appendChild(canonical);
+                var ogUrl = document.createElement('meta');
+                ogUrl.setAttribute('property', 'og:url');
+                ogUrl.content = SITE_LINKS.qaSelf;
+                document.head.appendChild(ogUrl);
+            }
+
+            QA_MASTER.sections.forEach(function (section) {
+                var navLink = document.createElement('a');
+                navLink.href = '#' + section.id;
+                navLink.className = 'nav-pill text-left';
+                navLink.textContent = section.number + ' ' + section.title;
+                nav.appendChild(navLink);
+
+                var block = document.createElement('section');
+                block.id = section.id;
+                block.className = 'qa-section';
+
+                var heading = document.createElement('h3');
+                heading.className = 'text-lg font-black mb-2 flex items-center';
+                heading.innerHTML = '<span class="section-badge">' + section.number + '</span><span>' + section.title + '</span>';
+                block.appendChild(heading);
+
+                if (section.intro) {
+                    var intro = document.createElement('p');
+                    intro.className = 'text-sm text-gray-500 mb-3';
+                    intro.textContent = section.intro;
+                    block.appendChild(intro);
+                }
+
+                section.items.forEach(function (item) {
+                    var details = document.createElement('details');
+                    var summary = document.createElement('summary');
+                    summary.textContent = item.q;
+                    details.appendChild(summary);
+
+                    var answer = document.createElement('div');
+                    answer.className = 'qa-answer';
+                    answer.textContent = item.a;
+                    details.appendChild(answer);
+
+                    if (item.linkKey || item.linkUrl) {
+                        var link = document.createElement('a');
+                        link.className = 'qa-link';
+                        link.href = hrefFor(item);
+                        link.textContent = item.linkLabel || '詳細はこちら';
+                        if (link.href.indexOf('http') === 0) {
+                            link.target = '_blank';
+                            link.rel = 'noopener';
+                        }
+                        details.appendChild(link);
+                    }
+
+                    block.appendChild(details);
+                });
+
+                if (section.links && section.links.length) {
+                    var linksWrap = document.createElement('div');
+                    linksWrap.className = 'section-links';
+                    section.links.forEach(function (l) {
+                        var a = document.createElement('a');
+                        a.className = 'qa-link block';
+                        a.href = hrefFor(l);
+                        a.textContent = '→ ' + l.label;
+                        if (a.href.indexOf('http') === 0) {
+                            a.target = '_blank';
+                            a.rel = 'noopener';
+                        }
+                        linksWrap.appendChild(a);
+                    });
+                    block.appendChild(linksWrap);
+                }
+
+                sectionsEl.appendChild(block);
+            });
+
+            var contactHtml =
+                '<p class="font-bold text-brand-red mb-2">それでも解決しない場合</p>' +
+                '<p class="text-sm text-gray-700 leading-relaxed">' + QA_MASTER.contact.note + '</p>' +
+                '<p class="text-xs text-gray-500 mt-2">' + QA_MASTER.contact.hint + '</p>';
+            var storeUrl = resolveSiteLink('storeHp');
+            if (storeUrl && storeUrl.indexOf('http') === 0) {
+                contactHtml += '<a class="qa-link block mt-3" href="' + storeUrl + '" target="_blank" rel="noopener">→ 店舗HPを開く</a>';
+            }
+            contactEl.innerHTML = contactHtml;
+
+            if (QA_MASTER.updatedAt) {
+                updatedEl.textContent = '最終更新: ' + QA_MASTER.updatedAt;
+            }
+        })();
+    </script>
+</body>
+</html>

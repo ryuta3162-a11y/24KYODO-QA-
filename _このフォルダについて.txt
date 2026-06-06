@@ -1,0 +1,27 @@
+24KYODO-QA（LP · Q&A）
+========================
+
+JOYFIT24 経堂の「よくあるご質問・各種手続き」マスターページ。
+
+【ファイル】
+  index.html      … 表示ページ
+  qa-content.js   … Q&A本文（ここを編集すると反映）
+  site-links.js   … 関連LPのURL（Vercelデプロイ後に更新）
+  README.md       … GitHub / Vercel 手順（詳細）
+
+【カテゴリ（5つ）】
+  01 アプリ登録方法
+  02 各種オプション
+  03 契約切り替え
+  04 法人契約・変更
+  05 学割・移籍・紹介
+
+【本番公開の流れ】
+  1. GitHub にリポジトリ作成 → push（README 参照）
+  2. Vercel で Import & Deploy
+  3. site-links.js の URL を本番値に更新 → 再push
+  4. 店舗HPから Q&A URL へリンク設置
+
+【更新方法】
+  qa-content.js の items[].a を書き換えるだけ。
+  質問の追加は items に { q, a } を1行追加。
