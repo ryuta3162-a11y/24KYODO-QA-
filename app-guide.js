@@ -35,7 +35,7 @@ var APP_REGISTRATION_GUIDE = {
       text: 'JOYFITアプリのホーム画面が表示されたら、右上の「サービス」をタップしてください。',
       image: 'images/app-guide/01-home.png',
       highlights: [
-        { label: 'サービス', top: 5.2, left: 77, width: 21, height: 7 }
+        { label: 'サービス', top: 5.8, left: 79, width: 18, height: 6.5 }
       ]
     },
     {
@@ -44,7 +44,7 @@ var APP_REGISTRATION_GUIDE = {
       text: 'サービス一覧画面に切り替わります。「店舗」セクションの「各種お手続き」をタップしてください。',
       image: 'images/app-guide/02-service-list.png',
       highlights: [
-        { label: '各種お手続き', top: 47, left: 37, width: 22, height: 10 }
+        { label: '各種お手続き', top: 48.5, left: 35, width: 24, height: 11 }
       ]
     },
     {
@@ -62,8 +62,8 @@ var APP_REGISTRATION_GUIDE = {
       text: 'ご契約の変更・休会は「ご契約変更について」をタップ。プログラム予約は「ご予約について」をタップしてください（→ 6番へ）。',
       image: 'images/app-guide/04-procedures-top.png',
       highlights: [
-        { label: 'ご予約について → 6番', top: 15.5, left: 7, width: 86, height: 8 },
-        { label: 'ご契約変更 → 5番', top: 26.5, left: 7, width: 86, height: 8 }
+        { label: 'ご予約 → 6番', top: 16, left: 8, width: 84, height: 7.5 },
+        { label: 'ご契約変更 → 5番', top: 27, left: 8, width: 84, height: 7.5, labelBelow: true }
       ]
     },
     {
@@ -72,8 +72,8 @@ var APP_REGISTRATION_GUIDE = {
       text: 'ご契約変更画面から、お手続き内容を選んでください。',
       image: 'images/app-guide/05-contract-change.png',
       highlights: [
-        { label: 'クレジットカード変更', top: 14.5, left: 7, width: 86, height: 7.5 },
-        { label: '休会', top: 24.5, left: 7, width: 86, height: 7.5 }
+        { label: 'クレジットカード変更', top: 14.5, left: 8, width: 84, height: 7.5 },
+        { label: '休会', top: 25, left: 8, width: 84, height: 7.5, labelBelow: true }
       ]
     }
   ],

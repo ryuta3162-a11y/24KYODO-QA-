@@ -307,9 +307,13 @@
         .phone-screen {
             position: relative;
             border-radius: 1.35rem;
-            overflow: hidden;
+            overflow: visible;
             background: #000;
             line-height: 0;
+        }
+        .phone-screen-inner {
+            border-radius: 1.35rem;
+            overflow: hidden;
         }
         .phone-screen img {
             width: 100%;
@@ -350,6 +354,16 @@
             border-left: 4px solid transparent;
             border-right: 4px solid transparent;
             border-top: 4px solid var(--brand-red);
+        }
+        .phone-highlight-label.is-below {
+            top: auto;
+            bottom: -1.75rem;
+        }
+        .phone-highlight-label.is-below::after {
+            bottom: auto;
+            top: -4px;
+            border-top: none;
+            border-bottom: 4px solid var(--brand-red);
         }
         @keyframes guide-pulse {
             0%, 100% { box-shadow: 0 0 0 2px rgba(255,255,255,0.95), 0 0 12px rgba(220,38,38,0.4); }
@@ -428,13 +442,16 @@
                 frame.innerHTML = '<div class="phone-notch" aria-hidden="true"></div>';
                 var screen = document.createElement('div');
                 screen.className = 'phone-screen';
+                var inner = document.createElement('div');
+                inner.className = 'phone-screen-inner';
+                inner.style.position = 'relative';
                 var img = document.createElement('img');
                 img.src = step.image;
                 img.alt = step.title;
                 img.loading = 'lazy';
-                screen.appendChild(img);
+                inner.appendChild(img);
                 if (step.highlights && step.highlights.length) {
-                    step.highlights.forEach(function (h) {
+                    step.highlights.forEach(function (h, idx) {
                         var box = document.createElement('div');
                         box.className = 'phone-highlight';
                         box.style.top = h.top + '%';
@@ -443,13 +460,14 @@
                         box.style.height = h.height + '%';
                         if (h.label) {
                             var lbl = document.createElement('span');
-                            lbl.className = 'phone-highlight-label';
+                            lbl.className = 'phone-highlight-label' + (h.labelBelow || idx > 0 ? ' is-below' : '');
                             lbl.textContent = h.label;
                             box.appendChild(lbl);
                         }
-                        screen.appendChild(box);
+                        inner.appendChild(box);
                     });
                 }
+                screen.appendChild(inner);
                 frame.appendChild(screen);
                 wrap.appendChild(frame);
                 return wrap;
