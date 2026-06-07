@@ -13,7 +13,10 @@
  *   07-member-search.png        … 会員検索フォーム
  *   08-app-link-qr.png          … QR・アプリアクティベート
  *   09-option-menu.png          … オプション追加・解約メニュー
- *   10-crowd-*                  … 混雑状況の確認
+ *   10-crowd-favorite-tab.png   … お気に入り店舗タブ
+ *   10-crowd-favorite-add.png   … 追加ボタン
+ *   10-crowd-store-search.png    … 店舗検索（経堂）
+ *   10-crowd-status-kyodo.png   … 来館人数表示
  */
 var APP_REGISTRATION_GUIDE = {
   registrationSteps: [
@@ -125,18 +128,29 @@ var APP_CROWD_STATUS_GUIDE = {
   steps: [
     {
       num: '1',
-      title: '下部「お気に入り店舗」をタップ',
-      image: 'images/app-guide/10-crowd-favorite-add.png'
+      title: 'JOYFITアプリのホーム画面',
+      image: 'images/app-guide/01-home.png'
     },
     {
       num: '2',
-      title: '「追加」から店舗を登録',
-      image: 'images/app-guide/10-crowd-store-search.png'
+      title: '下部「お気に入り店舗」をタップ',
+      image: 'images/app-guide/10-crowd-favorite-tab.png'
     },
     {
       num: '3',
+      title: '「追加」をタップ',
+      image: 'images/app-guide/10-crowd-favorite-add.png'
+    },
+    {
+      num: '4',
+      title: '「東京23区」→「経堂」の＋をタップ',
+      image: 'images/app-guide/10-crowd-store-search.png'
+    },
+    {
+      num: '5',
       title: '「○人来館中」で混雑状況を確認',
       image: 'images/app-guide/10-crowd-status-kyodo.png'
     }
-  ]
+  ],
+  footnote: '※複数店舗の追加が可能です。'
 };
