@@ -1,41 +1,37 @@
 <!DOCTYPE html>
-<html lang="ja" class="scroll-smooth">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JOYFIT24経堂 | よくあるご質問・各種手続き</title>
-    <meta name="description" content="JOYFIT24経堂のよくあるご質問。アプリ入会、オプション、契約変更、法人契約、学割・紹介・乗り換えキャンペーンの申請方法をまとめています。">
-    <meta property="og:title" content="JOYFIT24経堂 | よくあるご質問・各種手続き">
-    <meta property="og:description" content="お問い合わせの多い内容をカテゴリ別にまとめたQ&Aページです。">
+    <title>JOYFIT24経堂 | Q&A</title>
+    <meta name="description" content="JOYFIT24経堂のQ&A。アプリ登録、オプション、契約変更、法人契約、キャンペーン申請について。">
+    <meta property="og:title" content="JOYFIT24経堂 | Q&A">
+    <meta property="og:description" content="JOYFIT24経堂のQ&Aページです。">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="ja_JP">
-    <meta name="theme-color" content="#FAFAFA">
+    <meta name="theme-color" content="#F3F4F6">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --page-bg: #F5F5F7;
-            --page-bg-top: #FFFFFF;
+            --page-bg: #F3F4F6;
             --logo-wine-bg: #A63646;
             --brand-red: #DC2626;
             --brand-red-dark: #B91C1C;
-            --brand-red-soft: rgba(220, 38, 38, 0.10);
+            --brand-red-soft: rgba(220, 38, 38, 0.12);
             --ink: #111827;
             --muted: #6B7280;
-            --line: rgba(17, 24, 39, 0.08);
+            --line: rgba(17, 24, 39, 0.07);
             --surface: #FFFFFF;
-            --shadow-sm: 0 2px 8px rgba(17, 24, 39, 0.04);
-            --shadow-md: 0 8px 28px rgba(17, 24, 39, 0.07);
-            --shadow-lg: 0 20px 48px rgba(17, 24, 39, 0.10);
-            --radius-lg: 1.25rem;
-            --radius-xl: 1.5rem;
+            --shadow-soft: 0 12px 40px rgba(17, 24, 39, 0.06);
+            --shadow-tab: 0 4px 20px rgba(17, 24, 39, 0.05);
+            --radius: 1rem;
         }
-        * { -webkit-tap-highlight-color: transparent; }
-        html { scroll-behavior: smooth; }
+        * { -webkit-tap-highlight-color: transparent; box-sizing: border-box; }
         body {
             font-family: 'Noto Sans JP', sans-serif;
             color: var(--ink);
-            background: linear-gradient(180deg, var(--page-bg-top) 0%, var(--page-bg) 28%, #EEEEF2 100%);
+            background-color: var(--page-bg);
             min-height: 100vh;
             position: relative;
             overflow-x: hidden;
@@ -48,13 +44,23 @@
             z-index: 0;
             pointer-events: none;
             background:
-                radial-gradient(ellipse 80% 50% at 50% -20%, rgba(220, 38, 38, 0.06), transparent 70%),
-                radial-gradient(ellipse 60% 40% at 100% 0%, rgba(255, 255, 255, 0.8), transparent 50%),
-                radial-gradient(ellipse 50% 30% at 0% 100%, rgba(220, 38, 38, 0.03), transparent 50%);
+                radial-gradient(1200px 600px at 50% -10%, rgba(220, 38, 38, 0.06), transparent 60%),
+                radial-gradient(900px 500px at 10% 30%, rgba(255, 255, 255, 0.85), transparent 55%),
+                radial-gradient(900px 500px at 90% 60%, rgba(255, 255, 255, 0.6), transparent 50%);
         }
         main, header, footer { position: relative; z-index: 1; }
 
-        /* ── Header ── */
+        .page-shell {
+            max-width: 28rem;
+            margin: 0 auto;
+            padding-left: max(1.15rem, env(safe-area-inset-left));
+            padding-right: max(1.15rem, env(safe-area-inset-right));
+        }
+        .header-shell {
+            padding-top: max(2.25rem, env(safe-area-inset-top));
+            padding-bottom: 1.75rem;
+            text-align: center;
+        }
         .hero-brand-line {
             display: inline-flex;
             align-items: baseline;
@@ -65,121 +71,117 @@
         .hero-brand-main {
             font-weight: 900;
             letter-spacing: 0.04em;
-            font-size: clamp(1.65rem, 5vw, 2.2rem);
+            font-size: clamp(1.75rem, 5.5vw, 2.25rem);
         }
         .hero-brand-sub {
             font-weight: 800;
             color: var(--brand-red);
-            letter-spacing: 0.12em;
-            font-size: clamp(1.1rem, 3.8vw, 1.55rem);
+            letter-spacing: 0.14em;
+            font-size: clamp(1.15rem, 4vw, 1.6rem);
         }
-        .page-title-card {
-            margin-top: 0.85rem;
-            background: linear-gradient(180deg, #FFFFFF 0%, #FAFAFA 100%);
-            border: 1px solid var(--line);
-            border-radius: var(--radius-xl);
-            padding: 1.1rem 1.25rem;
-            box-shadow: var(--shadow-md);
-        }
-        .text-brand-red { color: var(--brand-red); }
-
-        /* ── Category nav (mobile: horizontal scroll) ── */
-        .qa-nav-scroll {
-            display: flex;
-            gap: 0.5rem;
-            overflow-x: auto;
-            padding: 0.25rem 0 0.75rem;
-            margin: 0 -0.25rem;
-            -webkit-overflow-scrolling: touch;
-            scrollbar-width: none;
-        }
-        .qa-nav-scroll::-webkit-scrollbar { display: none; }
-        @media (min-width: 640px) {
-            .qa-nav-scroll {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                overflow: visible;
-                margin: 0;
-                padding-bottom: 0;
-            }
-        }
-        .nav-pill {
-            flex: 0 0 auto;
-            display: flex;
-            align-items: center;
-            padding: 0.7rem 1rem;
-            border-radius: var(--radius-lg);
-            border: 1px solid var(--line);
-            background: linear-gradient(180deg, #FFFFFF 0%, #F9FAFB 100%);
-            font-size: 0.8125rem;
-            font-weight: 700;
+        .hero-qa-tag {
+            display: inline-block;
+            margin-top: 0.65rem;
+            font-size: 0.68rem;
+            font-weight: 800;
+            letter-spacing: 0.35em;
             color: var(--muted);
-            box-shadow: var(--shadow-sm);
-            transition: border-color 0.2s, color 0.2s, box-shadow 0.2s, transform 0.15s;
-            white-space: nowrap;
         }
-        @media (min-width: 640px) {
-            .nav-pill { white-space: normal; }
-        }
-        .nav-pill:active { transform: scale(0.98); }
-        .nav-pill:hover {
-            border-color: rgba(220, 38, 38, 0.35);
-            color: var(--brand-red);
-            box-shadow: 0 4px 16px rgba(220, 38, 38, 0.08);
-        }
-        .related-link {
-            display: inline-flex;
-            align-items: center;
-            padding: 0.45rem 0.9rem;
-            border-radius: 9999px;
-            border: 1px solid rgba(220, 38, 38, 0.22);
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(8px);
-            font-size: 0.75rem;
-            font-weight: 700;
-            color: var(--brand-red);
-            box-shadow: var(--shadow-sm);
-            transition: all 0.2s ease;
-        }
-        .related-link:active { transform: scale(0.97); }
-        .related-link:hover { background: var(--brand-red-soft); }
 
-        /* ── Q&A sections ── */
-        .qa-section {
-            background: linear-gradient(180deg, #FFFFFF 0%, #FCFCFD 100%);
-            border: 1px solid var(--line);
-            border-radius: var(--radius-xl);
-            padding: 1.25rem 1rem 0.35rem;
-            margin-bottom: 1.25rem;
-            box-shadow: var(--shadow-md);
+        /* ── Vertical tabs ── */
+        .qa-tab-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+            margin-bottom: 1.75rem;
         }
-        @media (min-width: 640px) {
-            .qa-section { padding: 1.35rem 1.35rem 0.5rem; }
-        }
-        .section-badge {
-            display: inline-flex;
+        .qa-tab {
+            display: flex;
             align-items: center;
-            justify-content: center;
-            min-width: 2rem;
-            height: 2rem;
-            border-radius: 0.65rem;
-            background: linear-gradient(145deg, #EF4444 0%, var(--brand-red) 45%, var(--brand-red-dark) 100%);
-            color: #fff;
+            gap: 0.85rem;
+            width: 100%;
+            text-align: left;
+            padding: 0.95rem 1.1rem 0.95rem 1.25rem;
+            background: rgba(255, 255, 255, 0.55);
+            border: none;
+            border-radius: var(--radius);
+            color: var(--muted);
+            font-size: 0.875rem;
+            font-weight: 600;
+            line-height: 1.45;
+            cursor: pointer;
+            transition: background 0.25s, color 0.25s, box-shadow 0.25s, transform 0.15s;
+            position: relative;
+            overflow: hidden;
+        }
+        .qa-tab::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 18%;
+            bottom: 18%;
+            width: 3px;
+            border-radius: 0 3px 3px 0;
+            background: var(--brand-red);
+            opacity: 0;
+            transform: scaleY(0.3);
+            transition: opacity 0.25s, transform 0.25s;
+        }
+        .qa-tab:active { transform: scale(0.99); }
+        .qa-tab.is-active {
+            background: var(--surface);
+            color: var(--ink);
+            box-shadow: var(--shadow-tab);
+        }
+        .qa-tab.is-active::before {
+            opacity: 1;
+            transform: scaleY(1);
+        }
+        .qa-tab-num {
+            flex-shrink: 0;
+            font-size: 0.72rem;
             font-weight: 900;
-            font-size: 0.8rem;
-            margin-right: 0.5rem;
-            box-shadow: 0 3px 10px rgba(220, 38, 38, 0.28);
+            letter-spacing: 0.06em;
+            color: var(--brand-red);
+            opacity: 0.85;
+            min-width: 1.35rem;
         }
+        .qa-tab.is-active .qa-tab-num { opacity: 1; }
+        .qa-tab-label { flex: 1; }
+
+        /* ── Panel (single view) ── */
+        .qa-panel {
+            display: none;
+            animation: panelIn 0.35s ease;
+        }
+        .qa-panel.is-active { display: block; }
+        @keyframes panelIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .panel-intro {
+            font-size: 0.875rem;
+            color: var(--muted);
+            line-height: 1.75;
+            margin-bottom: 1.25rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--line);
+        }
+        .panel-body {
+            padding-bottom: 0.5rem;
+        }
+
+        /* ── Accordion ── */
         details {
-            border-top: 1px solid var(--line);
-            padding: 0.85rem 0.15rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--line);
         }
-        details:first-of-type { border-top: none; }
+        details:last-of-type { border-bottom: none; }
         summary {
             cursor: pointer;
             list-style: none;
             font-weight: 700;
-            font-size: 0.9375rem;
+            font-size: 0.925rem;
             line-height: 1.55;
             padding-right: 2rem;
             position: relative;
@@ -191,53 +193,182 @@
             right: 0;
             top: 50%;
             transform: translateY(-50%);
-            width: 1.5rem;
-            height: 1.5rem;
-            border-radius: 0.5rem;
+            width: 1.35rem;
+            height: 1.35rem;
+            border-radius: 50%;
             background: var(--brand-red-soft);
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23DC2626' stroke-width='2.5'%3E%3Cpath stroke-linecap='round' d='M12 6v12M6 12h12'/%3E%3C/svg%3E");
             background-repeat: no-repeat;
             background-position: center;
-            background-size: 0.75rem;
+            background-size: 0.65rem;
         }
         details[open] summary::after {
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23DC2626' stroke-width='2.5'%3E%3Cpath stroke-linecap='round' d='M6 12h12'/%3E%3C/svg%3E");
         }
         .qa-answer {
-            margin-top: 0.75rem;
-            padding: 0.85rem 0.9rem;
+            margin-top: 0.85rem;
             color: #374151;
-            font-size: 0.9rem;
-            line-height: 1.75;
+            font-size: 0.875rem;
+            line-height: 1.8;
             white-space: pre-wrap;
-            background: #F9FAFB;
-            border-radius: 0.75rem;
-            border: 1px solid var(--line);
         }
         .qa-link {
-            display: inline-flex;
-            align-items: center;
+            display: inline-block;
             margin-top: 0.75rem;
-            padding: 0.4rem 0;
             color: var(--brand-red);
             font-weight: 700;
-            font-size: 0.875rem;
+            font-size: 0.8125rem;
             text-decoration: none;
-            border-bottom: 1.5px solid rgba(220, 38, 38, 0.35);
+            border-bottom: 1px solid rgba(220, 38, 38, 0.3);
         }
         .section-links {
-            margin-top: 1rem;
-            padding-top: 0.75rem;
-            border-top: 1px dashed var(--line);
-            margin-bottom: 0.75rem;
+            margin-top: 1.25rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--line);
         }
+
+        /* ── Contact ── */
         .contact-box {
-            background: linear-gradient(135deg, #FFF 0%, #FEF2F2 100%);
-            border: 1px solid rgba(220, 38, 38, 0.12);
-            border-radius: var(--radius-xl);
-            padding: 1.25rem;
-            box-shadow: var(--shadow-md);
+            margin-top: 2rem;
+            padding: 1.25rem 0 0;
+            border-top: 1px solid var(--line);
         }
+        .contact-box .contact-title {
+            font-size: 0.8125rem;
+            font-weight: 800;
+            color: var(--brand-red);
+            margin-bottom: 0.5rem;
+        }
+        .contact-box p {
+            font-size: 0.8125rem;
+            color: #4B5563;
+            line-height: 1.7;
+        }
+        .contact-hint {
+            margin-top: 0.5rem;
+            font-size: 0.75rem;
+            color: var(--muted);
+        }
+        .updated-at {
+            text-align: center;
+            font-size: 0.68rem;
+            color: #9CA3AF;
+            margin-top: 2.5rem;
+            padding-bottom: 1rem;
+        }
+
+        /* ── App guide ── */
+        .guide-banner {
+            text-align: center;
+            font-weight: 800;
+            font-size: 0.68rem;
+            letter-spacing: 0.22em;
+            color: var(--brand-red);
+            margin: 0 0 0.85rem;
+        }
+        .guide-lead {
+            font-size: 0.8375rem;
+            color: var(--muted);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        .guide-subtitle {
+            font-size: 0.8125rem;
+            font-weight: 800;
+            color: var(--ink);
+            margin: 2rem 0 1rem;
+            letter-spacing: 0.04em;
+        }
+        .guide-step {
+            margin-bottom: 1.75rem;
+        }
+        .guide-step-head {
+            display: flex;
+            align-items: baseline;
+            gap: 0.6rem;
+            margin-bottom: 0.5rem;
+        }
+        .guide-step-num {
+            font-size: 0.7rem;
+            font-weight: 900;
+            color: var(--brand-red);
+            letter-spacing: 0.04em;
+        }
+        .guide-step-title {
+            font-weight: 700;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        .guide-step-text {
+            font-size: 0.8125rem;
+            color: #4B5563;
+            line-height: 1.75;
+            margin-bottom: 0.85rem;
+            white-space: pre-wrap;
+        }
+        .guide-step-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            margin-bottom: 0.85rem;
+            padding: 0.8rem 1rem;
+            background: linear-gradient(180deg, #EF4444 0%, var(--brand-red) 55%, var(--brand-red-dark) 100%);
+            color: #fff;
+            font-weight: 700;
+            font-size: 0.8375rem;
+            border-radius: var(--radius);
+            text-decoration: none;
+            box-shadow: 0 6px 20px rgba(220, 38, 38, 0.22);
+            transition: transform 0.15s, box-shadow 0.2s;
+        }
+        .guide-step-link:active {
+            transform: scale(0.98);
+            box-shadow: 0 3px 12px rgba(220, 38, 38, 0.18);
+        }
+        .phone-wrap {
+            display: flex;
+            justify-content: center;
+            padding: 0.15rem 0;
+        }
+        .phone-frame {
+            width: min(100%, 252px);
+            background: linear-gradient(165deg, #48484A 0%, #2C2C2E 45%, #1C1C1E 100%);
+            border-radius: 2.1rem;
+            padding: 10px 9px;
+            box-shadow: var(--shadow-soft);
+        }
+        .phone-notch {
+            width: 30%;
+            height: 4px;
+            background: #0a0a0a;
+            border-radius: 9999px;
+            margin: 0 auto 7px;
+        }
+        .phone-screen {
+            border-radius: 1.45rem;
+            overflow: hidden;
+            background: #000;
+            line-height: 0;
+        }
+        .phone-screen img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .guide-branch {
+            margin-top: 1.5rem;
+            padding-top: 1.25rem;
+            border-top: 1px dashed rgba(17, 24, 39, 0.12);
+        }
+        .guide-branch-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--muted);
+            margin-bottom: 1rem;
+        }
+
         .site-footer-bar {
             background: linear-gradient(180deg, #B03A4A 0%, var(--logo-wine-bg) 100%);
             padding: 1.35rem 1rem calc(1.35rem + env(safe-area-inset-bottom));
@@ -250,207 +381,26 @@
             margin: 0 auto;
             opacity: 0.95;
         }
-
-        /* ── App guide ── */
-        .app-visual-guide {
-            margin-top: 0.5rem;
-        }
-        .guide-banner {
-            text-align: center;
-            font-weight: 900;
-            font-size: 0.72rem;
-            letter-spacing: 0.18em;
-            color: var(--brand-red);
-            padding: 0.75rem 1rem;
-            margin: 0.5rem 0 1rem;
-            border-radius: var(--radius-lg);
-            background: linear-gradient(135deg, rgba(254, 242, 242, 0.9) 0%, rgba(255, 255, 255, 0.95) 100%);
-            border: 1px solid rgba(220, 38, 38, 0.15);
-            box-shadow: var(--shadow-sm);
-        }
-        .guide-lead {
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: #4B5563;
-            margin-bottom: 1.25rem;
-            text-align: center;
-            line-height: 1.65;
-        }
-        .guide-subtitle {
-            font-size: 0.875rem;
-            font-weight: 900;
-            color: var(--ink);
-            margin: 1.75rem 0 0.85rem;
-            padding: 0.5rem 0 0.5rem 0.85rem;
-            border-left: 3px solid var(--brand-red);
-            background: linear-gradient(90deg, var(--brand-red-soft) 0%, transparent 100%);
-            border-radius: 0 0.5rem 0.5rem 0;
-        }
-        .guide-step {
-            display: flex;
-            gap: 0.75rem;
-            position: relative;
-        }
-        .guide-step + .guide-step { margin-top: 0.75rem; }
-        .guide-step-num {
-            flex-shrink: 0;
-            width: 1.85rem;
-            height: 1.85rem;
-            border-radius: 0.55rem;
-            background: linear-gradient(145deg, #EF4444, var(--brand-red-dark));
-            color: #fff;
-            font-weight: 900;
-            font-size: 0.7rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-top: 1.15rem;
-            z-index: 2;
-            box-shadow: 0 3px 10px rgba(220, 38, 38, 0.25);
-        }
-        .guide-step-body {
-            flex: 1;
-            min-width: 0;
-            padding: 1rem 1rem 0.75rem;
-            background: linear-gradient(180deg, #FFFFFF 0%, #F8F9FA 100%);
-            border: 1px solid var(--line);
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-sm);
-        }
-        .guide-step:not(:last-child) .guide-step-body {
-            margin-bottom: 0.25rem;
-        }
-        .guide-step-title {
-            font-weight: 800;
-            font-size: 0.9375rem;
-            line-height: 1.5;
-            margin-bottom: 0.4rem;
-            color: var(--ink);
-        }
-        .guide-step-text {
-            font-size: 0.8375rem;
-            color: #4B5563;
-            line-height: 1.75;
-            margin-bottom: 0.85rem;
-            white-space: pre-wrap;
-        }
-        .guide-step-link {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            max-width: 100%;
-            margin-bottom: 0.85rem;
-            padding: 0.75rem 1rem;
-            background: linear-gradient(180deg, #EF4444 0%, var(--brand-red) 50%, var(--brand-red-dark) 100%);
-            color: #fff;
-            font-weight: 700;
-            font-size: 0.875rem;
-            border-radius: var(--radius-lg);
-            text-decoration: none;
-            box-shadow: 0 4px 16px rgba(220, 38, 38, 0.28);
-            transition: transform 0.15s, box-shadow 0.2s;
-        }
-        .guide-step-link:active {
-            transform: scale(0.98);
-            box-shadow: 0 2px 8px rgba(220, 38, 38, 0.2);
-        }
-        .phone-wrap {
-            display: flex;
-            justify-content: center;
-            padding: 0.25rem 0 0.15rem;
-        }
-        .phone-frame {
-            width: min(100%, 240px);
-            background: linear-gradient(165deg, #48484A 0%, #2C2C2E 40%, #1C1C1E 100%);
-            border-radius: 2.25rem;
-            padding: 11px 9px;
-            box-shadow:
-                var(--shadow-lg),
-                0 0 0 1px rgba(255, 255, 255, 0.12) inset,
-                0 1px 0 rgba(255, 255, 255, 0.06) inset;
-        }
-        @media (min-width: 390px) {
-            .phone-frame { width: min(100%, 268px); }
-        }
-        .phone-notch {
-            width: 32%;
-            height: 4px;
-            background: #0a0a0a;
-            border-radius: 9999px;
-            margin: 0 auto 7px;
-            opacity: 0.9;
-        }
-        .phone-screen {
-            border-radius: 1.5rem;
-            overflow: hidden;
-            background: #000;
-            line-height: 0;
-            box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3) inset;
-        }
-        .phone-screen img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        .guide-branch {
-            margin-top: 0.75rem;
-            padding: 1rem 0.85rem;
-            background: linear-gradient(180deg, #FFFBEB 0%, #FFF 100%);
-            border: 1px solid rgba(245, 158, 11, 0.25);
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-sm);
-        }
-        .guide-branch-label {
-            font-size: 0.7rem;
-            font-weight: 800;
-            color: #92400E;
-            letter-spacing: 0.06em;
-            margin-bottom: 0.65rem;
-            padding-left: 0.15rem;
-        }
-        .guide-branch .guide-step-body {
-            background: #FFFFFF;
-            box-shadow: none;
-            border-color: rgba(245, 158, 11, 0.15);
-        }
-
-        /* ── Layout tweaks (mobile-first) ── */
-        .page-shell {
-            padding-left: max(1rem, env(safe-area-inset-left));
-            padding-right: max(1rem, env(safe-area-inset-right));
-        }
-        .header-shell {
-            padding-top: max(2rem, env(safe-area-inset-top));
-        }
     </style>
 </head>
 <body class="antialiased">
 
     <header class="w-full">
-        <div class="container mx-auto page-shell header-shell pb-5 flex flex-col items-center text-center">
+        <div class="page-shell header-shell">
             <h1 class="hero-brand-line">
                 <span class="hero-brand-main">JOYFIT24</span>
                 <span class="hero-brand-sub">経堂</span>
             </h1>
-            <div class="page-title-card max-w-2xl w-full">
-                <h2 class="text-xl sm:text-2xl font-black text-brand-red leading-tight">
-                    よくあるご質問・各種手続き
-                </h2>
-                <p class="text-sm sm:text-base text-gray-600 font-semibold mt-2">
-                    お問い合わせの多い内容をまとめています
-                </p>
-            </div>
-            <nav id="related-pages" class="flex flex-wrap justify-center gap-2 mt-4 max-w-2xl w-full" aria-label="関連ページ"></nav>
+            <p class="hero-qa-tag">Q&amp;A</p>
         </div>
     </header>
 
-    <main class="pb-16">
-        <div class="container mx-auto page-shell max-w-lg sm:max-w-2xl">
-            <nav id="qa-nav" class="qa-nav-scroll mb-6" aria-label="カテゴリ"></nav>
-            <div id="qa-sections"></div>
-            <div id="qa-contact" class="contact-box mt-4"></div>
-            <p id="qa-updated" class="text-center text-xs text-gray-400 mt-6"></p>
+    <main class="pb-8">
+        <div class="page-shell">
+            <nav id="qa-nav" class="qa-tab-list" aria-label="カテゴリ"></nav>
+            <div id="qa-panels"></div>
+            <div id="qa-contact"></div>
+            <p id="qa-updated" class="updated-at"></p>
         </div>
     </main>
 
@@ -464,10 +414,12 @@
     <script>
         (function () {
             var nav = document.getElementById('qa-nav');
-            var sectionsEl = document.getElementById('qa-sections');
+            var panelsEl = document.getElementById('qa-panels');
             var contactEl = document.getElementById('qa-contact');
             var updatedEl = document.getElementById('qa-updated');
-            var relatedEl = document.getElementById('related-pages');
+            var tabs = [];
+            var panels = [];
+            var activeId = '';
 
             function hrefFor(item) {
                 if (item.linkKey) return resolveSiteLink(item.linkKey);
@@ -492,23 +444,25 @@
                 return wrap;
             }
 
-            function buildGuideStep(step, numClass) {
+            function buildGuideStep(step) {
                 var article = document.createElement('article');
                 article.className = 'guide-step';
-                var num = document.createElement('div');
+                var head = document.createElement('div');
+                head.className = 'guide-step-head';
+                var num = document.createElement('span');
                 num.className = 'guide-step-num';
                 num.textContent = step.num;
-                var body = document.createElement('div');
-                body.className = 'guide-step-body';
                 var title = document.createElement('h4');
                 title.className = 'guide-step-title';
                 title.textContent = step.title;
-                body.appendChild(title);
+                head.appendChild(num);
+                head.appendChild(title);
+                article.appendChild(head);
                 if (step.text) {
                     var text = document.createElement('p');
                     text.className = 'guide-step-text';
                     text.textContent = step.text;
-                    body.appendChild(text);
+                    article.appendChild(text);
                 }
                 var linkUrl = step.linkUrl || (step.linkKey ? resolveSiteLink(step.linkKey) : '');
                 if (linkUrl && linkUrl.indexOf('http') === 0) {
@@ -518,21 +472,19 @@
                     link.textContent = step.linkLabel || 'リンクを開く';
                     link.target = '_blank';
                     link.rel = 'noopener';
-                    body.appendChild(link);
+                    article.appendChild(link);
                 }
                 if (step.image) {
-                    body.appendChild(buildPhoneScreen(step));
+                    article.appendChild(buildPhoneScreen(step));
                 }
-                article.appendChild(num);
-                article.appendChild(body);
                 return article;
             }
 
             function renderAppRegistrationGuide(container) {
                 var g = APP_REGISTRATION_GUIDE;
-                var banner = document.createElement('div');
+                var banner = document.createElement('p');
                 banner.className = 'guide-banner';
-                banner.textContent = '【' + g.title + '】';
+                banner.textContent = g.title;
                 container.appendChild(banner);
                 var lead = document.createElement('p');
                 lead.className = 'guide-lead';
@@ -564,27 +516,50 @@
                     branch.className = 'guide-branch';
                     var branchLabel = document.createElement('p');
                     branchLabel.className = 'guide-branch-label';
-                    branchLabel.textContent = '▼ 4番「ご予約について」を選んだ場合';
+                    branchLabel.textContent = '4番「ご予約について」を選んだ場合';
                     branch.appendChild(branchLabel);
                     branch.appendChild(buildGuideStep(g.branchStep));
                     container.appendChild(branch);
                 }
             }
 
-            if (typeof RELATED_PAGES !== 'undefined' && relatedEl) {
-                RELATED_PAGES.forEach(function (p) {
-                    var url = resolveSiteLink(p.key);
-                    if (!url || url === '#') return;
-                    var a = document.createElement('a');
-                    a.className = 'related-link';
-                    a.href = url;
-                    a.textContent = p.label;
-                    if (url.indexOf('http') === 0) {
-                        a.target = '_blank';
-                        a.rel = 'noopener';
-                    }
-                    relatedEl.appendChild(a);
+            function buildContactBox() {
+                var box = document.createElement('div');
+                box.className = 'contact-box';
+                box.innerHTML =
+                    '<p class="contact-title">それでも解決しない場合</p>' +
+                    '<p>' + QA_MASTER.contact.note + '</p>' +
+                    '<p class="contact-hint">' + QA_MASTER.contact.hint + '</p>';
+                var storeUrl = resolveSiteLink('storeHp');
+                if (storeUrl && storeUrl.indexOf('http') === 0) {
+                    var link = document.createElement('a');
+                    link.className = 'qa-link';
+                    link.href = storeUrl;
+                    link.target = '_blank';
+                    link.rel = 'noopener';
+                    link.textContent = '店舗HPを開く';
+                    box.appendChild(link);
+                }
+                return box;
+            }
+
+            function switchPanel(id, pushHash) {
+                if (activeId === id) return;
+                activeId = id;
+                tabs.forEach(function (tab) {
+                    tab.classList.toggle('is-active', tab.dataset.panel === id);
+                    tab.setAttribute('aria-selected', tab.dataset.panel === id ? 'true' : 'false');
                 });
+                panels.forEach(function (panel) {
+                    panel.classList.toggle('is-active', panel.id === 'panel-' + id);
+                });
+                if (pushHash !== false) {
+                    history.replaceState(null, '', '#' + id);
+                }
+                var activePanel = document.getElementById('panel-' + id);
+                if (activePanel) {
+                    activePanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }
             }
 
             if (SITE_LINKS.qaSelf && SITE_LINKS.qaSelf.indexOf('http') === 0) {
@@ -592,40 +567,41 @@
                 canonical.rel = 'canonical';
                 canonical.href = SITE_LINKS.qaSelf;
                 document.head.appendChild(canonical);
-                var ogUrl = document.createElement('meta');
-                ogUrl.setAttribute('property', 'og:url');
-                ogUrl.content = SITE_LINKS.qaSelf;
-                document.head.appendChild(ogUrl);
             }
 
-            QA_MASTER.sections.forEach(function (section) {
-                var navLink = document.createElement('a');
-                navLink.href = '#' + section.id;
-                navLink.className = 'nav-pill text-left';
-                navLink.textContent = section.number + ' ' + section.title;
-                nav.appendChild(navLink);
+            QA_MASTER.sections.forEach(function (section, index) {
+                var tab = document.createElement('button');
+                tab.type = 'button';
+                tab.className = 'qa-tab' + (index === 0 ? ' is-active' : '');
+                tab.dataset.panel = section.id;
+                tab.setAttribute('role', 'tab');
+                tab.setAttribute('aria-selected', index === 0 ? 'true' : 'false');
+                tab.innerHTML =
+                    '<span class="qa-tab-num">' + section.number + '</span>' +
+                    '<span class="qa-tab-label">' + section.title + '</span>';
+                tab.addEventListener('click', function () {
+                    switchPanel(section.id);
+                });
+                nav.appendChild(tab);
+                tabs.push(tab);
 
-                var block = document.createElement('section');
-                block.id = section.id;
-                block.className = 'qa-section';
-
-                var heading = document.createElement('h3');
-                heading.className = 'text-lg font-black mb-2 flex items-center';
-                heading.innerHTML = '<span class="section-badge">' + section.number + '</span><span>' + section.title + '</span>';
-                block.appendChild(heading);
+                var panel = document.createElement('div');
+                panel.id = 'panel-' + section.id;
+                panel.className = 'qa-panel' + (index === 0 ? ' is-active' : '');
+                panel.setAttribute('role', 'tabpanel');
 
                 if (section.intro) {
                     var intro = document.createElement('p');
-                    intro.className = 'text-sm text-gray-500 mb-3';
+                    intro.className = 'panel-intro';
                     intro.textContent = section.intro;
-                    block.appendChild(intro);
+                    panel.appendChild(intro);
                 }
 
+                var body = document.createElement('div');
+                body.className = 'panel-body';
+
                 if (section.visualGuide === 'appRegistration' && typeof APP_REGISTRATION_GUIDE !== 'undefined') {
-                    var guideWrap = document.createElement('div');
-                    guideWrap.className = 'app-visual-guide mb-4';
-                    renderAppRegistrationGuide(guideWrap);
-                    block.appendChild(guideWrap);
+                    renderAppRegistrationGuide(body);
                 }
 
                 section.items.forEach(function (item) {
@@ -651,7 +627,7 @@
                         details.appendChild(link);
                     }
 
-                    block.appendChild(details);
+                    body.appendChild(details);
                 });
 
                 if (section.links && section.links.length) {
@@ -668,25 +644,35 @@
                         }
                         linksWrap.appendChild(a);
                     });
-                    block.appendChild(linksWrap);
+                    body.appendChild(linksWrap);
                 }
 
-                sectionsEl.appendChild(block);
+                panel.appendChild(body);
+                panelsEl.appendChild(panel);
+                panels.push(panel);
+
+                if (index === 0) activeId = section.id;
             });
 
-            var contactHtml =
-                '<p class="font-bold text-brand-red mb-2">それでも解決しない場合</p>' +
-                '<p class="text-sm text-gray-700 leading-relaxed">' + QA_MASTER.contact.note + '</p>' +
-                '<p class="text-xs text-gray-500 mt-2">' + QA_MASTER.contact.hint + '</p>';
-            var storeUrl = resolveSiteLink('storeHp');
-            if (storeUrl && storeUrl.indexOf('http') === 0) {
-                contactHtml += '<a class="qa-link block mt-3" href="' + storeUrl + '" target="_blank" rel="noopener">→ 店舗HPを開く</a>';
+            var hash = location.hash.replace('#', '');
+            if (hash) {
+                var found = QA_MASTER.sections.some(function (s) { return s.id === hash; });
+                if (found) switchPanel(hash, false);
             }
-            contactEl.innerHTML = contactHtml;
+
+            window.addEventListener('hashchange', function () {
+                var h = location.hash.replace('#', '');
+                if (h && h !== activeId) {
+                    var ok = QA_MASTER.sections.some(function (s) { return s.id === h; });
+                    if (ok) switchPanel(h, false);
+                }
+            });
 
             if (QA_MASTER.updatedAt) {
-                updatedEl.textContent = '最終更新: ' + QA_MASTER.updatedAt;
+                updatedEl.textContent = '最終更新 ' + QA_MASTER.updatedAt;
             }
+
+            contactEl.appendChild(buildContactBox());
         })();
     </script>
 </body>
