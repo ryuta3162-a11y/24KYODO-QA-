@@ -20,8 +20,8 @@
  *   10-crowd-status-kyodo.png   … 来館人数表示
  *   11-corporate-app-top.png      … 法人切り替え・アプリで入会
  *   11-corporate-promo-code.png   … プロモーションコード入力
- *   11-reopen-app-settings.png    … 復開・サービス一覧→アプリ設定
- *   11-reopen-unregister.png      … 復開・アプリの登録を解除
+ *   11-reopen-app-settings.png    … 復会・サービス一覧→アプリ設定
+ *   11-reopen-unregister.png      … 復会・アプリの登録を解除
  */
 var APP_REGISTRATION_GUIDE = {
   registrationSteps: [
@@ -128,7 +128,7 @@ var APP_CORPORATE_SECTION = {
       ]
     },
     {
-      blockTitle: '復開手続き',
+      blockTitle: '復会手続き',
       intro: '過去にJOYFIT会員だった方で、会員情報をクリアして再度入会したい場合の手順です。',
       steps: [
         {
@@ -142,7 +142,7 @@ var APP_CORPORATE_SECTION = {
           image: 'images/app-guide/11-reopen-unregister.png'
         }
       ],
-      footnote: '※復開手続きをご希望の方は、原則、JOYFITアプリを一度ログアウト（登録解除）いただき、新規の会員様として上記「アプリで入会」から再度ご契約ください。',
+      footnote: '※復会手続きをご希望の方は、原則、JOYFITアプリを一度ログアウト（登録解除）いただき、新規の会員様として上記「アプリで入会」から再度ご契約ください。',
       footnoteProminent: true
     }
   ]
