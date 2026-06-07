@@ -227,28 +227,6 @@
             border-top: 1px solid var(--line);
         }
 
-        /* ── Contact ── */
-        .contact-box {
-            margin-top: 2rem;
-            padding: 1.25rem 0 0;
-            border-top: 1px solid var(--line);
-        }
-        .contact-box .contact-title {
-            font-size: 0.8125rem;
-            font-weight: 800;
-            color: var(--brand-red);
-            margin-bottom: 0.5rem;
-        }
-        .contact-box p {
-            font-size: 0.8125rem;
-            color: #4B5563;
-            line-height: 1.7;
-        }
-        .contact-hint {
-            margin-top: 0.5rem;
-            font-size: 0.75rem;
-            color: var(--muted);
-        }
         .updated-at {
             text-align: center;
             font-size: 0.68rem;
@@ -483,7 +461,6 @@
         <div class="page-shell">
             <nav id="qa-nav" class="qa-tab-list" aria-label="カテゴリ"></nav>
             <div id="qa-panels"></div>
-            <div id="qa-contact"></div>
             <p id="qa-updated" class="updated-at"></p>
         </div>
     </main>
@@ -499,7 +476,6 @@
         (function () {
             var nav = document.getElementById('qa-nav');
             var panelsEl = document.getElementById('qa-panels');
-            var contactEl = document.getElementById('qa-contact');
             var updatedEl = document.getElementById('qa-updated');
             var tabs = [];
             var panels = [];
@@ -600,26 +576,6 @@
                     note.textContent = guide.footnote;
                     container.appendChild(note);
                 }
-            }
-
-            function buildContactBox() {
-                var box = document.createElement('div');
-                box.className = 'contact-box';
-                box.innerHTML =
-                    '<p class="contact-title">それでも解決しない場合</p>' +
-                    '<p>' + QA_MASTER.contact.note + '</p>' +
-                    '<p class="contact-hint">' + QA_MASTER.contact.hint + '</p>';
-                var storeUrl = resolveSiteLink('storeHp');
-                if (storeUrl && storeUrl.indexOf('http') === 0) {
-                    var link = document.createElement('a');
-                    link.className = 'qa-link';
-                    link.href = storeUrl;
-                    link.target = '_blank';
-                    link.rel = 'noopener';
-                    link.textContent = '店舗HPを開く';
-                    box.appendChild(link);
-                }
-                return box;
             }
 
             function switchPanel(id, pushHash) {
@@ -758,8 +714,6 @@
             if (QA_MASTER.updatedAt) {
                 updatedEl.textContent = '最終更新 ' + QA_MASTER.updatedAt;
             }
-
-            contactEl.appendChild(buildContactBox());
         })();
     </script>
 </body>
