@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JOYFIT24経堂 | Q&A</title>
-    <meta name="description" content="JOYFIT24経堂のQ&A。アプリ登録、PT予約、クレジットカード変更、オプション、法人契約、キャンペーン申請について。">
+    <meta name="description" content="JOYFIT24経堂のQ&A アプリ登録、PT予約、クレジットカード変更、オプション、法人契約、キャンペーン申請について">
     <meta property="og:title" content="JOYFIT24経堂 | Q&A">
-    <meta property="og:description" content="JOYFIT24経堂のQ&Aページです。">
+    <meta property="og:description" content="JOYFIT24経堂のQ&Aページです">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="ja_JP">
     <meta name="theme-color" content="#F3F4F6">
@@ -92,62 +92,72 @@
         .qa-tab-list {
             display: flex;
             flex-direction: column;
-            gap: 0.4rem;
+            gap: 0.65rem;
             margin-bottom: 1.75rem;
         }
         .qa-tab {
             display: flex;
             align-items: center;
-            gap: 0.85rem;
+            gap: 1rem;
             width: 100%;
             text-align: left;
-            padding: 0.95rem 1.1rem 0.95rem 1.25rem;
-            background: rgba(255, 255, 255, 0.55);
-            border: none;
-            border-radius: var(--radius);
-            color: var(--muted);
-            font-size: 0.875rem;
-            font-weight: 600;
-            line-height: 1.45;
+            padding: 1.15rem 1.2rem 1.15rem 1.15rem;
+            background: #FFFFFF;
+            border: 2px solid rgba(220, 38, 38, 0.45);
+            border-radius: 3px;
+            color: var(--ink);
+            font-size: 1.125rem;
+            font-weight: 700;
+            line-height: 1.4;
             cursor: pointer;
-            transition: background 0.25s, color 0.25s, box-shadow 0.25s, transform 0.15s;
+            transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s, background 0.2s;
             position: relative;
-            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(17, 24, 39, 0.04);
         }
         .qa-tab::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 18%;
-            bottom: 18%;
-            width: 3px;
-            border-radius: 0 3px 3px 0;
-            background: var(--brand-red);
-            opacity: 0;
-            transform: scaleY(0.3);
-            transition: opacity 0.25s, transform 0.25s;
+            display: none;
         }
         .qa-tab:active { transform: scale(0.99); }
         .qa-tab.is-active {
-            background: var(--surface);
+            background: #FFFFFF;
             color: var(--ink);
-            box-shadow: var(--shadow-tab);
-        }
-        .qa-tab.is-active::before {
-            opacity: 1;
-            transform: scaleY(1);
+            border-color: var(--brand-red);
+            border-width: 2.5px;
+            box-shadow:
+                0 0 0 1px rgba(220, 38, 38, 0.08),
+                0 6px 20px rgba(220, 38, 38, 0.14);
         }
         .qa-tab-num {
             flex-shrink: 0;
-            font-size: 0.72rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 2.65rem;
+            height: 2.65rem;
+            font-size: 0.9375rem;
             font-weight: 900;
-            letter-spacing: 0.06em;
+            letter-spacing: 0.04em;
             color: var(--brand-red);
-            opacity: 0.85;
-            min-width: 1.35rem;
+            border: 2px solid var(--brand-red);
+            border-radius: 2px;
+            background: #FFFFFF;
         }
-        .qa-tab.is-active .qa-tab-num { opacity: 1; }
-        .qa-tab-label { flex: 1; }
+        .qa-tab.is-active .qa-tab-num {
+            background: var(--brand-red);
+            color: #FFFFFF;
+        }
+        .qa-tab-label { flex: 1; letter-spacing: 0.02em; }
+
+        .qa-panel-placeholder {
+            display: block;
+            padding: 2.5rem 1rem;
+            text-align: center;
+            font-size: 0.9375rem;
+            font-weight: 600;
+            color: var(--muted);
+            line-height: 1.7;
+        }
+        .qa-panel-placeholder.is-hidden { display: none; }
 
         /* ── Panel (single view) ── */
         .qa-panel {
@@ -183,27 +193,23 @@
             font-weight: 700;
             font-size: 0.925rem;
             line-height: 1.55;
-            padding-right: 2rem;
+            padding-right: 1.5rem;
             position: relative;
         }
         summary::-webkit-details-marker { display: none; }
         summary::after {
-            content: "";
+            content: "+";
             position: absolute;
             right: 0;
             top: 50%;
             transform: translateY(-50%);
-            width: 1.35rem;
-            height: 1.35rem;
-            border-radius: 50%;
-            background: var(--brand-red-soft);
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23DC2626' stroke-width='2.5'%3E%3Cpath stroke-linecap='round' d='M12 6v12M6 12h12'/%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: 0.65rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            line-height: 1;
+            color: var(--brand-red);
         }
         details[open] summary::after {
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23DC2626' stroke-width='2.5'%3E%3Cpath stroke-linecap='round' d='M6 12h12'/%3E%3C/svg%3E");
+            content: "−";
         }
         .qa-answer {
             margin-top: 0.85rem;
@@ -431,11 +437,17 @@
             overflow: hidden;
             background: #000;
             line-height: 0;
+            aspect-ratio: 460 / 1024;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
         }
         .phone-screen img {
             width: 100%;
-            height: auto;
+            height: 100%;
             display: block;
+            object-fit: contain;
+            object-position: top center;
         }
         .guide-branch {
             margin-top: 1.5rem;
@@ -478,6 +490,7 @@
     <main class="pb-8">
         <div class="page-shell">
             <nav id="qa-nav" class="qa-tab-list" aria-label="カテゴリ"></nav>
+            <p id="qa-panel-placeholder" class="qa-panel-placeholder">項目をタップして内容を表示</p>
             <div id="qa-panels"></div>
             <p id="qa-updated" class="updated-at"></p>
         </div>
@@ -494,6 +507,7 @@
         (function () {
             var nav = document.getElementById('qa-nav');
             var panelsEl = document.getElementById('qa-panels');
+            var placeholderEl = document.getElementById('qa-panel-placeholder');
             var updatedEl = document.getElementById('qa-updated');
             var tabs = [];
             var panels = [];
@@ -624,8 +638,15 @@
                 panels.forEach(function (panel) {
                     panel.classList.toggle('is-active', panel.id === 'panel-' + id);
                 });
+                if (placeholderEl) {
+                    placeholderEl.classList.toggle('is-hidden', !!id);
+                }
                 if (pushHash !== false) {
-                    history.replaceState(null, '', '#' + id);
+                    if (id) {
+                        history.replaceState(null, '', '#' + id);
+                    } else {
+                        history.replaceState(null, '', location.pathname + location.search);
+                    }
                 }
                 var activePanel = document.getElementById('panel-' + id);
                 if (activePanel) {
@@ -640,13 +661,13 @@
                 document.head.appendChild(canonical);
             }
 
-            QA_MASTER.sections.forEach(function (section, index) {
+            QA_MASTER.sections.forEach(function (section) {
                 var tab = document.createElement('button');
                 tab.type = 'button';
-                tab.className = 'qa-tab' + (index === 0 ? ' is-active' : '');
+                tab.className = 'qa-tab';
                 tab.dataset.panel = section.id;
                 tab.setAttribute('role', 'tab');
-                tab.setAttribute('aria-selected', index === 0 ? 'true' : 'false');
+                tab.setAttribute('aria-selected', 'false');
                 tab.innerHTML =
                     '<span class="qa-tab-num">' + section.number + '</span>' +
                     '<span class="qa-tab-label">' + section.title + '</span>';
@@ -658,7 +679,7 @@
 
                 var panel = document.createElement('div');
                 panel.id = 'panel-' + section.id;
-                panel.className = 'qa-panel' + (index === 0 ? ' is-active' : '');
+                panel.className = 'qa-panel';
                 panel.setAttribute('role', 'tabpanel');
 
                 if (section.intro) {
@@ -741,8 +762,6 @@
                 panel.appendChild(body);
                 panelsEl.appendChild(panel);
                 panels.push(panel);
-
-                if (index === 0) activeId = section.id;
             });
 
             var hash = location.hash.replace('#', '');

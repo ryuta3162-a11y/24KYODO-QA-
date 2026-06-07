@@ -29,20 +29,20 @@ var APP_REGISTRATION_GUIDE = {
       title: 'URLをスマートフォンで開く',
       linkKey: 'memberSearch',
       linkLabel: '会員検索フォームはこちらをタップ',
-      text: 'お名前（漢字・カタカナ）・生年月日・入会時の電話番号を入力して検索してください。',
+      text: 'お名前（漢字・カタカナ）・生年月日・入会時の電話番号を入力して検索してください',
       cardStyle: true,
       image: 'images/app-guide/07-member-search.png'
     },
     {
       title: 'アプリアクティベートで登録完了',
-      textHtml: 'QRコードが表示されたら、水色の<span class="guide-cyan-btn">アプリアクティベート</span>をタップしてください。',
+      textHtml: 'QRコードが表示されたら、水色の<span class="guide-cyan-btn">アプリアクティベート</span>をタップしてください',
       cardStyle: true,
       image: 'images/app-guide/08-app-link-qr.png'
     },
     {
       title: 'トップ画面へ',
-      text: 'JOYFITアプリが起動し、トップ画面へ移動します。',
-      closing: '位置情報・カメラの使用を許可してください。',
+      text: 'JOYFITアプリが起動し、トップ画面へ移動します',
+      closing: '位置情報・カメラの使用を許可してください',
       cardStyle: true,
       image: 'images/app-guide/01-home.png'
     }
@@ -77,7 +77,7 @@ var APP_PT_RESERVATION_GUIDE = {
       image: 'images/app-guide/06-program-reservation.png'
     }
   ],
-  footnote: '※予約やご案内の方法は、トレーナーLINEなどで承っております。\nこちらは決済時の画面・ウェブ予約になります。\n詳細は店舗スタッフもしくはトレーナーLINEにお問い合わせください。',
+  footnote: '予約やご案内の方法は、トレーナーLINEなどで承っております\nこちらは決済時の画面・ウェブ予約になります\n詳細は店舗スタッフもしくはトレーナーLINEにお問い合わせください',
   footnoteProminent: true
 };
 
@@ -103,16 +103,14 @@ var APP_CREDIT_CARD_GUIDE = {
       title: '「クレジットカード変更」「休会」をタップ',
       image: 'images/app-guide/05-credit-card-change.png'
     }
-  ],
-  footnote: '※休会は税込2,200円。1〜3ヶ月をチェックで選択できます（最大3ヶ月）。\n※適用月以外の休会などは、チェックで取り消しも可能です。同じ場所から申請してください。',
-  footnoteProminent: true
+  ]
 };
 
 var APP_CORPORATE_SECTION = {
   blocks: [
     {
       blockTitle: '法人切り替え（アプリで入会）',
-      intro: 'アプリで入会する新規の方（法人契約）向けです。プロモーションコードが必要です。',
+      intro: 'アプリで入会する新規の方（法人契約）向けです\nプロモーションコードが必要です',
       steps: [
         {
           num: '1',
@@ -122,14 +120,14 @@ var APP_CORPORATE_SECTION = {
         {
           num: '2',
           title: 'プロモーションコードを入力',
-          text: '12桁のプロモーションコードを入力して「次へ」をタップしてください。',
+          text: '12桁のプロモーションコードを入力して「次へ」をタップしてください',
           image: 'images/app-guide/11-corporate-promo-code.png'
         }
       ]
     },
     {
       blockTitle: '復会手続き',
-      intro: '過去にJOYFIT会員だった方で、会員情報をクリアして再度入会したい場合の手順です。',
+      intro: '過去にJOYFIT会員だった方で、会員情報をクリアして再度入会したい場合の手順です',
       steps: [
         {
           num: '1',
@@ -142,7 +140,7 @@ var APP_CORPORATE_SECTION = {
           image: 'images/app-guide/11-reopen-unregister.png'
         }
       ],
-      footnote: '※復会手続きをご希望の方は、原則、JOYFITアプリを一度ログアウト（登録解除）いただき、新規の会員様として上記「アプリで入会」から再度ご契約ください。',
+      footnote: '復会手続きをご希望の方は、原則、JOYFITアプリを一度ログアウト（登録解除）いただき、新規の会員様として上記「アプリで入会」から再度ご契約ください',
       footnoteProminent: true
     }
   ]
@@ -171,15 +169,14 @@ var APP_OPTION_GUIDE = {
       image: 'images/app-guide/09-option-menu.png'
     }
   ],
-  footnote: '※オプション解約後も当月末まではサービスをご利用いただけます（当月末解約となります）。',
-  footnoteProminent: true
+  footnote: '当月末解約となります'
 };
 
 var APP_CROWD_STATUS_GUIDE = {
   steps: [
     {
       num: '1',
-      title: '下部「お気に入り店舗」をタップ',
+      title: '「お気に入り店舗」をタップ',
       image: 'images/app-guide/10-crowd-favorite-tab.png'
     },
     {
@@ -189,13 +186,12 @@ var APP_CROWD_STATUS_GUIDE = {
     },
     {
       num: '3',
-      title: '「東京23区」→「経堂」の＋をタップ',
+      title: '「東京23区」の「経堂」の＋をタップ',
       image: 'images/app-guide/10-crowd-store-search.png'
     },
     {
       num: '4',
-      title: '「○人来館中」で混雑状況を確認',
-      note: '※複数店舗の追加が可能です。',
+      title: '来館人数で混雑状況を確認',
       image: 'images/app-guide/10-crowd-status-kyodo.png'
     }
   ]
