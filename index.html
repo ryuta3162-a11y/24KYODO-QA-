@@ -9,12 +9,12 @@
     <meta property="og:description" content="JOYFIT24経堂のQ&Aページです">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="ja_JP">
-    <meta name="theme-color" content="#F3F4F6">
+    <meta name="theme-color" content="#FFFFFF">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --page-bg: #F3F4F6;
+            --page-bg: #FFFFFF;
             --logo-wine-bg: #A63646;
             --brand-red: #DC2626;
             --brand-red-dark: #B91C1C;
@@ -38,15 +38,7 @@
             -webkit-font-smoothing: antialiased;
         }
         body::before {
-            content: "";
-            position: fixed;
-            inset: 0;
-            z-index: 0;
-            pointer-events: none;
-            background:
-                radial-gradient(1200px 600px at 50% -10%, rgba(220, 38, 38, 0.06), transparent 60%),
-                radial-gradient(900px 500px at 10% 30%, rgba(255, 255, 255, 0.85), transparent 55%),
-                radial-gradient(900px 500px at 90% 60%, rgba(255, 255, 255, 0.6), transparent 50%);
+            display: none;
         }
         main, header, footer { position: relative; z-index: 1; }
 
@@ -376,7 +368,8 @@
             background: linear-gradient(90deg, rgba(220, 38, 38, 0.08) 0%, rgba(255, 255, 255, 0.85) 100%);
             box-shadow: 0 4px 18px rgba(220, 38, 38, 0.08);
         }
-        .guide-footnote.is-prominent::first-line {
+        .guide-footnote.is-prominent::first-line,
+        .guide-footnote.is-prominent .guide-notice-text::first-line {
             color: var(--brand-red);
             font-weight: 800;
         }
@@ -385,6 +378,21 @@
         }
         .guide-notice-top.is-prominent {
             font-size: 0.875rem;
+        }
+        .guide-notice-text {
+            margin: 0;
+            white-space: pre-wrap;
+            line-height: 1.8;
+        }
+        .guide-notice-link {
+            display: inline-block;
+            margin-top: 0.65rem;
+            color: var(--brand-red);
+            font-weight: 700;
+            font-size: 0.8125rem;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(220, 38, 38, 0.35);
+            word-break: break-all;
         }
         .guide-step-note {
             font-size: 0.7rem;
@@ -604,6 +612,13 @@
             }
 
             function renderNavGuide(container, guide) {
+                if (guide.notice) {
+                    renderProminentNotice(container, guide.notice, {
+                        prominent: guide.noticeProminent !== false,
+                        linkKey: guide.noticeLinkKey,
+                        linkLabel: guide.noticeLinkLabel
+                    });
+                }
                 if (guide.intro) {
                     var intro = document.createElement('p');
                     intro.className = 'guide-step-text';
@@ -622,12 +637,31 @@
                 }
             }
 
+            function renderProminentNotice(container, notice, options) {
+                options = options || {};
+                var wrap = document.createElement('div');
+                wrap.className = 'guide-footnote guide-notice-top' + (options.prominent !== false ? ' is-prominent' : '');
+                var text = document.createElement('p');
+                text.className = 'guide-notice-text';
+                text.textContent = notice;
+                wrap.appendChild(text);
+                if (options.linkKey) {
+                    var link = document.createElement('a');
+                    link.className = 'guide-notice-link';
+                    link.href = resolveSiteLink(options.linkKey);
+                    link.textContent = options.linkLabel || link.href;
+                    if (link.href.indexOf('http') === 0) {
+                        link.target = '_blank';
+                        link.rel = 'noopener';
+                    }
+                    wrap.appendChild(link);
+                }
+                container.appendChild(wrap);
+            }
+
             function renderCorporateSection(container, section) {
                 if (section.notice) {
-                    var topNotice = document.createElement('p');
-                    topNotice.className = 'guide-footnote guide-notice-top' + (section.noticeProminent ? ' is-prominent' : '');
-                    topNotice.textContent = section.notice;
-                    container.appendChild(topNotice);
+                    renderProminentNotice(container, section.notice, { prominent: section.noticeProminent });
                 }
                 section.blocks.forEach(function (block) {
                     if (block.blockTitle) {
@@ -635,6 +669,13 @@
                         subtitle.className = 'guide-subtitle';
                         subtitle.textContent = block.blockTitle;
                         container.appendChild(subtitle);
+                    }
+                    if (block.notice) {
+                        renderProminentNotice(container, block.notice, {
+                            prominent: block.noticeProminent,
+                            linkKey: block.noticeLinkKey,
+                            linkLabel: block.noticeLinkLabel
+                        });
                     }
                     renderNavGuide(container, block);
                 });
@@ -726,6 +767,10 @@
 
                 if (section.visualGuide === 'corporateJoin' && typeof APP_CORPORATE_SECTION !== 'undefined') {
                     renderCorporateSection(body, APP_CORPORATE_SECTION);
+                }
+
+                if (section.visualGuide === 'unpaidPayment' && typeof APP_UNPAID_GUIDE !== 'undefined') {
+                    renderNavGuide(body, APP_UNPAID_GUIDE);
                 }
 
                 section.items.forEach(function (item) {
