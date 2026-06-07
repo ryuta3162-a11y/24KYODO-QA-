@@ -22,7 +22,7 @@
  *   11-corporate-promo-code.png   … プロモーションコード入力
  *   11-reopen-app-settings.png    … 復会・サービス一覧→アプリ設定
  *   11-reopen-unregister.png      … 復会・アプリの登録を解除
- *   12-unpaid-payment.png         … 未納金のお支払い（任意・未配置可）
+ *   12-unpaid-flowchart.png       … 未納金支払いフロー（全体図）
  */
 var APP_REGISTRATION_GUIDE = {
   registrationSteps: [
@@ -207,25 +207,28 @@ var APP_CROWD_STATUS_GUIDE = {
 };
 
 var APP_UNPAID_GUIDE = {
-  notice: '【未納金のお支払いについて】\nクレジットカード決済が確認できない場合、未納となります\n店舗からのご連絡またはJOYFITアプリ上の案内をご確認ください\n未納がある間は施設をご利用いただけません\n入金確認まで日数を要する場合があります',
-  noticeProminent: true,
+  intro: '未納がある間は施設をご利用いただけません\n月会費を2ヶ月滞納されますと規約退会になります\nアプリからお支払いいただければ、基本的にすぐ施設をご利用いただけます',
+  flowchart: 'images/app-guide/12-unpaid-flowchart.png',
   steps: [
     {
       num: '1',
-      title: 'ホーム画面右上の「サービス」をタップ',
-      image: 'images/app-guide/01-home.png'
+      title: 'プッシュ通知を確認',
+      text: '未納が発生すると、スマートフォンにJOYFITアプリからプッシュ通知が届きます'
     },
     {
       num: '2',
-      title: '「各種お手続き」をタップ',
-      image: 'images/app-guide/02-service-list.png'
+      title: 'アプリで未納アイコンを選択',
+      text: 'JOYFITアプリを開き、未納の案内（未納金処理）をタップしてください'
     },
     {
       num: '3',
-      title: '「未納金のお支払い」をタップ',
-      text: '表示されている未納分を確認し、クレジットカードでお支払いください'
+      title: 'お支払い内容を確認',
+      text: '表示されているお支払い内容を確認し「次へ」を押してください'
+    },
+    {
+      num: '4',
+      title: 'カード情報を入力して完了',
+      text: 'お支払いカード情報を入力し「確認」を押して手続きを完了してください'
     }
-  ],
-  footnote: 'お支払い後、登録メールアドレスに完了通知が届きます\n手続きの日時によっては、翌日以降に利用再開となる場合があります',
-  footnoteProminent: true
+  ]
 };

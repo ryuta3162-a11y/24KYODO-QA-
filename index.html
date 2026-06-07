@@ -277,6 +277,17 @@
                 radial-gradient(220px 100px at 0% 100%, rgba(255, 255, 255, 0.8), transparent 65%);
         }
         .guide-step-card > * { position: relative; z-index: 1; }
+        .guide-flowchart-wrap {
+            margin: 0 0 1.5rem;
+            padding: 0;
+        }
+        .guide-flowchart-wrap img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: calc(var(--radius) - 2px);
+            box-shadow: 0 4px 18px rgba(17, 24, 39, 0.08);
+        }
         .guide-step-card .guide-step-head {
             margin-bottom: 0.75rem;
             padding-bottom: 0.65rem;
@@ -618,6 +629,16 @@
                         linkKey: guide.noticeLinkKey,
                         linkLabel: guide.noticeLinkLabel
                     });
+                }
+                if (guide.flowchart) {
+                    var flowFig = document.createElement('figure');
+                    flowFig.className = 'guide-flowchart-wrap';
+                    var flowImg = document.createElement('img');
+                    flowImg.src = guide.flowchart;
+                    flowImg.alt = '未納金のお支払いフロー';
+                    flowImg.loading = 'lazy';
+                    flowFig.appendChild(flowImg);
+                    container.appendChild(flowFig);
                 }
                 if (guide.intro) {
                     var intro = document.createElement('p');
