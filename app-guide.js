@@ -18,6 +18,8 @@
  *   10-crowd-favorite-add.png   … 追加ボタン
  *   10-crowd-store-search.png    … 店舗検索（経堂）
  *   10-crowd-status-kyodo.png   … 来館人数表示
+ *   11-corporate-app-top.png      … 法人入会・アプリで入会
+ *   11-corporate-promo-code.png   … プロモーションコード入力
  */
 var APP_REGISTRATION_GUIDE = {
   registrationSteps: [
@@ -100,8 +102,25 @@ var APP_CREDIT_CARD_GUIDE = {
       image: 'images/app-guide/05-credit-card-change.png'
     }
   ],
-  footnote: '※休会は税込2,200円。1〜3ヶ月をチェックで選択できます（最大3ヶ月）。',
+  footnote: '※休会は税込2,200円。1〜3ヶ月をチェックで選択できます（最大3ヶ月）。\n※適用月以外の休会などは、チェックで取り消しも可能です。同じ場所から申請してください。',
   footnoteProminent: true
+};
+
+var APP_CORPORATE_GUIDE = {
+  intro: 'アプリで入会する新規の方（法人契約）向けです。プロモーションコードが必要です。',
+  steps: [
+    {
+      num: '1',
+      title: '「アプリで入会」をタップ',
+      image: 'images/app-guide/11-corporate-app-top.png'
+    },
+    {
+      num: '2',
+      title: 'プロモーションコードを入力',
+      text: '12桁のコードを入力して「次へ」をタップしてください。お持ちでない方はそのまま「次へ」で進めます。',
+      image: 'images/app-guide/11-corporate-promo-code.png'
+    }
+  ]
 };
 
 var APP_OPTION_GUIDE = {
