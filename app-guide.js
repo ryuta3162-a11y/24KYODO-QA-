@@ -23,6 +23,7 @@
  *   11-reopen-app-settings.png    … 復会・サービス一覧→アプリ設定
  *   11-reopen-unregister.png      … 復会・アプリの登録を解除
  *   12-unpaid-flowchart.png       … 未納金支払いフロー（全体図）
+ *   12-unpaid-app-only.png        … アプリ専用手続き・未納金のお支払い
  */
 var APP_REGISTRATION_GUIDE = {
   registrationSteps: [
@@ -212,23 +213,26 @@ var APP_UNPAID_GUIDE = {
   steps: [
     {
       num: '1',
-      title: 'プッシュ通知を確認',
-      text: '未納が発生すると、スマートフォンにJOYFITアプリからプッシュ通知が届きます'
+      title: 'プッシュ通知',
+      text: 'スマートフォンにJOYFITアプリからプッシュ通知が届きます'
     },
     {
       num: '2',
-      title: 'アプリで未納アイコンを選択',
-      text: 'JOYFITアプリを開き、未納の案内（未納金処理）をタップしてください'
+      title: 'アプリで未納バナーをタップ'
     },
     {
       num: '3',
-      title: 'お支払い内容を確認',
-      text: '表示されているお支払い内容を確認し「次へ」を押してください'
+      title: '表示されているお支払い内容を確認し「次へ」を押してください'
     },
     {
       num: '4',
       title: 'カード情報を入力して完了',
-      text: 'お支払いカード情報を入力し「確認」を押して手続きを完了してください'
+      text: '「確認」を押して手続きを完了してください'
     }
-  ]
+  ],
+  altPath: {
+    text: '通知が届いていないけど未納だった方は、こちらからお支払いください',
+    image: 'images/app-guide/12-unpaid-app-only.png',
+    imageCaption: 'サービス → アプリ専用手続き →「未納金のお支払い」'
+  }
 };

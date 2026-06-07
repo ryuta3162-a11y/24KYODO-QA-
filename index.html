@@ -650,6 +650,29 @@
                 guide.steps.forEach(function (step) {
                     container.appendChild(buildGuideStep(Object.assign({ cardStyle: true }, step)));
                 });
+                if (guide.altPath) {
+                    var altWrap = document.createElement('div');
+                    altWrap.className = 'guide-alt-path';
+                    if (guide.altPath.text) {
+                        var altText = document.createElement('p');
+                        altText.className = 'guide-step-text';
+                        altText.style.marginTop = '1.5rem';
+                        altText.textContent = guide.altPath.text;
+                        altWrap.appendChild(altText);
+                    }
+                    if (guide.altPath.imageCaption) {
+                        var altCap = document.createElement('p');
+                        altCap.className = 'guide-step-text';
+                        altCap.style.fontWeight = '700';
+                        altCap.style.color = 'var(--ink)';
+                        altCap.textContent = guide.altPath.imageCaption;
+                        altWrap.appendChild(altCap);
+                    }
+                    if (guide.altPath.image) {
+                        altWrap.appendChild(buildPhoneScreen({ image: guide.altPath.image, title: guide.altPath.imageCaption || '' }));
+                    }
+                    container.appendChild(altWrap);
+                }
                 if (guide.footnote) {
                     var note = document.createElement('p');
                     note.className = 'guide-footnote' + (guide.footnoteProminent ? ' is-prominent' : '');
