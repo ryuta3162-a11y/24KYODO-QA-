@@ -307,6 +307,28 @@
             margin-bottom: 0.85rem;
             white-space: pre-wrap;
         }
+        .guide-cyan-btn {
+            color: #0891B2;
+            font-weight: 700;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 2px;
+        }
+        .guide-step-closing {
+            font-size: 0.8125rem;
+            font-weight: 700;
+            color: var(--ink);
+            text-align: center;
+            margin: 0.5rem 0 0.85rem;
+            letter-spacing: 0.04em;
+        }
+        .guide-step-url {
+            font-size: 0.72rem;
+            color: var(--muted);
+            word-break: break-all;
+            margin-bottom: 0.85rem;
+            line-height: 1.5;
+        }
         .guide-step-link {
             display: flex;
             align-items: center;
@@ -449,27 +471,42 @@
                 article.className = 'guide-step';
                 var head = document.createElement('div');
                 head.className = 'guide-step-head';
-                var num = document.createElement('span');
-                num.className = 'guide-step-num';
-                num.textContent = step.num;
+                if (step.num) {
+                    var num = document.createElement('span');
+                    num.className = 'guide-step-num';
+                    num.textContent = step.num;
+                    head.appendChild(num);
+                }
                 var title = document.createElement('h4');
                 title.className = 'guide-step-title';
                 title.textContent = step.title;
-                head.appendChild(num);
                 head.appendChild(title);
                 article.appendChild(head);
-                if (step.text) {
+                if (step.textHtml) {
+                    var htmlText = document.createElement('p');
+                    htmlText.className = 'guide-step-text';
+                    htmlText.innerHTML = step.textHtml;
+                    article.appendChild(htmlText);
+                } else if (step.text) {
                     var text = document.createElement('p');
                     text.className = 'guide-step-text';
                     text.textContent = step.text;
                     article.appendChild(text);
                 }
+                var urlKey = step.urlKey;
+                var urlFromKey = urlKey && typeof SITE_LINKS !== 'undefined' ? SITE_LINKS[urlKey] : '';
+                if (urlFromKey && urlFromKey.indexOf('http') === 0) {
+                    var urlEl = document.createElement('p');
+                    urlEl.className = 'guide-step-url';
+                    urlEl.textContent = urlFromKey;
+                    article.appendChild(urlEl);
+                }
                 var linkUrl = step.linkUrl || (step.linkKey ? resolveSiteLink(step.linkKey) : '');
-                if (linkUrl && linkUrl.indexOf('http') === 0) {
+                if (step.showLink !== false && linkUrl && linkUrl.indexOf('http') === 0 && step.linkLabel) {
                     var link = document.createElement('a');
                     link.className = 'guide-step-link';
                     link.href = linkUrl;
-                    link.textContent = step.linkLabel || 'リンクを開く';
+                    link.textContent = step.linkLabel;
                     link.target = '_blank';
                     link.rel = 'noopener';
                     article.appendChild(link);
@@ -477,26 +514,23 @@
                 if (step.image) {
                     article.appendChild(buildPhoneScreen(step));
                 }
+                if (step.closing) {
+                    var closing = document.createElement('p');
+                    closing.className = 'guide-step-closing';
+                    closing.textContent = step.closing;
+                    article.appendChild(closing);
+                }
                 return article;
             }
 
             function renderAppRegistrationGuide(container) {
-                var g = APP_REGISTRATION_GUIDE;
-                var banner = document.createElement('p');
-                banner.className = 'guide-banner';
-                banner.textContent = g.title;
-                container.appendChild(banner);
-                var lead = document.createElement('p');
-                lead.className = 'guide-lead';
-                lead.textContent = g.lead;
-                container.appendChild(lead);
-                g.registrationSteps.forEach(function (step) {
-                    var s = Object.assign({}, step);
-                    if (!s.linkUrl && SITE_LINKS.memberSearch) {
-                        s.linkUrl = SITE_LINKS.memberSearch;
-                    }
-                    container.appendChild(buildGuideStep(s));
+                APP_REGISTRATION_GUIDE.registrationSteps.forEach(function (step) {
+                    container.appendChild(buildGuideStep(step));
                 });
+            }
+
+            function renderAppProceduresGuide(container) {
+                var g = APP_PROCEDURES_GUIDE;
                 var navTitle = document.createElement('h4');
                 navTitle.className = 'guide-subtitle';
                 navTitle.textContent = g.navTitle;
@@ -602,6 +636,10 @@
 
                 if (section.visualGuide === 'appRegistration' && typeof APP_REGISTRATION_GUIDE !== 'undefined') {
                     renderAppRegistrationGuide(body);
+                }
+
+                if (section.visualGuide === 'appProcedures' && typeof APP_PROCEDURES_GUIDE !== 'undefined') {
+                    renderAppProceduresGuide(body);
                 }
 
                 section.items.forEach(function (item) {

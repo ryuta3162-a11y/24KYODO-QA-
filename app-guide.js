@@ -3,26 +3,28 @@
  * 赤枠は画像側に描き込み済み（CSSオーバーレイなし）
  */
 var APP_REGISTRATION_GUIDE = {
-  title: 'APP登録方法',
-  lead: 'スマートフォンで登録をお願いいたします。',
   registrationSteps: [
     {
-      num: '①',
-      title: '会員検索フォームを開く',
-      text: '下記URLをスマートフォンで開き、お名前（漢字・カタカナ）・生年月日・入会時の電話番号を入力して検索してください。',
-      image: 'images/app-guide/07-member-search.png',
-      linkUrl: 'https://procedure.joyfit.jp/qrcode2/index.html',
-      linkLabel: '会員検索フォームを開く'
+      title: 'URLをスマートフォンで開く',
+      image: 'images/app-guide/07-member-search.png'
     },
     {
-      num: '②',
-      title: '「アプリアクティベート」で登録完了',
-      text: 'QRコードが表示されたら、カメラで読み取る必要はありません。水色の「アプリアクティベート」をタップしてください。JOYFITアプリが起動し、登録が完了するとホーム画面（トップ）が表示されます。',
+      title: 'アプリアクティベートで登録完了',
+      textHtml: 'QRコードが表示されたら、水色の<span class="guide-cyan-btn">アプリアクティベート</span>をタップしてください。',
       image: 'images/app-guide/08-app-link-qr.png'
+    },
+    {
+      title: 'トップ画面へ',
+      text: 'JOYFITアプリが起動し、トップ画面へ移動します。',
+      closing: 'こちらに移動して終了です',
+      image: 'images/app-guide/01-home.png'
     }
-  ],
+  ]
+};
+
+var APP_PROCEDURES_GUIDE = {
   navTitle: 'アプリ内「各種お手続き」への行き方',
-  navIntro: '登録完了後、契約変更・休会・予約などは次の操作で進めます。',
+  navIntro: 'オプション・契約変更・休会・予約などは次の操作で進めます。',
   navSteps: [
     {
       num: '1',
