@@ -128,29 +128,24 @@ var APP_CROWD_STATUS_GUIDE = {
   steps: [
     {
       num: '1',
-      title: 'JOYFITアプリのホーム画面',
-      image: 'images/app-guide/01-home.png'
-    },
-    {
-      num: '2',
       title: '下部「お気に入り店舗」をタップ',
       image: 'images/app-guide/10-crowd-favorite-tab.png'
     },
     {
-      num: '3',
+      num: '2',
       title: '「追加」をタップ',
       image: 'images/app-guide/10-crowd-favorite-add.png'
     },
     {
-      num: '4',
+      num: '3',
       title: '「東京23区」→「経堂」の＋をタップ',
       image: 'images/app-guide/10-crowd-store-search.png'
     },
     {
-      num: '5',
+      num: '4',
       title: '「○人来館中」で混雑状況を確認',
+      note: '※複数店舗の追加が可能です。',
       image: 'images/app-guide/10-crowd-status-kyodo.png'
     }
-  ],
-  footnote: '※複数店舗の追加が可能です。'
+  ]
 };

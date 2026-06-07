@@ -362,6 +362,12 @@
             padding: 0.85rem 0 0;
             border-top: 1px solid var(--line);
         }
+        .guide-step-note {
+            font-size: 0.7rem;
+            color: var(--muted);
+            line-height: 1.6;
+            margin: -0.15rem 0 0.75rem;
+        }
         .guide-step-url {
             font-size: 0.72rem;
             color: var(--muted);
@@ -520,6 +526,12 @@
                 title.textContent = step.title;
                 head.appendChild(title);
                 article.appendChild(head);
+                if (step.note) {
+                    var noteEl = document.createElement('p');
+                    noteEl.className = 'guide-step-note';
+                    noteEl.textContent = step.note;
+                    article.appendChild(noteEl);
+                }
                 if (step.textHtml) {
                     var htmlText = document.createElement('p');
                     htmlText.className = 'guide-step-text';
