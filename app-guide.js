@@ -4,7 +4,8 @@
  *
  * images/app-guide/
  *   01-home.png                 … ホーム（サービス・登録完了画面）
- *   02-service-list.png         … サービス一覧
+ *   02-service-list.png         … サービス一覧（各種お手続き）
+ *   02-service-list-app-only.png … サービス一覧（アプリ専用手続き・オプション用）
  *   03-procedures-menu.png      … 各種関連手続き（PT予約3番）
  *   04-procedures-top.png       … ご予約について（PT予約4番）
  *   05-contract-entry.png       … 各種お手続き→ご契約変更について
@@ -23,7 +24,7 @@ var APP_REGISTRATION_GUIDE = {
     {
       title: 'URLをスマートフォンで開く',
       linkKey: 'memberSearch',
-      linkLabel: '会員検索フォームはこちら',
+      linkLabel: '会員検索フォームはこちらをタップ',
       text: 'お名前（漢字・カタカナ）・生年月日・入会時の電話番号を入力して検索してください。',
       cardStyle: true,
       image: 'images/app-guide/07-member-search.png'
@@ -37,7 +38,7 @@ var APP_REGISTRATION_GUIDE = {
     {
       title: 'トップ画面へ',
       text: 'JOYFITアプリが起動し、トップ画面へ移動します。',
-      closing: 'こちらに移動して終了です',
+      closing: '位置情報・カメラの使用を許可してください。',
       cardStyle: true,
       image: 'images/app-guide/01-home.png'
     }
@@ -110,8 +111,8 @@ var APP_OPTION_GUIDE = {
     },
     {
       num: '2',
-      title: '「各種お手続き」をタップ',
-      image: 'images/app-guide/02-service-list.png'
+      title: '「アプリ専用手続き」をタップ',
+      image: 'images/app-guide/02-service-list-app-only.png'
     },
     {
       num: '3',
@@ -123,7 +124,9 @@ var APP_OPTION_GUIDE = {
       title: '「オプション追加」または「オプションの解約」をタップ',
       image: 'images/app-guide/09-option-menu.png'
     }
-  ]
+  ],
+  footnote: '※オプション解約後も当月末まではサービスをご利用いただけます（当月末解約となります）。\n※休会は税込2,200円。1〜3ヶ月をチェックで選択できます（最大3ヶ月）。',
+  footnoteProminent: true
 };
 
 var APP_CROWD_STATUS_GUIDE = {
