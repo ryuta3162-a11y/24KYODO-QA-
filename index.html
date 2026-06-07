@@ -9,27 +9,37 @@
     <meta property="og:description" content="お問い合わせの多い内容をカテゴリ別にまとめたQ&Aページです。">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="ja_JP">
+    <meta name="theme-color" content="#FAFAFA">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --page-bg: #F3F4F6;
+            --page-bg: #F5F5F7;
+            --page-bg-top: #FFFFFF;
             --logo-wine-bg: #A63646;
             --brand-red: #DC2626;
             --brand-red-dark: #B91C1C;
-            --brand-red-soft: rgba(220, 38, 38, 0.14);
+            --brand-red-soft: rgba(220, 38, 38, 0.10);
             --ink: #111827;
             --muted: #6B7280;
-            --line: #E5E7EB;
+            --line: rgba(17, 24, 39, 0.08);
             --surface: #FFFFFF;
+            --shadow-sm: 0 2px 8px rgba(17, 24, 39, 0.04);
+            --shadow-md: 0 8px 28px rgba(17, 24, 39, 0.07);
+            --shadow-lg: 0 20px 48px rgba(17, 24, 39, 0.10);
+            --radius-lg: 1.25rem;
+            --radius-xl: 1.5rem;
         }
+        * { -webkit-tap-highlight-color: transparent; }
+        html { scroll-behavior: smooth; }
         body {
             font-family: 'Noto Sans JP', sans-serif;
             color: var(--ink);
-            background-color: var(--page-bg);
+            background: linear-gradient(180deg, var(--page-bg-top) 0%, var(--page-bg) 28%, #EEEEF2 100%);
             min-height: 100vh;
             position: relative;
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
         }
         body::before {
             content: "";
@@ -38,11 +48,13 @@
             z-index: 0;
             pointer-events: none;
             background:
-                radial-gradient(1200px 600px at 50% -10%, rgba(220, 38, 38, 0.07), transparent 60%),
-                radial-gradient(900px 500px at 10% 20%, rgba(255, 255, 255, 0.9), transparent 55%),
-                radial-gradient(900px 500px at 90% 20%, rgba(255, 255, 255, 0.7), transparent 55%);
+                radial-gradient(ellipse 80% 50% at 50% -20%, rgba(220, 38, 38, 0.06), transparent 70%),
+                radial-gradient(ellipse 60% 40% at 100% 0%, rgba(255, 255, 255, 0.8), transparent 50%),
+                radial-gradient(ellipse 50% 30% at 0% 100%, rgba(220, 38, 38, 0.03), transparent 50%);
         }
         main, header, footer { position: relative; z-index: 1; }
+
+        /* ── Header ── */
         .hero-brand-line {
             display: inline-flex;
             align-items: baseline;
@@ -53,113 +65,165 @@
         .hero-brand-main {
             font-weight: 900;
             letter-spacing: 0.04em;
-            font-size: clamp(1.8rem, 4.6vw, 2.4rem);
+            font-size: clamp(1.65rem, 5vw, 2.2rem);
         }
         .hero-brand-sub {
             font-weight: 800;
             color: var(--brand-red);
             letter-spacing: 0.12em;
-            font-size: clamp(1.2rem, 3.6vw, 1.65rem);
+            font-size: clamp(1.1rem, 3.8vw, 1.55rem);
         }
         .page-title-card {
-            margin-top: 1rem;
-            background: var(--surface);
-            border: 1px solid rgba(17, 24, 39, 0.10);
-            border-radius: 1rem;
-            padding: 1rem 1.5rem;
-            box-shadow: 0 10px 22px rgba(17, 24, 39, 0.08);
+            margin-top: 0.85rem;
+            background: linear-gradient(180deg, #FFFFFF 0%, #FAFAFA 100%);
+            border: 1px solid var(--line);
+            border-radius: var(--radius-xl);
+            padding: 1.1rem 1.25rem;
+            box-shadow: var(--shadow-md);
         }
         .text-brand-red { color: var(--brand-red); }
+
+        /* ── Category nav (mobile: horizontal scroll) ── */
+        .qa-nav-scroll {
+            display: flex;
+            gap: 0.5rem;
+            overflow-x: auto;
+            padding: 0.25rem 0 0.75rem;
+            margin: 0 -0.25rem;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+        .qa-nav-scroll::-webkit-scrollbar { display: none; }
+        @media (min-width: 640px) {
+            .qa-nav-scroll {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                overflow: visible;
+                margin: 0;
+                padding-bottom: 0;
+            }
+        }
         .nav-pill {
-            display: block;
-            padding: 0.65rem 1rem;
-            border-radius: 9999px;
+            flex: 0 0 auto;
+            display: flex;
+            align-items: center;
+            padding: 0.7rem 1rem;
+            border-radius: var(--radius-lg);
             border: 1px solid var(--line);
-            background: var(--surface);
-            font-size: 0.875rem;
+            background: linear-gradient(180deg, #FFFFFF 0%, #F9FAFB 100%);
+            font-size: 0.8125rem;
             font-weight: 700;
             color: var(--muted);
-            transition: all 0.2s ease;
+            box-shadow: var(--shadow-sm);
+            transition: border-color 0.2s, color 0.2s, box-shadow 0.2s, transform 0.15s;
+            white-space: nowrap;
         }
+        @media (min-width: 640px) {
+            .nav-pill { white-space: normal; }
+        }
+        .nav-pill:active { transform: scale(0.98); }
         .nav-pill:hover {
-            border-color: var(--brand-red);
+            border-color: rgba(220, 38, 38, 0.35);
             color: var(--brand-red);
+            box-shadow: 0 4px 16px rgba(220, 38, 38, 0.08);
         }
         .related-link {
             display: inline-flex;
             align-items: center;
-            padding: 0.4rem 0.85rem;
+            padding: 0.45rem 0.9rem;
             border-radius: 9999px;
-            border: 1px solid rgba(220, 38, 38, 0.35);
-            background: #fff;
+            border: 1px solid rgba(220, 38, 38, 0.22);
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(8px);
             font-size: 0.75rem;
             font-weight: 700;
             color: var(--brand-red);
+            box-shadow: var(--shadow-sm);
             transition: all 0.2s ease;
         }
-        .related-link:hover {
-            background: var(--brand-red-soft);
-        }
+        .related-link:active { transform: scale(0.97); }
+        .related-link:hover { background: var(--brand-red-soft); }
+
+        /* ── Q&A sections ── */
         .qa-section {
-            background: var(--surface);
+            background: linear-gradient(180deg, #FFFFFF 0%, #FCFCFD 100%);
             border: 1px solid var(--line);
-            border-radius: 1rem;
-            padding: 1.25rem 1.25rem 0.5rem;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 8px 20px rgba(17, 24, 39, 0.06);
+            border-radius: var(--radius-xl);
+            padding: 1.25rem 1rem 0.35rem;
+            margin-bottom: 1.25rem;
+            box-shadow: var(--shadow-md);
+        }
+        @media (min-width: 640px) {
+            .qa-section { padding: 1.35rem 1.35rem 0.5rem; }
         }
         .section-badge {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            min-width: 2.25rem;
-            height: 2.25rem;
-            border-radius: 9999px;
-            background: var(--brand-red);
+            min-width: 2rem;
+            height: 2rem;
+            border-radius: 0.65rem;
+            background: linear-gradient(145deg, #EF4444 0%, var(--brand-red) 45%, var(--brand-red-dark) 100%);
             color: #fff;
             font-weight: 900;
-            font-size: 0.875rem;
+            font-size: 0.8rem;
             margin-right: 0.5rem;
+            box-shadow: 0 3px 10px rgba(220, 38, 38, 0.28);
         }
         details {
             border-top: 1px solid var(--line);
-            padding: 0.75rem 0;
+            padding: 0.85rem 0.15rem;
         }
         details:first-of-type { border-top: none; }
         summary {
             cursor: pointer;
             list-style: none;
             font-weight: 700;
-            font-size: 0.95rem;
-            line-height: 1.5;
-            padding-right: 1.5rem;
+            font-size: 0.9375rem;
+            line-height: 1.55;
+            padding-right: 2rem;
             position: relative;
         }
         summary::-webkit-details-marker { display: none; }
         summary::after {
-            content: "+";
+            content: "";
             position: absolute;
             right: 0;
-            top: 0;
-            color: var(--brand-red);
-            font-weight: 900;
-            font-size: 1.1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 0.5rem;
+            background: var(--brand-red-soft);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23DC2626' stroke-width='2.5'%3E%3Cpath stroke-linecap='round' d='M12 6v12M6 12h12'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 0.75rem;
         }
-        details[open] summary::after { content: "−"; }
+        details[open] summary::after {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23DC2626' stroke-width='2.5'%3E%3Cpath stroke-linecap='round' d='M6 12h12'/%3E%3C/svg%3E");
+        }
         .qa-answer {
             margin-top: 0.75rem;
+            padding: 0.85rem 0.9rem;
             color: #374151;
-            font-size: 0.925rem;
+            font-size: 0.9rem;
             line-height: 1.75;
             white-space: pre-wrap;
+            background: #F9FAFB;
+            border-radius: 0.75rem;
+            border: 1px solid var(--line);
         }
         .qa-link {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
             margin-top: 0.75rem;
+            padding: 0.4rem 0;
             color: var(--brand-red);
             font-weight: 700;
             font-size: 0.875rem;
-            text-decoration: underline;
+            text-decoration: none;
+            border-bottom: 1.5px solid rgba(220, 38, 38, 0.35);
         }
         .section-links {
             margin-top: 1rem;
@@ -168,148 +232,161 @@
             margin-bottom: 0.75rem;
         }
         .contact-box {
-            background: #FEF2F2;
-            border: 1px solid rgba(220, 38, 38, 0.2);
-            border-radius: 1rem;
+            background: linear-gradient(135deg, #FFF 0%, #FEF2F2 100%);
+            border: 1px solid rgba(220, 38, 38, 0.12);
+            border-radius: var(--radius-xl);
             padding: 1.25rem;
+            box-shadow: var(--shadow-md);
         }
         .site-footer-bar {
-            background-color: var(--logo-wine-bg);
-            padding: 1.25rem 1rem;
+            background: linear-gradient(180deg, #B03A4A 0%, var(--logo-wine-bg) 100%);
+            padding: 1.35rem 1rem calc(1.35rem + env(safe-area-inset-bottom));
         }
         .site-footer-bar .footer-logo-img {
-            height: 2rem;
+            height: 1.85rem;
             width: auto;
             max-width: min(100%, 220px);
             display: block;
             margin: 0 auto;
+            opacity: 0.95;
         }
-        /* ── アプリ図解ガイド ── */
+
+        /* ── App guide ── */
+        .app-visual-guide {
+            margin-top: 0.5rem;
+        }
         .guide-banner {
             text-align: center;
             font-weight: 900;
-            font-size: 0.8rem;
-            letter-spacing: 0.2em;
+            font-size: 0.72rem;
+            letter-spacing: 0.18em;
             color: var(--brand-red);
-            padding: 0.6rem 1rem;
-            margin: 1rem 0 1.25rem;
-            border-top: 2px solid var(--brand-red);
-            border-bottom: 2px solid var(--brand-red);
-            background: #FEF2F2;
+            padding: 0.75rem 1rem;
+            margin: 0.5rem 0 1rem;
+            border-radius: var(--radius-lg);
+            background: linear-gradient(135deg, rgba(254, 242, 242, 0.9) 0%, rgba(255, 255, 255, 0.95) 100%);
+            border: 1px solid rgba(220, 38, 38, 0.15);
+            box-shadow: var(--shadow-sm);
         }
         .guide-lead {
-            font-size: 0.925rem;
-            font-weight: 700;
-            color: #374151;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #4B5563;
             margin-bottom: 1.25rem;
             text-align: center;
+            line-height: 1.65;
         }
         .guide-subtitle {
             font-size: 0.875rem;
             font-weight: 900;
             color: var(--ink);
-            margin: 1.5rem 0 1rem;
-            padding-left: 0.75rem;
-            border-left: 4px solid var(--brand-red);
+            margin: 1.75rem 0 0.85rem;
+            padding: 0.5rem 0 0.5rem 0.85rem;
+            border-left: 3px solid var(--brand-red);
+            background: linear-gradient(90deg, var(--brand-red-soft) 0%, transparent 100%);
+            border-radius: 0 0.5rem 0.5rem 0;
         }
         .guide-step {
             display: flex;
-            gap: 0.85rem;
-            margin-bottom: 0;
+            gap: 0.75rem;
             position: relative;
         }
-        .guide-step + .guide-step {
-            margin-top: 0.25rem;
-        }
-        .guide-branch .guide-step-body::before {
-            display: none;
-        }
+        .guide-step + .guide-step { margin-top: 0.75rem; }
         .guide-step-num {
             flex-shrink: 0;
-            width: 2rem;
-            height: 2rem;
-            border-radius: 9999px;
-            background: var(--brand-red);
+            width: 1.85rem;
+            height: 1.85rem;
+            border-radius: 0.55rem;
+            background: linear-gradient(145deg, #EF4444, var(--brand-red-dark));
             color: #fff;
             font-weight: 900;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-top: 0.15rem;
+            margin-top: 1.15rem;
             z-index: 2;
+            box-shadow: 0 3px 10px rgba(220, 38, 38, 0.25);
         }
         .guide-step-body {
             flex: 1;
             min-width: 0;
-            padding-bottom: 1.5rem;
+            padding: 1rem 1rem 0.75rem;
+            background: linear-gradient(180deg, #FFFFFF 0%, #F8F9FA 100%);
+            border: 1px solid var(--line);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
         }
-        .guide-step:not(:last-child) .guide-step-body::before {
-            content: "";
-            position: absolute;
-            left: 0.95rem;
-            top: 2.25rem;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(to bottom, var(--brand-red), rgba(220, 38, 38, 0.15));
-            z-index: 1;
+        .guide-step:not(:last-child) .guide-step-body {
+            margin-bottom: 0.25rem;
         }
         .guide-step-title {
-            font-weight: 900;
-            font-size: 0.95rem;
-            line-height: 1.45;
-            margin-bottom: 0.35rem;
+            font-weight: 800;
+            font-size: 0.9375rem;
+            line-height: 1.5;
+            margin-bottom: 0.4rem;
+            color: var(--ink);
         }
         .guide-step-text {
-            font-size: 0.85rem;
+            font-size: 0.8375rem;
             color: #4B5563;
-            line-height: 1.7;
+            line-height: 1.75;
             margin-bottom: 0.85rem;
+            white-space: pre-wrap;
         }
         .guide-step-link {
             display: inline-flex;
             align-items: center;
-            gap: 0.35rem;
+            justify-content: center;
+            width: 100%;
+            max-width: 100%;
             margin-bottom: 0.85rem;
-            padding: 0.5rem 1rem;
-            background: var(--brand-red);
+            padding: 0.75rem 1rem;
+            background: linear-gradient(180deg, #EF4444 0%, var(--brand-red) 50%, var(--brand-red-dark) 100%);
             color: #fff;
             font-weight: 700;
-            font-size: 0.8rem;
-            border-radius: 9999px;
+            font-size: 0.875rem;
+            border-radius: var(--radius-lg);
             text-decoration: none;
-            box-shadow: 0 4px 14px rgba(220, 38, 38, 0.25);
+            box-shadow: 0 4px 16px rgba(220, 38, 38, 0.28);
+            transition: transform 0.15s, box-shadow 0.2s;
         }
-        .guide-step-link:hover {
-            background: var(--brand-red-dark);
+        .guide-step-link:active {
+            transform: scale(0.98);
+            box-shadow: 0 2px 8px rgba(220, 38, 38, 0.2);
         }
         .phone-wrap {
             display: flex;
             justify-content: center;
-            padding: 0.5rem 0 0.25rem;
+            padding: 0.25rem 0 0.15rem;
         }
         .phone-frame {
-            width: min(100%, 260px);
-            background: linear-gradient(145deg, #2d2d2d 0%, #1a1a1a 100%);
-            border-radius: 2rem;
-            padding: 10px;
+            width: min(100%, 240px);
+            background: linear-gradient(165deg, #48484A 0%, #2C2C2E 40%, #1C1C1E 100%);
+            border-radius: 2.25rem;
+            padding: 11px 9px;
             box-shadow:
-                0 24px 48px rgba(17, 24, 39, 0.18),
-                0 0 0 1px rgba(255, 255, 255, 0.08) inset;
+                var(--shadow-lg),
+                0 0 0 1px rgba(255, 255, 255, 0.12) inset,
+                0 1px 0 rgba(255, 255, 255, 0.06) inset;
+        }
+        @media (min-width: 390px) {
+            .phone-frame { width: min(100%, 268px); }
         }
         .phone-notch {
-            width: 36%;
-            height: 5px;
+            width: 32%;
+            height: 4px;
             background: #0a0a0a;
             border-radius: 9999px;
-            margin: 0 auto 6px;
+            margin: 0 auto 7px;
+            opacity: 0.9;
         }
         .phone-screen {
-            position: relative;
-            border-radius: 1.35rem;
+            border-radius: 1.5rem;
             overflow: hidden;
             background: #000;
             line-height: 0;
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3) inset;
         }
         .phone-screen img {
             width: 100%;
@@ -317,25 +394,41 @@
             display: block;
         }
         .guide-branch {
-            margin-top: 0.5rem;
-            padding: 1rem;
-            background: #FFFBEB;
-            border: 1px dashed #F59E0B;
-            border-radius: 0.75rem;
+            margin-top: 0.75rem;
+            padding: 1rem 0.85rem;
+            background: linear-gradient(180deg, #FFFBEB 0%, #FFF 100%);
+            border: 1px solid rgba(245, 158, 11, 0.25);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
         }
         .guide-branch-label {
             font-size: 0.7rem;
-            font-weight: 900;
-            color: #B45309;
-            letter-spacing: 0.08em;
-            margin-bottom: 0.75rem;
+            font-weight: 800;
+            color: #92400E;
+            letter-spacing: 0.06em;
+            margin-bottom: 0.65rem;
+            padding-left: 0.15rem;
+        }
+        .guide-branch .guide-step-body {
+            background: #FFFFFF;
+            box-shadow: none;
+            border-color: rgba(245, 158, 11, 0.15);
+        }
+
+        /* ── Layout tweaks (mobile-first) ── */
+        .page-shell {
+            padding-left: max(1rem, env(safe-area-inset-left));
+            padding-right: max(1rem, env(safe-area-inset-right));
+        }
+        .header-shell {
+            padding-top: max(2rem, env(safe-area-inset-top));
         }
     </style>
 </head>
 <body class="antialiased">
 
     <header class="w-full">
-        <div class="container mx-auto px-4 sm:px-6 pt-12 pb-6 flex flex-col items-center text-center">
+        <div class="container mx-auto page-shell header-shell pb-5 flex flex-col items-center text-center">
             <h1 class="hero-brand-line">
                 <span class="hero-brand-main">JOYFIT24</span>
                 <span class="hero-brand-sub">経堂</span>
@@ -353,8 +446,8 @@
     </header>
 
     <main class="pb-16">
-        <div class="container mx-auto px-4 sm:px-6 max-w-3xl">
-            <nav id="qa-nav" class="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-8"></nav>
+        <div class="container mx-auto page-shell max-w-lg sm:max-w-2xl">
+            <nav id="qa-nav" class="qa-nav-scroll mb-6" aria-label="カテゴリ"></nav>
             <div id="qa-sections"></div>
             <div id="qa-contact" class="contact-box mt-4"></div>
             <p id="qa-updated" class="text-center text-xs text-gray-400 mt-6"></p>
@@ -439,7 +532,7 @@
                 var g = APP_REGISTRATION_GUIDE;
                 var banner = document.createElement('div');
                 banner.className = 'guide-banner';
-                banner.textContent = '━━【' + g.title + '】━━';
+                banner.textContent = '【' + g.title + '】';
                 container.appendChild(banner);
                 var lead = document.createElement('p');
                 lead.className = 'guide-lead';
