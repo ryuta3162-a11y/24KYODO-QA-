@@ -59,7 +59,6 @@ var QA_MASTER = {
       id: 'corporate',
       number: '06',
       title: '法人契約・変更について',
-      intro: '法人契約の切り替えと、過去会員の復会手続きについて',
       visualGuide: 'corporateJoin',
       items: [
         {

@@ -380,6 +380,12 @@
             color: var(--brand-red);
             font-weight: 800;
         }
+        .guide-notice-top {
+            margin-bottom: 1.5rem;
+        }
+        .guide-notice-top.is-prominent {
+            font-size: 0.875rem;
+        }
         .guide-step-note {
             font-size: 0.7rem;
             color: var(--muted);
@@ -617,6 +623,12 @@
             }
 
             function renderCorporateSection(container, section) {
+                if (section.notice) {
+                    var topNotice = document.createElement('p');
+                    topNotice.className = 'guide-footnote guide-notice-top' + (section.noticeProminent ? ' is-prominent' : '');
+                    topNotice.textContent = section.notice;
+                    container.appendChild(topNotice);
+                }
                 section.blocks.forEach(function (block) {
                     if (block.blockTitle) {
                         var subtitle = document.createElement('h3');

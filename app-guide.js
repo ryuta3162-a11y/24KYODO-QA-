@@ -107,10 +107,11 @@ var APP_CREDIT_CARD_GUIDE = {
 };
 
 var APP_CORPORATE_SECTION = {
+  notice: '【法人会員としてJOYFIT Appからご入会される方へ】\n入会には12桁のプロモーションコードが必要です\n企業様ごとにコードが異なるため、こちらではご案内ができかねます\n恐れ入りますが、ご所属の企業様へ直接お問い合わせください',
+  noticeProminent: true,
   blocks: [
     {
       blockTitle: '法人切り替え（アプリで入会）',
-      intro: 'アプリで入会する新規の方（法人契約）向けです\nプロモーションコードが必要です',
       steps: [
         {
           num: '1',
@@ -120,22 +121,27 @@ var APP_CORPORATE_SECTION = {
         {
           num: '2',
           title: 'プロモーションコードを入力',
-          text: '12桁のプロモーションコードを入力して「次へ」をタップしてください',
+          text: 'プロモーションコードを入力して「次へ」をタップ\nその後は通常入会同様の手順でございます',
           image: 'images/app-guide/11-corporate-promo-code.png'
         }
       ]
     },
     {
       blockTitle: '復会手続き',
-      intro: '過去にJOYFIT会員だった方で、会員情報をクリアして再度入会したい場合の手順です',
+      intro: '過去にJOYFIT会員だった方で、再度入会したい場合の手順',
       steps: [
         {
           num: '1',
-          title: '「サービス」→「アプリ設定」をタップ',
-          image: 'images/app-guide/11-reopen-app-settings.png'
+          title: 'ホーム画面右上の「サービス」をタップ',
+          image: 'images/app-guide/01-home.png'
         },
         {
           num: '2',
+          title: '「アプリ設定」をタップ',
+          image: 'images/app-guide/11-reopen-app-settings.png'
+        },
+        {
+          num: '3',
           title: '「アプリの登録を解除」をタップ',
           image: 'images/app-guide/11-reopen-unregister.png'
         }
