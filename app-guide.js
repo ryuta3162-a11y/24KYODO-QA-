@@ -49,21 +49,34 @@ var APP_NAV_COMMON_STEPS = [
 ];
 
 var APP_PT_RESERVATION_GUIDE = {
-  intro: 'アプリ内の各種お手続きから、パーソナルトレーニングを予約できます。',
-  steps: APP_NAV_COMMON_STEPS.concat([
+  steps: [
+    {
+      num: '1',
+      title: 'ホーム画面右上の「サービス」をタップ',
+      image: 'images/app-guide/01-home.png'
+    },
+    {
+      num: '2',
+      title: '「各種お手続き」をタップ',
+      image: 'images/app-guide/02-service-list.png'
+    },
+    {
+      num: '3',
+      title: '「各種関連手続き」をタップ',
+      image: 'images/app-guide/03-procedures-menu.png'
+    },
     {
       num: '4',
       title: '「ご予約について」をタップ',
-      text: 'オレンジ色の「ご予約について」をタップしてください。',
       image: 'images/app-guide/04-procedures-top.png'
     },
     {
       num: '5',
       title: '「パーソナルトレーニング予約」をタップ',
-      text: 'プログラム予約画面が開いたら、「パーソナルトレーニング予約」をタップしてください。',
       image: 'images/app-guide/06-program-reservation.png'
     }
-  ])
+  ],
+  footnote: '※予約方法はLINEなどで受け付けている可能性もございます。あくまでパーソナルトレーニング予約は決済時の画面・ウェブ予約になりますので、対応していない可能性もあります。詳細は必ず店舗のスタッフもしくはLINEでお問い合わせください。'
 };
 
 var APP_CREDIT_CARD_GUIDE = {

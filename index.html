@@ -376,6 +376,14 @@
             margin: 0.5rem 0 0.85rem;
             letter-spacing: 0.04em;
         }
+        .guide-footnote {
+            font-size: 0.75rem;
+            color: var(--muted);
+            line-height: 1.75;
+            margin-top: 0.5rem;
+            padding: 0.85rem 0 0;
+            border-top: 1px solid var(--line);
+        }
         .guide-step-url {
             font-size: 0.72rem;
             color: var(--muted);
@@ -586,6 +594,12 @@
                 guide.steps.forEach(function (step) {
                     container.appendChild(buildGuideStep(Object.assign({ cardStyle: true }, step)));
                 });
+                if (guide.footnote) {
+                    var note = document.createElement('p');
+                    note.className = 'guide-footnote';
+                    note.textContent = guide.footnote;
+                    container.appendChild(note);
+                }
             }
 
             function buildContactBox() {
