@@ -602,6 +602,18 @@
                 }
             }
 
+            function renderCorporateSection(container, section) {
+                section.blocks.forEach(function (block) {
+                    if (block.blockTitle) {
+                        var subtitle = document.createElement('h3');
+                        subtitle.className = 'guide-subtitle';
+                        subtitle.textContent = block.blockTitle;
+                        container.appendChild(subtitle);
+                    }
+                    renderNavGuide(container, block);
+                });
+            }
+
             function switchPanel(id, pushHash) {
                 if (activeId === id) return;
                 activeId = id;
@@ -679,8 +691,8 @@
                     renderNavGuide(body, APP_CROWD_STATUS_GUIDE);
                 }
 
-                if (section.visualGuide === 'corporateJoin' && typeof APP_CORPORATE_GUIDE !== 'undefined') {
-                    renderNavGuide(body, APP_CORPORATE_GUIDE);
+                if (section.visualGuide === 'corporateJoin' && typeof APP_CORPORATE_SECTION !== 'undefined') {
+                    renderCorporateSection(body, APP_CORPORATE_SECTION);
                 }
 
                 section.items.forEach(function (item) {

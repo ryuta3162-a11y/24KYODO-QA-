@@ -18,8 +18,10 @@
  *   10-crowd-favorite-add.png   … 追加ボタン
  *   10-crowd-store-search.png    … 店舗検索（経堂）
  *   10-crowd-status-kyodo.png   … 来館人数表示
- *   11-corporate-app-top.png      … 法人入会・アプリで入会
+ *   11-corporate-app-top.png      … 法人切り替え・アプリで入会
  *   11-corporate-promo-code.png   … プロモーションコード入力
+ *   11-reopen-app-settings.png    … 復開・サービス一覧→アプリ設定
+ *   11-reopen-unregister.png      … 復開・アプリの登録を解除
  */
 var APP_REGISTRATION_GUIDE = {
   registrationSteps: [
@@ -106,19 +108,42 @@ var APP_CREDIT_CARD_GUIDE = {
   footnoteProminent: true
 };
 
-var APP_CORPORATE_GUIDE = {
-  intro: 'アプリで入会する新規の方（法人契約）向けです。プロモーションコードが必要です。',
-  steps: [
+var APP_CORPORATE_SECTION = {
+  blocks: [
     {
-      num: '1',
-      title: '「アプリで入会」をタップ',
-      image: 'images/app-guide/11-corporate-app-top.png'
+      blockTitle: '法人切り替え（アプリで入会）',
+      intro: 'アプリで入会する新規の方（法人契約）向けです。プロモーションコードが必要です。',
+      steps: [
+        {
+          num: '1',
+          title: '「アプリで入会」をタップ',
+          image: 'images/app-guide/11-corporate-app-top.png'
+        },
+        {
+          num: '2',
+          title: 'プロモーションコードを入力',
+          text: '12桁のプロモーションコードを入力して「次へ」をタップしてください。',
+          image: 'images/app-guide/11-corporate-promo-code.png'
+        }
+      ]
     },
     {
-      num: '2',
-      title: 'プロモーションコードを入力',
-      text: '12桁のコードを入力して「次へ」をタップしてください。お持ちでない方はそのまま「次へ」で進めます。',
-      image: 'images/app-guide/11-corporate-promo-code.png'
+      blockTitle: '復開手続き',
+      intro: '過去にJOYFIT会員だった方で、会員情報をクリアして再度入会したい場合の手順です。',
+      steps: [
+        {
+          num: '1',
+          title: '「サービス」→「アプリ設定」をタップ',
+          image: 'images/app-guide/11-reopen-app-settings.png'
+        },
+        {
+          num: '2',
+          title: '「アプリの登録を解除」をタップ',
+          image: 'images/app-guide/11-reopen-unregister.png'
+        }
+      ],
+      footnote: '※復開手続きをご希望の方は、原則、JOYFITアプリを一度ログアウト（登録解除）いただき、新規の会員様として上記「アプリで入会」から再度ご契約ください。',
+      footnoteProminent: true
     }
   ]
 };
