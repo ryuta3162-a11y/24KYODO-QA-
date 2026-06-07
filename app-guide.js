@@ -72,7 +72,8 @@ var APP_PT_RESERVATION_GUIDE = {
       image: 'images/app-guide/06-program-reservation.png'
     }
   ],
-  footnote: '※予約方法はLINEなどで受け付けている可能性もございます。あくまでパーソナルトレーニング予約は決済時の画面・ウェブ予約になりますので、対応していない可能性もあります。詳細は必ず店舗のスタッフもしくはLINEでお問い合わせください。'
+  footnote: '※予約やご案内の方法は、トレーナーLINEなどで承っております。\nこちらは決済時の画面・ウェブ予約になります。\n詳細は店舗スタッフもしくはトレーナーLINEにお問い合わせください。',
+  footnoteProminent: true
 };
 
 var APP_CREDIT_CARD_GUIDE = {
