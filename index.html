@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JOYFIT24経堂 | Q&A</title>
-    <meta name="description" content="JOYFIT24経堂のQ&A。アプリ登録、オプション、契約変更、法人契約、キャンペーン申請について。">
+    <meta name="description" content="JOYFIT24経堂のQ&A。アプリ登録、PT予約、クレジットカード変更、オプション、法人契約、キャンペーン申請について。">
     <meta property="og:title" content="JOYFIT24経堂 | Q&A">
     <meta property="og:description" content="JOYFIT24経堂のQ&Aページです。">
     <meta property="og:type" content="website">
@@ -283,6 +283,60 @@
         .guide-step {
             margin-bottom: 1.75rem;
         }
+        .guide-step-card {
+            padding: 1.15rem 1.1rem 1.25rem;
+            background: linear-gradient(165deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.72) 100%);
+            border-radius: calc(var(--radius) + 2px);
+            box-shadow: var(--shadow-soft);
+            position: relative;
+            overflow: hidden;
+        }
+        .guide-step-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background:
+                radial-gradient(280px 120px at 100% 0%, rgba(220, 38, 38, 0.07), transparent 70%),
+                radial-gradient(220px 100px at 0% 100%, rgba(255, 255, 255, 0.8), transparent 65%);
+        }
+        .guide-step-card > * { position: relative; z-index: 1; }
+        .guide-step-card .guide-step-head {
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.65rem;
+            border-bottom: 1px solid var(--line);
+        }
+        .guide-step-card .guide-step-title {
+            font-size: 0.9375rem;
+            letter-spacing: 0.03em;
+        }
+        .guide-action-banner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.45rem;
+            width: 100%;
+            margin-bottom: 1rem;
+            padding: 0.95rem 1rem;
+            background: linear-gradient(135deg, #EF4444 0%, var(--brand-red) 52%, var(--brand-red-dark) 100%);
+            color: #fff;
+            font-weight: 800;
+            font-size: 0.875rem;
+            letter-spacing: 0.06em;
+            border-radius: calc(var(--radius) - 2px);
+            text-decoration: none;
+            box-shadow: 0 8px 24px rgba(220, 38, 38, 0.24);
+            transition: transform 0.15s, box-shadow 0.2s;
+        }
+        .guide-action-banner::after {
+            content: "→";
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        .guide-action-banner:active {
+            transform: scale(0.98);
+            box-shadow: 0 4px 14px rgba(220, 38, 38, 0.2);
+        }
         .guide-step-head {
             display: flex;
             align-items: baseline;
@@ -352,14 +406,14 @@
         .phone-wrap {
             display: flex;
             justify-content: center;
-            padding: 0.15rem 0;
+            padding: 0.35rem 0 0.15rem;
         }
         .phone-frame {
-            width: min(100%, 252px);
+            width: min(100%, 218px);
             background: linear-gradient(165deg, #48484A 0%, #2C2C2E 45%, #1C1C1E 100%);
-            border-radius: 2.1rem;
-            padding: 10px 9px;
-            box-shadow: var(--shadow-soft);
+            border-radius: 1.95rem;
+            padding: 9px 8px;
+            box-shadow: 0 10px 32px rgba(17, 24, 39, 0.1);
         }
         .phone-notch {
             width: 30%;
@@ -468,7 +522,7 @@
 
             function buildGuideStep(step) {
                 var article = document.createElement('article');
-                article.className = 'guide-step';
+                article.className = 'guide-step' + (step.cardStyle ? ' guide-step-card' : '');
                 var head = document.createElement('div');
                 head.className = 'guide-step-head';
                 if (step.num) {
@@ -493,23 +547,15 @@
                     text.textContent = step.text;
                     article.appendChild(text);
                 }
-                var urlKey = step.urlKey;
-                var urlFromKey = urlKey && typeof SITE_LINKS !== 'undefined' ? SITE_LINKS[urlKey] : '';
-                if (urlFromKey && urlFromKey.indexOf('http') === 0) {
-                    var urlEl = document.createElement('p');
-                    urlEl.className = 'guide-step-url';
-                    urlEl.textContent = urlFromKey;
-                    article.appendChild(urlEl);
-                }
                 var linkUrl = step.linkUrl || (step.linkKey ? resolveSiteLink(step.linkKey) : '');
-                if (step.showLink !== false && linkUrl && linkUrl.indexOf('http') === 0 && step.linkLabel) {
-                    var link = document.createElement('a');
-                    link.className = 'guide-step-link';
-                    link.href = linkUrl;
-                    link.textContent = step.linkLabel;
-                    link.target = '_blank';
-                    link.rel = 'noopener';
-                    article.appendChild(link);
+                if (linkUrl && linkUrl.indexOf('http') === 0 && step.linkLabel) {
+                    var banner = document.createElement('a');
+                    banner.className = step.linkBanner === false ? 'guide-step-link' : 'guide-action-banner';
+                    banner.href = linkUrl;
+                    banner.textContent = step.linkLabel;
+                    banner.target = '_blank';
+                    banner.rel = 'noopener';
+                    article.appendChild(banner);
                 }
                 if (step.image) {
                     article.appendChild(buildPhoneScreen(step));
@@ -529,32 +575,17 @@
                 });
             }
 
-            function renderAppProceduresGuide(container) {
-                var g = APP_PROCEDURES_GUIDE;
-                var navTitle = document.createElement('h4');
-                navTitle.className = 'guide-subtitle';
-                navTitle.textContent = g.navTitle;
-                container.appendChild(navTitle);
-                if (g.navIntro) {
-                    var navIntro = document.createElement('p');
-                    navIntro.className = 'guide-step-text';
-                    navIntro.style.marginBottom = '1rem';
-                    navIntro.textContent = g.navIntro;
-                    container.appendChild(navIntro);
+            function renderNavGuide(container, guide) {
+                if (guide.intro) {
+                    var intro = document.createElement('p');
+                    intro.className = 'guide-step-text';
+                    intro.style.marginBottom = '1.25rem';
+                    intro.textContent = guide.intro;
+                    container.appendChild(intro);
                 }
-                g.navSteps.forEach(function (step) {
-                    container.appendChild(buildGuideStep(step));
+                guide.steps.forEach(function (step) {
+                    container.appendChild(buildGuideStep(Object.assign({ cardStyle: true }, step)));
                 });
-                if (g.branchStep) {
-                    var branch = document.createElement('div');
-                    branch.className = 'guide-branch';
-                    var branchLabel = document.createElement('p');
-                    branchLabel.className = 'guide-branch-label';
-                    branchLabel.textContent = '4番「ご予約について」を選んだ場合';
-                    branch.appendChild(branchLabel);
-                    branch.appendChild(buildGuideStep(g.branchStep));
-                    container.appendChild(branch);
-                }
             }
 
             function buildContactBox() {
@@ -638,8 +669,12 @@
                     renderAppRegistrationGuide(body);
                 }
 
-                if (section.visualGuide === 'appProcedures' && typeof APP_PROCEDURES_GUIDE !== 'undefined') {
-                    renderAppProceduresGuide(body);
+                if (section.visualGuide === 'ptReservation' && typeof APP_PT_RESERVATION_GUIDE !== 'undefined') {
+                    renderNavGuide(body, APP_PT_RESERVATION_GUIDE);
+                }
+
+                if (section.visualGuide === 'creditCard' && typeof APP_CREDIT_CARD_GUIDE !== 'undefined') {
+                    renderNavGuide(body, APP_CREDIT_CARD_GUIDE);
                 }
 
                 section.items.forEach(function (item) {
