@@ -35,6 +35,7 @@ var QA_MASTER = {
       number: '04',
       title: 'オプションの追加・解約について',
       intro: '水素水・ロッカーなど、オプション加入・解約に関する内容です。',
+      visualGuide: 'optionMenu',
       items: [
         {
           q: '入会時にオプションは自動で付きますか？',

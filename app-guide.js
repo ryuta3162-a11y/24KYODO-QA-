@@ -1,6 +1,19 @@
 /**
  * アプリ登録・操作 図解ガイド
  * 赤枠は画像側に描き込み済み（CSSオーバーレイなし）
+ *
+ * images/app-guide/
+ *   01-home.png              … 経堂表示ホーム（登録完了・各ガイド1番）
+ *   02-service-list.png      … サービス一覧
+ *   03-procedures-menu.png   … 各種関連手続き（PT予約3番）
+ *   04-procedures-top.png    … ご予約について（PT予約4番）
+ *   05-contract-entry.png    … 各種お手続き→ご契約変更について
+ *   05-credit-card-change.png… クレジットカード変更（CC 4番）
+ *   06-program-reservation.png … PT予約5番
+ *   07-member-search.png     … 会員検索フォーム
+ *   08-app-link-qr.png       … QR・アプリアクティベート
+ *   09-option-menu.png       … ご契約変更メニュー（オプション追加・解約）
+ *   _unused-*                … 予備（店舗検索・お気に入り店舗など）
  */
 var APP_REGISTRATION_GUIDE = {
   registrationSteps: [
@@ -26,27 +39,6 @@ var APP_REGISTRATION_GUIDE = {
     }
   ]
 };
-
-var APP_NAV_COMMON_STEPS = [
-  {
-    num: '1',
-    title: 'ホーム画面右上の「サービス」をタップ',
-    text: 'JOYFITアプリのホーム画面が表示されたら、右上の「サービス」をタップしてください。',
-    image: 'images/app-guide/01-home.png'
-  },
-  {
-    num: '2',
-    title: '「サービス一覧」→「各種お手続き」をタップ',
-    text: 'サービス一覧が表示されます。「店舗」セクションの「各種お手続き」をタップしてください。',
-    image: 'images/app-guide/02-service-list.png'
-  },
-  {
-    num: '3',
-    title: '「各種関連手続き」をタップ',
-    text: '各種お手続き画面が開いたら、「各種関連手続き」をタップしてください。',
-    image: 'images/app-guide/03-procedures-menu.png'
-  }
-];
 
 var APP_PT_RESERVATION_GUIDE = {
   steps: [
@@ -80,19 +72,51 @@ var APP_PT_RESERVATION_GUIDE = {
 };
 
 var APP_CREDIT_CARD_GUIDE = {
-  intro: '各種お手続きから変更できるのは、クレジットカードの変更のみです。',
-  steps: APP_NAV_COMMON_STEPS.concat([
+  steps: [
     {
-      num: '4',
-      title: '「ご契約変更について」をタップ',
-      text: 'オレンジ色の「ご契約変更について」をタップしてください。',
-      image: 'images/app-guide/04-procedures-top.png'
+      num: '1',
+      title: 'ホーム画面右上の「サービス」をタップ',
+      image: 'images/app-guide/01-home.png'
     },
     {
-      num: '5',
+      num: '2',
+      title: '「各種お手続き」をタップ',
+      image: 'images/app-guide/02-service-list.png'
+    },
+    {
+      num: '3',
+      title: '「ご契約変更について」をタップ',
+      image: 'images/app-guide/05-contract-entry.png'
+    },
+    {
+      num: '4',
       title: '「クレジットカード変更」をタップ',
-      text: '契約変更画面が開いたら、「クレジットカード変更」をタップしてください。',
-      image: 'images/app-guide/05-contract-change.png'
+      image: 'images/app-guide/05-credit-card-change.png'
     }
-  ])
+  ]
+};
+
+var APP_OPTION_GUIDE = {
+  steps: [
+    {
+      num: '1',
+      title: 'ホーム画面右上の「サービス」をタップ',
+      image: 'images/app-guide/01-home.png'
+    },
+    {
+      num: '2',
+      title: '「各種お手続き」をタップ',
+      image: 'images/app-guide/02-service-list.png'
+    },
+    {
+      num: '3',
+      title: '「ご契約変更について」をタップ',
+      image: 'images/app-guide/05-contract-entry.png'
+    },
+    {
+      num: '4',
+      title: '「オプション追加」または「オプションの解約」をタップ',
+      image: 'images/app-guide/09-option-menu.png'
+    }
+  ]
 };

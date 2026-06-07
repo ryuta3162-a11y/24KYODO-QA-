@@ -647,6 +647,10 @@
                     renderNavGuide(body, APP_CREDIT_CARD_GUIDE);
                 }
 
+                if (section.visualGuide === 'optionMenu' && typeof APP_OPTION_GUIDE !== 'undefined') {
+                    renderNavGuide(body, APP_OPTION_GUIDE);
+                }
+
                 section.items.forEach(function (item) {
                     var details = document.createElement('details');
                     var summary = document.createElement('summary');
