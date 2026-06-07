@@ -3,17 +3,17 @@
  * 赤枠は画像側に描き込み済み（CSSオーバーレイなし）
  *
  * images/app-guide/
- *   01-home.png              … 経堂表示ホーム（登録完了・各ガイド1番）
- *   02-service-list.png      … サービス一覧
- *   03-procedures-menu.png   … 各種関連手続き（PT予約3番）
- *   04-procedures-top.png    … ご予約について（PT予約4番）
- *   05-contract-entry.png    … 各種お手続き→ご契約変更について
- *   05-credit-card-change.png… クレジットカード変更（CC 4番）
- *   06-program-reservation.png … PT予約5番
- *   07-member-search.png     … 会員検索フォーム
- *   08-app-link-qr.png       … QR・アプリアクティベート
- *   09-option-menu.png       … ご契約変更メニュー（オプション追加・解約）
- *   _unused-*                … 予備（店舗検索・お気に入り店舗など）
+ *   01-home.png                 … ホーム（サービス・登録完了画面）
+ *   02-service-list.png         … サービス一覧
+ *   03-procedures-menu.png      … 各種関連手続き（PT予約3番）
+ *   04-procedures-top.png       … ご予約について（PT予約4番）
+ *   05-contract-entry.png       … 各種お手続き→ご契約変更について
+ *   05-credit-card-change.png   … クレジットカード変更
+ *   06-program-reservation.png  … PT予約5番
+ *   07-member-search.png        … 会員検索フォーム
+ *   08-app-link-qr.png          … QR・アプリアクティベート
+ *   09-option-menu.png          … オプション追加・解約メニュー
+ *   10-crowd-*                  … 混雑状況の確認
  */
 var APP_REGISTRATION_GUIDE = {
   registrationSteps: [
@@ -117,6 +117,26 @@ var APP_OPTION_GUIDE = {
       num: '4',
       title: '「オプション追加」または「オプションの解約」をタップ',
       image: 'images/app-guide/09-option-menu.png'
+    }
+  ]
+};
+
+var APP_CROWD_STATUS_GUIDE = {
+  steps: [
+    {
+      num: '1',
+      title: '下部「お気に入り店舗」をタップ',
+      image: 'images/app-guide/10-crowd-favorite-add.png'
+    },
+    {
+      num: '2',
+      title: '「追加」から店舗を登録',
+      image: 'images/app-guide/10-crowd-store-search.png'
+    },
+    {
+      num: '3',
+      title: '「○人来館中」で混雑状況を確認',
+      image: 'images/app-guide/10-crowd-status-kyodo.png'
     }
   ]
 };

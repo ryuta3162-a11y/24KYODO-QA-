@@ -15,8 +15,16 @@ var QA_MASTER = {
       links: []
     },
     {
-      id: 'pt',
+      id: 'crowd',
       number: '02',
+      title: '混雑状況の確認',
+      visualGuide: 'crowdStatus',
+      items: [],
+      links: []
+    },
+    {
+      id: 'pt',
+      number: '03',
       title: 'パーソナルトレーニングの予約方法',
       visualGuide: 'ptReservation',
       items: [],
@@ -24,7 +32,7 @@ var QA_MASTER = {
     },
     {
       id: 'card',
-      number: '03',
+      number: '04',
       title: 'クレジットカードの変更',
       visualGuide: 'creditCard',
       items: [],
@@ -32,7 +40,7 @@ var QA_MASTER = {
     },
     {
       id: 'option',
-      number: '04',
+      number: '05',
       title: 'オプションの追加・解約について',
       intro: '水素水・ロッカーなど、オプション加入・解約に関する内容です。',
       visualGuide: 'optionMenu',
@@ -56,7 +64,7 @@ var QA_MASTER = {
     },
     {
       id: 'corporate',
-      number: '05',
+      number: '06',
       title: '法人契約・変更について',
       intro: '法人会員・社員番号・契約変更に関する内容です。',
       items: [
@@ -73,7 +81,7 @@ var QA_MASTER = {
     },
     {
       id: 'campaign',
-      number: '06',
+      number: '07',
       title: '学割・移籍・紹介の申請について',
       intro: '各種キャンペーン・特典の申請方法と、よくある問い合わせです。',
       items: [

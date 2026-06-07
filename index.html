@@ -651,6 +651,10 @@
                     renderNavGuide(body, APP_OPTION_GUIDE);
                 }
 
+                if (section.visualGuide === 'crowdStatus' && typeof APP_CROWD_STATUS_GUIDE !== 'undefined') {
+                    renderNavGuide(body, APP_CROWD_STATUS_GUIDE);
+                }
+
                 section.items.forEach(function (item) {
                     var details = document.createElement('details');
                     var summary = document.createElement('summary');
