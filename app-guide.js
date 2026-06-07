@@ -9,11 +9,11 @@
  *   03-procedures-menu.png      … 各種関連手続き（PT予約3番）
  *   04-procedures-top.png       … ご予約について（PT予約4番）
  *   05-contract-entry.png       … 各種お手続き→ご契約変更について
- *   05-credit-card-change.png   … クレジットカード変更
+ *   05-credit-card-change.png   … クレジットカード変更・休会
  *   06-program-reservation.png  … PT予約5番
  *   07-member-search.png        … 会員検索フォーム
  *   08-app-link-qr.png          … QR・アプリアクティベート
- *   09-option-menu.png          … オプション追加・解約メニュー
+ *   09-option-menu.png          … オプション追加・解約（アプリ専用手続き）
  *   10-crowd-favorite-tab.png   … お気に入り店舗タブ
  *   10-crowd-favorite-add.png   … 追加ボタン
  *   10-crowd-store-search.png    … 店舗検索（経堂）
@@ -96,10 +96,12 @@ var APP_CREDIT_CARD_GUIDE = {
     },
     {
       num: '4',
-      title: '「クレジットカード変更」をタップ',
+      title: '「クレジットカード変更」「休会」をタップ',
       image: 'images/app-guide/05-credit-card-change.png'
     }
-  ]
+  ],
+  footnote: '※休会は税込2,200円。1〜3ヶ月をチェックで選択できます（最大3ヶ月）。',
+  footnoteProminent: true
 };
 
 var APP_OPTION_GUIDE = {
@@ -125,7 +127,7 @@ var APP_OPTION_GUIDE = {
       image: 'images/app-guide/09-option-menu.png'
     }
   ],
-  footnote: '※オプション解約後も当月末まではサービスをご利用いただけます（当月末解約となります）。\n※休会は税込2,200円。1〜3ヶ月をチェックで選択できます（最大3ヶ月）。',
+  footnote: '※オプション解約後も当月末まではサービスをご利用いただけます（当月末解約となります）。',
   footnoteProminent: true
 };
 
