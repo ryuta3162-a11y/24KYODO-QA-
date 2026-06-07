@@ -103,7 +103,8 @@ var APP_CREDIT_CARD_GUIDE = {
     {
       num: '4',
       title: '「クレジットカード変更」「休会」をタップ',
-      image: 'images/app-guide/05-credit-card-change.png'
+      image: 'images/app-guide/05-credit-card-change.png',
+      stepId: 'guide-card-step-4'
     }
   ]
 };
@@ -208,8 +209,15 @@ var APP_CROWD_STATUS_GUIDE = {
 };
 
 var APP_UNPAID_GUIDE = {
-  intro: '未納がある間は施設をご利用いただけません\n月会費を2ヶ月滞納されますと規約退会になります\nアプリからお支払いいただければ、基本的にすぐ施設をご利用いただけます',
+  intro: '未納金がある間は施設をご利用いただけません\n月会費を2ヶ月滞納されますと規約退会になります\nアプリからお支払い頂ければ、再度施設をご利用いただけます',
+  cardUpdateNote: 'クレジットカード情報は更新されないため、再登録が必要です',
+  cardUpdateLink: {
+    panel: 'card',
+    stepId: 'guide-card-step-4',
+    label: 'クレジットカード変更の手順へ'
+  },
   flowchart: 'images/app-guide/12-unpaid-flowchart.png',
+  flowTitle: 'プッシュ通知・バナーから',
   steps: [
     {
       num: '1',
@@ -231,8 +239,23 @@ var APP_UNPAID_GUIDE = {
     }
   ],
   altPath: {
-    text: '通知が届いていないけど未納だった方は、こちらからお支払いください',
-    image: 'images/app-guide/12-unpaid-app-only.png',
-    imageCaption: 'サービス → アプリ専用手続き →「未納金のお支払い」'
+    blockTitle: 'プッシュ通知やバナーが見当たらない方は',
+    steps: [
+      {
+        num: '1',
+        title: 'ホーム画面右上の「サービス」をタップ',
+        image: 'images/app-guide/01-home.png'
+      },
+      {
+        num: '2',
+        title: '「アプリ専用手続き」をタップ',
+        image: 'images/app-guide/02-service-list-app-only.png'
+      },
+      {
+        num: '3',
+        title: '「未納金のお支払い」をタップ',
+        image: 'images/app-guide/12-unpaid-app-only.png'
+      }
+    ]
   }
 };

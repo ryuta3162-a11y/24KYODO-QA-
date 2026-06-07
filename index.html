@@ -277,6 +277,68 @@
                 radial-gradient(220px 100px at 0% 100%, rgba(255, 255, 255, 0.8), transparent 65%);
         }
         .guide-step-card > * { position: relative; z-index: 1; }
+        .guide-intro-panel {
+            margin-bottom: 1.25rem;
+            padding: 1.05rem 1.1rem 1.15rem;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            background: #fff;
+            box-shadow: 0 2px 12px rgba(17, 24, 39, 0.04);
+        }
+        .guide-intro-panel .guide-step-text {
+            margin-bottom: 0;
+        }
+        .guide-card-update {
+            margin-top: 0.9rem;
+            padding-top: 0.9rem;
+            border-top: 1px dashed rgba(17, 24, 39, 0.1);
+        }
+        .guide-card-update-note {
+            font-size: 0.75rem;
+            color: #4B5563;
+            line-height: 1.7;
+            margin: 0 0 0.75rem;
+        }
+        .guide-cross-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 0.85rem 1rem;
+            border: 2px solid var(--brand-red);
+            border-radius: calc(var(--radius) - 2px);
+            background: linear-gradient(180deg, #fff 0%, rgba(254, 242, 242, 0.65) 100%);
+            color: var(--brand-red);
+            font-weight: 800;
+            font-size: 0.8125rem;
+            letter-spacing: 0.04em;
+            cursor: pointer;
+            font-family: inherit;
+            transition: transform 0.15s, box-shadow 0.2s, background 0.2s;
+            box-shadow: 0 4px 14px rgba(220, 38, 38, 0.1);
+        }
+        .guide-cross-link:active {
+            transform: scale(0.98);
+        }
+        .guide-flow-title {
+            font-size: 0.8125rem;
+            font-weight: 800;
+            color: var(--ink);
+            margin: 0 0 1rem;
+            letter-spacing: 0.04em;
+        }
+        .guide-section-divider {
+            margin: 2rem 0 0.25rem;
+            padding-top: 1.5rem;
+            border-top: 1px dashed rgba(17, 24, 39, 0.14);
+        }
+        .guide-step-card.is-highlight {
+            animation: guideHighlight 1.8s ease;
+        }
+        @keyframes guideHighlight {
+            0%, 100% { box-shadow: var(--shadow-soft); }
+            15%, 55% { box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.28), var(--shadow-soft); }
+        }
         .guide-flowchart-wrap {
             margin: 0 0 1.5rem;
             padding: 0;
@@ -564,6 +626,9 @@
             function buildGuideStep(step) {
                 var article = document.createElement('article');
                 article.className = 'guide-step' + (step.cardStyle ? ' guide-step-card' : '');
+                if (step.stepId) {
+                    article.id = step.stepId;
+                }
                 var head = document.createElement('div');
                 head.className = 'guide-step-head';
                 if (step.num) {
@@ -622,6 +687,60 @@
                 });
             }
 
+            function navigateToGuideStep(panelId, stepId) {
+                var wasDifferent = activeId !== panelId;
+                if (wasDifferent) {
+                    switchPanel(panelId);
+                }
+                if (placeholderEl) {
+                    placeholderEl.classList.add('is-hidden');
+                }
+                window.setTimeout(function () {
+                    var el = document.getElementById(stepId);
+                    if (el) {
+                        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        el.classList.add('is-highlight');
+                        window.setTimeout(function () {
+                            el.classList.remove('is-highlight');
+                        }, 2000);
+                    }
+                }, wasDifferent ? 380 : 80);
+            }
+
+            function renderGuideIntroPanel(container, guide) {
+                if (!guide.intro && !guide.cardUpdateNote) return;
+                var panel = document.createElement('div');
+                panel.className = 'guide-intro-panel';
+                if (guide.intro) {
+                    var intro = document.createElement('p');
+                    intro.className = 'guide-step-text';
+                    intro.textContent = guide.intro;
+                    panel.appendChild(intro);
+                }
+                if (guide.cardUpdateNote || guide.cardUpdateLink) {
+                    var cardBox = document.createElement('div');
+                    cardBox.className = 'guide-card-update';
+                    if (guide.cardUpdateNote) {
+                        var cardNote = document.createElement('p');
+                        cardNote.className = 'guide-card-update-note';
+                        cardNote.textContent = '※' + guide.cardUpdateNote;
+                        cardBox.appendChild(cardNote);
+                    }
+                    if (guide.cardUpdateLink) {
+                        var crossBtn = document.createElement('button');
+                        crossBtn.type = 'button';
+                        crossBtn.className = 'guide-cross-link';
+                        crossBtn.textContent = guide.cardUpdateLink.label || '手順を見る';
+                        crossBtn.addEventListener('click', function () {
+                            navigateToGuideStep(guide.cardUpdateLink.panel, guide.cardUpdateLink.stepId);
+                        });
+                        cardBox.appendChild(crossBtn);
+                    }
+                    panel.appendChild(cardBox);
+                }
+                container.appendChild(panel);
+            }
+
             function renderNavGuide(container, guide) {
                 if (guide.notice) {
                     renderProminentNotice(container, guide.notice, {
@@ -630,6 +749,7 @@
                         linkLabel: guide.noticeLinkLabel
                     });
                 }
+                renderGuideIntroPanel(container, guide);
                 if (guide.flowchart) {
                     var flowFig = document.createElement('figure');
                     flowFig.className = 'guide-flowchart-wrap';
@@ -640,37 +760,28 @@
                     flowFig.appendChild(flowImg);
                     container.appendChild(flowFig);
                 }
-                if (guide.intro) {
-                    var intro = document.createElement('p');
-                    intro.className = 'guide-step-text';
-                    intro.style.marginBottom = '1.25rem';
-                    intro.textContent = guide.intro;
-                    container.appendChild(intro);
+                if (guide.flowTitle) {
+                    var flowTitle = document.createElement('h3');
+                    flowTitle.className = 'guide-flow-title';
+                    flowTitle.textContent = guide.flowTitle;
+                    container.appendChild(flowTitle);
                 }
                 guide.steps.forEach(function (step) {
                     container.appendChild(buildGuideStep(Object.assign({ cardStyle: true }, step)));
                 });
                 if (guide.altPath) {
                     var altWrap = document.createElement('div');
-                    altWrap.className = 'guide-alt-path';
-                    if (guide.altPath.text) {
-                        var altText = document.createElement('p');
-                        altText.className = 'guide-step-text';
-                        altText.style.marginTop = '1.5rem';
-                        altText.textContent = guide.altPath.text;
-                        altWrap.appendChild(altText);
+                    altWrap.className = 'guide-section-divider';
+                    if (guide.altPath.blockTitle) {
+                        var altTitle = document.createElement('h3');
+                        altTitle.className = 'guide-subtitle';
+                        altTitle.style.marginTop = '0';
+                        altTitle.textContent = guide.altPath.blockTitle;
+                        altWrap.appendChild(altTitle);
                     }
-                    if (guide.altPath.imageCaption) {
-                        var altCap = document.createElement('p');
-                        altCap.className = 'guide-step-text';
-                        altCap.style.fontWeight = '700';
-                        altCap.style.color = 'var(--ink)';
-                        altCap.textContent = guide.altPath.imageCaption;
-                        altWrap.appendChild(altCap);
-                    }
-                    if (guide.altPath.image) {
-                        altWrap.appendChild(buildPhoneScreen({ image: guide.altPath.image, title: guide.altPath.imageCaption || '' }));
-                    }
+                    guide.altPath.steps.forEach(function (step) {
+                        altWrap.appendChild(buildGuideStep(Object.assign({ cardStyle: true }, step)));
+                    });
                     container.appendChild(altWrap);
                 }
                 if (guide.footnote) {
