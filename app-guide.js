@@ -24,6 +24,7 @@ var APP_REGISTRATION_GUIDE = {
       title: 'URLをスマートフォンで開く',
       linkKey: 'memberSearch',
       linkLabel: '会員検索フォームはこちら',
+      text: 'お名前（漢字・カタカナ）・生年月日・入会時の電話番号を入力して検索してください。',
       cardStyle: true,
       image: 'images/app-guide/07-member-search.png'
     },
