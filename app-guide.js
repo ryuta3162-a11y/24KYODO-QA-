@@ -127,6 +127,12 @@ var APP_CORPORATE_SECTION = {
         },
         {
           num: '2',
+          title: '「アプリで入会」をタップ',
+          image: 'images/app-guide/11-corporate-app-top.png',
+          cardStyle: true
+        },
+        {
+          num: '3',
           title: 'プロモーションコードを入力',
           text: 'プロモーションコードを入力して「次へ」をタップ\nその後は通常入会同様の手順でございます',
           closing: '顔写真の撮影時、必ずカメラの権限を許可してください',
