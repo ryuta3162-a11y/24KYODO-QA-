@@ -9,7 +9,7 @@ var QA_MASTER = {
     {
       id: 'app',
       number: '01',
-      title: 'アプリ登録方法について',
+      title: 'JOYFITAPP登録方法',
       visualGuide: 'appRegistration',
       items: [],
       links: []
@@ -33,7 +33,7 @@ var QA_MASTER = {
     {
       id: 'card',
       number: '04',
-      title: 'クレジットカードの変更・休会',
+      title: 'クレジットカード変更・休会方法',
       visualGuide: 'creditCard',
       items: [],
       links: []
