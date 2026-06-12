@@ -20,8 +20,8 @@
  *   10-crowd-status-kyodo.png   … 来館人数表示
  *   11-corporate-app-top.png      … 法人入会・アプリで入会
  *   11-corporate-promo-code.png   … プロモーションコード入力
- *   11-reopen-app-settings.png    … 復会・サービス一覧→アプリ設定
- *   11-reopen-unregister.png      … 復会・アプリの登録を解除
+ *   11-reopen-app-settings.png    … 再入会・サービス一覧→アプリ設定
+ *   11-reopen-unregister.png      … 再入会・アプリの登録を解除
  *   12-unpaid-flowchart.png       … 未納金支払いフロー（全体図）
  *   12-unpaid-app-only.png        … アプリ専用手続き・未納金のお支払い
  */
@@ -128,14 +128,15 @@ var APP_CORPORATE_SECTION = {
           image: 'images/app-guide/11-corporate-promo-code.png'
         }
       ]
-    },
+    }
+  ]
+};
+
+var APP_REJOIN_SECTION = {
+  blocks: [
     {
-      blockTitle: '復会手続き',
+      blockTitle: '再入会手続き',
       intro: '過去にJOYFIT会員だった方で、再度入会したい場合の手順',
-      notice: '【復会手続き後のご入会について】\n上記方法でログアウトできたら再度アプリで入会になります\nそのままプロモーションコードはスキップして経堂で実施している通常のキャンペーンでご入会ください\n必ず契約前にHPをご確認ください',
-      noticeProminent: true,
-      noticeLinkKey: 'storeHp',
-      noticeLinkLabel: 'https://joyfit.jp/kyodo/',
       steps: [
         {
           num: '1',
@@ -152,7 +153,12 @@ var APP_CORPORATE_SECTION = {
           title: '「アプリの登録を解除」をタップ',
           image: 'images/app-guide/11-reopen-unregister.png'
         }
-      ]
+      ],
+      notice: '【再入会手続き後のご入会について】\n上記方法でログアウトできたら再度アプリで入会になります\nそのままプロモーションコードはスキップして経堂で実施している通常のキャンペーンでご入会ください\n必ず契約前にHPをご確認ください',
+      noticeProminent: true,
+      noticeLinkKey: 'storeHp',
+      noticeLinkLabel: 'https://joyfit.jp/kyodo/',
+      noticeAfter: true
     }
   ]
 };

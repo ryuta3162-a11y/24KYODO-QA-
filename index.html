@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JOYFIT24経堂 | Q&A</title>
-    <meta name="description" content="JOYFIT24経堂のQ&A アプリ登録、PT予約、クレジットカード変更、オプション、法人契約、キャンペーン申請について">
+    <meta name="description" content="JOYFIT24経堂のQ&A アプリ登録、PT予約、クレジットカード変更、オプション、法人契約、再入会、キャンペーン申請について">
     <meta property="og:title" content="JOYFIT24経堂 | Q&A">
     <meta property="og:description" content="JOYFIT24経堂のQ&Aページです">
     <meta property="og:type" content="website">
@@ -911,7 +911,14 @@
                         subtitle.textContent = block.blockTitle;
                         container.appendChild(subtitle);
                     }
-                    if (block.notice) {
+                    if (block.intro) {
+                        var blockIntro = document.createElement('p');
+                        blockIntro.className = 'guide-step-text';
+                        blockIntro.style.marginBottom = '1rem';
+                        blockIntro.textContent = block.intro;
+                        container.appendChild(blockIntro);
+                    }
+                    if (block.notice && !block.noticeAfter) {
                         renderProminentNotice(container, block.notice, {
                             prominent: block.noticeProminent,
                             linkKey: block.noticeLinkKey,
@@ -919,6 +926,13 @@
                         });
                     }
                     renderNavGuide(container, block);
+                    if (block.notice && block.noticeAfter) {
+                        renderProminentNotice(container, block.notice, {
+                            prominent: block.noticeProminent,
+                            linkKey: block.noticeLinkKey,
+                            linkLabel: block.noticeLinkLabel
+                        });
+                    }
                 });
             }
 
@@ -1008,6 +1022,10 @@
 
                 if (section.visualGuide === 'corporateJoin' && typeof APP_CORPORATE_SECTION !== 'undefined') {
                     renderCorporateSection(body, APP_CORPORATE_SECTION);
+                }
+
+                if (section.visualGuide === 'rejoin' && typeof APP_REJOIN_SECTION !== 'undefined') {
+                    renderCorporateSection(body, APP_REJOIN_SECTION);
                 }
 
                 if (section.visualGuide === 'unpaidPayment' && typeof APP_UNPAID_GUIDE !== 'undefined') {
