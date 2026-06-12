@@ -29,8 +29,8 @@
  * images/trainers/
  *   kusaka.png    … 日下トレーナー写真（背景透過）
  *   ishida.png    … 石田トレーナー写真（背景透過）
- *   qr-kusaka.png … 日下トレーナー LINE QR
- *   qr-ishida.png … 石田トレーナー LINE QR
+ *   qr-kusaka.png … 日下トレーナー LINE QR（参照用・サイトではURLリンク）
+ *   qr-ishida.png … 石田トレーナー LINE QR（参照用・サイトではURLリンク）
  */
 var APP_REGISTRATION_GUIDE = {
   registrationSteps: [
@@ -77,8 +77,8 @@ var APP_PT_LINE_GUIDE = {
       nameMei: '竜太',
       kana: 'クサカ リュウタ',
       photo: 'images/trainers/kusaka.png',
-      qr: 'images/trainers/qr-kusaka.png',
-      qrNote: 'LINE・Googleカレンダー空き時間のQR',
+      lineKey: 'lineKusaka',
+      lineNote: 'LINE・Googleカレンダー空き時間もご確認いただけます',
       highlightTitle: '現在の最高記録',
       highlights: [
         { label: 'スクワット', value: '230', unit: 'kg' },
@@ -97,8 +97,8 @@ var APP_PT_LINE_GUIDE = {
       nameMei: '美絵',
       kana: 'イシダ ミエ',
       photo: 'images/trainers/ishida.png',
-      qr: 'images/trainers/qr-ishida.png',
-      qrNote: 'LINE友だち追加用QR',
+      lineKey: 'lineIshida',
+      lineNote: 'LINE友だち追加後にメッセージをお送りください',
       highlightTitle: '取得資格',
       highlights: [
         { label: 'YOGA RYT200' },

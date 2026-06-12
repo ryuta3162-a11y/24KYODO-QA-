@@ -27,7 +27,11 @@ var SITE_LINKS = {
   /** 学校関係者割（Googleフォーム・経堂） */
   studentForm: 'https://forms.gle/PCrYhsMrFGtQocZe6',
   /** オプション解約方法（YouTube Shorts） */
-  optionCancelVideo: 'https://www.youtube.com/shorts/qpvkmWi-vTM'
+  optionCancelVideo: 'https://www.youtube.com/shorts/qpvkmWi-vTM',
+  /** PT · 日下トレーナー LINE友だち追加 */
+  lineKusaka: 'https://line.me/R/ti/p/@836mewsc',
+  /** PT · 石田トレーナー LINE友だち追加 */
+  lineIshida: 'https://line.me/ti/p/3E-9u-q_8O'
 };
 
 /** 同一PC上で複数LPフォルダを並べて開くときの相対パス */
