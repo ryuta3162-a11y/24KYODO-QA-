@@ -113,7 +113,7 @@ var APP_PT_LINE_GUIDE = {
       ]
     }
   ],
-  footnote: 'JOYFIT24経堂常駐スタッフですので直接お声がけいただいても大丈夫です'
+  footnote: 'トレーナーはJOYFIT24経堂スタッフです\n入会後に直接お声がけいただいても大丈夫です'
 };
 
 var APP_CREDIT_CARD_GUIDE = {
