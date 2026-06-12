@@ -27,8 +27,8 @@
  *   12-unpaid-app-only.png        … アプリ専用手続き・未納金のお支払い
  *
  * images/trainers/
- *   kusaka.jpg    … 日下トレーナー写真
- *   ishida.jpg    … 石田トレーナー写真
+ *   kusaka.png    … 日下トレーナー写真（背景透過）
+ *   ishida.png    … 石田トレーナー写真（背景透過）
  *   qr-kusaka.png … 日下トレーナー LINE QR
  *   qr-ishida.png … 石田トレーナー LINE QR
  */
@@ -76,7 +76,7 @@ var APP_PT_LINE_GUIDE = {
       nameSei: '日下',
       nameMei: '竜太',
       kana: 'クサカ リュウタ',
-      photo: 'images/trainers/kusaka.jpg',
+      photo: 'images/trainers/kusaka.png',
       qr: 'images/trainers/qr-kusaka.png',
       qrNote: 'LINE・Googleカレンダー空き時間のQR',
       highlightTitle: '現在の最高記録',
@@ -96,7 +96,7 @@ var APP_PT_LINE_GUIDE = {
       nameSei: '石田',
       nameMei: '美絵',
       kana: 'イシダ ミエ',
-      photo: 'images/trainers/ishida.jpg',
+      photo: 'images/trainers/ishida.png',
       qr: 'images/trainers/qr-ishida.png',
       qrNote: 'LINE友だち追加用QR',
       highlightTitle: '取得資格',

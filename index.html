@@ -654,22 +654,21 @@
         .pt-trainer-photo {
             position: relative;
             min-height: 210px;
-            background: #e5e7eb;
+            background: linear-gradient(165deg, #f9fafb 0%, #f3f4f6 45%, #eef2f7 100%);
             overflow: hidden;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
         }
         .pt-trainer-photo img {
             width: 100%;
             height: 100%;
             min-height: 210px;
-            object-fit: cover;
-            object-position: top center;
+            max-height: 240px;
+            object-fit: contain;
+            object-position: bottom center;
             display: block;
-        }
-        .pt-trainer-showcase.is-kusaka .pt-trainer-photo img {
-            object-position: center 12%;
-        }
-        .pt-trainer-showcase.is-ishida .pt-trainer-photo img {
-            object-position: center 8%;
+            padding: 0.35rem 0.5rem 0;
         }
         .pt-trainer-main {
             padding: 1rem 1rem 1.15rem;
