@@ -4,7 +4,7 @@
  * 外部リンクは linkKey（site-links.js のキー）で指定します
  */
 var QA_MASTER = {
-  updatedAt: '2026-06-15',
+  updatedAt: '2026-06-16',
   sections: [
     {
       id: 'app',
@@ -26,7 +26,7 @@ var QA_MASTER = {
       id: 'pt',
       number: '03',
       title: 'パーソナルトレーニングの予約方法',
-      visualGuide: 'ptReservation',
+      visualGuide: 'ptLine',
       items: [],
       links: []
     },

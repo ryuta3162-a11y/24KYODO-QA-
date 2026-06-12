@@ -493,6 +493,112 @@
         .guide-apply-banner-box .guide-action-banner {
             margin-bottom: 0;
         }
+
+        /* ── PT LINE trainers ── */
+        .pt-trainer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.1rem;
+            margin-top: 0.25rem;
+        }
+        @media (min-width: 380px) {
+            .pt-trainer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        .pt-trainer-card {
+            display: flex;
+            flex-direction: column;
+            border-radius: calc(var(--radius) + 2px);
+            border: 1px solid rgba(17, 24, 39, 0.08);
+            background: linear-gradient(180deg, #ffffff 0%, #f9fafb 100%);
+            box-shadow:
+                0 1px 0 rgba(255, 255, 255, 0.95) inset,
+                var(--shadow-soft);
+            overflow: hidden;
+        }
+        .pt-trainer-photo {
+            aspect-ratio: 4 / 5;
+            background: #f3f4f6;
+            overflow: hidden;
+        }
+        .pt-trainer-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+            display: block;
+        }
+        .pt-trainer-body {
+            padding: 0.85rem 0.8rem 1rem;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+        .pt-trainer-role {
+            margin: 0 0 0.35rem;
+            font-size: 0.62rem;
+            font-weight: 800;
+            letter-spacing: 0.14em;
+            color: var(--brand-red);
+        }
+        .pt-trainer-name {
+            margin: 0 0 0.15rem;
+            font-size: 1.05rem;
+            font-weight: 900;
+            line-height: 1.35;
+            color: var(--ink);
+        }
+        .pt-trainer-kana {
+            margin: 0 0 0.75rem;
+            font-size: 0.68rem;
+            font-weight: 600;
+            color: var(--muted);
+            letter-spacing: 0.08em;
+        }
+        .pt-line-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            align-self: center;
+            margin-bottom: 0.65rem;
+            padding: 0.35rem 0.7rem;
+            border-radius: 9999px;
+            background: #06C755;
+            color: #fff;
+            font-size: 0.68rem;
+            font-weight: 800;
+            letter-spacing: 0.06em;
+        }
+        .pt-trainer-qr {
+            margin: 0 auto;
+            width: min(100%, 132px);
+            padding: 0.55rem;
+            border-radius: calc(var(--radius) - 4px);
+            background: #fff;
+            border: 1px solid rgba(17, 24, 39, 0.08);
+            box-shadow: 0 4px 14px rgba(17, 24, 39, 0.08);
+        }
+        .pt-trainer-qr img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .pt-trainer-qr-note {
+            margin: 0.55rem 0 0;
+            font-size: 0.62rem;
+            line-height: 1.55;
+            color: var(--muted);
+            text-align: center;
+        }
+        .pt-trainer-scan {
+            margin: 0.7rem 0 0;
+            font-size: 0.7rem;
+            font-weight: 700;
+            line-height: 1.55;
+            color: #374151;
+            text-align: center;
+        }
         .guide-step-head {
             display: flex;
             align-items: center;
@@ -965,6 +1071,75 @@
                 container.appendChild(wrap);
             }
 
+            function renderPtLineGuide(container, guide) {
+                renderGuideIntroPanel(container, guide);
+                if (guide.notice) {
+                    renderProminentNotice(container, guide.notice, {
+                        prominent: guide.noticeProminent !== false
+                    });
+                }
+                if (!guide.trainers || !guide.trainers.length) return;
+                var grid = document.createElement('div');
+                grid.className = 'pt-trainer-grid';
+                guide.trainers.forEach(function (trainer) {
+                    var card = document.createElement('article');
+                    card.className = 'pt-trainer-card';
+                    var photoWrap = document.createElement('div');
+                    photoWrap.className = 'pt-trainer-photo';
+                    var photo = document.createElement('img');
+                    photo.src = trainer.photo;
+                    photo.alt = trainer.nameSei + ' ' + trainer.nameMei + 'トレーナー';
+                    photo.loading = 'lazy';
+                    photoWrap.appendChild(photo);
+                    card.appendChild(photoWrap);
+                    var body = document.createElement('div');
+                    body.className = 'pt-trainer-body';
+                    var role = document.createElement('p');
+                    role.className = 'pt-trainer-role';
+                    role.textContent = 'PERSONAL TRAINER';
+                    body.appendChild(role);
+                    var name = document.createElement('p');
+                    name.className = 'pt-trainer-name';
+                    name.textContent = trainer.nameSei + ' ' + trainer.nameMei;
+                    body.appendChild(name);
+                    var kana = document.createElement('p');
+                    kana.className = 'pt-trainer-kana';
+                    kana.textContent = trainer.kana;
+                    body.appendChild(kana);
+                    var badge = document.createElement('span');
+                    badge.className = 'pt-line-badge';
+                    badge.textContent = 'LINEで予約';
+                    body.appendChild(badge);
+                    var qrWrap = document.createElement('div');
+                    qrWrap.className = 'pt-trainer-qr';
+                    var qr = document.createElement('img');
+                    qr.src = trainer.qr;
+                    qr.alt = trainer.nameSei + 'トレーナー LINE友だち追加QR';
+                    qr.loading = 'lazy';
+                    qrWrap.appendChild(qr);
+                    body.appendChild(qrWrap);
+                    if (trainer.qrNote) {
+                        var qrNote = document.createElement('p');
+                        qrNote.className = 'pt-trainer-qr-note';
+                        qrNote.textContent = '※' + trainer.qrNote;
+                        body.appendChild(qrNote);
+                    }
+                    var scan = document.createElement('p');
+                    scan.className = 'pt-trainer-scan';
+                    scan.textContent = 'QRを読み取り友だち追加';
+                    body.appendChild(scan);
+                    card.appendChild(body);
+                    grid.appendChild(card);
+                });
+                container.appendChild(grid);
+                if (guide.footnote) {
+                    var note = document.createElement('p');
+                    note.className = 'guide-footnote is-prominent';
+                    note.textContent = '※' + guide.footnote;
+                    container.appendChild(note);
+                }
+            }
+
             function renderCampaignApply(container, guide) {
                 if (guide.notice) {
                     renderProminentNotice(container, guide.notice, {
@@ -1089,8 +1264,8 @@
                     renderAppRegistrationGuide(body);
                 }
 
-                if (section.visualGuide === 'ptReservation' && typeof APP_PT_RESERVATION_GUIDE !== 'undefined') {
-                    renderNavGuide(body, APP_PT_RESERVATION_GUIDE);
+                if (section.visualGuide === 'ptLine' && typeof APP_PT_LINE_GUIDE !== 'undefined') {
+                    renderPtLineGuide(body, APP_PT_LINE_GUIDE);
                 }
 
                 if (section.visualGuide === 'creditCard' && typeof APP_CREDIT_CARD_GUIDE !== 'undefined') {

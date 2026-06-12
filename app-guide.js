@@ -25,6 +25,12 @@
  *   11-rejoin-app-top.png         … 再入会・アプリで入会（11-corporate-app-top 複製）
  *   12-unpaid-flowchart.png       … 未納金支払いフロー（全体図）
  *   12-unpaid-app-only.png        … アプリ専用手続き・未納金のお支払い
+ *
+ * images/trainers/
+ *   kusaka.jpg    … 日下トレーナー写真
+ *   ishida.jpg    … 石田トレーナー写真
+ *   qr-kusaka.png … 日下トレーナー LINE QR
+ *   qr-ishida.png … 石田トレーナー LINE QR
  */
 var APP_REGISTRATION_GUIDE = {
   registrationSteps: [
@@ -52,36 +58,33 @@ var APP_REGISTRATION_GUIDE = {
   ]
 };
 
-var APP_PT_RESERVATION_GUIDE = {
-  steps: [
+var APP_PT_LINE_GUIDE = {
+  introPanelStyle: 'featured',
+  introBullets: [
+    'パーソナルトレーニングのご予約・ご案内はLINEで承っております',
+    '担当トレーナーのQRを読み取り、友だち追加後にご連絡ください'
+  ],
+  notice: '友だち追加のみですと見逃してしまう可能性があります\n必ずご要望やご挨拶の一言をメッセージでお送りください',
+  noticeProminent: true,
+  trainers: [
     {
-      num: '1',
-      title: 'ホーム画面右上の「サービス」をタップ',
-      image: 'images/app-guide/01-home.png'
+      nameSei: '日下',
+      nameMei: '竜太',
+      kana: 'クサカ リュウタ',
+      photo: 'images/trainers/kusaka.jpg',
+      qr: 'images/trainers/qr-kusaka.png',
+      qrNote: 'LINE・Googleカレンダー空き時間のQR'
     },
     {
-      num: '2',
-      title: '「各種お手続き」をタップ',
-      image: 'images/app-guide/02-service-list.png'
-    },
-    {
-      num: '3',
-      title: '「各種関連手続き」をタップ',
-      image: 'images/app-guide/03-procedures-menu.png'
-    },
-    {
-      num: '4',
-      title: '「ご予約について」をタップ',
-      image: 'images/app-guide/04-procedures-top.png'
-    },
-    {
-      num: '5',
-      title: '「パーソナルトレーニング予約」をタップ',
-      image: 'images/app-guide/06-program-reservation.png'
+      nameSei: '石田',
+      nameMei: '美絵',
+      kana: 'イシダ ミエ',
+      photo: 'images/trainers/ishida.jpg',
+      qr: 'images/trainers/qr-ishida.png',
+      qrNote: 'LINE友だち追加用QR'
     }
   ],
-  footnote: '予約やご案内の方法は、トレーナーLINEなどで承っております\nこちらは決済時の画面・ウェブ予約になります\n詳細は店舗スタッフもしくはトレーナーLINEにお問い合わせください',
-  footnoteProminent: true
+  footnote: 'JOYFIT24経堂常駐スタッフですので直接お声がけいただいても大丈夫です'
 };
 
 var APP_CREDIT_CARD_GUIDE = {
