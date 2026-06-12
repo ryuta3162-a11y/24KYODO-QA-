@@ -137,9 +137,9 @@ var APP_CREDIT_CARD_GUIDE = {
         timeline: [
           { month: '3月', label: '休会中', status: '退会不可', statusTone: 'no' },
           { month: '4月', label: '通常会員に復帰', status: '復帰月', statusTone: 'mid' },
-          { month: '4月末', label: '退会可能となる最短のタイミング', status: '退会可', statusTone: 'yes' }
+          { month: '4月', label: '4月中に退会手続き', status: '退会可', statusTone: 'yes' }
         ],
-        summary: '最短で退会できるのは、復帰した月の月末となります'
+        summary: '最短で退会できるのは、4月末日になります'
       },
       feeGroups: [
         {
