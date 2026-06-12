@@ -1,0 +1,14 @@
+---
+description: 24KYODO-QA の変更後は必ず main に push して Vercel デプロイする
+alwaysApply: true
+---
+
+# デプロイ
+
+このリポジトリ（24KYODO-QA）でコンテンツやコードを変更したら、**ユーザーの明示的な依頼がなくても** 作業完了時に必ずデプロイする。
+
+1. `git add` で関連ファイルをステージ
+2. 変更内容を要約したコミットメッセージで `git commit`
+3. `git push origin main`（Vercel 自動反映）
+
+push しないまま作業を終えない。コミット対象がない場合は push 不要。
