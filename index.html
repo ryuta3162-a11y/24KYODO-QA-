@@ -336,19 +336,61 @@
                 0 1px 0 rgba(255, 255, 255, 0.9) inset,
                 0 4px 16px rgba(17, 24, 39, 0.06);
         }
+        .guide-intro-panel.is-featured {
+            padding: 1.15rem 1.15rem 1.2rem 1.25rem;
+            border-left: 3px solid var(--brand-red);
+            background: linear-gradient(105deg, rgba(254, 242, 242, 0.45) 0%, #ffffff 42%, #fafafa 100%);
+            box-shadow:
+                0 1px 0 rgba(255, 255, 255, 0.95) inset,
+                0 6px 22px rgba(220, 38, 38, 0.08);
+        }
         .guide-intro-panel .guide-step-text {
             margin-bottom: 0;
         }
+        .guide-intro-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .guide-intro-list li {
+            position: relative;
+            padding-left: 1rem;
+            margin-bottom: 0.7rem;
+            font-size: 0.8375rem;
+            font-weight: 600;
+            color: #374151;
+            line-height: 1.75;
+        }
+        .guide-intro-list li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.62em;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--brand-red);
+            box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.15);
+        }
+        .guide-intro-list li:last-child {
+            margin-bottom: 0;
+        }
         .guide-card-update {
-            margin-top: 0.9rem;
-            padding-top: 0.9rem;
-            border-top: 1px dashed rgba(17, 24, 39, 0.1);
+            margin-top: 1rem;
+            padding: 0.9rem 0.95rem;
+            border-radius: calc(var(--radius) - 2px);
+            border: 1px dashed rgba(220, 38, 38, 0.22);
+            background: rgba(255, 255, 255, 0.75);
         }
         .guide-card-update-note {
-            font-size: 0.75rem;
+            font-size: 0.78rem;
+            font-weight: 700;
             color: #4B5563;
-            line-height: 1.7;
-            margin: 0 0 0.75rem;
+            line-height: 1.75;
+            margin: 0 0 0.8rem;
+        }
+        .guide-card-update-note:last-child {
+            margin-bottom: 0;
         }
         .guide-cross-link {
             display: flex;
@@ -449,14 +491,7 @@
             text-align: center;
         }
         .guide-apply-banner-box .guide-action-banner {
-            margin-bottom: 0.65rem;
-        }
-        .guide-apply-banner-url {
-            margin: 0;
-            font-size: 0.72rem;
-            color: var(--muted);
-            word-break: break-all;
-            line-height: 1.5;
+            margin-bottom: 0;
         }
         .guide-step-head {
             display: flex;
@@ -815,10 +850,19 @@
             }
 
             function renderGuideIntroPanel(container, guide) {
-                if (!guide.intro && !guide.cardUpdateNote) return;
+                if (!guide.intro && !guide.introBullets && !guide.cardUpdateNote) return;
                 var panel = document.createElement('div');
-                panel.className = 'guide-intro-panel';
-                if (guide.intro) {
+                panel.className = 'guide-intro-panel' + (guide.introPanelStyle === 'featured' ? ' is-featured' : '');
+                if (guide.introBullets && guide.introBullets.length) {
+                    var list = document.createElement('ul');
+                    list.className = 'guide-intro-list';
+                    guide.introBullets.forEach(function (line) {
+                        var li = document.createElement('li');
+                        li.textContent = line;
+                        list.appendChild(li);
+                    });
+                    panel.appendChild(list);
+                } else if (guide.intro) {
                     var intro = document.createElement('p');
                     intro.className = 'guide-step-text';
                     intro.textContent = guide.intro;
@@ -937,11 +981,7 @@
                 banner.textContent = guide.applyLabel || 'こちらから申請してください';
                 banner.target = '_blank';
                 banner.rel = 'noopener';
-                var urlHint = document.createElement('p');
-                urlHint.className = 'guide-apply-banner-url';
-                urlHint.textContent = linkUrl;
                 box.appendChild(banner);
-                box.appendChild(urlHint);
                 container.appendChild(box);
             }
 

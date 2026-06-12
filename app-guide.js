@@ -232,8 +232,13 @@ var APP_CROWD_STATUS_GUIDE = {
 };
 
 var APP_UNPAID_GUIDE = {
-  intro: '未納金がある間は施設をご利用いただけません\n月会費を2ヶ月滞納されますと規約退会になります\nアプリからお支払い頂ければ、再度施設をご利用いただけます',
-  cardUpdateNote: 'クレジットカード情報は更新されないため、再登録が必要です',
+  introPanelStyle: 'featured',
+  introBullets: [
+    '未納金がある間は施設をご利用いただけません',
+    '月会費を2ヶ月滞納されますと規約退会になります',
+    'アプリからお支払い頂ければ、再度施設をご利用いただけます'
+  ],
+  cardUpdateNote: '支払い後クレジットカード情報は更新されないため、別途再登録が必要です',
   cardUpdateLink: {
     panel: 'card',
     stepId: 'guide-card-step-4',
@@ -284,14 +289,7 @@ var APP_UNPAID_GUIDE = {
 };
 
 var APP_CAMPAIGN_APPLY_GUIDE = {
-  notice: '追加特典は新規入会者様限定です\n入会月末までに必ず申請をお願いいたします\n期間外での特典付与は出来かねます',
-  noticeProminent: true,
-  linkKey: 'specialPlan',
-  applyLabel: 'こちらから申請してください'
-};
-
-var APP_CAMPAIGN_APPLY_GUIDE = {
-  notice: '追加特典は新規入会者様限定です\n入会月末までに必ず申請をお願いいたします\n期間外での特典付与は出来かねます',
+  notice: '追加特典は新規入会者様限定です\n入会月末までに必ず申請をお願いいたします\n※期間外での特典付与は出来かねます',
   noticeProminent: true,
   linkKey: 'specialPlan',
   applyLabel: 'こちらから申請してください'
