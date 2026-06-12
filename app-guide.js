@@ -150,7 +150,7 @@ var APP_CREDIT_CARD_GUIDE = {
       footnote: 'その他のオプションサービスの料金は発生いたしません',
       feeExample: {
         title: '負担金額の参考例',
-        subtitle: '安心サポートVIP＋ヨガマットロッカーを契約中の場合（1ヶ月）',
+        subtitle: '安心サポートVIP＋ヨガマットロッカーを契約中の場合',
         lines: [
           { label: '休会費用', amount: '2,200円' },
           { label: '安心サポートVIP（半額）', amount: '412円' },
