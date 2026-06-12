@@ -437,6 +437,27 @@
             transform: scale(0.98);
             box-shadow: 0 4px 14px rgba(220, 38, 38, 0.2);
         }
+        .guide-apply-banner-box {
+            margin-top: 0.25rem;
+            padding: 1.2rem 1.1rem 1.3rem;
+            border-radius: calc(var(--radius) + 2px);
+            border: 1px solid rgba(220, 38, 38, 0.14);
+            background: linear-gradient(165deg, #ffffff 0%, #fff5f5 100%);
+            box-shadow:
+                0 1px 0 rgba(255, 255, 255, 0.95) inset,
+                0 8px 28px rgba(220, 38, 38, 0.1);
+            text-align: center;
+        }
+        .guide-apply-banner-box .guide-action-banner {
+            margin-bottom: 0.65rem;
+        }
+        .guide-apply-banner-url {
+            margin: 0;
+            font-size: 0.72rem;
+            color: var(--muted);
+            word-break: break-all;
+            line-height: 1.5;
+        }
         .guide-step-head {
             display: flex;
             align-items: center;
@@ -900,6 +921,30 @@
                 container.appendChild(wrap);
             }
 
+            function renderCampaignApply(container, guide) {
+                if (guide.notice) {
+                    renderProminentNotice(container, guide.notice, {
+                        prominent: guide.noticeProminent !== false
+                    });
+                }
+                var linkUrl = resolveSiteLink(guide.linkKey);
+                if (!linkUrl || linkUrl === '#') return;
+                var box = document.createElement('div');
+                box.className = 'guide-apply-banner-box';
+                var banner = document.createElement('a');
+                banner.className = 'guide-action-banner';
+                banner.href = linkUrl;
+                banner.textContent = guide.applyLabel || 'こちらから申請してください';
+                banner.target = '_blank';
+                banner.rel = 'noopener';
+                var urlHint = document.createElement('p');
+                urlHint.className = 'guide-apply-banner-url';
+                urlHint.textContent = linkUrl;
+                box.appendChild(banner);
+                box.appendChild(urlHint);
+                container.appendChild(box);
+            }
+
             function renderCorporateSection(container, section) {
                 if (section.notice) {
                     renderProminentNotice(container, section.notice, { prominent: section.noticeProminent });
@@ -1026,6 +1071,10 @@
 
                 if (section.visualGuide === 'rejoin' && typeof APP_REJOIN_SECTION !== 'undefined') {
                     renderCorporateSection(body, APP_REJOIN_SECTION);
+                }
+
+                if (section.visualGuide === 'campaignApply' && typeof APP_CAMPAIGN_APPLY_GUIDE !== 'undefined') {
+                    renderCampaignApply(body, APP_CAMPAIGN_APPLY_GUIDE);
                 }
 
                 if (section.visualGuide === 'unpaidPayment' && typeof APP_UNPAID_GUIDE !== 'undefined') {

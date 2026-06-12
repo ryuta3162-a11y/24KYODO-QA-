@@ -282,3 +282,17 @@ var APP_UNPAID_GUIDE = {
     ]
   }
 };
+
+var APP_CAMPAIGN_APPLY_GUIDE = {
+  notice: '追加特典は新規入会者様限定です\n入会月末までに必ず申請をお願いいたします\n期間外での特典付与は出来かねます',
+  noticeProminent: true,
+  linkKey: 'specialPlan',
+  applyLabel: 'こちらから申請してください'
+};
+
+var APP_CAMPAIGN_APPLY_GUIDE = {
+  notice: '追加特典は新規入会者様限定です\n入会月末までに必ず申請をお願いいたします\n期間外での特典付与は出来かねます',
+  noticeProminent: true,
+  linkKey: 'specialPlan',
+  applyLabel: 'こちらから申請してください'
+};

@@ -15,6 +15,8 @@ var SITE_LINKS = {
   freetrial: '',
   /** LP · マシンラインナップ（GAS Webアプリ exec URL） */
   machine: '',
+  /** LP · 追加特典・キャンペーン申請 */
+  specialPlan: 'https://24kyodo-special-plan.vercel.app/',
   /** LP · キャンペーン一覧（24kyodo-special2） */
   special2Index: '',
   referralForm: '',
@@ -52,6 +54,6 @@ function resolveSiteLink(key) {
 var RELATED_PAGES = [
   { key: 'storeHp', label: '店舗HP' },
   { key: 'freetrial', label: '無料体験予約' },
-  { key: 'special2Index', label: 'キャンペーン申請' },
+  { key: 'specialPlan', label: '追加特典申請' },
   { key: 'machine', label: 'マシン一覧' }
 ];
