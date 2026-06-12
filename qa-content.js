@@ -4,7 +4,7 @@
  * 外部リンクは linkKey（site-links.js のキー）で指定します
  */
 var QA_MASTER = {
-  updatedAt: '2026-06-30',
+  updatedAt: '2026-07-01',
   sections: [
     {
       id: 'app',

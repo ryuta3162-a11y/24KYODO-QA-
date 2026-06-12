@@ -129,6 +129,18 @@ var APP_CREDIT_CARD_GUIDE = {
         '休会は月額2,000円（税込2,200円）',
         '1ヶ月から3ヶ月まで選択できます。最大3ヶ月です'
       ],
+      cautionNotice: {
+        badge: 'ご注意ください',
+        headline: '休会中に退会することは原則できません',
+        body: '休会期間中は退会手続きをお取りいただけません',
+        exampleTitle: '例）3月に休会していた場合',
+        timeline: [
+          { month: '3月', label: '休会中', status: '退会不可', statusTone: 'no' },
+          { month: '4月', label: '通常会員に復帰', status: '復帰月', statusTone: 'mid' },
+          { month: '4月末', label: '退会可能となる最短のタイミング', status: '退会可', statusTone: 'yes' }
+        ],
+        summary: '最短で退会できるのは、復帰した月の月末となります'
+      },
       feeGroups: [
         {
           badge: '休会中も全額負担',

@@ -467,6 +467,122 @@
             margin: 0.85rem 0 0.9rem;
             background: linear-gradient(90deg, rgba(220, 38, 38, 0.22) 0%, rgba(220, 38, 38, 0.06) 100%);
         }
+        .guide-caution-notice {
+            margin-top: 1rem;
+            padding: 1.05rem 1rem 1.1rem;
+            border-radius: calc(var(--radius) - 2px);
+            border: 2px solid rgba(153, 27, 27, 0.3);
+            background: linear-gradient(165deg, rgba(254, 242, 242, 0.62) 0%, #ffffff 48%, #f9fafb 100%);
+            box-shadow:
+                0 1px 0 rgba(255, 255, 255, 0.95) inset,
+                0 8px 28px rgba(127, 29, 29, 0.12);
+        }
+        .guide-caution-badge {
+            display: inline-block;
+            margin-bottom: 0.6rem;
+            padding: 0.28rem 0.7rem;
+            border-radius: 3px;
+            font-size: 0.62rem;
+            font-weight: 900;
+            letter-spacing: 0.14em;
+            color: #fff;
+            background: linear-gradient(135deg, #991B1B 0%, var(--brand-red) 100%);
+            box-shadow: 0 3px 10px rgba(153, 27, 27, 0.22);
+        }
+        .guide-caution-headline {
+            margin: 0 0 0.4rem;
+            font-size: 0.84rem;
+            font-weight: 800;
+            color: #7F1D1D;
+            line-height: 1.65;
+            letter-spacing: 0.03em;
+        }
+        .guide-caution-body {
+            margin: 0 0 0.85rem;
+            font-size: 0.74rem;
+            font-weight: 600;
+            color: #4B5563;
+            line-height: 1.7;
+        }
+        .guide-caution-example {
+            padding: 0.82rem 0.85rem 0.75rem;
+            border-radius: calc(var(--radius) - 4px);
+            background: rgba(255, 255, 255, 0.92);
+            border: 1px solid rgba(17, 24, 39, 0.08);
+        }
+        .guide-caution-example-title {
+            margin: 0 0 0.55rem;
+            font-size: 0.72rem;
+            font-weight: 800;
+            color: #374151;
+            letter-spacing: 0.04em;
+        }
+        .guide-caution-timeline {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .guide-caution-step {
+            display: flex;
+            align-items: center;
+            gap: 0.55rem;
+            padding: 0.5rem 0;
+            border-bottom: 1px dashed rgba(17, 24, 39, 0.08);
+        }
+        .guide-caution-step:last-child {
+            border-bottom: none;
+            padding-bottom: 0.15rem;
+        }
+        .guide-caution-step-month {
+            flex-shrink: 0;
+            width: 2.85rem;
+            font-size: 0.74rem;
+            font-weight: 900;
+            color: var(--brand-red);
+            letter-spacing: 0.02em;
+        }
+        .guide-caution-step-label {
+            flex: 1;
+            min-width: 0;
+            font-size: 0.73rem;
+            font-weight: 600;
+            color: #374151;
+            line-height: 1.5;
+        }
+        .guide-caution-step-status {
+            flex-shrink: 0;
+            padding: 0.18rem 0.48rem;
+            border-radius: 999px;
+            font-size: 0.62rem;
+            font-weight: 800;
+            letter-spacing: 0.04em;
+        }
+        .guide-caution-step-status.is-no {
+            color: #991B1B;
+            background: rgba(153, 27, 27, 0.1);
+            border: 1px solid rgba(153, 27, 27, 0.16);
+        }
+        .guide-caution-step-status.is-mid {
+            color: #6B7280;
+            background: rgba(17, 24, 39, 0.05);
+            border: 1px solid rgba(17, 24, 39, 0.08);
+        }
+        .guide-caution-step-status.is-yes {
+            color: var(--brand-red);
+            background: rgba(220, 38, 38, 0.1);
+            border: 1px solid rgba(220, 38, 38, 0.18);
+        }
+        .guide-caution-summary {
+            margin: 0.72rem 0 0;
+            padding-top: 0.65rem;
+            border-top: 1px solid rgba(153, 27, 27, 0.12);
+            font-size: 0.72rem;
+            font-weight: 800;
+            color: #7F1D1D;
+            text-align: center;
+            line-height: 1.65;
+            letter-spacing: 0.03em;
+        }
         .guide-fee-groups {
             display: flex;
             flex-direction: column;
@@ -1674,6 +1790,70 @@
                 container.appendChild(section);
             }
 
+            function appendGuideCautionNotice(parent, notice) {
+                if (!notice) return;
+                var box = document.createElement('div');
+                box.className = 'guide-caution-notice';
+                if (notice.badge) {
+                    var badge = document.createElement('span');
+                    badge.className = 'guide-caution-badge';
+                    badge.textContent = notice.badge;
+                    box.appendChild(badge);
+                }
+                if (notice.headline) {
+                    var headline = document.createElement('p');
+                    headline.className = 'guide-caution-headline';
+                    headline.textContent = notice.headline;
+                    box.appendChild(headline);
+                }
+                if (notice.body) {
+                    var body = document.createElement('p');
+                    body.className = 'guide-caution-body';
+                    body.textContent = notice.body;
+                    box.appendChild(body);
+                }
+                if (notice.timeline && notice.timeline.length) {
+                    var example = document.createElement('div');
+                    example.className = 'guide-caution-example';
+                    if (notice.exampleTitle) {
+                        var exampleTitle = document.createElement('p');
+                        exampleTitle.className = 'guide-caution-example-title';
+                        exampleTitle.textContent = notice.exampleTitle;
+                        example.appendChild(exampleTitle);
+                    }
+                    var timeline = document.createElement('ul');
+                    timeline.className = 'guide-caution-timeline';
+                    notice.timeline.forEach(function (step) {
+                        var row = document.createElement('li');
+                        row.className = 'guide-caution-step';
+                        var month = document.createElement('span');
+                        month.className = 'guide-caution-step-month';
+                        month.textContent = step.month;
+                        var label = document.createElement('span');
+                        label.className = 'guide-caution-step-label';
+                        label.textContent = step.label;
+                        row.appendChild(month);
+                        row.appendChild(label);
+                        if (step.status) {
+                            var status = document.createElement('span');
+                            status.className = 'guide-caution-step-status is-' + (step.statusTone || 'no');
+                            status.textContent = step.status;
+                            row.appendChild(status);
+                        }
+                        timeline.appendChild(row);
+                    });
+                    example.appendChild(timeline);
+                    box.appendChild(example);
+                }
+                if (notice.summary) {
+                    var summary = document.createElement('p');
+                    summary.className = 'guide-caution-summary';
+                    summary.textContent = notice.summary;
+                    box.appendChild(summary);
+                }
+                parent.appendChild(box);
+            }
+
             function renderGuideInfoPanels(container, panels) {
                 if (!panels || !panels.length) return;
                 var stack = document.createElement('div');
@@ -1689,6 +1869,9 @@
                     body.className = 'guide-info-body';
                     if (panel.bullets && panel.bullets.length) {
                         appendGuideBulletList(body, panel.bullets);
+                    }
+                    if (panel.cautionNotice) {
+                        appendGuideCautionNotice(body, panel.cautionNotice);
                     }
                     if (panel.linkKey) {
                         var panelLinkUrl = resolveSiteLink(panel.linkKey);
