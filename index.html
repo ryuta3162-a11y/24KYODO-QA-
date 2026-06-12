@@ -450,6 +450,18 @@
             background: linear-gradient(105deg, rgba(254, 242, 242, 0.38) 0%, #ffffff 48%, #fafafa 100%);
             border-left: 3px solid var(--brand-red);
         }
+        .guide-info-link-wrap {
+            margin: 0;
+            text-align: center;
+        }
+        .guide-info-link {
+            color: var(--brand-red);
+            font-size: 0.8125rem;
+            font-weight: 700;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 2px;
+        }
         .guide-info-divider {
             height: 1px;
             margin: 0.85rem 0 0.9rem;
@@ -1600,7 +1612,7 @@
                 card.className = 'guide-option-pricing-card';
                 var head = document.createElement('div');
                 head.className = 'guide-option-pricing-head';
-                head.textContent = pricing.title || 'オプション料金';
+                head.textContent = pricing.title || '各種オプション料金一覧';
                 card.appendChild(head);
                 if (pricing.lead) {
                     var lead = document.createElement('p');
@@ -1675,7 +1687,24 @@
                     wrap.appendChild(head);
                     var body = document.createElement('div');
                     body.className = 'guide-info-body';
-                    appendGuideBulletList(body, panel.bullets);
+                    if (panel.bullets && panel.bullets.length) {
+                        appendGuideBulletList(body, panel.bullets);
+                    }
+                    if (panel.linkKey) {
+                        var panelLinkUrl = resolveSiteLink(panel.linkKey);
+                        if (panelLinkUrl && panelLinkUrl.indexOf('http') === 0) {
+                            var linkWrap = document.createElement('p');
+                            linkWrap.className = 'guide-info-link-wrap';
+                            var panelLink = document.createElement('a');
+                            panelLink.className = 'guide-info-link';
+                            panelLink.href = panelLinkUrl;
+                            panelLink.textContent = panel.linkLabel || '詳細はこちら';
+                            panelLink.target = '_blank';
+                            panelLink.rel = 'noopener';
+                            linkWrap.appendChild(panelLink);
+                            body.appendChild(linkWrap);
+                        }
+                    }
                     if (panel.feeGroups && panel.feeGroups.length) {
                         var divider = document.createElement('div');
                         divider.className = 'guide-info-divider';
