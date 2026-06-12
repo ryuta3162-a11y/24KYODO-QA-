@@ -455,6 +455,92 @@
             margin: 0.85rem 0 0.9rem;
             background: linear-gradient(90deg, rgba(220, 38, 38, 0.22) 0%, rgba(220, 38, 38, 0.06) 100%);
         }
+        .guide-fee-groups {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+        .guide-fee-group {
+            padding: 0.85rem 0.9rem 0.75rem;
+            border-radius: calc(var(--radius) - 2px);
+            background: rgba(255, 255, 255, 0.88);
+            border: 1px solid rgba(220, 38, 38, 0.1);
+            box-shadow:
+                0 1px 0 rgba(255, 255, 255, 0.95) inset,
+                0 3px 14px rgba(17, 24, 39, 0.05);
+        }
+        .guide-fee-badge {
+            display: inline-flex;
+            align-items: center;
+            margin-bottom: 0.65rem;
+            padding: 0.3rem 0.7rem;
+            border-radius: 999px;
+            font-size: 0.68rem;
+            font-weight: 800;
+            letter-spacing: 0.07em;
+        }
+        .guide-fee-badge.is-full {
+            background: linear-gradient(135deg, rgba(254, 242, 242, 0.95) 0%, rgba(255, 255, 255, 0.9) 100%);
+            color: var(--brand-red);
+            border: 1px solid rgba(220, 38, 38, 0.2);
+            box-shadow: 0 2px 8px rgba(220, 38, 38, 0.08);
+        }
+        .guide-fee-badge.is-half {
+            background: #ffffff;
+            color: #B91C1C;
+            border: 1px dashed rgba(220, 38, 38, 0.28);
+        }
+        .guide-fee-row {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 0.85rem;
+            padding: 0.58rem 0;
+            border-bottom: 1px solid rgba(17, 24, 39, 0.06);
+        }
+        .guide-fee-row:last-child {
+            border-bottom: none;
+            padding-bottom: 0.15rem;
+        }
+        .guide-fee-label {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--ink);
+            line-height: 1.5;
+            flex: 1;
+            min-width: 0;
+        }
+        .guide-fee-price {
+            text-align: right;
+            flex-shrink: 0;
+        }
+        .guide-fee-ex {
+            display: block;
+            font-size: 0.8125rem;
+            font-weight: 800;
+            color: var(--ink);
+            letter-spacing: 0.02em;
+        }
+        .guide-fee-inc {
+            display: block;
+            margin-top: 0.15rem;
+            font-size: 0.68rem;
+            font-weight: 600;
+            color: var(--muted);
+            letter-spacing: 0.03em;
+        }
+        .guide-info-footnote {
+            margin: 0.9rem 0 0;
+            padding: 0.72rem 0.85rem;
+            border-radius: calc(var(--radius) - 4px);
+            background: rgba(254, 242, 242, 0.5);
+            border: 1px dashed rgba(220, 38, 38, 0.16);
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #4B5563;
+            line-height: 1.65;
+            text-align: center;
+        }
         .guide-flow-title {
             font-size: 0.8125rem;
             font-weight: 800;
@@ -1241,6 +1327,42 @@
                 parent.appendChild(list);
             }
 
+            function appendGuideFeeGroups(parent, feeGroups) {
+                if (!feeGroups || !feeGroups.length) return;
+                var groups = document.createElement('div');
+                groups.className = 'guide-fee-groups';
+                feeGroups.forEach(function (group) {
+                    var block = document.createElement('div');
+                    block.className = 'guide-fee-group';
+                    var badge = document.createElement('span');
+                    badge.className = 'guide-fee-badge is-' + (group.badgeTone || 'full');
+                    badge.textContent = group.badge;
+                    block.appendChild(badge);
+                    group.items.forEach(function (item) {
+                        var row = document.createElement('div');
+                        row.className = 'guide-fee-row';
+                        var label = document.createElement('span');
+                        label.className = 'guide-fee-label';
+                        label.textContent = item.label;
+                        var price = document.createElement('span');
+                        price.className = 'guide-fee-price';
+                        var ex = document.createElement('span');
+                        ex.className = 'guide-fee-ex';
+                        ex.textContent = item.exTax;
+                        var inc = document.createElement('span');
+                        inc.className = 'guide-fee-inc';
+                        inc.textContent = '税込 ' + item.incTax;
+                        price.appendChild(ex);
+                        price.appendChild(inc);
+                        row.appendChild(label);
+                        row.appendChild(price);
+                        block.appendChild(row);
+                    });
+                    groups.appendChild(block);
+                });
+                parent.appendChild(groups);
+            }
+
             function renderGuideInfoPanels(container, panels) {
                 if (!panels || !panels.length) return;
                 var stack = document.createElement('div');
@@ -1255,12 +1377,24 @@
                     var body = document.createElement('div');
                     body.className = 'guide-info-body';
                     appendGuideBulletList(body, panel.bullets);
-                    if (panel.extraBullets && panel.extraBullets.length) {
+                    if (panel.feeGroups && panel.feeGroups.length) {
                         var divider = document.createElement('div');
                         divider.className = 'guide-info-divider';
                         divider.setAttribute('aria-hidden', 'true');
                         body.appendChild(divider);
+                        appendGuideFeeGroups(body, panel.feeGroups);
+                    } else if (panel.extraBullets && panel.extraBullets.length) {
+                        var dividerAlt = document.createElement('div');
+                        dividerAlt.className = 'guide-info-divider';
+                        dividerAlt.setAttribute('aria-hidden', 'true');
+                        body.appendChild(dividerAlt);
                         appendGuideBulletList(body, panel.extraBullets);
+                    }
+                    if (panel.footnote) {
+                        var footnote = document.createElement('p');
+                        footnote.className = 'guide-info-footnote';
+                        footnote.textContent = panel.footnote;
+                        body.appendChild(footnote);
                     }
                     wrap.appendChild(body);
                     stack.appendChild(wrap);

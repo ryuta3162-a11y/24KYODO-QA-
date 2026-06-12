@@ -126,14 +126,28 @@ var APP_CREDIT_CARD_GUIDE = {
     {
       title: '休会について',
       bullets: [
-        '休会は2,000円（税込2,200円）',
+        '休会は月額2,000円（税込2,200円）',
         '1ヶ月から3ヶ月まで選択できます。最大3ヶ月です'
       ],
-      extraBullets: [
-        '契約ロッカーとヨガマットロッカーは全額のお支払い、休会期間中も',
-        '安心サポート通常・VIPは半額お支払いいただきます',
-        'その他のオプションサービスの料金は発生いたしません'
-      ]
+      feeGroups: [
+        {
+          badge: '休会中も全額負担',
+          badgeTone: 'full',
+          items: [
+            { label: '契約ロッカー', exTax: '1,500円', incTax: '1,650円' },
+            { label: 'ヨガマットロッカー', exTax: '1,000円', incTax: '1,100円' }
+          ]
+        },
+        {
+          badge: '半額負担',
+          badgeTone: 'half',
+          items: [
+            { label: '安心サポート', exTax: '500円', incTax: '550円' },
+            { label: '安心サポートVIP', exTax: '750円', incTax: '825円' }
+          ]
+        }
+      ],
+      footnote: 'その他のオプションサービスの料金は発生いたしません'
     }
   ],
   steps: [
