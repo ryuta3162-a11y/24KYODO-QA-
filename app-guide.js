@@ -59,13 +59,17 @@ var APP_REGISTRATION_GUIDE = {
 };
 
 var APP_PT_LINE_GUIDE = {
-  introPanelStyle: 'featured',
-  introBullets: [
-    'パーソナルトレーニングのご予約・ご案内はLINEで承っております',
-    '担当トレーナーのQRを読み取り、友だち追加後にご連絡ください'
+  hero: {
+    eyebrow: 'PERSONAL TRAINER',
+    brand: 'JOYFIT24 経堂',
+    lead: 'お申し込みはLINEの友だち追加から'
+  },
+  prices: [
+    { duration: '30分', amount: '3,300円' },
+    { duration: '60分', amount: '6,600円' },
+    { duration: '90分', amount: '9,900円' }
   ],
   notice: '友だち追加のみですと見逃してしまう可能性があります\n必ずご要望やご挨拶の一言をメッセージでお送りください',
-  noticeProminent: true,
   trainers: [
     {
       nameSei: '日下',
@@ -73,7 +77,18 @@ var APP_PT_LINE_GUIDE = {
       kana: 'クサカ リュウタ',
       photo: 'images/trainers/kusaka.jpg',
       qr: 'images/trainers/qr-kusaka.png',
-      qrNote: 'LINE・Googleカレンダー空き時間のQR'
+      qrNote: 'LINE・Googleカレンダー空き時間のQR',
+      highlightTitle: '現在の最高記録',
+      highlights: [
+        { label: 'スクワット', value: '230', unit: 'kg' },
+        { label: 'ベンチプレス', value: '180', unit: 'kg' },
+        { label: 'デッドリフト', value: '280', unit: 'kg' }
+      ],
+      reco: [
+        'BIG3の重量を伸ばしたい',
+        'フリーウエイトの使い方が知りたい',
+        '筋肉量を増やしたい'
+      ]
     },
     {
       nameSei: '石田',
@@ -81,7 +96,19 @@ var APP_PT_LINE_GUIDE = {
       kana: 'イシダ ミエ',
       photo: 'images/trainers/ishida.jpg',
       qr: 'images/trainers/qr-ishida.png',
-      qrNote: 'LINE友だち追加用QR'
+      qrNote: 'LINE友だち追加用QR',
+      highlightTitle: '取得資格',
+      highlights: [
+        { label: 'YOGA RYT200' },
+        { label: 'Core Functional Yoga' },
+        { label: '美しい骨盤' }
+      ],
+      recoTags: ['FWエリアを使ってみたい', 'ダンベルトレーニングをしてみたい'],
+      reco: [
+        '二の腕引き締め',
+        'ヒップアップ',
+        '姿勢改善'
+      ]
     }
   ],
   footnote: 'JOYFIT24経堂常駐スタッフですので直接お声がけいただいても大丈夫です'

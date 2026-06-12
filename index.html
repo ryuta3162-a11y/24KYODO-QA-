@@ -495,89 +495,318 @@
         }
 
         /* ── PT LINE trainers ── */
-        .pt-trainer-grid {
+        .pt-hero {
+            position: relative;
+            margin-bottom: 1.15rem;
+            padding: 1.2rem 1.1rem 1.25rem;
+            border-radius: calc(var(--radius) + 4px);
+            overflow: hidden;
+            color: #fff;
+            background: linear-gradient(135deg, #1f2937 0%, #111827 38%, #7f1d1d 100%);
+            box-shadow: 0 14px 36px rgba(17, 24, 39, 0.22);
+        }
+        .pt-hero::before {
+            content: "";
+            position: absolute;
+            inset: -40% -20% auto;
+            height: 140%;
+            background: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.18), transparent 55%);
+            animation: ptHeroGlow 5s ease-in-out infinite alternate;
+        }
+        .pt-hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(120deg, transparent 30%, rgba(255, 255, 255, 0.07) 50%, transparent 70%);
+            transform: translateX(-120%);
+            animation: ptHeroShine 4.5s ease-in-out infinite;
+        }
+        .pt-hero > * { position: relative; z-index: 1; }
+        .pt-hero-eyebrow {
+            margin: 0 0 0.4rem;
+            font-size: 0.62rem;
+            font-weight: 800;
+            letter-spacing: 0.22em;
+            color: rgba(255, 255, 255, 0.82);
+        }
+        .pt-hero-brand {
+            margin: 0 0 0.55rem;
+            font-size: 1.35rem;
+            font-weight: 900;
+            letter-spacing: 0.04em;
+            line-height: 1.3;
+        }
+        .pt-hero-lead {
+            margin: 0;
+            font-size: 0.8125rem;
+            font-weight: 600;
+            line-height: 1.65;
+            color: rgba(255, 255, 255, 0.92);
+        }
+        .pt-hero-lead strong {
+            color: #86efac;
+            font-weight: 800;
+        }
+        .pt-price-strip {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.1rem;
-            margin-top: 0.25rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.55rem;
+            margin-bottom: 1.15rem;
         }
-        @media (min-width: 380px) {
-            .pt-trainer-grid {
-                grid-template-columns: 1fr 1fr;
-            }
+        .pt-price-pill {
+            padding: 0.75rem 0.45rem;
+            border-radius: calc(var(--radius) - 2px);
+            border: 1px solid rgba(220, 38, 38, 0.12);
+            background: linear-gradient(180deg, #fff 0%, #fff7f7 100%);
+            box-shadow: 0 4px 16px rgba(220, 38, 38, 0.08);
+            text-align: center;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
         }
-        .pt-trainer-card {
+        .pt-price-pill:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 22px rgba(220, 38, 38, 0.14);
+        }
+        .pt-price-duration {
+            display: block;
+            font-size: 0.68rem;
+            font-weight: 700;
+            color: var(--muted);
+            margin-bottom: 0.2rem;
+        }
+        .pt-price-amount {
+            display: block;
+            font-size: 0.95rem;
+            font-weight: 900;
+            color: var(--brand-red);
+            line-height: 1.2;
+        }
+        .pt-price-tax {
+            display: block;
+            font-size: 0.58rem;
+            font-weight: 600;
+            color: var(--muted);
+            margin-top: 0.1rem;
+        }
+        .pt-trainer-stack {
             display: flex;
             flex-direction: column;
-            border-radius: calc(var(--radius) + 2px);
+            gap: 1.35rem;
+        }
+        .pt-trainer-showcase {
+            border-radius: calc(var(--radius) + 4px);
             border: 1px solid rgba(17, 24, 39, 0.08);
-            background: linear-gradient(180deg, #ffffff 0%, #f9fafb 100%);
-            box-shadow:
-                0 1px 0 rgba(255, 255, 255, 0.95) inset,
-                var(--shadow-soft);
+            background: #fff;
+            box-shadow: var(--shadow-lift);
             overflow: hidden;
         }
-        .pt-trainer-photo {
-            aspect-ratio: 4 / 5;
-            background: #f3f4f6;
+        .qa-panel.is-active .pt-trainer-showcase {
+            animation: ptCardIn 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+        }
+        .qa-panel.is-active .pt-trainer-showcase:nth-child(2) { animation-delay: 0.12s; }
+        .qa-panel.is-active .pt-trainer-showcase:nth-child(3) { animation-delay: 0.24s; }
+        .pt-trainer-visual {
+            position: relative;
+            aspect-ratio: 16 / 11;
+            background: #111827;
             overflow: hidden;
         }
-        .pt-trainer-photo img {
+        .pt-trainer-visual img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             object-position: top center;
             display: block;
+            transform: scale(1.02);
+            transition: transform 0.6s ease;
         }
-        .pt-trainer-body {
-            padding: 0.85rem 0.8rem 1rem;
-            display: flex;
-            flex-direction: column;
-            flex: 1;
+        .pt-trainer-showcase:hover .pt-trainer-visual img {
+            transform: scale(1.06);
         }
-        .pt-trainer-role {
-            margin: 0 0 0.35rem;
-            font-size: 0.62rem;
+        .pt-trainer-visual::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 35%, rgba(17, 24, 39, 0.88) 100%);
+        }
+        .pt-trainer-visual-caption {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+            padding: 1rem 1rem 0.95rem;
+        }
+        .pt-trainer-visual-role {
+            margin: 0 0 0.25rem;
+            font-size: 0.58rem;
             font-weight: 800;
-            letter-spacing: 0.14em;
-            color: var(--brand-red);
+            letter-spacing: 0.18em;
+            color: #fca5a5;
         }
-        .pt-trainer-name {
-            margin: 0 0 0.15rem;
-            font-size: 1.05rem;
+        .pt-trainer-visual-name {
+            margin: 0;
+            font-size: 1.45rem;
             font-weight: 900;
-            line-height: 1.35;
-            color: var(--ink);
+            color: #fff;
+            line-height: 1.25;
         }
-        .pt-trainer-kana {
-            margin: 0 0 0.75rem;
+        .pt-trainer-visual-kana {
+            margin: 0.2rem 0 0;
             font-size: 0.68rem;
             font-weight: 600;
+            color: rgba(255, 255, 255, 0.75);
+            letter-spacing: 0.1em;
+        }
+        .pt-trainer-main {
+            padding: 1rem 1rem 1.15rem;
+        }
+        .pt-highlight-box {
+            margin-bottom: 0.95rem;
+            padding: 0.85rem 0.9rem;
+            border-radius: calc(var(--radius) - 2px);
+            background: linear-gradient(135deg, #fef2f2 0%, #fff 100%);
+            border: 1px solid rgba(220, 38, 38, 0.1);
+        }
+        .pt-highlight-title {
+            margin: 0 0 0.6rem;
+            font-size: 0.72rem;
+            font-weight: 800;
+            color: var(--brand-red);
+            letter-spacing: 0.06em;
+        }
+        .pt-highlight-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.45rem;
+        }
+        .pt-highlight-item {
+            padding: 0.5rem 0.35rem;
+            border-radius: 0.55rem;
+            background: rgba(255, 255, 255, 0.85);
+            text-align: center;
+            font-size: 0.62rem;
+            font-weight: 700;
+            color: #374151;
+            line-height: 1.45;
+        }
+        .pt-highlight-item.is-record .pt-hl-label {
+            display: block;
+            font-size: 0.58rem;
             color: var(--muted);
-            letter-spacing: 0.08em;
+            margin-bottom: 0.15rem;
+        }
+        .pt-highlight-item.is-record .pt-hl-value {
+            display: block;
+            font-size: 1rem;
+            font-weight: 900;
+            color: var(--ink);
+            line-height: 1.1;
+        }
+        .pt-highlight-item.is-record .pt-hl-value small {
+            font-size: 0.62rem;
+            font-weight: 700;
+            margin-left: 0.1rem;
+        }
+        .pt-reco-box {
+            margin-bottom: 1rem;
+        }
+        .pt-reco-title {
+            margin: 0 0 0.55rem;
+            font-size: 0.75rem;
+            font-weight: 800;
+            color: var(--ink);
+        }
+        .pt-reco-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-bottom: 0.55rem;
+        }
+        .pt-reco-tag {
+            padding: 0.35rem 0.55rem;
+            border-radius: 9999px;
+            background: rgba(17, 24, 39, 0.06);
+            font-size: 0.65rem;
+            font-weight: 700;
+            color: #374151;
+        }
+        .pt-reco-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .pt-reco-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.45rem;
+            margin-bottom: 0.45rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #374151;
+            line-height: 1.55;
+        }
+        .pt-reco-list li::before {
+            content: "";
+            flex-shrink: 0;
+            width: 0.45rem;
+            height: 0.45rem;
+            margin-top: 0.38rem;
+            border-radius: 50%;
+            background: var(--brand-red);
+            box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.15);
+        }
+        .pt-cta-panel {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 0.85rem;
+            align-items: center;
+            padding: 0.9rem;
+            border-radius: calc(var(--radius) - 2px);
+            background: linear-gradient(135deg, #f0fdf4 0%, #fff 55%, #fef2f2 100%);
+            border: 1px solid rgba(6, 199, 85, 0.2);
+        }
+        .pt-cta-copy-lead {
+            margin: 0 0 0.35rem;
+            font-size: 0.78rem;
+            font-weight: 800;
+            color: var(--ink);
+            line-height: 1.5;
+        }
+        .pt-cta-copy-sub {
+            margin: 0;
+            font-size: 0.68rem;
+            color: #4b5563;
+            line-height: 1.55;
         }
         .pt-line-badge {
             display: inline-flex;
             align-items: center;
-            justify-content: center;
-            align-self: center;
-            margin-bottom: 0.65rem;
-            padding: 0.35rem 0.7rem;
+            gap: 0.35rem;
+            margin-bottom: 0.45rem;
+            padding: 0.32rem 0.65rem;
             border-radius: 9999px;
             background: #06C755;
             color: #fff;
-            font-size: 0.68rem;
+            font-size: 0.65rem;
             font-weight: 800;
-            letter-spacing: 0.06em;
+            letter-spacing: 0.05em;
+            animation: ptLinePulse 2.2s ease-in-out infinite;
+        }
+        .pt-line-badge::before {
+            content: "";
+            width: 0.4rem;
+            height: 0.4rem;
+            border-radius: 50%;
+            background: #fff;
         }
         .pt-trainer-qr {
-            margin: 0 auto;
-            width: min(100%, 132px);
-            padding: 0.55rem;
-            border-radius: calc(var(--radius) - 4px);
+            width: 108px;
+            padding: 0.5rem;
+            border-radius: 0.65rem;
             background: #fff;
-            border: 1px solid rgba(17, 24, 39, 0.08);
-            box-shadow: 0 4px 14px rgba(17, 24, 39, 0.08);
+            border: 2px solid rgba(220, 38, 38, 0.15);
+            box-shadow: 0 6px 20px rgba(17, 24, 39, 0.12);
+            animation: ptQrGlow 2.8s ease-in-out infinite;
         }
         .pt-trainer-qr img {
             width: 100%;
@@ -585,19 +814,30 @@
             display: block;
         }
         .pt-trainer-qr-note {
-            margin: 0.55rem 0 0;
-            font-size: 0.62rem;
-            line-height: 1.55;
+            margin: 0.45rem 0 0;
+            font-size: 0.58rem;
+            line-height: 1.5;
             color: var(--muted);
-            text-align: center;
         }
-        .pt-trainer-scan {
-            margin: 0.7rem 0 0;
-            font-size: 0.7rem;
-            font-weight: 700;
-            line-height: 1.55;
-            color: #374151;
-            text-align: center;
+        @keyframes ptHeroGlow {
+            from { opacity: 0.55; transform: translateY(0); }
+            to { opacity: 1; transform: translateY(-4%); }
+        }
+        @keyframes ptHeroShine {
+            0%, 75%, 100% { transform: translateX(-120%); }
+            40% { transform: translateX(120%); }
+        }
+        @keyframes ptCardIn {
+            from { opacity: 0; transform: translateY(18px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes ptLinePulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(6, 199, 85, 0.35); }
+            50% { box-shadow: 0 0 0 8px rgba(6, 199, 85, 0); }
+        }
+        @keyframes ptQrGlow {
+            0%, 100% { box-shadow: 0 6px 20px rgba(17, 24, 39, 0.12); }
+            50% { box-shadow: 0 8px 26px rgba(220, 38, 38, 0.18); }
         }
         .guide-step-head {
             display: flex;
@@ -798,13 +1038,20 @@
 
         @media (prefers-reduced-motion: reduce) {
             .qa-panel,
-            .guide-step-card.is-highlight {
+            .guide-step-card.is-highlight,
+            .pt-hero::before,
+            .pt-hero::after,
+            .pt-trainer-showcase,
+            .pt-line-badge,
+            .pt-trainer-qr {
                 animation: none;
             }
             .qa-tab,
             .guide-cross-link,
             .guide-step-card,
-            .guide-action-banner {
+            .guide-action-banner,
+            .pt-trainer-visual img,
+            .pt-price-pill {
                 transition: none;
             }
         }
@@ -1072,44 +1319,153 @@
             }
 
             function renderPtLineGuide(container, guide) {
-                renderGuideIntroPanel(container, guide);
-                if (guide.notice) {
-                    renderProminentNotice(container, guide.notice, {
-                        prominent: guide.noticeProminent !== false
+                if (guide.hero) {
+                    var hero = document.createElement('div');
+                    hero.className = 'pt-hero pt-animate-in';
+                    var eyebrow = document.createElement('p');
+                    eyebrow.className = 'pt-hero-eyebrow';
+                    eyebrow.textContent = guide.hero.eyebrow || 'PERSONAL TRAINER';
+                    hero.appendChild(eyebrow);
+                    var brand = document.createElement('p');
+                    brand.className = 'pt-hero-brand';
+                    brand.textContent = guide.hero.brand || 'JOYFIT24 経堂';
+                    hero.appendChild(brand);
+                    var lead = document.createElement('p');
+                    lead.className = 'pt-hero-lead';
+                    lead.innerHTML = (guide.hero.lead || '').replace('LINE', '<strong>LINE</strong>');
+                    hero.appendChild(lead);
+                    container.appendChild(hero);
+                }
+                if (guide.prices && guide.prices.length) {
+                    var priceTitle = document.createElement('h3');
+                    priceTitle.className = 'guide-subtitle pt-animate-in';
+                    priceTitle.style.marginTop = '0';
+                    priceTitle.textContent = 'パーソナル料金（税込）';
+                    container.appendChild(priceTitle);
+                    var priceStrip = document.createElement('div');
+                    priceStrip.className = 'pt-price-strip pt-animate-in';
+                    guide.prices.forEach(function (price) {
+                        var pill = document.createElement('div');
+                        pill.className = 'pt-price-pill';
+                        pill.innerHTML =
+                            '<span class="pt-price-duration">' + price.duration + '</span>' +
+                            '<span class="pt-price-amount">' + price.amount + '</span>' +
+                            '<span class="pt-price-tax">税込</span>';
+                        priceStrip.appendChild(pill);
                     });
+                    container.appendChild(priceStrip);
+                }
+                if (guide.notice) {
+                    renderProminentNotice(container, guide.notice, { prominent: true });
                 }
                 if (!guide.trainers || !guide.trainers.length) return;
-                var grid = document.createElement('div');
-                grid.className = 'pt-trainer-grid';
+                var stack = document.createElement('div');
+                stack.className = 'pt-trainer-stack';
                 guide.trainers.forEach(function (trainer) {
                     var card = document.createElement('article');
-                    card.className = 'pt-trainer-card';
-                    var photoWrap = document.createElement('div');
-                    photoWrap.className = 'pt-trainer-photo';
+                    card.className = 'pt-trainer-showcase';
+                    var visual = document.createElement('div');
+                    visual.className = 'pt-trainer-visual';
                     var photo = document.createElement('img');
                     photo.src = trainer.photo;
                     photo.alt = trainer.nameSei + ' ' + trainer.nameMei + 'トレーナー';
                     photo.loading = 'lazy';
-                    photoWrap.appendChild(photo);
-                    card.appendChild(photoWrap);
-                    var body = document.createElement('div');
-                    body.className = 'pt-trainer-body';
+                    visual.appendChild(photo);
+                    var caption = document.createElement('div');
+                    caption.className = 'pt-trainer-visual-caption';
                     var role = document.createElement('p');
-                    role.className = 'pt-trainer-role';
+                    role.className = 'pt-trainer-visual-role';
                     role.textContent = 'PERSONAL TRAINER';
-                    body.appendChild(role);
+                    caption.appendChild(role);
                     var name = document.createElement('p');
-                    name.className = 'pt-trainer-name';
+                    name.className = 'pt-trainer-visual-name';
                     name.textContent = trainer.nameSei + ' ' + trainer.nameMei;
-                    body.appendChild(name);
+                    caption.appendChild(name);
                     var kana = document.createElement('p');
-                    kana.className = 'pt-trainer-kana';
+                    kana.className = 'pt-trainer-visual-kana';
                     kana.textContent = trainer.kana;
-                    body.appendChild(kana);
+                    caption.appendChild(kana);
+                    visual.appendChild(caption);
+                    card.appendChild(visual);
+                    var main = document.createElement('div');
+                    main.className = 'pt-trainer-main';
+                    if (trainer.highlights && trainer.highlights.length) {
+                        var hlBox = document.createElement('div');
+                        hlBox.className = 'pt-highlight-box';
+                        var hlTitle = document.createElement('p');
+                        hlTitle.className = 'pt-highlight-title';
+                        hlTitle.textContent = trainer.highlightTitle || '';
+                        hlBox.appendChild(hlTitle);
+                        var hlGrid = document.createElement('div');
+                        hlGrid.className = 'pt-highlight-grid';
+                        trainer.highlights.forEach(function (item) {
+                            var cell = document.createElement('div');
+                            cell.className = 'pt-highlight-item' + (item.value ? ' is-record' : '');
+                            if (item.value) {
+                                cell.innerHTML =
+                                    '<span class="pt-hl-label">' + item.label + '</span>' +
+                                    '<span class="pt-hl-value">' + item.value + '<small>' + (item.unit || '') + '</small></span>';
+                            } else {
+                                cell.textContent = item.label;
+                            }
+                            hlGrid.appendChild(cell);
+                        });
+                        hlBox.appendChild(hlGrid);
+                        main.appendChild(hlBox);
+                    }
+                    if ((trainer.reco && trainer.reco.length) || (trainer.recoTags && trainer.recoTags.length)) {
+                        var recoBox = document.createElement('div');
+                        recoBox.className = 'pt-reco-box';
+                        var recoTitle = document.createElement('p');
+                        recoTitle.className = 'pt-reco-title';
+                        recoTitle.textContent = 'こんな方にオススメです';
+                        recoBox.appendChild(recoTitle);
+                        if (trainer.recoTags && trainer.recoTags.length) {
+                            var tags = document.createElement('div');
+                            tags.className = 'pt-reco-tags';
+                            trainer.recoTags.forEach(function (tag) {
+                                var tagEl = document.createElement('span');
+                                tagEl.className = 'pt-reco-tag';
+                                tagEl.textContent = tag;
+                                tags.appendChild(tagEl);
+                            });
+                            recoBox.appendChild(tags);
+                        }
+                        if (trainer.reco && trainer.reco.length) {
+                            var recoList = document.createElement('ul');
+                            recoList.className = 'pt-reco-list';
+                            trainer.reco.forEach(function (line) {
+                                var li = document.createElement('li');
+                                li.textContent = line;
+                                recoList.appendChild(li);
+                            });
+                            recoBox.appendChild(recoList);
+                        }
+                        main.appendChild(recoBox);
+                    }
+                    var cta = document.createElement('div');
+                    cta.className = 'pt-cta-panel';
+                    var ctaCopy = document.createElement('div');
+                    ctaCopy.className = 'pt-cta-copy';
                     var badge = document.createElement('span');
                     badge.className = 'pt-line-badge';
                     badge.textContent = 'LINEで予約';
-                    body.appendChild(badge);
+                    ctaCopy.appendChild(badge);
+                    var ctaLead = document.createElement('p');
+                    ctaLead.className = 'pt-cta-copy-lead';
+                    ctaLead.textContent = 'QRを読み取り友だち追加';
+                    ctaCopy.appendChild(ctaLead);
+                    var ctaSub = document.createElement('p');
+                    ctaSub.className = 'pt-cta-copy-sub';
+                    ctaSub.textContent = '追加後にご要望やご挨拶をメッセージでお送りください';
+                    ctaCopy.appendChild(ctaSub);
+                    if (trainer.qrNote) {
+                        var qrNote = document.createElement('p');
+                        qrNote.className = 'pt-trainer-qr-note';
+                        qrNote.textContent = '※' + trainer.qrNote;
+                        ctaCopy.appendChild(qrNote);
+                    }
+                    cta.appendChild(ctaCopy);
                     var qrWrap = document.createElement('div');
                     qrWrap.className = 'pt-trainer-qr';
                     var qr = document.createElement('img');
@@ -1117,21 +1473,12 @@
                     qr.alt = trainer.nameSei + 'トレーナー LINE友だち追加QR';
                     qr.loading = 'lazy';
                     qrWrap.appendChild(qr);
-                    body.appendChild(qrWrap);
-                    if (trainer.qrNote) {
-                        var qrNote = document.createElement('p');
-                        qrNote.className = 'pt-trainer-qr-note';
-                        qrNote.textContent = '※' + trainer.qrNote;
-                        body.appendChild(qrNote);
-                    }
-                    var scan = document.createElement('p');
-                    scan.className = 'pt-trainer-scan';
-                    scan.textContent = 'QRを読み取り友だち追加';
-                    body.appendChild(scan);
-                    card.appendChild(body);
-                    grid.appendChild(card);
+                    cta.appendChild(qrWrap);
+                    main.appendChild(cta);
+                    card.appendChild(main);
+                    stack.appendChild(card);
                 });
-                container.appendChild(grid);
+                container.appendChild(stack);
                 if (guide.footnote) {
                     var note = document.createElement('p');
                     note.className = 'guide-footnote is-prominent';
