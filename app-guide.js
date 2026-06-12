@@ -72,6 +72,7 @@ var APP_PT_LINE_GUIDE = {
   notice: '友だち追加のみですと見逃してしまう可能性があります\n必ずご要望やご挨拶の一言をメッセージでお送りください',
   trainers: [
     {
+      photoSide: 'right',
       nameSei: '日下',
       nameMei: '竜太',
       kana: 'クサカ リュウタ',
@@ -91,6 +92,7 @@ var APP_PT_LINE_GUIDE = {
       ]
     },
     {
+      photoSide: 'left',
       nameSei: '石田',
       nameMei: '美絵',
       kana: 'イシダ ミエ',
