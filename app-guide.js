@@ -147,7 +147,18 @@ var APP_CREDIT_CARD_GUIDE = {
           ]
         }
       ],
-      footnote: 'その他のオプションサービスの料金は発生いたしません'
+      footnote: 'その他のオプションサービスの料金は発生いたしません',
+      feeExample: {
+        title: '負担金額の参考例',
+        subtitle: '安心サポートVIP＋ヨガマットロッカーを契約中の場合（1ヶ月）',
+        lines: [
+          { label: '休会費用', amount: '2,200円' },
+          { label: '安心サポートVIP（半額）', amount: '412円' },
+          { label: 'ヨガマットロッカー（全額）', amount: '1,100円' }
+        ],
+        total: '3,712円',
+        note: '契約中のオプションにより金額は異なります'
+      }
     }
   ],
   steps: [
@@ -264,7 +275,43 @@ var APP_OPTION_GUIDE = {
       image: 'images/app-guide/09-option-menu.png'
     }
   ],
-  footnote: '当月末解約となります'
+  infoPanels: [
+    {
+      title: '解約について',
+      bullets: [
+        '各種オプションは当月末解約となります',
+        '解約手続きをした後も月末まではサービスをご利用いただけます'
+      ]
+    },
+    {
+      title: 'ご入会時のオプションについて',
+      bullets: [
+        'キャンペーンなどでのご入会時も、オプションはセットで付与される自動契約となります',
+        '利用の有無に関わらずオプション料金はすべて発生します',
+        'オプション料金に関する返金などはできかねます'
+      ]
+    }
+  ],
+  optionPricing: {
+    title: 'オプション料金',
+    lead: 'オプションの申込みは店頭またはアプリからお願いいたします',
+    items: [
+      { label: 'グループピラティスリフォーマー', exTax: '3,000円', incTax: '3,300円' },
+      { label: '体組成計', exTax: '500円', incTax: '550円' },
+      { label: 'JOYFITオンラインレッスン', exTax: '1,000円', incTax: '1,100円', note: 'JOYFITアプリのご登録が必要です' },
+      { label: '安心サポートVIP', exTax: '750円', incTax: '825円', linkKey: 'anshinSupport', linkLabel: '安心サポートの詳細はこちら' },
+      { label: '安心サポート', exTax: '500円', incTax: '550円', linkKey: 'anshinSupport', linkLabel: '安心サポートの詳細はこちら' },
+      { label: 'ホットスタジオ', exTax: '1,000円', incTax: '1,100円' },
+      { label: '水素水', exTax: '1,000円', incTax: '1,080円' },
+      { label: 'プライベートロッカー', exTax: '1,500円', incTax: '1,650円' },
+      { label: 'ヨガマットロッカー', exTax: '1,000円', incTax: '1,100円' },
+      { label: 'タンニング', exTax: '5,000円', incTax: '5,500円', tag: '男性会員様限定' },
+      { label: 'セルフエステ', exTax: '3,000円', incTax: '3,300円', tag: '女性会員様限定' },
+      { label: 'レンタルタオル', exTax: '1,500円', incTax: '1,650円' },
+      { label: 'レンタルマット', exTax: '1,000円', incTax: '1,100円' },
+      { label: '水素水&プロテイン（6杯/1日）', exTax: '3,000円', incTax: '3,240円' }
+    ]
+  }
 };
 
 var APP_CROWD_STATUS_GUIDE = {

@@ -28,6 +28,8 @@ var SITE_LINKS = {
   studentForm: 'https://forms.gle/PCrYhsMrFGtQocZe6',
   /** オプション解約方法（YouTube Shorts） */
   optionCancelVideo: 'https://www.youtube.com/shorts/qpvkmWi-vTM',
+  /** JOYFITあんしんサポート 公式ページ */
+  anshinSupport: 'https://joyfit.jp/jf_anshin_support/',
   /** PT · 日下トレーナー LINE友だち追加 */
   lineKusaka: 'https://line.me/ti/p/dky0Uv5NXt',
   /** PT · 石田トレーナー LINE友だち追加 */

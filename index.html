@@ -541,6 +541,183 @@
             line-height: 1.65;
             text-align: center;
         }
+        .guide-fee-example {
+            margin-top: 1rem;
+            padding: 1rem 1rem 0.95rem;
+            border-radius: calc(var(--radius) - 2px);
+            background: linear-gradient(135deg, rgba(254, 242, 242, 0.72) 0%, #ffffff 58%);
+            border: 1px solid rgba(220, 38, 38, 0.2);
+            box-shadow:
+                0 1px 0 rgba(255, 255, 255, 0.95) inset,
+                0 5px 20px rgba(220, 38, 38, 0.1);
+        }
+        .guide-fee-example-title {
+            margin: 0 0 0.3rem;
+            font-size: 0.78rem;
+            font-weight: 800;
+            color: var(--brand-red);
+            letter-spacing: 0.05em;
+        }
+        .guide-fee-example-sub {
+            margin: 0 0 0.75rem;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--muted);
+            line-height: 1.55;
+        }
+        .guide-fee-example-lines {
+            padding: 0.65rem 0.75rem;
+            border-radius: calc(var(--radius) - 4px);
+            background: rgba(255, 255, 255, 0.82);
+            border: 1px solid rgba(17, 24, 39, 0.06);
+        }
+        .guide-fee-example-line {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 0.75rem;
+            padding: 0.42rem 0;
+            border-bottom: 1px dashed rgba(17, 24, 39, 0.08);
+        }
+        .guide-fee-example-line:last-of-type {
+            border-bottom: none;
+        }
+        .guide-fee-example-line-label {
+            font-size: 0.74rem;
+            font-weight: 600;
+            color: #374151;
+            line-height: 1.5;
+        }
+        .guide-fee-example-line-amount {
+            font-size: 0.78rem;
+            font-weight: 800;
+            color: var(--ink);
+            white-space: nowrap;
+        }
+        .guide-fee-example-total {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 0.75rem;
+            margin-top: 0.75rem;
+            padding: 0.72rem 0.75rem;
+            border-radius: calc(var(--radius) - 4px);
+            background: linear-gradient(135deg, #EF4444 0%, var(--brand-red) 55%, var(--brand-red-dark) 100%);
+            color: #fff;
+            box-shadow: 0 6px 18px rgba(220, 38, 38, 0.22);
+        }
+        .guide-fee-example-total-label {
+            font-size: 0.74rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+        }
+        .guide-fee-example-total-amount {
+            font-size: 1.05rem;
+            font-weight: 900;
+            letter-spacing: 0.03em;
+        }
+        .guide-fee-example-total-amount small {
+            font-size: 0.68rem;
+            font-weight: 700;
+            margin-right: 0.2rem;
+        }
+        .guide-fee-example-note {
+            margin: 0.65rem 0 0;
+            font-size: 0.68rem;
+            font-weight: 600;
+            color: var(--muted);
+            text-align: center;
+            line-height: 1.55;
+        }
+        .guide-option-pricing {
+            margin-top: 0.25rem;
+        }
+        .guide-option-pricing-card {
+            border-radius: calc(var(--radius) + 2px);
+            overflow: hidden;
+            border: 1px solid rgba(220, 38, 38, 0.14);
+            box-shadow:
+                0 1px 0 rgba(255, 255, 255, 0.95) inset,
+                0 6px 22px rgba(220, 38, 38, 0.08);
+        }
+        .guide-option-pricing-head {
+            padding: 0.88rem 1rem;
+            border-bottom: 1px dashed rgba(220, 38, 38, 0.2);
+            background: linear-gradient(180deg, #ffffff 0%, rgba(254, 242, 242, 0.82) 100%);
+            color: var(--brand-red);
+            font-weight: 800;
+            font-size: 0.8125rem;
+            letter-spacing: 0.05em;
+            text-align: center;
+        }
+        .guide-option-pricing-lead {
+            margin: 0;
+            padding: 0.85rem 1.1rem 0.75rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #4B5563;
+            line-height: 1.65;
+            text-align: center;
+            background: linear-gradient(105deg, rgba(254, 242, 242, 0.32) 0%, #ffffff 55%);
+            border-bottom: 1px solid rgba(17, 24, 39, 0.06);
+        }
+        .guide-option-pricing-list {
+            padding: 0.35rem 0.95rem 0.85rem;
+            background: linear-gradient(105deg, rgba(254, 242, 242, 0.22) 0%, #ffffff 50%, #fafafa 100%);
+            border-left: 3px solid var(--brand-red);
+        }
+        .guide-option-row {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 0.85rem;
+            padding: 0.72rem 0;
+            border-bottom: 1px solid rgba(17, 24, 39, 0.06);
+        }
+        .guide-option-row:last-child {
+            border-bottom: none;
+            padding-bottom: 0.35rem;
+        }
+        .guide-option-label-block {
+            flex: 1;
+            min-width: 0;
+        }
+        .guide-option-label {
+            display: block;
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--ink);
+            line-height: 1.5;
+        }
+        .guide-option-meta {
+            display: block;
+            margin-top: 0.28rem;
+            font-size: 0.66rem;
+            font-weight: 600;
+            color: var(--muted);
+            line-height: 1.5;
+        }
+        .guide-option-tag {
+            display: inline-flex;
+            margin-top: 0.32rem;
+            padding: 0.18rem 0.5rem;
+            border-radius: 999px;
+            font-size: 0.62rem;
+            font-weight: 800;
+            letter-spacing: 0.04em;
+            color: #B91C1C;
+            background: rgba(254, 242, 242, 0.85);
+            border: 1px solid rgba(220, 38, 38, 0.16);
+        }
+        .guide-option-link {
+            display: inline-block;
+            margin-top: 0.28rem;
+            color: var(--brand-red);
+            font-size: 0.66rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(220, 38, 38, 0.28);
+        }
         .guide-flow-title {
             font-size: 0.8125rem;
             font-weight: 800;
@@ -1363,6 +1540,128 @@
                 parent.appendChild(groups);
             }
 
+            function appendGuideFeeExample(parent, example) {
+                if (!example) return;
+                var box = document.createElement('div');
+                box.className = 'guide-fee-example';
+                var title = document.createElement('p');
+                title.className = 'guide-fee-example-title';
+                title.textContent = example.title;
+                box.appendChild(title);
+                if (example.subtitle) {
+                    var sub = document.createElement('p');
+                    sub.className = 'guide-fee-example-sub';
+                    sub.textContent = example.subtitle;
+                    box.appendChild(sub);
+                }
+                var lines = document.createElement('div');
+                lines.className = 'guide-fee-example-lines';
+                example.lines.forEach(function (line) {
+                    var row = document.createElement('div');
+                    row.className = 'guide-fee-example-line';
+                    var label = document.createElement('span');
+                    label.className = 'guide-fee-example-line-label';
+                    label.textContent = line.label;
+                    var amount = document.createElement('span');
+                    amount.className = 'guide-fee-example-line-amount';
+                    amount.textContent = line.amount;
+                    row.appendChild(label);
+                    row.appendChild(amount);
+                    lines.appendChild(row);
+                });
+                box.appendChild(lines);
+                if (example.total) {
+                    var total = document.createElement('div');
+                    total.className = 'guide-fee-example-total';
+                    var totalLabel = document.createElement('span');
+                    totalLabel.className = 'guide-fee-example-total-label';
+                    totalLabel.textContent = '合計（税込）';
+                    var totalAmount = document.createElement('span');
+                    totalAmount.className = 'guide-fee-example-total-amount';
+                    totalAmount.innerHTML = '<small>税込</small>' + example.total;
+                    total.appendChild(totalLabel);
+                    total.appendChild(totalAmount);
+                    box.appendChild(total);
+                }
+                if (example.note) {
+                    var note = document.createElement('p');
+                    note.className = 'guide-fee-example-note';
+                    note.textContent = '※' + example.note;
+                    box.appendChild(note);
+                }
+                parent.appendChild(box);
+            }
+
+            function renderOptionPricing(container, pricing) {
+                if (!pricing || !pricing.items || !pricing.items.length) return;
+                var section = document.createElement('section');
+                section.className = 'guide-option-pricing';
+                var card = document.createElement('div');
+                card.className = 'guide-option-pricing-card';
+                var head = document.createElement('div');
+                head.className = 'guide-option-pricing-head';
+                head.textContent = pricing.title || 'オプション料金';
+                card.appendChild(head);
+                if (pricing.lead) {
+                    var lead = document.createElement('p');
+                    lead.className = 'guide-option-pricing-lead';
+                    lead.textContent = pricing.lead;
+                    card.appendChild(lead);
+                }
+                var list = document.createElement('div');
+                list.className = 'guide-option-pricing-list';
+                pricing.items.forEach(function (item) {
+                    var row = document.createElement('div');
+                    row.className = 'guide-option-row';
+                    var labelBlock = document.createElement('div');
+                    labelBlock.className = 'guide-option-label-block';
+                    var label = document.createElement('span');
+                    label.className = 'guide-option-label';
+                    label.textContent = item.label;
+                    labelBlock.appendChild(label);
+                    if (item.note) {
+                        var meta = document.createElement('span');
+                        meta.className = 'guide-option-meta';
+                        meta.textContent = '※' + item.note;
+                        labelBlock.appendChild(meta);
+                    }
+                    if (item.linkKey) {
+                        var linkUrl = resolveSiteLink(item.linkKey);
+                        if (linkUrl && linkUrl.indexOf('http') === 0) {
+                            var link = document.createElement('a');
+                            link.className = 'guide-option-link';
+                            link.href = linkUrl;
+                            link.textContent = '※' + (item.linkLabel || '詳細はこちら');
+                            link.target = '_blank';
+                            link.rel = 'noopener';
+                            labelBlock.appendChild(link);
+                        }
+                    }
+                    if (item.tag) {
+                        var tag = document.createElement('span');
+                        tag.className = 'guide-option-tag';
+                        tag.textContent = item.tag;
+                        labelBlock.appendChild(tag);
+                    }
+                    var price = document.createElement('span');
+                    price.className = 'guide-fee-price';
+                    var ex = document.createElement('span');
+                    ex.className = 'guide-fee-ex';
+                    ex.textContent = item.exTax;
+                    var inc = document.createElement('span');
+                    inc.className = 'guide-fee-inc';
+                    inc.textContent = '税込 ' + item.incTax;
+                    price.appendChild(ex);
+                    price.appendChild(inc);
+                    row.appendChild(labelBlock);
+                    row.appendChild(price);
+                    list.appendChild(row);
+                });
+                card.appendChild(list);
+                section.appendChild(card);
+                container.appendChild(section);
+            }
+
             function renderGuideInfoPanels(container, panels) {
                 if (!panels || !panels.length) return;
                 var stack = document.createElement('div');
@@ -1395,6 +1694,9 @@
                         footnote.className = 'guide-info-footnote';
                         footnote.textContent = panel.footnote;
                         body.appendChild(footnote);
+                    }
+                    if (panel.feeExample) {
+                        appendGuideFeeExample(body, panel.feeExample);
                     }
                     wrap.appendChild(body);
                     stack.appendChild(wrap);
@@ -1495,6 +1797,7 @@
                     container.appendChild(note);
                 }
                 renderGuideInfoPanels(container, guide.infoPanels);
+                renderOptionPricing(container, guide.optionPricing);
             }
 
             function renderProminentNotice(container, notice, options) {
