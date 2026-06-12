@@ -69,7 +69,7 @@ var APP_PT_LINE_GUIDE = {
     { duration: '60分', amount: '6,600円' },
     { duration: '90分', amount: '9,900円' }
   ],
-  notice: '友だち追加のみですと見逃してしまう可能性があります\n必ずご要望やご挨拶の一言をメッセージでお送りください',
+  notice: '友だち追加後、メッセージをお願い致します\n※見逃してしまう可能性がある為',
   trainers: [
     {
       photoSide: 'right',
