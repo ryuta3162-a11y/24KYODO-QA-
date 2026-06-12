@@ -111,22 +111,27 @@ var APP_CREDIT_CARD_GUIDE = {
 };
 
 var APP_CORPORATE_SECTION = {
-  notice: '【法人会員としてJOYFIT Appからご入会される方へ】\n入会には12桁のプロモーションコードが必要です\n企業様ごとにコードが異なるため、こちらではご案内ができかねます\n恐れ入りますが、ご所属の企業様へ直接お問い合わせください',
+  notice: '【JOYFIT Appでご入会いただけます】\n12桁のプロモーションコードが必要です\n企業様ごとにコードが異なるため、ご案内ができかねます\n事前にご所属の企業様へお問い合わせください',
   noticeProminent: true,
   blocks: [
     {
-      blockTitle: '法人入会方法です',
+      blockTitle: 'JOYFIT Appインストール',
       steps: [
         {
           num: '1',
-          title: '「アプリで入会」をタップ',
-          image: 'images/app-guide/11-corporate-app-top.png'
+          title: 'App入会ページへ',
+          linkKey: 'appJoin',
+          linkLabel: 'https://joyfit.jp/kyodo/app_join/',
+          linkBanner: false,
+          cardStyle: true
         },
         {
           num: '2',
           title: 'プロモーションコードを入力',
           text: 'プロモーションコードを入力して「次へ」をタップ\nその後は通常入会同様の手順でございます',
-          image: 'images/app-guide/11-corporate-promo-code.png'
+          closing: '顔写真の撮影時、必ずカメラの権限を許可してください',
+          image: 'images/app-guide/11-corporate-promo-code.png',
+          cardStyle: true
         }
       ]
     }
