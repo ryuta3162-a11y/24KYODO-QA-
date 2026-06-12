@@ -17,7 +17,7 @@ var QA_MASTER = {
     {
       id: 'crowd',
       number: '02',
-      title: '混雑状況の確認',
+      title: 'APP来館人数確認機能',
       visualGuide: 'crowdStatus',
       items: [],
       links: []
@@ -25,7 +25,7 @@ var QA_MASTER = {
     {
       id: 'pt',
       number: '03',
-      title: 'パーソナルトレーニングの予約方法',
+      title: 'パーソナルトレーニングについて',
       visualGuide: 'ptLine',
       items: [],
       links: []
@@ -41,7 +41,7 @@ var QA_MASTER = {
     {
       id: 'option',
       number: '05',
-      title: 'オプションの追加・解約について',
+      title: 'オプション追加・解約方法',
       visualGuide: 'optionMenu',
       items: [],
       links: []
