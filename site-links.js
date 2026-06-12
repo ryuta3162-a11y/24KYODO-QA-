@@ -29,7 +29,7 @@ var SITE_LINKS = {
   /** オプション解約方法（YouTube Shorts） */
   optionCancelVideo: 'https://www.youtube.com/shorts/qpvkmWi-vTM',
   /** PT · 日下トレーナー LINE友だち追加 */
-  lineKusaka: 'https://line.me/R/ti/p/@836mewsc',
+  lineKusaka: 'https://line.me/ti/p/dky0Uv5NXt',
   /** PT · 石田トレーナー LINE友だち追加 */
   lineIshida: 'https://line.me/ti/p/3E-9u-q_8O'
 };

@@ -629,27 +629,27 @@
             text-align: left;
             align-items: flex-start;
         }
-        .pt-trainer-role {
-            margin: 0 0 0.45rem;
-            font-size: 0.58rem;
-            font-weight: 800;
-            letter-spacing: 0.16em;
-            color: var(--brand-red);
+        .pt-trainer-kana {
+            margin: 0 0 0.35rem;
+            font-size: 0.68rem;
+            font-weight: 600;
+            color: var(--muted);
+            letter-spacing: 0.1em;
         }
         .pt-trainer-name {
-            margin: 0;
+            margin: 0 0 0.35rem;
             font-size: clamp(1.15rem, 4.8vw, 1.4rem);
             font-weight: 900;
             line-height: 1.3;
             color: var(--ink);
             word-break: keep-all;
         }
-        .pt-trainer-kana {
-            margin: 0.35rem 0 0;
-            font-size: 0.68rem;
-            font-weight: 600;
-            color: var(--muted);
-            letter-spacing: 0.1em;
+        .pt-trainer-role {
+            margin: 0;
+            font-size: 0.58rem;
+            font-weight: 800;
+            letter-spacing: 0.16em;
+            color: var(--brand-red);
         }
         .pt-trainer-photo {
             position: relative;
@@ -1310,14 +1310,14 @@
                 if (guide.hero) {
                     var hero = document.createElement('div');
                     hero.className = 'pt-hero pt-animate-in';
-                    var eyebrow = document.createElement('p');
-                    eyebrow.className = 'pt-hero-eyebrow';
-                    eyebrow.textContent = guide.hero.eyebrow || 'PERSONAL TRAINER';
-                    hero.appendChild(eyebrow);
                     var brand = document.createElement('p');
                     brand.className = 'pt-hero-brand';
                     brand.textContent = guide.hero.brand || 'JOYFIT24 経堂';
                     hero.appendChild(brand);
+                    var eyebrow = document.createElement('p');
+                    eyebrow.className = 'pt-hero-eyebrow';
+                    eyebrow.textContent = guide.hero.eyebrow || 'PERSONAL TRAINER';
+                    hero.appendChild(eyebrow);
                     var lead = document.createElement('p');
                     lead.className = 'pt-hero-lead';
                     lead.innerHTML = (guide.hero.lead || '').replace('LINE', '<strong>LINE</strong>');
@@ -1359,18 +1359,18 @@
                     head.className = 'pt-trainer-head is-photo-' + side;
                     var identity = document.createElement('div');
                     identity.className = 'pt-trainer-identity';
-                    var role = document.createElement('p');
-                    role.className = 'pt-trainer-role';
-                    role.textContent = 'PERSONAL TRAINER';
-                    identity.appendChild(role);
-                    var name = document.createElement('p');
-                    name.className = 'pt-trainer-name';
-                    name.textContent = trainer.nameSei + ' ' + trainer.nameMei;
-                    identity.appendChild(name);
                     var kana = document.createElement('p');
                     kana.className = 'pt-trainer-kana';
                     kana.textContent = trainer.kana;
                     identity.appendChild(kana);
+                    var name = document.createElement('p');
+                    name.className = 'pt-trainer-name';
+                    name.textContent = trainer.nameSei + ' ' + trainer.nameMei;
+                    identity.appendChild(name);
+                    var role = document.createElement('p');
+                    role.className = 'pt-trainer-role';
+                    role.textContent = 'PERSONAL TRAINER';
+                    identity.appendChild(role);
                     head.appendChild(identity);
                     var photoWrap = document.createElement('div');
                     photoWrap.className = 'pt-trainer-photo';
@@ -1449,16 +1449,6 @@
                         lineBtn.target = '_blank';
                         lineBtn.rel = 'noopener';
                         cta.appendChild(lineBtn);
-                    }
-                    var ctaSub = document.createElement('p');
-                    ctaSub.className = 'pt-cta-copy-sub';
-                    ctaSub.textContent = 'タップでLINEが開きます。追加後にご要望やご挨拶をメッセージでお送りください';
-                    cta.appendChild(ctaSub);
-                    if (trainer.lineNote) {
-                        var lineNote = document.createElement('p');
-                        lineNote.className = 'pt-line-note';
-                        lineNote.textContent = '※' + trainer.lineNote;
-                        cta.appendChild(lineNote);
                     }
                     main.appendChild(cta);
                     card.appendChild(main);
