@@ -78,7 +78,6 @@ var APP_PT_LINE_GUIDE = {
       kana: 'クサカ リュウタ',
       photo: 'images/trainers/kusaka.png',
       lineKey: 'lineKusaka',
-      lineNote: 'LINE・Googleカレンダー空き時間もご確認いただけます',
       highlightTitle: '現在の最高記録',
       highlights: [
         { label: 'スクワット', value: '230', unit: 'kg' },
@@ -98,7 +97,6 @@ var APP_PT_LINE_GUIDE = {
       kana: 'イシダ ミエ',
       photo: 'images/trainers/ishida.png',
       lineKey: 'lineIshida',
-      lineNote: 'LINE友だち追加後にメッセージをお送りください',
       highlightTitle: '取得資格',
       highlights: [
         { label: 'YOGA RYT200' },
