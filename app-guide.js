@@ -22,6 +22,7 @@
  *   11-corporate-promo-code.png   … プロモーションコード入力
  *   11-reopen-app-settings.png    … 再入会・サービス一覧→アプリ設定
  *   11-reopen-unregister.png      … 再入会・アプリの登録を解除
+ *   11-rejoin-app-top.png         … 再入会・アプリで入会（11-corporate-app-top 複製）
  *   12-unpaid-flowchart.png       … 未納金支払いフロー（全体図）
  *   12-unpaid-app-only.png        … アプリ専用手続き・未納金のお支払い
  */
@@ -152,6 +153,11 @@ var APP_REJOIN_SECTION = {
           num: '3',
           title: '「アプリの登録を解除」をタップ',
           image: 'images/app-guide/11-reopen-unregister.png'
+        },
+        {
+          num: '4',
+          title: '「アプリで入会」をタップ',
+          image: 'images/app-guide/11-rejoin-app-top.png'
         }
       ],
       notice: '【再入会手続き後のご入会について】\n上記方法でログアウトできたら再度アプリで入会になります\nそのままプロモーションコードはスキップして経堂で実施している通常のキャンペーンでご入会ください\n必ず契約前にHPをご確認ください',
