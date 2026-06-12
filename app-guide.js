@@ -146,23 +146,19 @@ var APP_CORPORATE_SECTION = {
   blocks: [
     {
       blockTitle: 'JOYFIT Appインストール',
+      actionBanner: {
+        linkKey: 'appJoin',
+        label: 'APPインストール'
+      },
       steps: [
         {
           num: '1',
-          title: 'App入会ページへ',
-          linkKey: 'appJoin',
-          linkLabel: 'https://joyfit.jp/kyodo/app_join/',
-          linkBanner: false,
-          cardStyle: true
-        },
-        {
-          num: '2',
           title: '「アプリで入会」をタップ',
           image: 'images/app-guide/11-corporate-app-top.png',
           cardStyle: true
         },
         {
-          num: '3',
+          num: '2',
           title: 'プロモーションコードを入力',
           text: 'プロモーションコードを入力して「次へ」をタップ\nその後は通常入会同様の手順でございます',
           closing: '顔写真の撮影時、必ずカメラの権限を許可してください',

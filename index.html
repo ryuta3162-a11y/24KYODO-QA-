@@ -1501,6 +1501,21 @@
                         blockIntro.textContent = block.intro;
                         container.appendChild(blockIntro);
                     }
+                    if (block.actionBanner) {
+                        var actionUrl = resolveSiteLink(block.actionBanner.linkKey);
+                        if (actionUrl && actionUrl.indexOf('http') === 0) {
+                            var actionBox = document.createElement('div');
+                            actionBox.className = 'guide-apply-banner-box';
+                            var actionBtn = document.createElement('a');
+                            actionBtn.className = 'guide-action-banner';
+                            actionBtn.href = actionUrl;
+                            actionBtn.textContent = block.actionBanner.label || 'APPインストール';
+                            actionBtn.target = '_blank';
+                            actionBtn.rel = 'noopener';
+                            actionBox.appendChild(actionBtn);
+                            container.appendChild(actionBox);
+                        }
+                    }
                     if (block.notice && !block.noticeAfter) {
                         renderProminentNotice(container, block.notice, {
                             prominent: block.noticeProminent,
