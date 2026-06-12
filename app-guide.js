@@ -132,7 +132,6 @@ var APP_CREDIT_CARD_GUIDE = {
       cautionNotice: {
         badge: 'ご注意ください',
         headline: '休会中に退会することは原則できません',
-        body: '休会期間中は退会手続きをお取りいただけません',
         exampleTitle: '例）3月に休会していた場合',
         timeline: [
           { month: '3月', label: '休会中', status: '退会不可', statusTone: 'no' },
