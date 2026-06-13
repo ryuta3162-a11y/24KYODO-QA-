@@ -640,6 +640,30 @@
             transform: translateY(1px) scale(0.98);
             box-shadow: 0 2px 8px rgba(220, 38, 38, 0.12);
         }
+        .guide-step-followup {
+            margin: 0.65rem 0 0;
+            padding: 0.8rem 0.85rem;
+            border-radius: calc(var(--radius) - 2px);
+            background: linear-gradient(105deg, #f9fafb 0%, #ffffff 58%);
+            border: 1px solid rgba(17, 24, 39, 0.08);
+            text-align: center;
+        }
+        .guide-step-followup-lead,
+        .guide-step-followup-tail {
+            margin: 0;
+            font-size: var(--text-small);
+            font-weight: 600;
+            color: #4B5563;
+            line-height: 1.65;
+        }
+        .guide-step-followup .guide-cross-link {
+            margin: 0.55rem 0;
+            padding: 0.72rem 0.85rem;
+            font-size: 0.78rem;
+        }
+        .guide-step-followup-tail {
+            margin-top: 0.45rem;
+        }
         .guide-info-stack {
             margin-top: 1rem;
             display: flex;
@@ -2054,6 +2078,35 @@
                 parent.appendChild(box);
             }
 
+            function appendAfterClosingNote(parent, config) {
+                if (!config) return;
+                var wrap = document.createElement('div');
+                wrap.className = 'guide-step-followup';
+                if (config.lead) {
+                    var lead = document.createElement('p');
+                    lead.className = 'guide-step-followup-lead';
+                    lead.textContent = config.lead;
+                    wrap.appendChild(lead);
+                }
+                if (config.panelLink && config.panelLink.panel) {
+                    var btn = document.createElement('button');
+                    btn.type = 'button';
+                    btn.className = 'guide-cross-link';
+                    btn.textContent = config.panelLink.label || '手順を見る';
+                    btn.addEventListener('click', function () {
+                        navigateToGuideStep(config.panelLink.panel, config.panelLink.stepId);
+                    });
+                    wrap.appendChild(btn);
+                }
+                if (config.tail) {
+                    var tail = document.createElement('p');
+                    tail.className = 'guide-step-followup-tail';
+                    tail.textContent = config.tail;
+                    wrap.appendChild(tail);
+                }
+                parent.appendChild(wrap);
+            }
+
             function buildGuideStep(step, stepIndex) {
                 var article = document.createElement('article');
                 article.className = 'guide-step' + (step.cardStyle ? ' guide-step-card' : '');
@@ -2142,6 +2195,9 @@
                         article.appendChild(closing);
                     }
                 }
+                if (step.afterClosing) {
+                    appendAfterClosingNote(article, step.afterClosing);
+                }
                 return article;
             }
 
@@ -2163,13 +2219,20 @@
                     placeholderEl.classList.add('is-hidden');
                 }
                 window.setTimeout(function () {
-                    var el = document.getElementById(stepId);
-                    if (el) {
-                        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                        el.classList.add('is-highlight');
-                        window.setTimeout(function () {
-                            el.classList.remove('is-highlight');
-                        }, 2000);
+                    if (stepId) {
+                        var el = document.getElementById(stepId);
+                        if (el) {
+                            el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                            el.classList.add('is-highlight');
+                            window.setTimeout(function () {
+                                el.classList.remove('is-highlight');
+                            }, 2000);
+                        }
+                    } else {
+                        var panel = document.getElementById('panel-' + panelId);
+                        if (panel) {
+                            panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
                     }
                 }, wasDifferent ? 380 : 80);
             }

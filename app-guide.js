@@ -214,7 +214,7 @@ var GUIDE_CAMERA_PERMISSION = {
 };
 
 var APP_CORPORATE_SECTION = {
-  notice: '【JOYFIT Appでご入会いただけます】\n12桁のプロモーションコードが必要です\n企業様ごとにコードが異なるため、ご案内ができかねます\n事前にご所属の企業様へお問い合わせください',
+  notice: 'ジョイフィットアプリからご入会をお願いします\n12桁のプロモーションコードが必須です\n企業様ごとにコードが異なるため、事前にご所属の企業様へお問い合わせください',
   noticeProminent: true,
   blocks: [
     {
@@ -233,10 +233,18 @@ var APP_CORPORATE_SECTION = {
         {
           num: '2',
           title: 'プロモーションコードを入力',
-          text: 'プロモーションコードを入力して「次へ」をタップ\nその後は通常入会同様の手順でございます',
+          textHtml: 'プロモーションコードを入力して「次へ」をタップ<br>その後は通常入会同様の手順でございます<br>必要事項を入力し、ご入会ください',
           closing: GUIDE_CAMERA_PERMISSION.closing,
           closingHtml: GUIDE_CAMERA_PERMISSION.closingHtml,
           closingPermission: GUIDE_CAMERA_PERMISSION.closingPermission,
+          afterClosing: {
+            lead: '入会後、リマインドメールでAPP登録ができない方は、',
+            panelLink: {
+              panel: 'app',
+              label: 'JOYFITAPP登録方法'
+            },
+            tail: 'を参考にお試しください'
+          },
           image: 'images/app-guide/11-corporate-promo-code.png',
           cardStyle: true
         }
