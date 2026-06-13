@@ -222,7 +222,7 @@ var APP_CORPORATE_SECTION = {
       blockTitle: 'JOYFIT Appインストール',
       actionBanner: {
         linkKey: 'appJoin',
-        label: 'APPインストール'
+        label: 'こちらからAPPインストール'
       },
       steps: [
         {
@@ -239,10 +239,9 @@ var APP_CORPORATE_SECTION = {
           closingHtml: GUIDE_CAMERA_PERMISSION.closingHtml,
           closingPermission: GUIDE_CAMERA_PERMISSION.closingPermission,
           afterClosing: {
-            lead: '入会後リマインドメールでAPP登録ができない方は',
             panelLink: {
               panel: 'app',
-              label: 'App登録方法へ進む',
+              label: 'こちらからAPP登録へ進む',
               bannerStyle: 'action'
             }
           },

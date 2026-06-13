@@ -2091,6 +2091,20 @@
 
             function appendAfterClosingNote(parent, config) {
                 if (!config) return;
+                if (config.panelLink && config.panelLink.panel && !config.lead && !config.tail) {
+                    var actionBox = document.createElement('div');
+                    actionBox.className = 'guide-apply-banner-box';
+                    var btn = document.createElement('button');
+                    btn.type = 'button';
+                    btn.className = 'guide-action-banner';
+                    btn.textContent = config.panelLink.label || 'こちらから';
+                    btn.addEventListener('click', function () {
+                        navigateToGuideStep(config.panelLink.panel, config.panelLink.stepId);
+                    });
+                    actionBox.appendChild(btn);
+                    parent.appendChild(actionBox);
+                    return;
+                }
                 var wrap = document.createElement('div');
                 wrap.className = 'guide-step-followup';
                 if (config.lead) {
