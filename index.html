@@ -1576,7 +1576,7 @@
                 return wrap;
             }
 
-            function buildGuideStep(step) {
+            function buildGuideStep(step, stepIndex) {
                 var article = document.createElement('article');
                 article.className = 'guide-step' + (step.cardStyle ? ' guide-step-card' : '');
                 if (step.stepId) {
@@ -1584,10 +1584,11 @@
                 }
                 var head = document.createElement('div');
                 head.className = 'guide-step-head';
-                if (step.num) {
+                var numText = step.num || (stepIndex != null ? String(stepIndex + 1) : '');
+                if (numText) {
                     var num = document.createElement('span');
                     num.className = 'guide-step-num';
-                    num.textContent = step.num;
+                    num.textContent = numText;
                     head.appendChild(num);
                 }
                 var title = document.createElement('h4');
@@ -1635,8 +1636,8 @@
             }
 
             function renderAppRegistrationGuide(container) {
-                APP_REGISTRATION_GUIDE.registrationSteps.forEach(function (step) {
-                    container.appendChild(buildGuideStep(step));
+                APP_REGISTRATION_GUIDE.registrationSteps.forEach(function (step, index) {
+                    container.appendChild(buildGuideStep(Object.assign({ cardStyle: true }, step), index));
                 });
             }
 
@@ -2082,8 +2083,8 @@
                     stepsHost.appendChild(flowTitle);
                 }
                 if (guide.steps && guide.steps.length) {
-                    guide.steps.forEach(function (step) {
-                        stepsHost.appendChild(buildGuideStep(Object.assign({ cardStyle: true }, step)));
+                    guide.steps.forEach(function (step, index) {
+                        stepsHost.appendChild(buildGuideStep(Object.assign({ cardStyle: true }, step), index));
                     });
                 }
                 if (stepsSection) {
@@ -2531,5 +2532,4 @@
 
         })();
     </script>
-</body>
-</html>
+</bo

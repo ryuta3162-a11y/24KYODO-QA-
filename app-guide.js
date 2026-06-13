@@ -35,6 +35,7 @@
 var APP_REGISTRATION_GUIDE = {
   registrationSteps: [
     {
+      num: '1',
       title: 'URLをスマートフォンで開く',
       linkKey: 'memberSearch',
       linkLabel: '会員検索フォームはこちらをタップ',
@@ -43,12 +44,14 @@ var APP_REGISTRATION_GUIDE = {
       image: 'images/app-guide/07-member-search.png'
     },
     {
+      num: '2',
       title: 'アプリアクティベートで登録完了',
       textHtml: 'QRコードが表示されたら、水色の<span class="guide-cyan-btn">アプリアクティベート</span>をタップしてください',
       cardStyle: true,
       image: 'images/app-guide/08-app-link-qr.png'
     },
     {
+      num: '3',
       title: 'トップ画面へ',
       text: 'JOYFITアプリが起動し、トップ画面へ移動します',
       closing: '位置情報・カメラの使用を許可してください',
