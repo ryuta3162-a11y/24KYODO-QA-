@@ -341,6 +341,58 @@
             line-height: 1.7;
             text-align: center;
         }
+        .joyfit-campaign-banner {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            width: 100%;
+            padding: 0.72rem 0.65rem 0.72rem 0.55rem;
+            background: #c61026;
+            color: #ffffff;
+            border-radius: 3px;
+            text-decoration: none;
+            box-shadow: 0 5px 16px rgba(198, 16, 38, 0.32);
+            transition: transform 0.15s ease, box-shadow 0.2s ease;
+        }
+        .joyfit-campaign-banner:active {
+            transform: scale(0.98);
+            box-shadow: 0 3px 10px rgba(198, 16, 38, 0.28);
+        }
+        .joyfit-campaign-banner__icon {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.1rem;
+            height: 2.1rem;
+        }
+        .joyfit-campaign-banner__icon svg {
+            width: 1.85rem;
+            height: 1.85rem;
+            display: block;
+        }
+        .joyfit-campaign-banner__text {
+            flex: 1;
+            min-width: 0;
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            justify-content: center;
+            gap: 0.3rem;
+            font-weight: 800;
+            font-size: clamp(0.68rem, 3.2vw, 0.78rem);
+            letter-spacing: 0.02em;
+            line-height: 1.2;
+            white-space: nowrap;
+        }
+        .joyfit-campaign-banner__chev {
+            flex-shrink: 0;
+            font-size: 1.35rem;
+            font-weight: 700;
+            line-height: 1;
+            opacity: 0.95;
+            margin-right: 0.1rem;
+        }
         .guide-rejoin-hp-link {
             display: flex;
             align-items: center;
@@ -2494,6 +2546,38 @@
                 container.appendChild(box);
             }
 
+            function appendCampaignBanner(parent, linkKey, banner) {
+                banner = banner || {};
+                var linkUrl = resolveSiteLink(linkKey);
+                if (!linkUrl || linkUrl.indexOf('http') !== 0) return;
+                var link = document.createElement('a');
+                link.className = 'joyfit-campaign-banner';
+                link.href = linkUrl;
+                link.target = '_blank';
+                link.rel = 'noopener';
+                link.setAttribute('aria-label', (banner.main || 'キャンペーン実施中') + (banner.sub || ''));
+                var icon = document.createElement('span');
+                icon.className = 'joyfit-campaign-banner__icon';
+                icon.setAttribute('aria-hidden', 'true');
+                icon.innerHTML = '<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M30 8L10 18v8l20 10V8z" fill="#fff" stroke="#1f2937" stroke-width="2" stroke-linejoin="round"/><path d="M10 22H6a2 2 0 00-2 2v4a2 2 0 002 2h4" stroke="#1f2937" stroke-width="2" stroke-linecap="round"/><path d="M34 14l4-3v26l-4-3" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/><path d="M38 8l3 5M38 16l3-2M38 24l3 2M38 32l3 5" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>';
+                var text = document.createElement('span');
+                text.className = 'joyfit-campaign-banner__text';
+                var main = document.createElement('span');
+                main.textContent = banner.main || 'キャンペーン実施中！';
+                var sub = document.createElement('span');
+                sub.textContent = banner.sub || 'こちらをチェック！';
+                text.appendChild(main);
+                text.appendChild(sub);
+                var chev = document.createElement('span');
+                chev.className = 'joyfit-campaign-banner__chev';
+                chev.setAttribute('aria-hidden', 'true');
+                chev.textContent = '›';
+                link.appendChild(icon);
+                link.appendChild(text);
+                link.appendChild(chev);
+                parent.appendChild(link);
+            }
+
             function renderBlockLeadPanel(container, panel) {
                 if (!panel) return;
                 var wrap = document.createElement('div');
@@ -2515,15 +2599,19 @@
                     wrap.appendChild(note);
                 }
                 if (panel.linkKey) {
-                    var linkUrl = resolveSiteLink(panel.linkKey);
-                    if (linkUrl && linkUrl.indexOf('http') === 0) {
-                        var link = document.createElement('a');
-                        link.className = 'guide-rejoin-hp-link';
-                        link.href = linkUrl;
-                        link.textContent = panel.linkLabel || '店舗HPはこちら';
-                        link.target = '_blank';
-                        link.rel = 'noopener';
-                        wrap.appendChild(link);
+                    if (panel.linkStyle === 'campaign-banner') {
+                        appendCampaignBanner(wrap, panel.linkKey, panel.campaignBanner);
+                    } else {
+                        var linkUrl = resolveSiteLink(panel.linkKey);
+                        if (linkUrl && linkUrl.indexOf('http') === 0) {
+                            var link = document.createElement('a');
+                            link.className = 'guide-rejoin-hp-link';
+                            link.href = linkUrl;
+                            link.textContent = panel.linkLabel || '店舗HPはこちら';
+                            link.target = '_blank';
+                            link.rel = 'noopener';
+                            wrap.appendChild(link);
+                        }
                     }
                 }
                 container.appendChild(wrap);
