@@ -309,6 +309,18 @@
         .guide-subtitle.is-flush {
             margin-top: 0;
         }
+        .guide-section-head.is-framed {
+            margin-bottom: 1.15rem;
+            padding: 0.9rem 1rem;
+            text-align: center;
+            border: 2px solid var(--ink);
+            border-radius: calc(var(--radius) - 2px);
+            background: #ffffff;
+            box-shadow:
+                0 2px 0 rgba(17, 24, 39, 0.06),
+                0 6px 18px rgba(17, 24, 39, 0.08);
+            letter-spacing: 0.08em;
+        }
         .guide-anchor-nav {
             display: flex;
             flex-wrap: wrap;
@@ -2448,7 +2460,8 @@
                     renderGuideAnchorNav(container, block.anchorNav);
                     if (block.blockTitle) {
                         var subtitle = document.createElement('h3');
-                        subtitle.className = 'guide-section-head is-flush';
+                        subtitle.className = 'guide-section-head is-flush' +
+                            (block.blockTitleStyle === 'framed' ? ' is-framed' : '');
                         subtitle.textContent = block.blockTitle;
                         container.appendChild(subtitle);
                     }

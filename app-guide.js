@@ -246,13 +246,7 @@ var APP_REJOIN_SECTION = {
   blocks: [
     {
       blockTitle: '再入会手続き',
-      intro: '過去にJOYFIT会員だった方で、再度入会したい場合の手順',
-      stepsAnchorId: 'guide-rejoin-steps',
-      noticeAnchorId: 'guide-rejoin-notice',
-      anchorNav: [
-        { id: 'guide-rejoin-steps', label: '手順' },
-        { id: 'guide-rejoin-notice', label: 'ご入会について' }
-      ],
+      blockTitleStyle: 'framed',
       steps: [
         {
           num: '1',
@@ -274,12 +268,7 @@ var APP_REJOIN_SECTION = {
           title: '「アプリで入会」をタップ',
           image: 'images/app-guide/11-rejoin-app-top.png'
         }
-      ],
-      notice: '【再入会手続き後のご入会について】\n上記方法でログアウトできたら再度アプリで入会になります\nそのままプロモーションコードはスキップして経堂で実施している通常のキャンペーンでご入会ください\n必ず契約前にHPをご確認ください',
-      noticeProminent: true,
-      noticeLinkKey: 'storeHp',
-      noticeLinkLabel: 'https://joyfit.jp/kyodo/',
-      noticeAfter: true
+      ]
     }
   ]
 };
