@@ -1593,17 +1593,17 @@
             background: linear-gradient(105deg, #f9fafb 0%, #ffffff 58%);
             box-shadow: 0 4px 16px rgba(17, 24, 39, 0.06);
         }
-        .guide-iccard-body .guide-intro-list {
-            margin-bottom: 0;
-        }
-        .guide-iccard-fee {
-            margin: 0.85rem 0 0;
-            padding-top: 0.7rem;
-            border-top: 1px dashed rgba(17, 24, 39, 0.12);
+        .guide-iccard-text {
+            margin: 0;
             font-size: var(--text-small);
             font-weight: 700;
             color: #374151;
+            line-height: 1.8;
             text-align: center;
+        }
+        .guide-iccard-free {
+            color: var(--brand-red);
+            font-weight: 800;
         }
         .guide-footnote {
             font-size: 0.75rem;
@@ -2727,7 +2727,12 @@
                 }
                 var body = document.createElement('div');
                 body.className = 'guide-iccard-body';
-                if (panel.bullets && panel.bullets.length) {
+                if (panel.bodyHtml) {
+                    var text = document.createElement('p');
+                    text.className = 'guide-iccard-text';
+                    text.innerHTML = panel.bodyHtml;
+                    body.appendChild(text);
+                } else if (panel.bullets && panel.bullets.length) {
                     var list = document.createElement('ul');
                     list.className = 'guide-intro-list';
                     panel.bullets.forEach(function (line) {
@@ -2736,12 +2741,12 @@
                         list.appendChild(li);
                     });
                     body.appendChild(list);
-                }
-                if (panel.fee) {
-                    var fee = document.createElement('p');
-                    fee.className = 'guide-iccard-fee';
-                    fee.textContent = panel.fee;
-                    body.appendChild(fee);
+                    if (panel.fee) {
+                        var fee = document.createElement('p');
+                        fee.className = 'guide-iccard-text';
+                        fee.textContent = panel.fee;
+                        body.appendChild(fee);
+                    }
                 }
                 wrap.appendChild(body);
                 container.appendChild(wrap);
