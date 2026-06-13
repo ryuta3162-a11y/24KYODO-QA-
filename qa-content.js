@@ -16,7 +16,7 @@ var QA_MASTER = {
     {
       id: 'crowd',
       number: '02',
-      title: 'APP来館人数確認機能',
+      title: 'APP混雑状況の確認',
       visualGuide: 'crowdStatus',
       items: [],
       links: []
