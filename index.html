@@ -1058,15 +1058,19 @@
             flex: 1;
             min-width: 0;
         }
-        .guide-option-row-line {
-            display: flex;
-            align-items: flex-start;
+        .guide-option-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            grid-template-rows: auto auto;
+            align-items: baseline;
+            column-gap: 0.5rem;
+            row-gap: 0.14rem;
             width: 100%;
         }
         .guide-option-thumb {
             flex-shrink: 0;
-            width: 3.25rem;
-            height: 3.25rem;
+            width: 3rem;
+            height: 3rem;
             border-radius: 10px;
             object-fit: cover;
             object-position: center;
@@ -1076,14 +1080,6 @@
                 0 2px 0 rgba(255, 255, 255, 0.9) inset,
                 0 4px 12px rgba(17, 24, 39, 0.1);
         }
-        .guide-option-leader {
-            flex: 1 1 auto;
-            min-width: 0.35rem;
-            height: 0;
-            margin: 0.72em 0.2rem 0;
-            border: none;
-            border-bottom: 1px dotted rgba(139, 115, 85, 0.38);
-        }
         .guide-option-row:nth-child(even) {
             background: linear-gradient(105deg, rgba(250, 246, 240, 0.65) 0%, rgba(255, 255, 255, 0.4) 100%);
         }
@@ -1091,110 +1087,79 @@
             border-bottom: none;
             padding-bottom: 0.9rem;
         }
-        .guide-option-label-block {
-            flex: 1;
+        .guide-option-name {
+            grid-column: 1;
+            grid-row: 1;
             min-width: 0;
+            font-size: clamp(0.62rem, 2.65vw, 0.72rem);
+            font-weight: 800;
+            color: #2f2118;
+            line-height: 1.35;
+            letter-spacing: -0.01em;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
-        .guide-option-row-line .guide-option-label {
-            flex: 0 1 auto;
-            max-width: 52%;
+        .guide-option-ex {
+            grid-column: 2;
+            grid-row: 1;
             font-size: 0.76rem;
             font-weight: 800;
             color: #2f2118;
-            line-height: 1.45;
-            letter-spacing: 0.01em;
+            line-height: 1.35;
+            white-space: nowrap;
+            text-align: right;
         }
-        .guide-option-label {
-            display: block;
-            font-size: 0.76rem;
-            font-weight: 800;
-            color: #2f2118;
-            line-height: 1.45;
-            letter-spacing: 0.01em;
-        }
-        .guide-option-row-extra {
-            margin-top: 0.2rem;
-            padding-left: 0;
-        }
-        .guide-option-meta {
-            display: block;
-            margin-top: 0.2rem;
-            font-size: 0.58rem;
+        .guide-option-sub {
+            grid-column: 1;
+            grid-row: 2;
+            min-width: 0;
+            min-height: 0.95rem;
+            font-size: 0.56rem;
             font-weight: 600;
             color: #8b7355;
-            line-height: 1.4;
+            line-height: 1.35;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .guide-option-sub:empty {
+            min-height: 0;
+        }
+        .guide-option-inc {
+            grid-column: 2;
+            grid-row: 2;
+            font-size: 0.56rem;
+            font-weight: 600;
+            color: #8b7355;
+            line-height: 1.35;
+            white-space: nowrap;
+            text-align: right;
         }
         .guide-option-tag {
             display: inline-flex;
-            margin-top: 0.28rem;
-            padding: 0.16rem 0.45rem;
+            padding: 0.12rem 0.4rem;
             border-radius: 999px;
-            font-size: 0.56rem;
+            font-size: 0.54rem;
             font-weight: 800;
-            letter-spacing: 0.03em;
+            letter-spacing: 0.02em;
             color: #B91C1C;
             background: rgba(254, 242, 242, 0.9);
             border: 1px solid rgba(220, 38, 38, 0.14);
         }
         .guide-option-link {
-            display: inline-block;
-            margin-top: 0.22rem;
+            display: inline;
             color: var(--brand-red);
-            font-size: 0.56rem;
             font-weight: 700;
             text-decoration: none;
             border-bottom: 1px solid rgba(220, 38, 38, 0.28);
         }
-        .guide-option-row-line .guide-fee-price {
-            flex-shrink: 0;
-            min-width: 3.4rem;
-            padding: 0;
-            border-radius: 0;
-            text-align: right;
-            background: transparent;
-            border: none;
-            box-shadow: none;
-            line-height: 1.45;
+        .guide-option-meta {
+            display: inline;
         }
-        .guide-option-row-line .guide-fee-ex {
-            display: block;
-            font-size: 0.78rem;
-            font-weight: 800;
-            color: #2f2118;
-            line-height: 1.45;
-        }
-        .guide-option-row-line .guide-fee-inc {
-            display: block;
-            margin-top: 0.1rem;
-            font-size: 0.56rem;
-            font-weight: 600;
-            color: #8b7355;
-            line-height: 1.2;
-        }
-        .guide-option-row .guide-fee-price {
-            flex-shrink: 0;
-            min-width: 3.4rem;
-            padding: 0;
-            border-radius: 0;
-            text-align: right;
-            background: transparent;
-            border: none;
-            box-shadow: none;
-        }
-        .guide-option-row .guide-fee-ex {
-            display: block;
-            font-size: 0.78rem;
-            font-weight: 800;
-            color: #2f2118;
-            line-height: 1.2;
-        }
-        .guide-option-row .guide-fee-inc {
-            display: block;
-            margin-top: 0.12rem;
-            font-size: 0.56rem;
-            font-weight: 600;
-            color: #8b7355;
-            line-height: 1.2;
+        .guide-option-sub .guide-option-tag,
+        .guide-option-sub .guide-option-link {
+            vertical-align: baseline;
         }
         .guide-flow-title {
             font-size: 0.8125rem;
@@ -2352,57 +2317,54 @@
                     }
                     var body = document.createElement('div');
                     body.className = 'guide-option-row-body';
-                    var line = document.createElement('div');
-                    line.className = 'guide-option-row-line';
-                    var label = document.createElement('span');
-                    label.className = 'guide-option-label';
-                    label.textContent = item.label;
-                    line.appendChild(label);
-                    var leader = document.createElement('span');
-                    leader.className = 'guide-option-leader';
-                    leader.setAttribute('aria-hidden', 'true');
-                    line.appendChild(leader);
-                    var price = document.createElement('span');
-                    price.className = 'guide-fee-price';
+                    var grid = document.createElement('div');
+                    grid.className = 'guide-option-grid';
+                    var name = document.createElement('span');
+                    name.className = 'guide-option-name';
+                    name.textContent = item.label;
+                    grid.appendChild(name);
                     var ex = document.createElement('span');
-                    ex.className = 'guide-fee-ex';
+                    ex.className = 'guide-option-ex';
                     ex.textContent = item.exTax;
-                    var inc = document.createElement('span');
-                    inc.className = 'guide-fee-inc';
-                    inc.textContent = '税込 ' + item.incTax;
-                    price.appendChild(ex);
-                    price.appendChild(inc);
-                    line.appendChild(price);
-                    body.appendChild(line);
-                    if (item.note || item.linkKey || item.tag) {
-                        var extra = document.createElement('div');
-                        extra.className = 'guide-option-row-extra';
-                        if (item.note) {
-                            var meta = document.createElement('span');
-                            meta.className = 'guide-option-meta';
-                            meta.textContent = '※' + item.note;
-                            extra.appendChild(meta);
-                        }
-                        if (item.linkKey) {
-                            var linkUrl = resolveSiteLink(item.linkKey);
-                            if (linkUrl && linkUrl.indexOf('http') === 0) {
-                                var link = document.createElement('a');
-                                link.className = 'guide-option-link';
-                                link.href = linkUrl;
-                                link.textContent = '※' + (item.linkLabel || '詳細はこちら');
-                                link.target = '_blank';
-                                link.rel = 'noopener';
-                                extra.appendChild(link);
-                            }
-                        }
-                        if (item.tag) {
-                            var tag = document.createElement('span');
-                            tag.className = 'guide-option-tag';
-                            tag.textContent = item.tag;
-                            extra.appendChild(tag);
-                        }
-                        body.appendChild(extra);
+                    grid.appendChild(ex);
+                    var sub = document.createElement('span');
+                    sub.className = 'guide-option-sub';
+                    if (item.note) {
+                        var meta = document.createElement('span');
+                        meta.className = 'guide-option-meta';
+                        meta.textContent = '※' + item.note;
+                        sub.appendChild(meta);
                     }
+                    if (item.linkKey) {
+                        var linkUrl = resolveSiteLink(item.linkKey);
+                        if (linkUrl && linkUrl.indexOf('http') === 0) {
+                            if (sub.childNodes.length) {
+                                sub.appendChild(document.createTextNode(' '));
+                            }
+                            var link = document.createElement('a');
+                            link.className = 'guide-option-link';
+                            link.href = linkUrl;
+                            link.textContent = '※' + (item.linkLabel || '詳細はこちら');
+                            link.target = '_blank';
+                            link.rel = 'noopener';
+                            sub.appendChild(link);
+                        }
+                    }
+                    if (item.tag) {
+                        if (sub.childNodes.length) {
+                            sub.appendChild(document.createTextNode(' '));
+                        }
+                        var tag = document.createElement('span');
+                        tag.className = 'guide-option-tag';
+                        tag.textContent = item.tag;
+                        sub.appendChild(tag);
+                    }
+                    grid.appendChild(sub);
+                    var inc = document.createElement('span');
+                    inc.className = 'guide-option-inc';
+                    inc.textContent = '税込 ' + item.incTax;
+                    grid.appendChild(inc);
+                    body.appendChild(grid);
                     row.appendChild(body);
                     list.appendChild(row);
                 });

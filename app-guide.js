@@ -332,7 +332,7 @@ var APP_OPTION_GUIDE = {
     anchorId: 'guide-option-pricing',
     title: 'オプション料金一覧表',
     items: [
-      { label: 'グループピラティスリフォーマー', exTax: '3,000円', incTax: '3,300円', image: 'images/options/pilates-reformer.png' },
+      { label: 'ピラティスリフォーマー', exTax: '3,000円', incTax: '3,300円', image: 'images/options/pilates-reformer.png' },
       { label: '体組成計', exTax: '500円', incTax: '550円', image: 'images/options/body-composition.png' },
       { label: 'JOYFITオンラインレッスン', exTax: '1,000円', incTax: '1,100円', note: 'アプリ登録が必要', image: 'images/options/online-lesson.png' },
       { label: '安心サポートVIP', exTax: '750円', incTax: '825円', linkKey: 'anshinSupport', linkLabel: '安心サポートの詳細はこちら', image: 'images/options/anshin-support-vip.png' },
@@ -345,7 +345,7 @@ var APP_OPTION_GUIDE = {
       { label: 'セルフエステ', exTax: '3,000円', incTax: '3,300円', tag: '女性会員様限定', image: 'images/options/self-esthe.png' },
       { label: 'レンタルタオル', exTax: '1,500円', incTax: '1,650円', image: 'images/options/rental-towel.png' },
       { label: 'レンタルマット', exTax: '1,000円', incTax: '1,100円', image: 'images/options/rental-mat.png' },
-      { label: '水素水&プロテイン（6杯/1日）', exTax: '3,000円', incTax: '3,240円', image: 'images/options/hydrogen-water.png' }
+      { label: '水素水&プロテイン', exTax: '3,000円', incTax: '3,240円', note: '6杯/1日', image: 'images/options/hydrogen-water.png' }
     ]
   }
 };
