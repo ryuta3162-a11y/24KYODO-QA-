@@ -3,7 +3,8 @@
  * 赤枠は画像側に描き込み済み（CSSオーバーレイなし）
  *
  * images/app-guide/
- *   01-home.png                 … ホーム（サービス・登録完了画面）
+ *   01-home.png                 … ホーム（サービス案内・各種手続き用）
+ *   01-home-top.png             … 登録完了後のトップ画面（赤枠なし）
  *   02-service-list.png         … サービス一覧（各種お手続き）
  *   02-service-list-app-only.png … サービス一覧（アプリ専用手続き・オプション用）
  *   03-procedures-menu.png      … 各種関連手続き（PT予約3番）
@@ -56,7 +57,7 @@ var APP_REGISTRATION_GUIDE = {
       text: 'JOYFITアプリが起動し、トップ画面へ移動します',
       closing: '位置情報・カメラの使用を許可してください',
       cardStyle: true,
-      image: 'images/app-guide/01-home.png'
+      image: 'images/app-guide/01-home-top.png'
     }
   ]
 };
