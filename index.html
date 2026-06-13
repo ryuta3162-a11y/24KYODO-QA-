@@ -310,7 +310,7 @@
             margin-top: 0;
         }
         .guide-section-head.is-framed {
-            margin-bottom: 1.15rem;
+            margin-bottom: 1rem;
             padding: 0.9rem 1rem;
             text-align: center;
             border: 2px solid var(--ink);
@@ -320,6 +320,48 @@
                 0 2px 0 rgba(17, 24, 39, 0.06),
                 0 6px 18px rgba(17, 24, 39, 0.08);
             letter-spacing: 0.08em;
+        }
+        .guide-rejoin-lead {
+            margin-bottom: 1.15rem;
+            padding: 1rem 1.05rem 1.1rem;
+            border-radius: calc(var(--radius) - 2px);
+            border: 1px solid rgba(17, 24, 39, 0.1);
+            border-left: 3px solid var(--ink);
+            background: linear-gradient(105deg, #f9fafb 0%, #ffffff 58%);
+            box-shadow: 0 4px 16px rgba(17, 24, 39, 0.06);
+        }
+        .guide-rejoin-lead .guide-intro-list {
+            margin-bottom: 0.85rem;
+        }
+        .guide-rejoin-note {
+            margin: 0 0 0.85rem;
+            font-size: var(--text-small);
+            font-weight: 700;
+            color: #374151;
+            line-height: 1.7;
+            text-align: center;
+        }
+        .guide-rejoin-hp-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 0.88rem 1rem;
+            border: 2px solid var(--brand-red);
+            border-radius: calc(var(--radius) - 2px);
+            background: linear-gradient(180deg, #ffffff 0%, rgba(254, 242, 242, 0.8) 100%);
+            color: var(--brand-red);
+            font-weight: 800;
+            font-size: var(--text-small);
+            letter-spacing: 0.04em;
+            text-decoration: none;
+            box-shadow:
+                0 2px 0 rgba(220, 38, 38, 0.08),
+                0 5px 16px rgba(220, 38, 38, 0.12);
+            transition: transform 0.15s ease, box-shadow 0.2s ease;
+        }
+        .guide-rejoin-hp-link:active {
+            transform: translateY(1px) scale(0.98);
         }
         .guide-anchor-nav {
             display: flex;
@@ -2452,6 +2494,41 @@
                 container.appendChild(box);
             }
 
+            function renderBlockLeadPanel(container, panel) {
+                if (!panel) return;
+                var wrap = document.createElement('div');
+                wrap.className = 'guide-rejoin-lead';
+                if (panel.bullets && panel.bullets.length) {
+                    var list = document.createElement('ul');
+                    list.className = 'guide-intro-list';
+                    panel.bullets.forEach(function (line) {
+                        var li = document.createElement('li');
+                        li.textContent = line;
+                        list.appendChild(li);
+                    });
+                    wrap.appendChild(list);
+                }
+                if (panel.note) {
+                    var note = document.createElement('p');
+                    note.className = 'guide-rejoin-note';
+                    note.textContent = panel.note;
+                    wrap.appendChild(note);
+                }
+                if (panel.linkKey) {
+                    var linkUrl = resolveSiteLink(panel.linkKey);
+                    if (linkUrl && linkUrl.indexOf('http') === 0) {
+                        var link = document.createElement('a');
+                        link.className = 'guide-rejoin-hp-link';
+                        link.href = linkUrl;
+                        link.textContent = panel.linkLabel || '店舗HPはこちら';
+                        link.target = '_blank';
+                        link.rel = 'noopener';
+                        wrap.appendChild(link);
+                    }
+                }
+                container.appendChild(wrap);
+            }
+
             function renderCorporateSection(container, section) {
                 if (section.notice) {
                     renderProminentNotice(container, section.notice, { prominent: section.noticeProminent });
@@ -2465,6 +2542,7 @@
                         subtitle.textContent = block.blockTitle;
                         container.appendChild(subtitle);
                     }
+                    renderBlockLeadPanel(container, block.leadPanel);
                     if (block.intro) {
                         var blockIntro = document.createElement('p');
                         blockIntro.className = 'guide-step-text';

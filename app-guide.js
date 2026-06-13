@@ -247,6 +247,16 @@ var APP_REJOIN_SECTION = {
     {
       blockTitle: '再入会手続き',
       blockTitleStyle: 'framed',
+      leadPanel: {
+        bullets: [
+          '過去にJOYFIT会員だった方が対象です',
+          '一度アプリをログアウトしてください',
+          '新規会員として再入会いただきます'
+        ],
+        note: 'キャンペーン内容は随時変動しますので、必ず店舗HPでご確認ください',
+        linkKey: 'storeHp',
+        linkLabel: '店舗HPでキャンペーン内容をご確認ください'
+      },
       steps: [
         {
           num: '1',
