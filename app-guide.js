@@ -238,7 +238,7 @@ var APP_CORPORATE_SECTION = {
           closingHtml: GUIDE_CAMERA_PERMISSION.closingHtml,
           closingPermission: GUIDE_CAMERA_PERMISSION.closingPermission,
           afterClosing: {
-            lead: '入会後、リマインドメールでAPP登録ができない方は、',
+            lead: '入会後、リマインドメールでAPP登録ができない方は',
             panelLink: {
               panel: 'app',
               label: 'JOYFITAPP登録方法'
