@@ -243,6 +243,12 @@ var APP_REJOIN_SECTION = {
     {
       blockTitle: '再入会手続き',
       intro: '過去にJOYFIT会員だった方で、再度入会したい場合の手順',
+      stepsAnchorId: 'guide-rejoin-steps',
+      noticeAnchorId: 'guide-rejoin-notice',
+      anchorNav: [
+        { id: 'guide-rejoin-steps', label: '手順' },
+        { id: 'guide-rejoin-notice', label: 'ご入会について' }
+      ],
       steps: [
         {
           num: '1',
