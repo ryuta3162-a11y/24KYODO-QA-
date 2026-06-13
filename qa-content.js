@@ -69,7 +69,7 @@ var QA_MASTER = {
     {
       id: 'campaign',
       number: '08',
-      title: '学割・移籍・紹介の申請について',
+      title: '学割・移籍・友達紹介の申請',
       visualGuide: 'campaignApply',
       items: [],
       links: []

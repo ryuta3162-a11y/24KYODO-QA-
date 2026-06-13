@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JOYFIT24経堂 | Q&A</title>
-    <meta name="description" content="JOYFIT24経堂のQ&A アプリ登録、PT予約、クレジットカード変更、オプション、法人入会、再入会、キャンペーン申請について">
+    <meta name="description" content="JOYFIT24経堂のQ&A アプリ登録・PT予約・クレジットカード変更・オプション・法人入会・再入会・キャンペーン申請について">
     <meta property="og:title" content="JOYFIT24経堂 | Q&A">
     <meta property="og:description" content="JOYFIT24経堂のQ&Aページです">
     <meta property="og:type" content="website">
@@ -3001,7 +3001,7 @@
                     if (panel.campaignNote) {
                         var campaignNote = document.createElement('p');
                         campaignNote.className = 'guide-rejoin-unified__campaign-note';
-                        campaignNote.textContent = panel.campaignNote;
+                        campaignNote.innerHTML = panel.campaignNote;
                         unified.appendChild(campaignNote);
                     }
                     if (panel.linkKey && panel.linkStyle === 'campaign-banner') {

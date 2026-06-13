@@ -58,7 +58,7 @@ var APP_REGISTRATION_GUIDE = {
     {
       num: '3',
       title: 'トップ画面へ',
-      text: 'JOYFITアプリが起動し、トップ画面へ移動します',
+      text: 'JOYFITアプリが起動しトップ画面へ移動します',
       closing: '位置情報・カメラの使用を許可してください',
       closingPermission: ['location', 'camera'],
       cardStyle: true,
@@ -78,7 +78,7 @@ var APP_PT_LINE_GUIDE = {
     { duration: '60分', amount: '6,600円' },
     { duration: '90分', amount: '9,900円' }
   ],
-  notice: '友だち追加後、メッセージをお願い致します\n※見逃してしまう可能性がある為',
+  notice: '友だち追加後メッセージをお願い致します\n※見逃してしまう可能性がある為',
   trainers: [
     {
       photoSide: 'right',
@@ -138,7 +138,8 @@ var APP_CREDIT_CARD_GUIDE = {
       title: '休会について',
       bullets: [
         '休会は月額2,000円（税込2,200円）',
-        '1ヶ月から3ヶ月まで選択できます。最大3ヶ月です'
+        '1ヶ月から3ヶ月まで選択できます',
+        '最大3ヶ月です'
       ],
       cautionNotice: {
         headline: '休会月に退会することはできません',
@@ -214,7 +215,7 @@ var GUIDE_CAMERA_PERMISSION = {
 };
 
 var APP_CORPORATE_SECTION = {
-  noticeHtml: '<span class="guide-notice-u">12桁のプロモーションコードが必須です</span><br>企業様ごとにコードが異なるため、事前にご所属の企業様へお問い合わせください',
+  noticeHtml: '<span class="guide-notice-u">12桁のプロモーションコードが必須です</span><br>企業様ごとにコードが異なるため事前にご所属の企業様へお問い合わせください',
   noticeProminent: true,
   blocks: [
     {
@@ -233,12 +234,12 @@ var APP_CORPORATE_SECTION = {
         {
           num: '2',
           title: 'プロモーションコードを入力',
-          textHtml: 'プロモーションコードを入力して「次へ」をタップ<br>その後は通常入会同様の手順でございます<br>必要事項を入力し、ご入会ください',
+          textHtml: 'プロモーションコードを入力して「次へ」をタップ<br>その後は通常入会同様の手順でございます<br>必要事項を入力しご入会ください',
           closing: GUIDE_CAMERA_PERMISSION.closing,
           closingHtml: GUIDE_CAMERA_PERMISSION.closingHtml,
           closingPermission: GUIDE_CAMERA_PERMISSION.closingPermission,
           afterClosing: {
-            lead: '入会後、リマインドメールでAPP登録ができない方は',
+            lead: '入会後リマインドメールでAPP登録ができない方は',
             panelLink: {
               panel: 'app',
               label: 'App登録方法へ進む',
@@ -258,8 +259,8 @@ var APP_REJOIN_SECTION = {
     {
       leadPanel: {
         panelStyle: 'unified',
-        introHtml: '過去にJOYFIT会員だった方は、新規会員として再入会いただきます。<br>手続き前に、アプリから一度ログアウトしてください。',
-        campaignNote: 'キャンペーン内容は随時変更します。店舗HPでご確認ください',
+        introHtml: '過去にJOYFIT会員だった方は新規会員として再入会いただきます<br>手続き前にアプリから一度ログアウトしてください',
+        campaignNote: 'キャンペーン内容は随時変更します<br>店舗HPでご確認ください',
         bannerCaption: '上記バナーをタップしてご確認ください',
         linkKey: 'storeHp',
         linkStyle: 'campaign-banner',
@@ -291,14 +292,14 @@ var APP_REJOIN_SECTION = {
         }
       ],
       afterSteps: {
-        promoNoteHtml: 'プロモーションコードの入力は<br>法人限定のため、該当しない場合はスキップしてください',
+        promoNoteHtml: 'プロモーションコードの入力は<br>法人限定のため該当しない場合はスキップしてください',
         closing: GUIDE_CAMERA_PERMISSION.closing,
         closingHtml: GUIDE_CAMERA_PERMISSION.closingHtml,
         closingPermission: GUIDE_CAMERA_PERMISSION.closingPermission
       },
       icCardPanel: {
         title: '会員証（ICカード）について',
-        bodyHtml: '前の会員証をお持ちの方は、再登録いたします<span class="guide-iccard-free">『無料』</span><br><br>捨ててしまった方も再発行が可能です<br>再発行1,000円（税込1,100円）<br><br>詳細は店舗スタッフにお声がけください'
+        bodyHtml: '前の会員証をお持ちの方は再登録いたします<span class="guide-iccard-free">『無料』</span><br><br>捨ててしまった方も再発行が可能です<br>再発行1,000円（税込1,100円）<br><br>詳細は店舗スタッフにお声がけください'
       }
     }
   ]
@@ -398,7 +399,7 @@ var APP_UNPAID_GUIDE = {
     '月会費を2ヶ月滞納されますと規約退会になります',
     'APP入金後は再度施設をご利用いただけます'
   ],
-  cardUpdateNote: '支払い後クレジットカード情報は更新されないため、別途再登録が必要です',
+  cardUpdateNote: '支払い後クレジットカード情報は更新されないため別途再登録が必要です',
   cardUpdateLink: {
     panel: 'card',
     stepId: 'guide-card-step-4',
