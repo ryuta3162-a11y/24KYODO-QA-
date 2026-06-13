@@ -251,10 +251,10 @@ var APP_CORPORATE_SECTION = {
 var APP_REJOIN_SECTION = {
   blocks: [
     {
-      blockTitle: '過去にJOYFIT会員だった方は新規会員様として再入会いただくため、一度アプリをログアウトする必要があります。',
-      blockTitleStyle: 'framed',
       leadPanel: {
-        note: 'キャンペーン内容は随時変更するため、店舗HPで一度ご確認ください',
+        panelStyle: 'unified',
+        introHtml: '過去にJOYFIT会員だった方は、新規会員として再入会いただきます。<br>手続き前に、アプリから一度ログアウトしてください。',
+        campaignNote: 'キャンペーン内容は随時変更します。店舗HPでご確認ください',
         bannerCaption: '上記バナーをタップしてご確認ください',
         linkKey: 'storeHp',
         linkStyle: 'campaign-banner',
