@@ -28,6 +28,16 @@
             --shadow-lift: 0 10px 28px rgba(17, 24, 39, 0.1);
             --shadow-red: 0 8px 22px rgba(220, 38, 38, 0.2);
             --radius: 1rem;
+            --text-caption: 0.6875rem;
+            --text-small: 0.75rem;
+            --text-body: 0.8125rem;
+            --text-body-lg: 0.875rem;
+            --text-heading: 0.8125rem;
+            --text-price: 0.8125rem;
+            --leading-body: 1.75;
+            --leading-tight: 1.55;
+            --space-section: 1.5rem;
+            --space-block: 1rem;
         }
         * { -webkit-tap-highlight-color: transparent; box-sizing: border-box; }
         body {
@@ -263,17 +273,9 @@
             border-bottom: 1px solid rgba(220, 38, 38, 0.3);
         }
         .section-links {
-            margin-top: 1.25rem;
-            padding-top: 1rem;
+            margin-top: var(--space-section);
+            padding-top: var(--space-block);
             border-top: 1px solid var(--line);
-        }
-
-        .updated-at {
-            text-align: center;
-            font-size: 0.68rem;
-            color: #9CA3AF;
-            margin-top: 2.5rem;
-            padding-bottom: 1rem;
         }
 
         /* ── App guide ── */
@@ -286,20 +288,67 @@
             margin: 0 0 0.85rem;
         }
         .guide-lead {
-            font-size: 0.8375rem;
+            font-size: var(--text-body-lg);
             color: var(--muted);
-            line-height: 1.7;
-            margin-bottom: 1.5rem;
+            line-height: var(--leading-body);
+            margin-bottom: var(--space-section);
             text-align: center;
         }
+        .guide-section-head,
         .guide-subtitle {
-            font-size: 0.8125rem;
+            font-size: var(--text-heading);
             font-weight: 800;
             color: var(--ink);
-            margin: 2rem 0 1rem;
-            letter-spacing: 0.04em;
+            margin: var(--space-section) 0 var(--space-block);
+            letter-spacing: 0.05em;
             padding-left: 0.55rem;
             border-left: 3px solid var(--brand-red);
+        }
+        .guide-section-head.is-flush,
+        .guide-subtitle.is-flush {
+            margin-top: 0;
+        }
+        .guide-anchor-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.45rem;
+            margin-bottom: var(--space-section);
+            padding: 0.85rem 0.95rem;
+            border-radius: calc(var(--radius) + 2px);
+            background: linear-gradient(165deg, #ffffff 0%, rgba(254, 242, 242, 0.35) 100%);
+            border: 1px solid rgba(220, 38, 38, 0.14);
+            box-shadow:
+                0 1px 0 rgba(255, 255, 255, 0.95) inset,
+                0 4px 16px rgba(220, 38, 38, 0.06);
+        }
+        .guide-anchor-link {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.42rem 0.72rem;
+            font-size: var(--text-small);
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            color: var(--brand-red);
+            text-decoration: none;
+            background: #fff;
+            border: 1px solid rgba(220, 38, 38, 0.22);
+            border-radius: 999px;
+            box-shadow: 0 2px 6px rgba(220, 38, 38, 0.08);
+            transition: background 0.2s ease, transform 0.15s ease;
+        }
+        .guide-anchor-link:active {
+            transform: scale(0.97);
+            background: rgba(254, 242, 242, 0.85);
+        }
+        .guide-anchor-section {
+            scroll-margin-top: 0.75rem;
+        }
+        .guide-anchor-section.is-highlight {
+            animation: anchorPulse 1.8s ease;
+        }
+        @keyframes anchorPulse {
+            0%, 100% { box-shadow: none; }
+            15%, 45% { box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.18); border-radius: calc(var(--radius) + 2px); }
         }
         .guide-step {
             margin-bottom: 1.75rem;
@@ -356,10 +405,10 @@
             position: relative;
             padding-left: 1rem;
             margin-bottom: 0.7rem;
-            font-size: 0.8375rem;
+            font-size: var(--text-body);
             font-weight: 600;
             color: #374151;
-            line-height: 1.75;
+            line-height: var(--leading-body);
         }
         .guide-intro-list li::before {
             content: "";
@@ -430,7 +479,8 @@
                 0 1px 0 rgba(255, 255, 255, 0.95) inset,
                 0 6px 22px rgba(220, 38, 38, 0.08);
         }
-        .guide-info-head {
+        .guide-info-head,
+        .guide-option-pricing-head {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -441,7 +491,7 @@
             background: linear-gradient(180deg, #ffffff 0%, rgba(254, 242, 242, 0.82) 100%);
             color: var(--brand-red);
             font-weight: 800;
-            font-size: 0.8125rem;
+            font-size: var(--text-heading);
             letter-spacing: 0.05em;
             box-shadow: 0 2px 0 rgba(220, 38, 38, 0.05);
         }
@@ -631,7 +681,7 @@
             padding-bottom: 0.15rem;
         }
         .guide-fee-label {
-            font-size: 0.78rem;
+            font-size: var(--text-body);
             font-weight: 700;
             color: var(--ink);
             line-height: 1.5;
@@ -644,7 +694,7 @@
         }
         .guide-fee-ex {
             display: block;
-            font-size: 0.8125rem;
+            font-size: var(--text-price);
             font-weight: 800;
             color: var(--ink);
             letter-spacing: 0.02em;
@@ -768,16 +818,6 @@
                 0 1px 0 rgba(255, 255, 255, 0.95) inset,
                 0 6px 22px rgba(220, 38, 38, 0.08);
         }
-        .guide-option-pricing-head {
-            padding: 0.88rem 1rem;
-            border-bottom: 1px dashed rgba(220, 38, 38, 0.2);
-            background: linear-gradient(180deg, #ffffff 0%, rgba(254, 242, 242, 0.82) 100%);
-            color: var(--brand-red);
-            font-weight: 800;
-            font-size: 0.8125rem;
-            letter-spacing: 0.05em;
-            text-align: center;
-        }
         .guide-option-pricing-lead {
             margin: 0;
             padding: 0.85rem 1.1rem 0.75rem;
@@ -812,7 +852,7 @@
         }
         .guide-option-label {
             display: block;
-            font-size: 0.78rem;
+            font-size: var(--text-body);
             font-weight: 700;
             color: var(--ink);
             line-height: 1.5;
@@ -1284,13 +1324,13 @@
         }
         .guide-step-title {
             font-weight: 700;
-            font-size: 0.9rem;
-            line-height: 1.5;
+            font-size: var(--text-body-lg);
+            line-height: var(--leading-tight);
         }
         .guide-step-text {
-            font-size: 0.8125rem;
+            font-size: var(--text-body);
             color: #4B5563;
-            line-height: 1.75;
+            line-height: var(--leading-body);
             margin-bottom: 0.85rem;
             white-space: pre-wrap;
         }
@@ -1458,6 +1498,7 @@
         @media (prefers-reduced-motion: reduce) {
             .qa-panel,
             .guide-step-card.is-highlight,
+            .guide-anchor-section.is-highlight,
             .pt-hero::before,
             .pt-hero::after,
             .pt-trainer-showcase,
@@ -1466,6 +1507,7 @@
             }
             .qa-tab,
             .guide-cross-link,
+            .guide-anchor-link,
             .guide-step-card,
             .guide-action-banner,
             .pt-trainer-photo img,
@@ -1492,7 +1534,6 @@
             <nav id="qa-nav" class="qa-tab-list" aria-label="カテゴリ"></nav>
             <p id="qa-panel-placeholder" class="qa-panel-placeholder">項目をタップして内容を表示</p>
             <div id="qa-panels"></div>
-            <p id="qa-updated" class="updated-at"></p>
         </div>
     </main>
 
@@ -1508,7 +1549,6 @@
             var nav = document.getElementById('qa-nav');
             var panelsEl = document.getElementById('qa-panels');
             var placeholderEl = document.getElementById('qa-panel-placeholder');
-            var updatedEl = document.getElementById('qa-updated');
             var tabs = [];
             var panels = [];
             var activeId = '';
@@ -1724,6 +1764,10 @@
                 if (!pricing || !pricing.items || !pricing.items.length) return;
                 var section = document.createElement('section');
                 section.className = 'guide-option-pricing';
+                if (pricing.anchorId) {
+                    section.id = pricing.anchorId;
+                    section.classList.add('guide-anchor-section');
+                }
                 var card = document.createElement('div');
                 card.className = 'guide-option-pricing-card';
                 var head = document.createElement('div');
@@ -1854,6 +1898,35 @@
                 parent.appendChild(box);
             }
 
+            function scrollToAnchor(id) {
+                var target = document.getElementById(id);
+                if (!target) return;
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                target.classList.add('is-highlight');
+                window.setTimeout(function () {
+                    target.classList.remove('is-highlight');
+                }, 1800);
+            }
+
+            function renderGuideAnchorNav(container, anchors) {
+                if (!anchors || anchors.length < 2) return;
+                var nav = document.createElement('nav');
+                nav.className = 'guide-anchor-nav';
+                nav.setAttribute('aria-label', 'ページ内目次');
+                anchors.forEach(function (a) {
+                    var link = document.createElement('a');
+                    link.className = 'guide-anchor-link';
+                    link.href = '#' + a.id;
+                    link.textContent = a.label;
+                    link.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        scrollToAnchor(a.id);
+                    });
+                    nav.appendChild(link);
+                });
+                container.appendChild(nav);
+            }
+
             function renderGuideInfoPanels(container, panels) {
                 if (!panels || !panels.length) return;
                 var stack = document.createElement('div');
@@ -1861,6 +1934,10 @@
                 panels.forEach(function (panel) {
                     var wrap = document.createElement('section');
                     wrap.className = 'guide-info-panel';
+                    if (panel.anchorId) {
+                        wrap.id = panel.anchorId;
+                        wrap.classList.add('guide-anchor-section');
+                    }
                     var head = document.createElement('div');
                     head.className = 'guide-info-head';
                     head.textContent = panel.title;
@@ -1918,6 +1995,12 @@
 
             function renderGuideIntroPanel(container, guide) {
                 if (!guide.intro && !guide.introBullets && !guide.cardUpdateNote) return;
+                var outer = null;
+                if (guide.introAnchorId) {
+                    outer = document.createElement('div');
+                    outer.id = guide.introAnchorId;
+                    outer.className = 'guide-anchor-section';
+                }
                 var panel = document.createElement('div');
                 panel.className = 'guide-intro-panel' + (guide.introPanelStyle === 'featured' ? ' is-featured' : '');
                 if (guide.introBullets && guide.introBullets.length) {
@@ -1956,10 +2039,16 @@
                     }
                     panel.appendChild(cardBox);
                 }
-                container.appendChild(panel);
+                if (outer) {
+                    outer.appendChild(panel);
+                    container.appendChild(outer);
+                } else {
+                    container.appendChild(panel);
+                }
             }
 
             function renderNavGuide(container, guide) {
+                renderGuideAnchorNav(container, guide.anchorNav);
                 if (guide.notice) {
                     renderProminentNotice(container, guide.notice, {
                         prominent: guide.noticeProminent !== false,
@@ -1968,6 +2057,14 @@
                     });
                 }
                 renderGuideIntroPanel(container, guide);
+                var stepsHost = container;
+                var stepsSection = null;
+                if (guide.stepsAnchorId && (guide.flowchart || guide.flowTitle || (guide.steps && guide.steps.length))) {
+                    stepsSection = document.createElement('div');
+                    stepsSection.id = guide.stepsAnchorId;
+                    stepsSection.className = 'guide-anchor-section';
+                    stepsHost = stepsSection;
+                }
                 if (guide.flowchart) {
                     var flowFig = document.createElement('figure');
                     flowFig.className = 'guide-flowchart-wrap';
@@ -1976,24 +2073,32 @@
                     flowImg.alt = '未納金のお支払いフロー';
                     flowImg.loading = 'lazy';
                     flowFig.appendChild(flowImg);
-                    container.appendChild(flowFig);
+                    stepsHost.appendChild(flowFig);
                 }
                 if (guide.flowTitle) {
                     var flowTitle = document.createElement('h3');
-                    flowTitle.className = 'guide-flow-title';
+                    flowTitle.className = 'guide-section-head is-flush';
                     flowTitle.textContent = guide.flowTitle;
-                    container.appendChild(flowTitle);
+                    stepsHost.appendChild(flowTitle);
                 }
-                guide.steps.forEach(function (step) {
-                    container.appendChild(buildGuideStep(Object.assign({ cardStyle: true }, step)));
-                });
+                if (guide.steps && guide.steps.length) {
+                    guide.steps.forEach(function (step) {
+                        stepsHost.appendChild(buildGuideStep(Object.assign({ cardStyle: true }, step)));
+                    });
+                }
+                if (stepsSection) {
+                    container.appendChild(stepsSection);
+                }
                 if (guide.altPath) {
                     var altWrap = document.createElement('div');
                     altWrap.className = 'guide-section-divider';
+                    if (guide.altPathAnchorId) {
+                        altWrap.id = guide.altPathAnchorId;
+                        altWrap.classList.add('guide-anchor-section');
+                    }
                     if (guide.altPath.blockTitle) {
                         var altTitle = document.createElement('h3');
-                        altTitle.className = 'guide-subtitle';
-                        altTitle.style.marginTop = '0';
+                        altTitle.className = 'guide-section-head is-flush';
                         altTitle.textContent = guide.altPath.blockTitle;
                         altWrap.appendChild(altTitle);
                     }
@@ -2424,9 +2529,6 @@
                 }
             });
 
-            if (QA_MASTER.updatedAt) {
-                updatedEl.textContent = '最終更新 ' + QA_MASTER.updatedAt;
-            }
         })();
     </script>
 </body>

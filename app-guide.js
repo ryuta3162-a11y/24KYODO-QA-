@@ -115,8 +115,15 @@ var APP_PT_LINE_GUIDE = {
 };
 
 var APP_CREDIT_CARD_GUIDE = {
+  stepsAnchorId: 'guide-card-steps',
+  anchorNav: [
+    { id: 'guide-card-steps', label: '手順' },
+    { id: 'guide-card-credit', label: 'クレジットカード変更' },
+    { id: 'guide-card-kyukai', label: '休会について' }
+  ],
   infoPanels: [
     {
+      anchorId: 'guide-card-credit',
       title: 'クレジットカード変更について',
       bullets: [
         'すでに引き落とし済みの内容は変更できません',
@@ -124,6 +131,7 @@ var APP_CREDIT_CARD_GUIDE = {
       ]
     },
     {
+      anchorId: 'guide-card-kyukai',
       title: '休会について',
       bullets: [
         '休会は月額2,000円（税込2,200円）',
@@ -264,6 +272,13 @@ var APP_REJOIN_SECTION = {
 };
 
 var APP_OPTION_GUIDE = {
+  stepsAnchorId: 'guide-option-steps',
+  anchorNav: [
+    { id: 'guide-option-steps', label: '手順' },
+    { id: 'guide-option-cancel', label: '解約について' },
+    { id: 'guide-option-join', label: '入会時オプション' },
+    { id: 'guide-option-pricing', label: '料金一覧' }
+  ],
   steps: [
     {
       num: '1',
@@ -288,6 +303,7 @@ var APP_OPTION_GUIDE = {
   ],
   infoPanels: [
     {
+      anchorId: 'guide-option-cancel',
       title: '解約について',
       bullets: [
         '各種オプションは当月末解約となります',
@@ -295,12 +311,14 @@ var APP_OPTION_GUIDE = {
       ]
     },
     {
+      anchorId: 'guide-option-join',
       title: 'ご入会時のオプションについて',
       linkKey: 'storeHp',
       linkLabel: '詳細はHPキャンペーンページをご確認ください'
     }
   ],
   optionPricing: {
+    anchorId: 'guide-option-pricing',
     title: '各種オプション料金一覧',
     items: [
       { label: 'グループピラティスリフォーマー', exTax: '3,000円', incTax: '3,300円' },
@@ -347,6 +365,14 @@ var APP_CROWD_STATUS_GUIDE = {
 };
 
 var APP_UNPAID_GUIDE = {
+  introAnchorId: 'guide-unpaid-intro',
+  stepsAnchorId: 'guide-unpaid-flow',
+  altPathAnchorId: 'guide-unpaid-alt',
+  anchorNav: [
+    { id: 'guide-unpaid-intro', label: 'ご案内' },
+    { id: 'guide-unpaid-flow', label: '支払い手順' },
+    { id: 'guide-unpaid-alt', label: '別の手順' }
+  ],
   introPanelStyle: 'featured',
   introBullets: [
     '未納金がある間は施設をご利用いただけません',
