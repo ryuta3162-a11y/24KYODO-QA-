@@ -77,7 +77,7 @@ var QA_MASTER = {
     {
       id: 'unpaid',
       number: '09',
-      title: '未納金の支払いについて',
+      title: '未納金について',
       visualGuide: 'unpaidPayment',
       items: [],
       links: []

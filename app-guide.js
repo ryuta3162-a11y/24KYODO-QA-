@@ -384,14 +384,6 @@ var APP_CROWD_STATUS_GUIDE = {
 };
 
 var APP_UNPAID_GUIDE = {
-  introAnchorId: 'guide-unpaid-intro',
-  stepsAnchorId: 'guide-unpaid-flow',
-  altPathAnchorId: 'guide-unpaid-alt',
-  anchorNav: [
-    { id: 'guide-unpaid-intro', label: 'ご案内' },
-    { id: 'guide-unpaid-flow', label: '支払い手順' },
-    { id: 'guide-unpaid-alt', label: '別の手順' }
-  ],
   introPanelStyle: 'featured',
   introBullets: [
     '未納金がある間は施設をご利用いただけません',
@@ -402,28 +394,26 @@ var APP_UNPAID_GUIDE = {
   cardUpdateLink: {
     panel: 'card',
     stepId: 'guide-card-step-4',
-    label: 'クレジットカード変更の手順へ'
+    label: 'こちらからクレジットカード変更',
+    bannerStyle: 'action'
   },
   flowchart: 'images/app-guide/12-unpaid-flowchart.png',
-  flowTitle: 'プッシュ通知・バナーから',
-  steps: [
+  flowTitle: 'JOYFITアプリお支払い手順',
+  flowItems: [
     {
-      num: '1',
-      title: 'JOYFITアプリからプッシュ通知'
+      title: 'JOYFIT APPプッシュ通知をタップ',
+      detail: '表示されている未納バナーをタップ'
     },
     {
-      num: '2',
-      title: 'アプリで未納バナーをタップ'
-    },
-    {
-      num: '3',
       title: 'お支払い内容・金額を確認',
-      text: '「次へ」を押してください'
+      detail: '内容を確認して「次へ」をタップ'
     },
     {
-      num: '4',
-      title: 'カード情報を入力して完了',
-      text: '「確認」を押して手続きを完了してください'
+      title: 'カード情報を入力',
+      detail: 'カード情報を入力し「確認」をタップ'
+    },
+    {
+      title: '支払い完了'
     }
   ],
   altPath: {

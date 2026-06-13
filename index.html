@@ -616,6 +616,56 @@
         .guide-card-update-note:last-child {
             margin-bottom: 0;
         }
+        .guide-intro-panel .guide-card-update-note {
+            margin-top: 1rem;
+        }
+        .guide-intro-panel .guide-apply-banner-box {
+            margin-top: 0.85rem;
+        }
+        .guide-flow-items {
+            list-style: none;
+            margin: 0 0 1.25rem;
+            padding: 0;
+            counter-reset: guide-flow;
+        }
+        .guide-flow-items li {
+            counter-increment: guide-flow;
+            position: relative;
+            padding: 0 0 1rem 2.35rem;
+            margin: 0;
+        }
+        .guide-flow-items li:last-child {
+            padding-bottom: 0;
+        }
+        .guide-flow-items li::before {
+            content: counter(guide-flow);
+            position: absolute;
+            left: 0;
+            top: 0.05rem;
+            width: 1.65rem;
+            height: 1.65rem;
+            border-radius: 50%;
+            background: var(--brand-red);
+            color: #fff;
+            font-size: 0.75rem;
+            font-weight: 800;
+            line-height: 1.65rem;
+            text-align: center;
+        }
+        .guide-flow-item-title {
+            font-size: 0.875rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            line-height: 1.55;
+            margin: 0;
+        }
+        .guide-flow-item-detail {
+            font-size: 0.8125rem;
+            font-weight: 600;
+            color: #4B5563;
+            line-height: 1.65;
+            margin: 0.2rem 0 0;
+        }
         .guide-cross-link {
             display: flex;
             align-items: center;
@@ -2652,16 +2702,28 @@
                     intro.textContent = guide.intro;
                     panel.appendChild(intro);
                 }
-                if (guide.cardUpdateNote || guide.cardUpdateLink) {
-                    var cardBox = document.createElement('div');
-                    cardBox.className = 'guide-card-update';
-                    if (guide.cardUpdateNote) {
-                        var cardNote = document.createElement('p');
-                        cardNote.className = 'guide-card-update-note';
-                        cardNote.textContent = '※' + guide.cardUpdateNote;
-                        cardBox.appendChild(cardNote);
-                    }
-                    if (guide.cardUpdateLink) {
+                if (guide.cardUpdateNote) {
+                    var cardNote = document.createElement('p');
+                    cardNote.className = 'guide-card-update-note';
+                    cardNote.textContent = '※' + guide.cardUpdateNote;
+                    panel.appendChild(cardNote);
+                }
+                if (guide.cardUpdateLink) {
+                    if (guide.cardUpdateLink.bannerStyle === 'action') {
+                        var cardActionBox = document.createElement('div');
+                        cardActionBox.className = 'guide-apply-banner-box';
+                        var cardActionBtn = document.createElement('button');
+                        cardActionBtn.type = 'button';
+                        cardActionBtn.className = 'guide-action-banner';
+                        cardActionBtn.textContent = guide.cardUpdateLink.label || 'こちらから';
+                        cardActionBtn.addEventListener('click', function () {
+                            navigateToGuideStep(guide.cardUpdateLink.panel, guide.cardUpdateLink.stepId);
+                        });
+                        cardActionBox.appendChild(cardActionBtn);
+                        panel.appendChild(cardActionBox);
+                    } else {
+                        var cardBox = document.createElement('div');
+                        cardBox.className = 'guide-card-update';
                         var crossBtn = document.createElement('button');
                         crossBtn.type = 'button';
                         crossBtn.className = 'guide-cross-link';
@@ -2670,8 +2732,8 @@
                             navigateToGuideStep(guide.cardUpdateLink.panel, guide.cardUpdateLink.stepId);
                         });
                         cardBox.appendChild(crossBtn);
+                        panel.appendChild(cardBox);
                     }
-                    panel.appendChild(cardBox);
                 }
                 if (outer) {
                     outer.appendChild(panel);
@@ -2693,7 +2755,7 @@
                 renderGuideIntroPanel(container, guide);
                 var stepsHost = container;
                 var stepsSection = null;
-                if (guide.stepsAnchorId && (guide.flowchart || guide.flowTitle || (guide.steps && guide.steps.length))) {
+                if (guide.stepsAnchorId && (guide.flowchart || guide.flowTitle || (guide.steps && guide.steps.length) || (guide.flowItems && guide.flowItems.length))) {
                     stepsSection = document.createElement('div');
                     stepsSection.id = guide.stepsAnchorId;
                     stepsSection.className = 'guide-anchor-section';
@@ -2704,7 +2766,7 @@
                     flowFig.className = 'guide-flowchart-wrap';
                     var flowImg = document.createElement('img');
                     flowImg.src = guide.flowchart;
-                    flowImg.alt = '未納金のお支払いフロー';
+                    flowImg.alt = '未納金フロー';
                     flowImg.loading = 'lazy';
                     flowFig.appendChild(flowImg);
                     stepsHost.appendChild(flowFig);
@@ -2715,7 +2777,25 @@
                     flowTitle.textContent = guide.flowTitle;
                     stepsHost.appendChild(flowTitle);
                 }
-                if (guide.steps && guide.steps.length) {
+                if (guide.flowItems && guide.flowItems.length) {
+                    var flowList = document.createElement('ol');
+                    flowList.className = 'guide-flow-items';
+                    guide.flowItems.forEach(function (item) {
+                        var li = document.createElement('li');
+                        var itemTitle = document.createElement('p');
+                        itemTitle.className = 'guide-flow-item-title';
+                        itemTitle.textContent = item.title;
+                        li.appendChild(itemTitle);
+                        if (item.detail) {
+                            var itemDetail = document.createElement('p');
+                            itemDetail.className = 'guide-flow-item-detail';
+                            itemDetail.textContent = item.detail;
+                            li.appendChild(itemDetail);
+                        }
+                        flowList.appendChild(li);
+                    });
+                    stepsHost.appendChild(flowList);
+                } else if (guide.steps && guide.steps.length) {
                     guide.steps.forEach(function (step, index) {
                         stepsHost.appendChild(buildGuideStep(Object.assign({ cardStyle: true }, step), index));
                     });
