@@ -125,19 +125,14 @@ var APP_PT_LINE_GUIDE = {
 
 var APP_CREDIT_CARD_GUIDE = {
   stepsAnchorId: 'guide-card-steps',
-  anchorNav: [
-    { id: 'guide-card-steps', label: '手順' },
-    { id: 'guide-card-credit', label: 'クレジットカード変更' },
-    { id: 'guide-card-kyukai', label: '休会について' }
-  ],
+  intro: 'クレジットカード変更・休会は、同じ画面からお手続きいただけます',
+  introPanelStyle: 'featured',
+  infoSectionTitle: 'ご案内',
   infoPanels: [
     {
       anchorId: 'guide-card-credit',
       title: 'クレジットカード変更について',
-      bullets: [
-        'すでに引き落とし済みの内容は変更できません',
-        '変更したカード情報は、次回請求（翌月）から適用されます'
-      ]
+      note: '変更したカード情報は、次回請求から適用されます'
     },
     {
       anchorId: 'guide-card-kyukai',
