@@ -317,28 +317,20 @@ var APP_OPTION_GUIDE = {
     {
       num: '4',
       title: '「オプション追加」または「オプションの解約」をタップ',
+      titleHtml: '「オプション追加」または<br>「オプションの解約」をタップ',
       image: 'images/app-guide/09-option-menu.png'
     }
   ],
   infoPanels: [
     {
       anchorId: 'guide-option-cancel',
-      title: '解約について',
-      bullets: [
-        '各種オプションは当月末解約となります',
-        '解約手続きをした後も月末まではサービスをご利用いただけます'
-      ]
-    },
-    {
-      anchorId: 'guide-option-join',
-      title: 'ご入会時のオプションについて',
-      linkKey: 'storeHp',
-      linkLabel: '詳細はHPキャンペーンページをご確認ください'
+      title: 'オプションの解約について',
+      note: '各種オプションは当月末解約となります。解約後も月末までご利用できます'
     }
   ],
   optionPricing: {
     anchorId: 'guide-option-pricing',
-    title: '各種オプション料金一覧',
+    title: 'オプション料金一覧表',
     items: [
       { label: 'グループピラティスリフォーマー', exTax: '3,000円', incTax: '3,300円' },
       { label: '体組成計', exTax: '500円', incTax: '550円' },
