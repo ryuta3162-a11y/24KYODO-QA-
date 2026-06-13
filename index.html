@@ -666,8 +666,7 @@
             line-height: 1.75;
             text-align: center;
         }
-        .guide-info-head,
-        .guide-option-pricing-head {
+        .guide-info-head {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -995,21 +994,43 @@
             line-height: 1.55;
         }
         .guide-option-pricing {
-            margin-top: 0.5rem;
+            margin-top: 0.85rem;
         }
         .guide-option-pricing-card {
-            border-radius: calc(var(--radius) + 2px);
+            padding: 0.45rem;
+            border-radius: 16px;
+            background: linear-gradient(155deg, #ebe3d8 0%, #f5efe6 42%, #faf6f0 100%);
+            border: 1px solid rgba(92, 64, 41, 0.14);
+            box-shadow:
+                0 1px 0 rgba(255, 255, 255, 0.75) inset,
+                0 2px 0 rgba(92, 64, 41, 0.08),
+                0 14px 36px rgba(17, 24, 39, 0.12),
+                0 28px 56px rgba(17, 24, 39, 0.06);
+        }
+        .guide-option-pricing-inner {
             overflow: hidden;
-            border: 1px solid rgba(17, 24, 39, 0.08);
+            border-radius: 12px;
+            border: 1px solid rgba(92, 64, 41, 0.12);
+            background: linear-gradient(180deg, #fffefb 0%, #ffffff 100%);
             box-shadow:
                 0 1px 0 rgba(255, 255, 255, 0.95) inset,
-                0 8px 28px rgba(17, 24, 39, 0.07);
+                0 6px 18px rgba(92, 64, 41, 0.06);
         }
-        .guide-option-pricing-card .guide-option-pricing-head {
-            border-bottom: none;
-            background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
-            color: var(--ink);
-            letter-spacing: 0.06em;
+        .guide-option-pricing-head {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            margin: 0;
+            padding: 1rem 1.1rem 0.95rem;
+            border: none;
+            border-bottom: 2px solid rgba(220, 38, 38, 0.22);
+            background: linear-gradient(180deg, #2f2118 0%, #3f2b1f 100%);
+            color: #faf6f0;
+            font-weight: 800;
+            font-size: 0.95rem;
+            letter-spacing: 0.14em;
+            box-shadow: 0 4px 14px rgba(17, 24, 39, 0.18);
         }
         .guide-option-pricing-lead {
             margin: 0;
@@ -1027,57 +1048,65 @@
             align-items: center;
             justify-content: space-between;
             gap: 0.85rem;
-            padding: 0.55rem 1rem;
-            font-size: 0.62rem;
+            padding: 0.5rem 1rem 0.45rem;
+            font-size: 0.58rem;
             font-weight: 800;
-            letter-spacing: 0.1em;
-            color: #6B7280;
-            text-transform: uppercase;
-            background: linear-gradient(105deg, rgba(254, 242, 242, 0.55) 0%, rgba(249, 250, 251, 0.9) 100%);
-            border-bottom: 1px solid rgba(17, 24, 39, 0.07);
+            letter-spacing: 0.12em;
+            color: #8b7355;
+            background: linear-gradient(105deg, rgba(245, 239, 230, 0.9) 0%, rgba(255, 254, 251, 0.95) 100%);
+            border-bottom: 1px solid rgba(92, 64, 41, 0.1);
         }
         .guide-option-pricing-colhead span:last-child {
             flex-shrink: 0;
-            min-width: 4.8rem;
+            min-width: 3.4rem;
             text-align: right;
         }
         .guide-option-pricing-list {
-            padding: 0;
-            background: #ffffff;
-            border-left: none;
+            padding: 0.15rem 0 0.35rem;
+            background: transparent;
         }
         .guide-option-row {
             display: flex;
-            align-items: center;
+            align-items: flex-end;
             justify-content: space-between;
-            gap: 0.75rem;
-            padding: 0.78rem 1rem;
-            border-bottom: 1px solid rgba(17, 24, 39, 0.05);
+            gap: 0.25rem;
+            padding: 0.72rem 1rem;
+            border-bottom: 1px dashed rgba(92, 64, 41, 0.1);
         }
         .guide-option-row-main {
             display: flex;
             align-items: flex-start;
-            gap: 0.65rem;
-            flex: 1;
+            gap: 0.7rem;
+            flex: 0 1 auto;
             min-width: 0;
+            max-width: calc(100% - 4.5rem);
         }
         .guide-option-thumb {
             flex-shrink: 0;
-            width: 2.85rem;
-            height: 2.85rem;
-            border-radius: 9px;
+            width: 3.25rem;
+            height: 3.25rem;
+            border-radius: 10px;
             object-fit: cover;
             object-position: center;
-            background: #f9fafb;
-            border: 1px solid rgba(17, 24, 39, 0.07);
-            box-shadow: 0 2px 8px rgba(17, 24, 39, 0.06);
+            background: #ffffff;
+            border: 1px solid rgba(92, 64, 41, 0.12);
+            box-shadow:
+                0 2px 0 rgba(255, 255, 255, 0.9) inset,
+                0 4px 12px rgba(17, 24, 39, 0.1);
+        }
+        .guide-option-leader {
+            flex: 1 1 auto;
+            min-width: 0.35rem;
+            margin: 0 0.15rem 0.42rem;
+            border-bottom: 1px dotted rgba(139, 115, 85, 0.38);
+            align-self: flex-end;
         }
         .guide-option-row:nth-child(even) {
-            background: linear-gradient(105deg, #fafafa 0%, #ffffff 100%);
+            background: linear-gradient(105deg, rgba(250, 246, 240, 0.65) 0%, rgba(255, 255, 255, 0.4) 100%);
         }
         .guide-option-row:last-child {
             border-bottom: none;
-            padding-bottom: 0.85rem;
+            padding-bottom: 0.9rem;
         }
         .guide-option-label-block {
             flex: 1;
@@ -1085,55 +1114,65 @@
         }
         .guide-option-label {
             display: block;
-            font-size: 0.9rem;
-            font-weight: 700;
-            color: var(--ink);
-            line-height: 1.55;
+            font-size: 0.76rem;
+            font-weight: 800;
+            color: #2f2118;
+            line-height: 1.45;
+            letter-spacing: 0.01em;
         }
         .guide-option-meta {
             display: block;
-            margin-top: 0.28rem;
-            font-size: 0.66rem;
+            margin-top: 0.2rem;
+            font-size: 0.58rem;
             font-weight: 600;
-            color: var(--muted);
-            line-height: 1.5;
+            color: #8b7355;
+            line-height: 1.4;
         }
         .guide-option-tag {
             display: inline-flex;
-            margin-top: 0.32rem;
-            padding: 0.18rem 0.5rem;
+            margin-top: 0.28rem;
+            padding: 0.16rem 0.45rem;
             border-radius: 999px;
-            font-size: 0.62rem;
+            font-size: 0.56rem;
             font-weight: 800;
-            letter-spacing: 0.04em;
+            letter-spacing: 0.03em;
             color: #B91C1C;
-            background: rgba(254, 242, 242, 0.85);
-            border: 1px solid rgba(220, 38, 38, 0.16);
+            background: rgba(254, 242, 242, 0.9);
+            border: 1px solid rgba(220, 38, 38, 0.14);
         }
         .guide-option-link {
             display: inline-block;
-            margin-top: 0.28rem;
+            margin-top: 0.22rem;
             color: var(--brand-red);
-            font-size: 0.66rem;
+            font-size: 0.56rem;
             font-weight: 700;
             text-decoration: none;
             border-bottom: 1px solid rgba(220, 38, 38, 0.28);
         }
         .guide-option-row .guide-fee-price {
             flex-shrink: 0;
-            min-width: 4.8rem;
-            padding: 0.35rem 0.5rem;
-            border-radius: 8px;
+            min-width: 3.4rem;
+            padding: 0;
+            border-radius: 0;
             text-align: right;
-            background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
-            border: 1px solid rgba(17, 24, 39, 0.07);
-            box-shadow: 0 2px 8px rgba(17, 24, 39, 0.04);
+            background: transparent;
+            border: none;
+            box-shadow: none;
         }
         .guide-option-row .guide-fee-ex {
-            font-size: 0.72rem;
+            display: block;
+            font-size: 0.78rem;
+            font-weight: 800;
+            color: #2f2118;
+            line-height: 1.2;
         }
         .guide-option-row .guide-fee-inc {
-            font-size: 0.62rem;
+            display: block;
+            margin-top: 0.12rem;
+            font-size: 0.56rem;
+            font-weight: 600;
+            color: #8b7355;
+            line-height: 1.2;
         }
         .guide-flow-title {
             font-size: 0.8125rem;
@@ -2264,15 +2303,17 @@
                 }
                 var card = document.createElement('div');
                 card.className = 'guide-option-pricing-card';
+                var inner = document.createElement('div');
+                inner.className = 'guide-option-pricing-inner';
                 var head = document.createElement('div');
                 head.className = 'guide-option-pricing-head';
                 head.textContent = pricing.title || 'オプション料金一覧表';
-                card.appendChild(head);
+                inner.appendChild(head);
                 if (pricing.lead) {
                     var lead = document.createElement('p');
                     lead.className = 'guide-option-pricing-lead';
                     lead.textContent = pricing.lead;
-                    card.appendChild(lead);
+                    inner.appendChild(lead);
                 }
                 var list = document.createElement('div');
                 list.className = 'guide-option-pricing-list';
@@ -2324,6 +2365,9 @@
                         labelBlock.appendChild(tag);
                     }
                     rowMain.appendChild(labelBlock);
+                    var leader = document.createElement('span');
+                    leader.className = 'guide-option-leader';
+                    leader.setAttribute('aria-hidden', 'true');
                     var price = document.createElement('span');
                     price.className = 'guide-fee-price';
                     var ex = document.createElement('span');
@@ -2335,10 +2379,12 @@
                     price.appendChild(ex);
                     price.appendChild(inc);
                     row.appendChild(rowMain);
+                    row.appendChild(leader);
                     row.appendChild(price);
                     list.appendChild(row);
                 });
-                card.appendChild(list);
+                inner.appendChild(list);
+                card.appendChild(inner);
                 section.appendChild(card);
                 container.appendChild(section);
             }

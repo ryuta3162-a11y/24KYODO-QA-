@@ -334,9 +334,9 @@ var APP_OPTION_GUIDE = {
     items: [
       { label: 'グループピラティスリフォーマー', exTax: '3,000円', incTax: '3,300円', image: 'images/options/pilates-reformer.png' },
       { label: '体組成計', exTax: '500円', incTax: '550円', image: 'images/options/body-composition.png' },
-      { label: 'JOYFITオンラインレッスン', exTax: '1,000円', incTax: '1,100円', note: 'JOYFITアプリのご登録が必要です', image: 'images/options/online-lesson.png' },
+      { label: 'JOYFITオンラインレッスン', exTax: '1,000円', incTax: '1,100円', note: 'アプリ登録が必要', image: 'images/options/online-lesson.png' },
       { label: '安心サポートVIP', exTax: '750円', incTax: '825円', linkKey: 'anshinSupport', linkLabel: '安心サポートの詳細はこちら', image: 'images/options/anshin-support-vip.png' },
-      { label: '安心サポート', exTax: '500円', incTax: '550円', linkKey: 'anshinSupport', linkLabel: '安心サポートの詳細はこちら' },
+      { label: '安心サポート', exTax: '500円', incTax: '550円', image: 'images/options/anshin-support-vip.png' },
       { label: 'ホットスタジオ', exTax: '1,000円', incTax: '1,100円', image: 'images/options/hot-studio.png' },
       { label: '水素水', exTax: '1,000円', incTax: '1,080円', image: 'images/options/hydrogen-water.png' },
       { label: 'プライベートロッカー', exTax: '1,500円', incTax: '1,650円', image: 'images/options/private-locker.png' },
