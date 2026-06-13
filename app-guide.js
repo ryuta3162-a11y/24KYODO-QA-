@@ -241,9 +241,9 @@ var APP_CORPORATE_SECTION = {
             lead: '入会後、リマインドメールでAPP登録ができない方は',
             panelLink: {
               panel: 'app',
-              label: 'JOYFITAPP登録方法'
-            },
-            tail: 'を参考にお試しください'
+              label: 'App登録方法へ進む',
+              bannerStyle: 'action'
+            }
           },
           image: 'images/app-guide/11-corporate-promo-code.png',
           cardStyle: true

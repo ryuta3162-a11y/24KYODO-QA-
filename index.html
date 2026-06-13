@@ -656,10 +656,15 @@
             color: #4B5563;
             line-height: 1.65;
         }
-        .guide-step-followup .guide-cross-link {
-            margin: 0.55rem 0;
-            padding: 0.72rem 0.85rem;
-            font-size: 0.78rem;
+        .guide-step-followup .guide-cross-link,
+        .guide-step-followup .guide-action-banner {
+            margin: 0.55rem 0 0;
+        }
+        .guide-step-followup .guide-action-banner {
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+            width: 100%;
         }
         .guide-step-followup-tail {
             margin-top: 0.45rem;
@@ -2097,7 +2102,9 @@
                 if (config.panelLink && config.panelLink.panel) {
                     var btn = document.createElement('button');
                     btn.type = 'button';
-                    btn.className = 'guide-cross-link';
+                    btn.className = config.panelLink.bannerStyle === 'action'
+                        ? 'guide-action-banner'
+                        : 'guide-cross-link';
                     btn.textContent = config.panelLink.label || '手順を見る';
                     btn.addEventListener('click', function () {
                         navigateToGuideStep(config.panelLink.panel, config.panelLink.stepId);
