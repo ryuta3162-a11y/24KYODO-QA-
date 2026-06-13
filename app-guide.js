@@ -253,7 +253,9 @@ var APP_REJOIN_SECTION = {
           '一度アプリをログアウトしてください',
           '新規会員として再入会いただきます'
         ],
-        note: 'キャンペーン内容は随時変動します。店舗HPのバナーをタップして、必ず最新の内容をご確認ください',
+        note: 'キャンペーン内容は随時変動します',
+        bannerLead: 'こちらをタップして店舗HPへ',
+        bannerCaption: 'ホームページのバナーをタップして、必ず内容をご確認ください',
         linkKey: 'storeHp',
         linkStyle: 'campaign-banner',
         campaignBanner: {
