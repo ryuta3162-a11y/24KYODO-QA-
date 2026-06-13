@@ -46,7 +46,7 @@ var APP_REGISTRATION_GUIDE = {
     {
       num: '2',
       title: 'アプリアクティベートで登録完了',
-      textHtml: 'QRコードが表示されたら、水色の<span class="guide-cyan-btn">アプリアクティベート</span>をタップしてください',
+      textHtml: '水色の<span class="guide-cyan-btn">アプリアクティベート</span>をタップしてください',
       cardStyle: true,
       image: 'images/app-guide/08-app-link-qr.png'
     },
