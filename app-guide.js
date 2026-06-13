@@ -258,8 +258,8 @@ var APP_REJOIN_SECTION = {
     {
       leadPanel: {
         panelStyle: 'unified',
-        introHtml: '過去にJOYFIT会員だった方は新規会員として再入会いただきます<br>手続き前にアプリから一度ログアウトしてください',
-        campaignNote: 'キャンペーン内容は随時変更します<br>店舗HPでご確認ください',
+        introHtml: '<span class="guide-notice-u">過去にJOYFIT会員だった方は</span><br>新規会員として再入会いただきます<br>店舗での再入会手続きは出来かねます',
+        campaignNote: 'キャンペーン内容は随時変更しますので<br>必ず店舗HPでご確認ください',
         bannerCaption: '上記バナーをタップしてご確認ください',
         linkKey: 'storeHp',
         linkStyle: 'campaign-banner',
@@ -400,21 +400,10 @@ var APP_UNPAID_GUIDE = {
   flowchart: 'images/app-guide/12-unpaid-flowchart.png',
   flowTitle: 'JOYFITアプリお支払い手順',
   flowItems: [
-    {
-      title: 'JOYFIT APPプッシュ通知をタップ',
-      detail: '表示されている未納バナーをタップ'
-    },
-    {
-      title: 'お支払い内容・金額を確認',
-      detail: '内容を確認して「次へ」をタップ'
-    },
-    {
-      title: 'カード情報を入力',
-      detail: 'カード情報を入力し「確認」をタップ'
-    },
-    {
-      title: '支払い完了'
-    }
+    { title: 'JOYFIT APPプッシュ通知をタップ' },
+    { title: '表示されている未納バナーをタップ' },
+    { title: 'お支払い内容を確認し「次へ」' },
+    { title: 'カード情報を入力し「確認」で完了' }
   ],
   altPath: {
     blockTitle: 'プッシュ通知やバナーが見当たらない方は',
