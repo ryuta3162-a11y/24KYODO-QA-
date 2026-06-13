@@ -12,7 +12,7 @@
  *   05-contract-entry.png       … 各種お手続き→ご契約変更について
  *   05-credit-card-change.png   … クレジットカード変更・休会
  *   06-program-reservation.png  … PT予約5番
- *   07-member-search.png        … 会員検索フォーム
+ *   07-member-search.png        … APPログイン設定
  *   08-app-link-qr.png          … QR・アプリアクティベート
  *   09-option-menu.png          … オプション追加・解約（アプリ専用手続き）
  *   10-crowd-favorite-tab.png   … お気に入り店舗タブ
@@ -37,10 +37,14 @@ var APP_REGISTRATION_GUIDE = {
   registrationSteps: [
     {
       num: '1',
-      title: 'URLをスマートフォンで開く',
+      title: 'APPログイン設定',
       linkKey: 'memberSearch',
-      linkLabel: '会員検索フォームはこちらをタップ',
-      text: 'お名前（漢字・カタカナ）・生年月日・入会時の電話番号を入力して検索してください',
+      linkLabel: 'APPログインはこちらをタップ',
+      instructionBox: {
+        lead: 'APP入会時と同じ情報を入力',
+        fields: ['お名前', '生年月日', '電話番号'],
+        action: '検索'
+      },
       cardStyle: true,
       image: 'images/app-guide/07-member-search.png'
     },

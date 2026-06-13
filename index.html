@@ -1553,6 +1553,63 @@
             text-underline-offset: 3px;
             text-decoration-thickness: 2px;
         }
+        .guide-instruction-box {
+            margin-bottom: 1rem;
+            padding: 1rem 0.95rem 1.05rem;
+            border-radius: calc(var(--radius) - 2px);
+            background: linear-gradient(135deg, #f0fdfa 0%, #ffffff 62%);
+            border: 1px solid rgba(8, 145, 178, 0.18);
+            border-left: 3px solid #0891B2;
+            box-shadow: 0 4px 16px rgba(8, 145, 178, 0.08);
+            text-align: center;
+        }
+        .guide-instruction-lead {
+            margin: 0 0 0.7rem;
+            font-size: var(--text-body);
+            font-weight: 800;
+            color: var(--ink);
+            line-height: 1.6;
+            letter-spacing: 0.02em;
+        }
+        .guide-instruction-fields {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.4rem;
+            margin: 0 0 0.8rem;
+            padding: 0;
+            list-style: none;
+        }
+        .guide-instruction-fields li {
+            padding: 0.38rem 0.7rem;
+            background: #ffffff;
+            border: 1px solid rgba(8, 145, 178, 0.28);
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 800;
+            color: #0e7490;
+            letter-spacing: 0.03em;
+            box-shadow: 0 2px 6px rgba(8, 145, 178, 0.07);
+        }
+        .guide-instruction-action {
+            margin: 0;
+            font-size: var(--text-body);
+            font-weight: 700;
+            color: #374151;
+            line-height: 1.6;
+        }
+        .guide-search-btn {
+            display: inline-block;
+            margin: 0 0.15rem;
+            padding: 0.22rem 0.6rem;
+            background: linear-gradient(135deg, #06b6d4 0%, #0891B2 100%);
+            color: #ffffff;
+            border-radius: 4px;
+            font-weight: 800;
+            font-size: 0.85rem;
+            letter-spacing: 0.06em;
+            box-shadow: 0 3px 10px rgba(8, 145, 178, 0.28);
+        }
         .guide-step-closing {
             font-size: var(--text-body);
             font-weight: 700;
@@ -1930,7 +1987,31 @@
                     noteEl.textContent = step.note;
                     article.appendChild(noteEl);
                 }
-                if (step.textHtml) {
+                if (step.instructionBox) {
+                    var box = document.createElement('div');
+                    box.className = 'guide-instruction-box';
+                    var lead = document.createElement('p');
+                    lead.className = 'guide-instruction-lead';
+                    lead.textContent = step.instructionBox.lead;
+                    box.appendChild(lead);
+                    if (step.instructionBox.fields && step.instructionBox.fields.length) {
+                        var fields = document.createElement('ul');
+                        fields.className = 'guide-instruction-fields';
+                        step.instructionBox.fields.forEach(function (field) {
+                            var li = document.createElement('li');
+                            li.textContent = field;
+                            fields.appendChild(li);
+                        });
+                        box.appendChild(fields);
+                    }
+                    if (step.instructionBox.action) {
+                        var action = document.createElement('p');
+                        action.className = 'guide-instruction-action';
+                        action.innerHTML = '<span class="guide-search-btn">' + step.instructionBox.action + '</span>をタップ';
+                        box.appendChild(action);
+                    }
+                    article.appendChild(box);
+                } else if (step.textHtml) {
                     var htmlText = document.createElement('p');
                     htmlText.className = 'guide-step-text';
                     htmlText.innerHTML = step.textHtml;
