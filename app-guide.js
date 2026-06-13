@@ -214,7 +214,7 @@ var GUIDE_CAMERA_PERMISSION = {
 };
 
 var APP_CORPORATE_SECTION = {
-  notice: 'ジョイフィットアプリからご入会をお願いします\n12桁のプロモーションコードが必須です\n企業様ごとにコードが異なるため、事前にご所属の企業様へお問い合わせください',
+  noticeHtml: '<span class="guide-notice-u">12桁のプロモーションコードが必須です</span><br>企業様ごとにコードが異なるため、事前にご所属の企業様へお問い合わせください',
   noticeProminent: true,
   blocks: [
     {

@@ -1864,6 +1864,12 @@
             white-space: pre-wrap;
             line-height: 1.8;
         }
+        .guide-notice-u {
+            font-weight: 800;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 2px;
+        }
         .guide-notice-link {
             display: inline-block;
             margin-top: 0.65rem;
@@ -2736,7 +2742,11 @@
                 wrap.className = 'guide-footnote guide-notice-top' + (options.prominent !== false ? ' is-prominent' : '');
                 var text = document.createElement('p');
                 text.className = 'guide-notice-text';
-                text.textContent = notice;
+                if (options.noticeHtml) {
+                    text.innerHTML = options.noticeHtml;
+                } else {
+                    text.textContent = notice;
+                }
                 wrap.appendChild(text);
                 if (options.linkKey) {
                     var link = document.createElement('a');
@@ -3111,8 +3121,11 @@
             }
 
             function renderCorporateSection(container, section) {
-                if (section.notice) {
-                    renderProminentNotice(container, section.notice, { prominent: section.noticeProminent });
+                if (section.notice || section.noticeHtml) {
+                    renderProminentNotice(container, section.notice || '', {
+                        prominent: section.noticeProminent,
+                        noticeHtml: section.noticeHtml
+                    });
                 }
                 section.blocks.forEach(function (block) {
                     renderGuideAnchorNav(container, block.anchorNav);
