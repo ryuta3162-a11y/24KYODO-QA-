@@ -1428,6 +1428,13 @@
             line-height: 1.65;
             text-align: left;
         }
+        .guide-perm-em {
+            font-weight: 800;
+            color: var(--brand-red);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 2px;
+        }
         .guide-footnote {
             font-size: 0.75rem;
             color: var(--muted);
@@ -1655,7 +1662,7 @@
                 return wrap;
             }
 
-            function appendPermissionNote(parent, text, types) {
+            function appendPermissionNote(parent, text, types, html) {
                 var box = document.createElement('div');
                 box.className = 'guide-permission-note';
                 var icons = document.createElement('div');
@@ -1673,7 +1680,11 @@
                 });
                 box.appendChild(icons);
                 var note = document.createElement('p');
-                note.textContent = text;
+                if (html) {
+                    note.innerHTML = html;
+                } else {
+                    note.textContent = text;
+                }
                 box.appendChild(note);
                 parent.appendChild(box);
             }
@@ -1730,7 +1741,7 @@
                 }
                 if (step.closing) {
                     if (step.closingPermission && step.closingPermission.length) {
-                        appendPermissionNote(article, step.closing, step.closingPermission);
+                        appendPermissionNote(article, step.closing, step.closingPermission, step.closingHtml);
                     } else {
                         var closing = document.createElement('p');
                         closing.className = 'guide-step-closing';

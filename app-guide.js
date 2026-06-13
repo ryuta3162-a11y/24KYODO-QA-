@@ -231,7 +231,8 @@ var APP_CORPORATE_SECTION = {
           num: '2',
           title: 'プロモーションコードを入力',
           text: 'プロモーションコードを入力して「次へ」をタップ\nその後は通常入会同様の手順でございます',
-          closing: '顔写真の撮影時、必ずカメラの権限を許可してください',
+          closing: '顔写真の撮影時\n必ずカメラの権限を許可してください',
+          closingHtml: '顔写真の撮影時<br>必ず<span class="guide-perm-em">カメラの権限を許可</span>してください',
           closingPermission: ['camera'],
           image: 'images/app-guide/11-corporate-promo-code.png',
           cardStyle: true
