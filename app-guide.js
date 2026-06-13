@@ -125,14 +125,13 @@ var APP_PT_LINE_GUIDE = {
 
 var APP_CREDIT_CARD_GUIDE = {
   stepsAnchorId: 'guide-card-steps',
-  intro: 'クレジットカード変更・休会は、同じ画面からお手続きいただけます',
-  introPanelStyle: 'featured',
-  infoSectionTitle: 'ご案内',
   infoPanels: [
     {
       anchorId: 'guide-card-credit',
       title: 'クレジットカード変更について',
-      note: '変更したカード情報は、次回請求から適用されます'
+      bullets: [
+        '次回請求から適用です'
+      ]
     },
     {
       anchorId: 'guide-card-kyukai',
@@ -142,15 +141,14 @@ var APP_CREDIT_CARD_GUIDE = {
         '1ヶ月から3ヶ月まで選択できます。最大3ヶ月です'
       ],
       cautionNotice: {
-        badge: 'ご注意ください',
-        headline: '休会中に退会することは原則できません',
+        headline: '休会月に退会することはできません',
         exampleTitle: '例）3月に休会していた場合',
         timeline: [
           { month: '3月', label: '休会中', status: '退会不可', statusTone: 'no' },
           { month: '4月', label: '通常会員に復帰', status: '復帰月', statusTone: 'mid' },
-          { month: '4月', label: '4月中に退会手続き', status: '退会可', statusTone: 'yes' }
+          { month: '4月', label: '4月中に退会手続き', status: '退会可能', statusTone: 'yes' }
         ],
-        summary: '最短で退会できるのは、4月末日になります'
+        summary: '最短で退会できるのは4月末日になります'
       },
       feeGroups: [
         {
