@@ -56,6 +56,7 @@ var APP_REGISTRATION_GUIDE = {
       title: 'トップ画面へ',
       text: 'JOYFITアプリが起動し、トップ画面へ移動します',
       closing: '位置情報・カメラの使用を許可してください',
+      closingPermission: ['location', 'camera'],
       cardStyle: true,
       image: 'images/app-guide/01-home-top.png'
     }
@@ -231,6 +232,7 @@ var APP_CORPORATE_SECTION = {
           title: 'プロモーションコードを入力',
           text: 'プロモーションコードを入力して「次へ」をタップ\nその後は通常入会同様の手順でございます',
           closing: '顔写真の撮影時、必ずカメラの権限を許可してください',
+          closingPermission: ['camera'],
           image: 'images/app-guide/11-corporate-promo-code.png',
           cardStyle: true
         }
@@ -283,12 +285,6 @@ var APP_REJOIN_SECTION = {
 
 var APP_OPTION_GUIDE = {
   stepsAnchorId: 'guide-option-steps',
-  anchorNav: [
-    { id: 'guide-option-steps', label: '手順' },
-    { id: 'guide-option-cancel', label: '解約について' },
-    { id: 'guide-option-join', label: '入会時オプション' },
-    { id: 'guide-option-pricing', label: '料金一覧' }
-  ],
   steps: [
     {
       num: '1',

@@ -38,6 +38,7 @@
             --leading-tight: 1.55;
             --space-section: 1.5rem;
             --space-block: 1rem;
+            --line-green: #06C755;
         }
         * { -webkit-tap-highlight-color: transparent; box-sizing: border-box; }
         body {
@@ -968,69 +969,96 @@
         .pt-hero {
             position: relative;
             margin-bottom: 1.15rem;
-            padding: 1.2rem 1.1rem 1.25rem;
-            border-radius: calc(var(--radius) + 4px);
+            padding: 1.15rem 1.1rem 1.2rem;
+            border-radius: calc(var(--radius) + 2px);
             overflow: hidden;
-            color: #fff;
-            background: linear-gradient(135deg, #1f2937 0%, #111827 38%, #7f1d1d 100%);
-            box-shadow: 0 14px 36px rgba(17, 24, 39, 0.22);
+            color: var(--ink);
+            background: #ffffff;
+            border: 1px solid rgba(17, 24, 39, 0.08);
+            box-shadow:
+                0 1px 0 rgba(255, 255, 255, 0.95) inset,
+                var(--shadow-soft);
         }
-        .pt-hero::before {
-            content: "";
-            position: absolute;
-            inset: -40% -20% auto;
-            height: 140%;
-            background: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.18), transparent 55%);
-            animation: ptHeroGlow 5s ease-in-out infinite alternate;
-        }
+        .pt-hero::before,
         .pt-hero::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(120deg, transparent 30%, rgba(255, 255, 255, 0.07) 50%, transparent 70%);
-            transform: translateX(-120%);
-            animation: ptHeroShine 4.5s ease-in-out infinite;
+            display: none;
         }
         .pt-hero > * { position: relative; z-index: 1; }
         .pt-hero-eyebrow {
-            margin: 0 0 0.4rem;
+            margin: 0 0 0.35rem;
             font-size: 0.62rem;
             font-weight: 800;
-            letter-spacing: 0.22em;
-            color: rgba(255, 255, 255, 0.82);
+            letter-spacing: 0.2em;
+            color: var(--brand-red);
         }
         .pt-hero-brand {
-            margin: 0 0 0.55rem;
-            font-size: 1.35rem;
+            margin: 0 0 0.5rem;
+            font-size: 1.28rem;
             font-weight: 900;
             letter-spacing: 0.04em;
             line-height: 1.3;
+            color: var(--ink);
         }
         .pt-hero-lead {
             margin: 0;
-            font-size: 0.8125rem;
+            font-size: var(--text-body);
             font-weight: 600;
             line-height: 1.65;
-            color: rgba(255, 255, 255, 0.92);
+            color: #4B5563;
         }
-        .pt-hero-lead strong {
-            color: #86efac;
+        .pt-line-accent {
+            display: inline-block;
+            padding: 0.1rem 0.45rem;
+            margin: 0 0.1rem;
+            border-radius: 4px;
+            background: var(--line-green);
+            color: #ffffff;
             font-weight: 800;
+            font-size: 0.78rem;
+            letter-spacing: 0.06em;
+            vertical-align: baseline;
+        }
+        .pt-price-panel {
+            margin-bottom: 1.15rem;
+            padding: 0.85rem 0.65rem 0.75rem;
+            border-radius: calc(var(--radius) + 2px);
+            background: linear-gradient(165deg, #ffffff 0%, rgba(254, 242, 242, 0.28) 100%);
+            border: 1px solid rgba(220, 38, 38, 0.1);
+            box-shadow: 0 4px 18px rgba(17, 24, 39, 0.05);
         }
         .pt-price-strip {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 0.55rem;
-            margin-bottom: 1.15rem;
+            gap: 0.5rem;
+            margin-bottom: 0;
         }
         .pt-price-pill {
-            padding: 0.75rem 0.45rem;
+            position: relative;
+            padding: 0.78rem 0.4rem 0.72rem;
             border-radius: calc(var(--radius) - 2px);
             border: 1px solid rgba(17, 24, 39, 0.08);
-            background: #FFFFFF;
-            box-shadow: 0 2px 10px rgba(17, 24, 39, 0.06);
+            background: #ffffff;
+            box-shadow: 0 2px 8px rgba(17, 24, 39, 0.05);
             text-align: center;
             transition: transform 0.25s ease, box-shadow 0.25s ease;
+            overflow: hidden;
+        }
+        .pt-price-pill::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, rgba(220, 38, 38, 0.35) 0%, var(--brand-red) 100%);
+        }
+        .pt-price-pill.is-featured {
+            border-color: rgba(220, 38, 38, 0.22);
+            box-shadow: 0 6px 18px rgba(220, 38, 38, 0.1);
+        }
+        .pt-price-pill.is-featured::before {
+            height: 4px;
+            background: linear-gradient(90deg, var(--brand-red) 0%, #EF4444 100%);
         }
         .pt-price-pill:hover {
             transform: translateY(-2px);
@@ -1145,55 +1173,65 @@
         }
         .pt-highlight-box {
             margin-bottom: 0.95rem;
-            padding: 0.85rem 0.9rem;
+            padding: 0.9rem 0.95rem 0.85rem;
             border-radius: calc(var(--radius) - 2px);
-            background: #FFFFFF;
-            border: 1px solid rgba(17, 24, 39, 0.08);
+            background: linear-gradient(105deg, rgba(254, 242, 242, 0.42) 0%, #ffffff 55%);
+            border: 1px solid rgba(220, 38, 38, 0.1);
+            border-left: 3px solid var(--brand-red);
+            box-shadow: 0 3px 14px rgba(17, 24, 39, 0.05);
         }
         .pt-highlight-title {
-            margin: 0 0 0.6rem;
-            font-size: 0.72rem;
+            margin: 0 0 0.65rem;
+            font-size: 0.75rem;
             font-weight: 800;
             color: var(--brand-red);
-            letter-spacing: 0.06em;
+            letter-spacing: 0.08em;
         }
         .pt-highlight-grid {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 0.45rem;
+            gap: 0.5rem;
         }
         .pt-highlight-grid.is-quals {
             grid-template-columns: 1fr;
-            gap: 0.35rem;
+            gap: 0.4rem;
         }
         .pt-highlight-item {
-            padding: 0.5rem 0.35rem;
+            padding: 0.55rem 0.4rem;
             border-radius: 0.55rem;
-            background: #FFFFFF;
-            border: 1px solid rgba(17, 24, 39, 0.06);
+            background: #ffffff;
+            border: 1px solid rgba(17, 24, 39, 0.07);
             text-align: center;
             font-size: 0.62rem;
             font-weight: 700;
             color: #374151;
             line-height: 1.45;
             word-break: keep-all;
+            box-shadow: 0 2px 6px rgba(17, 24, 39, 0.04);
         }
         .pt-highlight-grid.is-quals .pt-highlight-item {
             text-align: left;
-            padding: 0.5rem 0.7rem;
-            font-size: 0.72rem;
+            padding: 0.55rem 0.75rem;
+            font-size: 0.74rem;
+            border-left: 2px solid rgba(220, 38, 38, 0.2);
+        }
+        .pt-highlight-item.is-record {
+            padding: 0.6rem 0.35rem 0.55rem;
+            background: linear-gradient(180deg, #ffffff 0%, rgba(254, 242, 242, 0.35) 100%);
         }
         .pt-highlight-item.is-record .pt-hl-label {
             display: block;
             font-size: 0.58rem;
+            font-weight: 700;
             color: var(--muted);
-            margin-bottom: 0.15rem;
+            margin-bottom: 0.2rem;
+            letter-spacing: 0.03em;
         }
         .pt-highlight-item.is-record .pt-hl-value {
             display: block;
-            font-size: 1rem;
+            font-size: 1.05rem;
             font-weight: 900;
-            color: var(--ink);
+            color: var(--brand-red);
             line-height: 1.1;
         }
         .pt-highlight-item.is-record .pt-hl-value small {
@@ -1342,12 +1380,53 @@
             text-decoration-thickness: 2px;
         }
         .guide-step-closing {
-            font-size: 0.8125rem;
+            font-size: var(--text-body);
             font-weight: 700;
             color: var(--ink);
             text-align: center;
             margin: 0.5rem 0 0.85rem;
             letter-spacing: 0.04em;
+        }
+        .guide-permission-note {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin: 0.65rem 0 0.85rem;
+            padding: 0.82rem 0.9rem;
+            border-radius: calc(var(--radius) - 2px);
+            background: linear-gradient(105deg, rgba(254, 242, 242, 0.48) 0%, #ffffff 58%);
+            border: 1px solid rgba(220, 38, 38, 0.12);
+            border-left: 3px solid var(--brand-red);
+            box-shadow: 0 3px 14px rgba(17, 24, 39, 0.05);
+        }
+        .guide-permission-icons {
+            display: flex;
+            gap: 0.35rem;
+            flex-shrink: 0;
+        }
+        .guide-perm-icon-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 0.5rem;
+            background: #ffffff;
+            border: 1px solid rgba(17, 24, 39, 0.08);
+            color: #374151;
+            box-shadow: 0 2px 6px rgba(17, 24, 39, 0.05);
+        }
+        .guide-perm-icon {
+            width: 1.05rem;
+            height: 1.05rem;
+        }
+        .guide-permission-note p {
+            margin: 0;
+            font-size: var(--text-small);
+            font-weight: 700;
+            color: #374151;
+            line-height: 1.65;
+            text-align: left;
         }
         .guide-footnote {
             font-size: 0.75rem;
@@ -1576,6 +1655,29 @@
                 return wrap;
             }
 
+            function appendPermissionNote(parent, text, types) {
+                var box = document.createElement('div');
+                box.className = 'guide-permission-note';
+                var icons = document.createElement('div');
+                icons.className = 'guide-permission-icons';
+                var iconSvgs = {
+                    location: '<svg class="guide-perm-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>',
+                    camera: '<svg class="guide-perm-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M9 4l-1.5 2H5c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-2.5L15 4H9zm3 13.6a5.6 5.6 0 110-11.2 5.6 5.6 0 010 11.2z"/><circle fill="currentColor" cx="12" cy="11" r="2.8"/></svg>'
+                };
+                types.forEach(function (type) {
+                    if (!iconSvgs[type]) return;
+                    var wrap = document.createElement('span');
+                    wrap.className = 'guide-perm-icon-wrap';
+                    wrap.innerHTML = iconSvgs[type];
+                    icons.appendChild(wrap);
+                });
+                box.appendChild(icons);
+                var note = document.createElement('p');
+                note.textContent = text;
+                box.appendChild(note);
+                parent.appendChild(box);
+            }
+
             function buildGuideStep(step, stepIndex) {
                 var article = document.createElement('article');
                 article.className = 'guide-step' + (step.cardStyle ? ' guide-step-card' : '');
@@ -1627,10 +1729,14 @@
                     article.appendChild(buildPhoneScreen(step));
                 }
                 if (step.closing) {
-                    var closing = document.createElement('p');
-                    closing.className = 'guide-step-closing';
-                    closing.textContent = step.closing;
-                    article.appendChild(closing);
+                    if (step.closingPermission && step.closingPermission.length) {
+                        appendPermissionNote(article, step.closing, step.closingPermission);
+                    } else {
+                        var closing = document.createElement('p');
+                        closing.className = 'guide-step-closing';
+                        closing.textContent = step.closing;
+                        article.appendChild(closing);
+                    }
                 }
                 return article;
             }
@@ -2157,7 +2263,7 @@
                     hero.appendChild(eyebrow);
                     var lead = document.createElement('p');
                     lead.className = 'pt-hero-lead';
-                    lead.innerHTML = (guide.hero.lead || '').replace('LINE', '<strong>LINE</strong>');
+                    lead.innerHTML = (guide.hero.lead || '').replace(/LINE/g, '<span class="pt-line-accent">LINE</span>');
                     hero.appendChild(lead);
                     container.appendChild(hero);
                 }
@@ -2167,18 +2273,21 @@
                     priceTitle.style.marginTop = '0';
                     priceTitle.textContent = 'パーソナル料金（税込）';
                     container.appendChild(priceTitle);
+                    var pricePanel = document.createElement('div');
+                    pricePanel.className = 'pt-price-panel pt-animate-in';
                     var priceStrip = document.createElement('div');
-                    priceStrip.className = 'pt-price-strip pt-animate-in';
+                    priceStrip.className = 'pt-price-strip';
                     guide.prices.forEach(function (price) {
                         var pill = document.createElement('div');
-                        pill.className = 'pt-price-pill';
+                        pill.className = 'pt-price-pill' + (price.duration === '60分' ? ' is-featured' : '');
                         pill.innerHTML =
                             '<span class="pt-price-duration">' + price.duration + '</span>' +
                             '<span class="pt-price-amount">' + price.amount + '</span>' +
                             '<span class="pt-price-tax">税込</span>';
                         priceStrip.appendChild(pill);
                     });
-                    container.appendChild(priceStrip);
+                    pricePanel.appendChild(priceStrip);
+                    container.appendChild(pricePanel);
                 }
                 if (guide.notice) {
                     renderProminentNotice(container, guide.notice, { prominent: true });
