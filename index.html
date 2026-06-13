@@ -1564,6 +1564,47 @@
             text-underline-offset: 3px;
             text-decoration-thickness: 2px;
         }
+        .guide-after-steps {
+            margin: 0.15rem 0 1.25rem;
+        }
+        .guide-after-steps-promo {
+            margin: 0 0 0.65rem;
+            padding: 0.72rem 0.9rem;
+            border-radius: calc(var(--radius) - 2px);
+            background: #f9fafb;
+            border: 1px solid rgba(17, 24, 39, 0.08);
+            font-size: var(--text-small);
+            font-weight: 700;
+            color: #374151;
+            line-height: 1.65;
+            text-align: center;
+        }
+        .guide-iccard-panel {
+            margin-top: 1.5rem;
+        }
+        .guide-iccard-panel .guide-section-head.is-framed {
+            margin-bottom: 0.75rem;
+        }
+        .guide-iccard-body {
+            padding: 1rem 1.05rem 1.1rem;
+            border-radius: calc(var(--radius) - 2px);
+            border: 1px solid rgba(17, 24, 39, 0.1);
+            border-left: 3px solid var(--ink);
+            background: linear-gradient(105deg, #f9fafb 0%, #ffffff 58%);
+            box-shadow: 0 4px 16px rgba(17, 24, 39, 0.06);
+        }
+        .guide-iccard-body .guide-intro-list {
+            margin-bottom: 0;
+        }
+        .guide-iccard-fee {
+            margin: 0.85rem 0 0;
+            padding-top: 0.7rem;
+            border-top: 1px dashed rgba(17, 24, 39, 0.12);
+            font-size: var(--text-small);
+            font-weight: 700;
+            color: #374151;
+            text-align: center;
+        }
         .guide-footnote {
             font-size: 0.75rem;
             color: var(--muted);
@@ -2653,6 +2694,59 @@
                 container.appendChild(wrap);
             }
 
+            function renderBlockAfterSteps(container, afterSteps) {
+                if (!afterSteps) return;
+                var wrap = document.createElement('div');
+                wrap.className = 'guide-after-steps';
+                if (afterSteps.promoNoteHtml) {
+                    var promo = document.createElement('p');
+                    promo.className = 'guide-after-steps-promo';
+                    promo.innerHTML = afterSteps.promoNoteHtml;
+                    wrap.appendChild(promo);
+                }
+                if (afterSteps.closing && afterSteps.closingPermission && afterSteps.closingPermission.length) {
+                    appendPermissionNote(
+                        wrap,
+                        afterSteps.closing,
+                        afterSteps.closingPermission,
+                        afterSteps.closingHtml
+                    );
+                }
+                container.appendChild(wrap);
+            }
+
+            function renderIcCardPanel(container, panel) {
+                if (!panel) return;
+                var wrap = document.createElement('div');
+                wrap.className = 'guide-iccard-panel';
+                if (panel.title) {
+                    var head = document.createElement('h3');
+                    head.className = 'guide-section-head is-flush is-framed';
+                    head.textContent = panel.title;
+                    wrap.appendChild(head);
+                }
+                var body = document.createElement('div');
+                body.className = 'guide-iccard-body';
+                if (panel.bullets && panel.bullets.length) {
+                    var list = document.createElement('ul');
+                    list.className = 'guide-intro-list';
+                    panel.bullets.forEach(function (line) {
+                        var li = document.createElement('li');
+                        li.textContent = line;
+                        list.appendChild(li);
+                    });
+                    body.appendChild(list);
+                }
+                if (panel.fee) {
+                    var fee = document.createElement('p');
+                    fee.className = 'guide-iccard-fee';
+                    fee.textContent = panel.fee;
+                    body.appendChild(fee);
+                }
+                wrap.appendChild(body);
+                container.appendChild(wrap);
+            }
+
             function renderCorporateSection(container, section) {
                 if (section.notice) {
                     renderProminentNotice(container, section.notice, { prominent: section.noticeProminent });
@@ -2697,6 +2791,12 @@
                         });
                     }
                     renderNavGuide(container, block);
+                    if (block.afterSteps) {
+                        renderBlockAfterSteps(container, block.afterSteps);
+                    }
+                    if (block.icCardPanel) {
+                        renderIcCardPanel(container, block.icCardPanel);
+                    }
                     if (block.notice && block.noticeAfter) {
                         var noticeWrap = null;
                         if (block.noticeAnchorId) {

@@ -210,6 +210,12 @@ var APP_CREDIT_CARD_GUIDE = {
   ]
 };
 
+var GUIDE_CAMERA_PERMISSION = {
+  closing: '顔写真の撮影時\n必ずカメラの権限を許可してください',
+  closingHtml: '顔写真の撮影時<br>必ず<span class="guide-perm-em">カメラの権限を許可</span>してください',
+  closingPermission: ['camera']
+};
+
 var APP_CORPORATE_SECTION = {
   notice: '【JOYFIT Appでご入会いただけます】\n12桁のプロモーションコードが必要です\n企業様ごとにコードが異なるため、ご案内ができかねます\n事前にご所属の企業様へお問い合わせください',
   noticeProminent: true,
@@ -231,9 +237,9 @@ var APP_CORPORATE_SECTION = {
           num: '2',
           title: 'プロモーションコードを入力',
           text: 'プロモーションコードを入力して「次へ」をタップ\nその後は通常入会同様の手順でございます',
-          closing: '顔写真の撮影時\n必ずカメラの権限を許可してください',
-          closingHtml: '顔写真の撮影時<br>必ず<span class="guide-perm-em">カメラの権限を許可</span>してください',
-          closingPermission: ['camera'],
+          closing: GUIDE_CAMERA_PERMISSION.closing,
+          closingHtml: GUIDE_CAMERA_PERMISSION.closingHtml,
+          closingPermission: GUIDE_CAMERA_PERMISSION.closingPermission,
           image: 'images/app-guide/11-corporate-promo-code.png',
           cardStyle: true
         }
@@ -255,7 +261,7 @@ var APP_REJOIN_SECTION = {
         ],
         note: 'キャンペーン内容は随時変動します',
         bannerLead: 'こちらをタップして店舗HPへ',
-        bannerCaption: 'ホームページのバナーをタップして、必ず内容をご確認ください',
+        bannerCaption: 'HPのバナーをタップして、必ず内容をご確認ください',
         linkKey: 'storeHp',
         linkStyle: 'campaign-banner',
         campaignBanner: {
@@ -284,7 +290,21 @@ var APP_REJOIN_SECTION = {
           title: '「アプリで入会」をタップ',
           image: 'images/app-guide/11-rejoin-app-top.png'
         }
-      ]
+      ],
+      afterSteps: {
+        promoNoteHtml: 'プロモーションコードの入力は<br>法人限定のため、該当しない場合はスキップしてください',
+        closing: GUIDE_CAMERA_PERMISSION.closing,
+        closingHtml: GUIDE_CAMERA_PERMISSION.closingHtml,
+        closingPermission: GUIDE_CAMERA_PERMISSION.closingPermission
+      },
+      icCardPanel: {
+        title: '会員証（ICカード）について',
+        bullets: [
+          '会員証をお持ちの場合は、再登録をさせていただきます',
+          '店舗スタッフに直接お声がけください'
+        ],
+        fee: '再発行料は1,000円（税込1,100円）'
+      }
     }
   ]
 };
