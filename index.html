@@ -1043,43 +1043,25 @@
             background: linear-gradient(105deg, rgba(254, 242, 242, 0.32) 0%, #ffffff 55%);
             border-bottom: 1px solid rgba(17, 24, 39, 0.06);
         }
-        .guide-option-pricing-colhead {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 0.85rem;
-            padding: 0.5rem 1rem 0.45rem;
-            font-size: 0.58rem;
-            font-weight: 800;
-            letter-spacing: 0.12em;
-            color: #8b7355;
-            background: linear-gradient(105deg, rgba(245, 239, 230, 0.9) 0%, rgba(255, 254, 251, 0.95) 100%);
-            border-bottom: 1px solid rgba(92, 64, 41, 0.1);
-        }
-        .guide-option-pricing-colhead span:last-child {
-            flex-shrink: 0;
-            min-width: 3.4rem;
-            text-align: right;
-        }
         .guide-option-pricing-list {
-            padding: 0.15rem 0 0.35rem;
+            padding: 0.35rem 0 0.35rem;
             background: transparent;
         }
         .guide-option-row {
             display: flex;
-            align-items: flex-end;
-            justify-content: space-between;
-            gap: 0.25rem;
+            align-items: flex-start;
+            gap: 0.7rem;
             padding: 0.72rem 1rem;
             border-bottom: 1px dashed rgba(92, 64, 41, 0.1);
         }
-        .guide-option-row-main {
+        .guide-option-row-body {
+            flex: 1;
+            min-width: 0;
+        }
+        .guide-option-row-line {
             display: flex;
             align-items: flex-start;
-            gap: 0.7rem;
-            flex: 0 1 auto;
-            min-width: 0;
-            max-width: calc(100% - 4.5rem);
+            width: 100%;
         }
         .guide-option-thumb {
             flex-shrink: 0;
@@ -1097,9 +1079,10 @@
         .guide-option-leader {
             flex: 1 1 auto;
             min-width: 0.35rem;
-            margin: 0 0.15rem 0.42rem;
+            height: 0;
+            margin: 0.72em 0.2rem 0;
+            border: none;
             border-bottom: 1px dotted rgba(139, 115, 85, 0.38);
-            align-self: flex-end;
         }
         .guide-option-row:nth-child(even) {
             background: linear-gradient(105deg, rgba(250, 246, 240, 0.65) 0%, rgba(255, 255, 255, 0.4) 100%);
@@ -1112,6 +1095,15 @@
             flex: 1;
             min-width: 0;
         }
+        .guide-option-row-line .guide-option-label {
+            flex: 0 1 auto;
+            max-width: 52%;
+            font-size: 0.76rem;
+            font-weight: 800;
+            color: #2f2118;
+            line-height: 1.45;
+            letter-spacing: 0.01em;
+        }
         .guide-option-label {
             display: block;
             font-size: 0.76rem;
@@ -1119,6 +1111,10 @@
             color: #2f2118;
             line-height: 1.45;
             letter-spacing: 0.01em;
+        }
+        .guide-option-row-extra {
+            margin-top: 0.2rem;
+            padding-left: 0;
         }
         .guide-option-meta {
             display: block;
@@ -1148,6 +1144,32 @@
             font-weight: 700;
             text-decoration: none;
             border-bottom: 1px solid rgba(220, 38, 38, 0.28);
+        }
+        .guide-option-row-line .guide-fee-price {
+            flex-shrink: 0;
+            min-width: 3.4rem;
+            padding: 0;
+            border-radius: 0;
+            text-align: right;
+            background: transparent;
+            border: none;
+            box-shadow: none;
+            line-height: 1.45;
+        }
+        .guide-option-row-line .guide-fee-ex {
+            display: block;
+            font-size: 0.78rem;
+            font-weight: 800;
+            color: #2f2118;
+            line-height: 1.45;
+        }
+        .guide-option-row-line .guide-fee-inc {
+            display: block;
+            margin-top: 0.1rem;
+            font-size: 0.56rem;
+            font-weight: 600;
+            color: #8b7355;
+            line-height: 1.2;
         }
         .guide-option-row .guide-fee-price {
             flex-shrink: 0;
@@ -2317,57 +2339,29 @@
                 }
                 var list = document.createElement('div');
                 list.className = 'guide-option-pricing-list';
-                var colHead = document.createElement('div');
-                colHead.className = 'guide-option-pricing-colhead';
-                colHead.innerHTML = '<span>オプション</span><span>月額</span>';
-                list.appendChild(colHead);
                 pricing.items.forEach(function (item) {
                     var row = document.createElement('div');
                     row.className = 'guide-option-row';
-                    var rowMain = document.createElement('div');
-                    rowMain.className = 'guide-option-row-main';
                     if (item.image) {
                         var thumb = document.createElement('img');
                         thumb.className = 'guide-option-thumb';
                         thumb.src = item.image;
                         thumb.alt = '';
                         thumb.loading = 'lazy';
-                        rowMain.appendChild(thumb);
+                        row.appendChild(thumb);
                     }
-                    var labelBlock = document.createElement('div');
-                    labelBlock.className = 'guide-option-label-block';
+                    var body = document.createElement('div');
+                    body.className = 'guide-option-row-body';
+                    var line = document.createElement('div');
+                    line.className = 'guide-option-row-line';
                     var label = document.createElement('span');
                     label.className = 'guide-option-label';
                     label.textContent = item.label;
-                    labelBlock.appendChild(label);
-                    if (item.note) {
-                        var meta = document.createElement('span');
-                        meta.className = 'guide-option-meta';
-                        meta.textContent = '※' + item.note;
-                        labelBlock.appendChild(meta);
-                    }
-                    if (item.linkKey) {
-                        var linkUrl = resolveSiteLink(item.linkKey);
-                        if (linkUrl && linkUrl.indexOf('http') === 0) {
-                            var link = document.createElement('a');
-                            link.className = 'guide-option-link';
-                            link.href = linkUrl;
-                            link.textContent = '※' + (item.linkLabel || '詳細はこちら');
-                            link.target = '_blank';
-                            link.rel = 'noopener';
-                            labelBlock.appendChild(link);
-                        }
-                    }
-                    if (item.tag) {
-                        var tag = document.createElement('span');
-                        tag.className = 'guide-option-tag';
-                        tag.textContent = item.tag;
-                        labelBlock.appendChild(tag);
-                    }
-                    rowMain.appendChild(labelBlock);
+                    line.appendChild(label);
                     var leader = document.createElement('span');
                     leader.className = 'guide-option-leader';
                     leader.setAttribute('aria-hidden', 'true');
+                    line.appendChild(leader);
                     var price = document.createElement('span');
                     price.className = 'guide-fee-price';
                     var ex = document.createElement('span');
@@ -2378,9 +2372,38 @@
                     inc.textContent = '税込 ' + item.incTax;
                     price.appendChild(ex);
                     price.appendChild(inc);
-                    row.appendChild(rowMain);
-                    row.appendChild(leader);
-                    row.appendChild(price);
+                    line.appendChild(price);
+                    body.appendChild(line);
+                    if (item.note || item.linkKey || item.tag) {
+                        var extra = document.createElement('div');
+                        extra.className = 'guide-option-row-extra';
+                        if (item.note) {
+                            var meta = document.createElement('span');
+                            meta.className = 'guide-option-meta';
+                            meta.textContent = '※' + item.note;
+                            extra.appendChild(meta);
+                        }
+                        if (item.linkKey) {
+                            var linkUrl = resolveSiteLink(item.linkKey);
+                            if (linkUrl && linkUrl.indexOf('http') === 0) {
+                                var link = document.createElement('a');
+                                link.className = 'guide-option-link';
+                                link.href = linkUrl;
+                                link.textContent = '※' + (item.linkLabel || '詳細はこちら');
+                                link.target = '_blank';
+                                link.rel = 'noopener';
+                                extra.appendChild(link);
+                            }
+                        }
+                        if (item.tag) {
+                            var tag = document.createElement('span');
+                            tag.className = 'guide-option-tag';
+                            tag.textContent = item.tag;
+                            extra.appendChild(tag);
+                        }
+                        body.appendChild(extra);
+                    }
+                    row.appendChild(body);
                     list.appendChild(row);
                 });
                 inner.appendChild(list);
