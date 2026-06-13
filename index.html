@@ -997,24 +997,16 @@
             margin-top: 0.85rem;
         }
         .guide-option-pricing-card {
-            padding: 0.45rem;
-            border-radius: 16px;
-            background: linear-gradient(155deg, #ebe3d8 0%, #f5efe6 42%, #faf6f0 100%);
-            border: 1px solid rgba(92, 64, 41, 0.14);
+            border-radius: calc(var(--radius) + 2px);
+            overflow: hidden;
+            border: 1px solid rgba(220, 38, 38, 0.14);
             box-shadow:
-                0 1px 0 rgba(255, 255, 255, 0.75) inset,
-                0 2px 0 rgba(92, 64, 41, 0.08),
-                0 14px 36px rgba(17, 24, 39, 0.12),
-                0 28px 56px rgba(17, 24, 39, 0.06);
+                0 1px 0 rgba(255, 255, 255, 0.95) inset,
+                0 6px 22px rgba(220, 38, 38, 0.08);
         }
         .guide-option-pricing-inner {
             overflow: hidden;
-            border-radius: 12px;
-            border: 1px solid rgba(92, 64, 41, 0.12);
-            background: linear-gradient(180deg, #fffefb 0%, #ffffff 100%);
-            box-shadow:
-                0 1px 0 rgba(255, 255, 255, 0.95) inset,
-                0 6px 18px rgba(92, 64, 41, 0.06);
+            background: #ffffff;
         }
         .guide-option-pricing-head {
             display: flex;
@@ -1022,15 +1014,15 @@
             justify-content: center;
             width: 100%;
             margin: 0;
-            padding: 1rem 1.1rem 0.95rem;
+            padding: 0.88rem 1rem;
             border: none;
-            border-bottom: 2px solid rgba(220, 38, 38, 0.22);
-            background: linear-gradient(180deg, #2f2118 0%, #3f2b1f 100%);
-            color: #faf6f0;
+            border-bottom: 1px dashed rgba(220, 38, 38, 0.2);
+            background: linear-gradient(180deg, #ffffff 0%, rgba(254, 242, 242, 0.82) 100%);
+            color: var(--brand-red);
             font-weight: 800;
-            font-size: 0.95rem;
-            letter-spacing: 0.14em;
-            box-shadow: 0 4px 14px rgba(17, 24, 39, 0.18);
+            font-size: var(--text-heading);
+            letter-spacing: 0.05em;
+            box-shadow: 0 2px 0 rgba(220, 38, 38, 0.05);
         }
         .guide-option-pricing-lead {
             margin: 0;
@@ -1044,44 +1036,45 @@
             border-bottom: 1px solid rgba(17, 24, 39, 0.06);
         }
         .guide-option-pricing-list {
-            padding: 0.35rem 0 0.35rem;
-            background: transparent;
+            padding: 0.2rem 0 0.35rem;
+            background: linear-gradient(105deg, rgba(254, 242, 242, 0.12) 0%, #ffffff 50%, #fafafa 100%);
         }
         .guide-option-row {
             display: flex;
-            align-items: flex-start;
+            align-items: center;
             gap: 0.7rem;
-            padding: 0.72rem 1rem;
-            border-bottom: 1px dashed rgba(92, 64, 41, 0.1);
+            padding: 0.78rem 1rem;
+            border-bottom: 1px solid rgba(17, 24, 39, 0.06);
         }
         .guide-option-row-body {
             flex: 1;
             min-width: 0;
+            display: flex;
+            align-items: center;
         }
         .guide-option-grid {
             display: grid;
             grid-template-columns: minmax(0, 1fr) auto;
             grid-template-rows: auto auto;
-            align-items: baseline;
+            align-items: center;
             column-gap: 0.5rem;
-            row-gap: 0.14rem;
+            row-gap: 0.16rem;
             width: 100%;
         }
         .guide-option-thumb {
             flex-shrink: 0;
+            align-self: center;
             width: 3rem;
             height: 3rem;
-            border-radius: 10px;
+            border-radius: 9px;
             object-fit: cover;
             object-position: center;
             background: #ffffff;
-            border: 1px solid rgba(92, 64, 41, 0.12);
-            box-shadow:
-                0 2px 0 rgba(255, 255, 255, 0.9) inset,
-                0 4px 12px rgba(17, 24, 39, 0.1);
+            border: 1px solid rgba(17, 24, 39, 0.08);
+            box-shadow: 0 2px 8px rgba(17, 24, 39, 0.06);
         }
         .guide-option-row:nth-child(even) {
-            background: linear-gradient(105deg, rgba(250, 246, 240, 0.65) 0%, rgba(255, 255, 255, 0.4) 100%);
+            background: linear-gradient(105deg, rgba(254, 242, 242, 0.22) 0%, #ffffff 100%);
         }
         .guide-option-row:last-child {
             border-bottom: none;
@@ -1091,9 +1084,9 @@
             grid-column: 1;
             grid-row: 1;
             min-width: 0;
-            font-size: clamp(0.62rem, 2.65vw, 0.72rem);
+            font-size: clamp(0.68rem, 2.9vw, 0.79rem);
             font-weight: 800;
-            color: #2f2118;
+            color: var(--ink);
             line-height: 1.35;
             letter-spacing: -0.01em;
             white-space: nowrap;
@@ -1103,9 +1096,9 @@
         .guide-option-ex {
             grid-column: 2;
             grid-row: 1;
-            font-size: 0.76rem;
+            font-size: 0.84rem;
             font-weight: 800;
-            color: #2f2118;
+            color: var(--ink);
             line-height: 1.35;
             white-space: nowrap;
             text-align: right;
@@ -1114,10 +1107,10 @@
             grid-column: 1;
             grid-row: 2;
             min-width: 0;
-            min-height: 0.95rem;
-            font-size: 0.56rem;
+            min-height: 1rem;
+            font-size: 0.62rem;
             font-weight: 600;
-            color: #8b7355;
+            color: var(--muted);
             line-height: 1.35;
             white-space: nowrap;
             overflow: hidden;
@@ -1125,22 +1118,23 @@
         }
         .guide-option-sub:empty {
             min-height: 0;
+            display: none;
         }
         .guide-option-inc {
             grid-column: 2;
             grid-row: 2;
-            font-size: 0.56rem;
+            font-size: 0.62rem;
             font-weight: 600;
-            color: #8b7355;
+            color: var(--muted);
             line-height: 1.35;
             white-space: nowrap;
             text-align: right;
         }
         .guide-option-tag {
             display: inline-flex;
-            padding: 0.12rem 0.4rem;
+            padding: 0.14rem 0.44rem;
             border-radius: 999px;
-            font-size: 0.54rem;
+            font-size: 0.59rem;
             font-weight: 800;
             letter-spacing: 0.02em;
             color: #B91C1C;
