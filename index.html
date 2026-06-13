@@ -2478,7 +2478,12 @@
                     wrap.appendChild(head);
                     var body = document.createElement('div');
                     body.className = 'guide-info-body';
-                    if (panel.note) {
+                    if (panel.noteHtml) {
+                        var panelNoteHtml = document.createElement('p');
+                        panelNoteHtml.className = 'guide-info-note';
+                        panelNoteHtml.innerHTML = panel.noteHtml;
+                        body.appendChild(panelNoteHtml);
+                    } else if (panel.note) {
                         var panelNote = document.createElement('p');
                         panelNote.className = 'guide-info-note';
                         panelNote.textContent = panel.note;

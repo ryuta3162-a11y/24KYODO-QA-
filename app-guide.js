@@ -325,7 +325,7 @@ var APP_OPTION_GUIDE = {
     {
       anchorId: 'guide-option-cancel',
       title: 'オプションの解約について',
-      note: '各種オプションは当月末解約となります。解約後も月末までご利用できます'
+      noteHtml: '各種オプションは当月末解約となります<br>解約後も月末までご利用できます',
     }
   ],
   optionPricing: {
