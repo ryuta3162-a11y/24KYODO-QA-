@@ -1048,11 +1048,29 @@
         }
         .guide-option-row {
             display: flex;
-            align-items: flex-start;
+            align-items: center;
             justify-content: space-between;
-            gap: 0.85rem;
+            gap: 0.75rem;
             padding: 0.78rem 1rem;
             border-bottom: 1px solid rgba(17, 24, 39, 0.05);
+        }
+        .guide-option-row-main {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            flex: 1;
+            min-width: 0;
+        }
+        .guide-option-thumb {
+            flex-shrink: 0;
+            width: 2.85rem;
+            height: 2.85rem;
+            border-radius: 9px;
+            object-fit: cover;
+            object-position: center;
+            background: #f9fafb;
+            border: 1px solid rgba(17, 24, 39, 0.07);
+            box-shadow: 0 2px 8px rgba(17, 24, 39, 0.06);
         }
         .guide-option-row:nth-child(even) {
             background: linear-gradient(105deg, #fafafa 0%, #ffffff 100%);
@@ -2265,6 +2283,16 @@
                 pricing.items.forEach(function (item) {
                     var row = document.createElement('div');
                     row.className = 'guide-option-row';
+                    var rowMain = document.createElement('div');
+                    rowMain.className = 'guide-option-row-main';
+                    if (item.image) {
+                        var thumb = document.createElement('img');
+                        thumb.className = 'guide-option-thumb';
+                        thumb.src = item.image;
+                        thumb.alt = '';
+                        thumb.loading = 'lazy';
+                        rowMain.appendChild(thumb);
+                    }
                     var labelBlock = document.createElement('div');
                     labelBlock.className = 'guide-option-label-block';
                     var label = document.createElement('span');
@@ -2295,6 +2323,7 @@
                         tag.textContent = item.tag;
                         labelBlock.appendChild(tag);
                     }
+                    rowMain.appendChild(labelBlock);
                     var price = document.createElement('span');
                     price.className = 'guide-fee-price';
                     var ex = document.createElement('span');
@@ -2305,7 +2334,7 @@
                     inc.textContent = '税込 ' + item.incTax;
                     price.appendChild(ex);
                     price.appendChild(inc);
-                    row.appendChild(labelBlock);
+                    row.appendChild(rowMain);
                     row.appendChild(price);
                     list.appendChild(row);
                 });
