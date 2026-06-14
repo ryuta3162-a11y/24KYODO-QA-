@@ -3393,6 +3393,10 @@
                     renderNavGuide(body, APP_UNPAID_GUIDE);
                 }
 
+                if (section.visualGuide === 'onlineLesson' && typeof APP_ONLINE_LESSON_GUIDE !== 'undefined') {
+                    renderNavGuide(body, APP_ONLINE_LESSON_GUIDE);
+                }
+
                 section.items.forEach(function (item) {
                     var details = document.createElement('details');
                     var summary = document.createElement('summary');

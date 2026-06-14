@@ -81,6 +81,14 @@ var QA_MASTER = {
       visualGuide: 'unpaidPayment',
       items: [],
       links: []
+    },
+    {
+      id: 'onlineLesson',
+      number: '10',
+      title: 'オンラインレッスンについて',
+      visualGuide: 'onlineLesson',
+      items: [],
+      links: []
     }
   ]
 };

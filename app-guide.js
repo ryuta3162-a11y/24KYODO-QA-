@@ -26,6 +26,10 @@
  *   11-rejoin-app-top.png         … 再入会・アプリで入会（11-corporate-app-top 複製）
  *   12-unpaid-flowchart.png       … 未納金支払いフロー（全体図）
  *   12-unpaid-app-only.png        … アプリ専用手続き・未納金のお支払い
+ *   13-online-lesson-service-list.png … オンラインレッスン・サービス一覧
+ *   13-online-lesson-login.png        … オンラインレッスン・ログイン
+ *   13-online-lesson-email.png        … オンラインレッスン・メール認証
+ *   13-online-lesson-top.png          … オンラインレッスン・トップ
  *
  * images/trainers/
  *   kusaka.png    … 日下トレーナー写真（背景透過）
@@ -432,4 +436,47 @@ var APP_CAMPAIGN_APPLY_GUIDE = {
   noticeProminent: true,
   linkKey: 'specialPlan',
   applyLabel: 'こちらから申請してください'
+};
+
+var APP_ONLINE_LESSON_GUIDE = {
+  introPanelStyle: 'featured',
+  introBullets: [
+    'JOYFITオンラインレッスンはオプション契約とAPP登録が必要です',
+    'アプリ右上「サービス」からOnline Lessonサイトへ進みます'
+  ],
+  steps: [
+    {
+      num: '1',
+      title: 'ホーム画面右上の「サービス」をタップ',
+      image: 'images/app-guide/01-home.png',
+      cardStyle: true
+    },
+    {
+      num: '2',
+      title: '「オンラインレッスン」をタップ',
+      image: 'images/app-guide/13-online-lesson-service-list.png',
+      cardStyle: true
+    },
+    {
+      num: '3',
+      title: 'メールアドレス・パスワードでログイン',
+      text: '初回は新規登録から進みます',
+      image: 'images/app-guide/13-online-lesson-login.png',
+      cardStyle: true
+    },
+    {
+      num: '4',
+      title: 'メール内URLにアクセスして登録完了',
+      text: '【JOYFIT Online Lesson】メールアドレス確認メールが届きます',
+      image: 'images/app-guide/13-online-lesson-email.png',
+      cardStyle: true
+    },
+    {
+      num: '5',
+      title: 'オンラインレッスントップへ',
+      text: '登録完了後ダイレクトリンクで開きます\nLIVE・動画レッスンなどから受講開始',
+      image: 'images/app-guide/13-online-lesson-top.png',
+      cardStyle: true
+    }
+  ]
 };
