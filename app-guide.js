@@ -30,6 +30,8 @@
  *   13-online-lesson-login.png        … オンラインレッスン・ログイン
  *   13-online-lesson-email.png        … オンラインレッスン・メール認証
  *   13-online-lesson-top.png          … オンラインレッスン・トップ
+ *   13-online-lesson-genre.png        … オンラインレッスン・ジャンル選択
+ *   13-online-lesson-watch.png        … オンラインレッスン・視聴する
  *
  * images/trainers/
  *   kusaka.png    … 日下トレーナー写真（背景透過）
@@ -473,9 +475,23 @@ var APP_ONLINE_LESSON_GUIDE = {
     },
     {
       num: '5',
-      title: 'オンラインレッスントップへ',
-      text: '登録完了後ダイレクトリンクで開きます\nLIVE・動画レッスンなどから受講開始',
+      title: 'オンラインレッスン登録完了',
+      text: '登録完了後ダイレクトリンクで開きます\nおすすめは「動画レッスン」をタップ',
       image: 'images/app-guide/13-online-lesson-top.png',
+      cardStyle: true
+    },
+    {
+      num: '6',
+      title: '好きなジャンルを選択',
+      text: 'ジャンルを選ぶとアーカイブが閲覧可能です',
+      image: 'images/app-guide/13-online-lesson-genre.png',
+      cardStyle: true
+    },
+    {
+      num: '7',
+      title: '「視聴する」をタップ',
+      text: '視聴するをタップしてご覧ください',
+      image: 'images/app-guide/13-online-lesson-watch.png',
       cardStyle: true
     }
   ]
