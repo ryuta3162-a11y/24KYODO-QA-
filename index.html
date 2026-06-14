@@ -1227,6 +1227,15 @@
             text-decoration: none;
             border-bottom: 1px solid rgba(220, 38, 38, 0.28);
         }
+        button.guide-option-link {
+            padding: 0;
+            margin: 0;
+            border: none;
+            border-bottom: 1px solid rgba(220, 38, 38, 0.28);
+            background: none;
+            font: inherit;
+            cursor: pointer;
+        }
         .guide-option-meta {
             display: inline;
         }
@@ -2468,6 +2477,19 @@
                         meta.className = 'guide-option-meta';
                         meta.textContent = '※' + item.note;
                         sub.appendChild(meta);
+                    }
+                    if (item.panelLink && item.panelLink.panel) {
+                        if (sub.childNodes.length) {
+                            sub.appendChild(document.createTextNode(' '));
+                        }
+                        var panelBtn = document.createElement('button');
+                        panelBtn.type = 'button';
+                        panelBtn.className = 'guide-option-link';
+                        panelBtn.textContent = item.panelLink.label || '詳細はこちら';
+                        panelBtn.addEventListener('click', function () {
+                            navigateToGuideStep(item.panelLink.panel, item.panelLink.stepId);
+                        });
+                        sub.appendChild(panelBtn);
                     }
                     if (item.linkKey) {
                         var linkUrl = resolveSiteLink(item.linkKey);

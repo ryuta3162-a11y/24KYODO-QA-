@@ -348,7 +348,7 @@ var APP_OPTION_GUIDE = {
     items: [
       { label: 'ピラティスリフォーマー', exTax: '3,000円', incTax: '3,300円', image: 'images/options/pilates-reformer.png' },
       { label: '体組成計', exTax: '500円', incTax: '550円', image: 'images/options/body-composition.png' },
-      { label: 'JOYFITオンラインレッスン', exTax: '1,000円', incTax: '1,100円', note: 'アプリ登録が必要', image: 'images/options/online-lesson.png' },
+      { label: 'JOYFITオンラインレッスン', exTax: '1,000円', incTax: '1,100円', image: 'images/options/online-lesson.png', panelLink: { panel: 'onlineLesson', label: 'オンラインレッスンの詳細はこちら' } },
       { label: '安心サポートVIP', exTax: '750円', incTax: '825円', linkKey: 'anshinSupport', linkLabel: '安心サポートの詳細はこちら', image: 'images/options/anshin-support-vip.png' },
       { label: '安心サポート', exTax: '500円', incTax: '550円', image: 'images/options/anshin-support-vip.png' },
       { label: 'ホットスタジオ', exTax: '1,000円', incTax: '1,100円', image: 'images/options/hot-studio.png' },
@@ -469,7 +469,7 @@ var APP_ONLINE_LESSON_GUIDE = {
     {
       num: '4',
       title: 'メール内URLにアクセスして登録完了',
-      text: '【JOYFIT Online Lesson】メールアドレス確認メールが届きます',
+      text: '【JOYFIT Online Lesson】確認メールが届きます',
       image: 'images/app-guide/13-online-lesson-email.png',
       cardStyle: true
     },
