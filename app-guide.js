@@ -476,7 +476,7 @@ var APP_ONLINE_LESSON_GUIDE = {
     {
       num: '5',
       title: 'オンラインレッスン登録完了',
-      text: '登録完了後ダイレクトリンクで開きます\nおすすめは「動画レッスン」をタップ',
+      text: 'おすすめは「動画レッスン」をタップ',
       image: 'images/app-guide/13-online-lesson-top.png',
       cardStyle: true
     },
