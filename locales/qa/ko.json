@@ -1,0 +1,586 @@
+{
+  "meta": {
+    "title": "JOYFIT24 경당 | Q&A",
+    "description": "JOYFIT24 경당 Q&A — 앱 등록, PT 예약, 신용카드 변경, 옵션, 법인 입회, 재입회 및 캠페인 신청"
+  },
+  "ui": {
+    "placeholder": "항목을 탭하여 내용 보기",
+    "tapAction": "탭",
+    "tapSuffix": "하세요",
+    "taxInc": "세금 포함",
+    "taxIncPrefix": "세금 포함 ",
+    "totalTaxInc": "합계（세금 포함）",
+    "detailsLink": "자세히 보기",
+    "hereFrom": "여기서 신청",
+    "viewSteps": "단계 보기",
+    "hereFromGeneric": "여기서",
+    "pageNav": "페이지 목차",
+    "ptPriceTitle": "퍼스널 트레이닝 요금（세금 포함）",
+    "ptRecoTitle": "이런 분께 추천",
+    "ptLineAdd": "여기서 친구 추가",
+    "ptRole": "PERSONAL TRAINER",
+    "campaignMain": "캠페인 진행 중!",
+    "campaignSub": "여기서 확인!",
+    "storeHp": "매장 홈페이지",
+    "appInstall": "APP 설치",
+    "applyHere": "여기서 신청",
+    "flowAlt": "미납금 결제 흐름",
+    "toc": "목차",
+    "tapSearchHtml": "<span class=\"guide-search-btn\">{action}</span> 탭",
+    "trainerSuffix": " 트레이너"
+  },
+  "sections": {
+    "app": {
+      "title": "JOYFIT APP 등록 방법"
+    },
+    "crowd": {
+      "title": "APP 혼잡도 확인"
+    },
+    "pt": {
+      "title": "퍼스널 트레이닝 안내"
+    },
+    "card": {
+      "title": "신용카드 변경・휴회 방법"
+    },
+    "option": {
+      "title": "옵션 추가・해지 방법"
+    },
+    "corporate": {
+      "title": "법인 입회 안내",
+      "items": [
+        {
+          "q": "법인 회원은 캠페인을 함께 이용할 수 있나요?",
+          "a": "캠페인과 법인 회원은 함께 이용할 수 없습니다.\n캠페인으로 입회를 원하시면\n일반 회원으로 입회해 주세요."
+        }
+      ]
+    },
+    "rejoin": {
+      "title": "재입회 안내"
+    },
+    "campaign": {
+      "title": "학생 할인・전입・친구 소개 신청"
+    },
+    "unpaid": {
+      "title": "미납금 안내"
+    },
+    "onlineLesson": {
+      "title": "온라인 레슨 안내"
+    }
+  },
+  "guides": {
+    "registration": {
+      "registrationSteps": [
+        {
+          "num": "1",
+          "title": "APP 로그인 설정",
+          "linkLabel": "APP 로그인은 여기를 탭",
+          "instructionBox": {
+            "lead": "APP 입회 시와 동일한 정보 입력",
+            "fields": [
+              "이름",
+              "생년월일",
+              "전화번호"
+            ],
+            "action": "검색"
+          }
+        },
+        {
+          "num": "2",
+          "title": "앱 활성화로 등록 완료",
+          "textHtml": "하늘색 <span class=\"guide-cyan-btn\">앱 활성화</span>를 탭해 주세요"
+        },
+        {
+          "num": "3",
+          "title": "홈 화면으로",
+          "text": "JOYFIT 앱이 실행되어 홈 화면으로 이동합니다",
+          "closing": "위치 정보・카메라 사용을 허용해 주세요"
+        }
+      ]
+    },
+    "ptLine": {
+      "hero": {
+        "eyebrow": "PERSONAL TRAINER",
+        "brand": "JOYFIT24 경당",
+        "lead": "LINE 친구 추가로 신청"
+      },
+      "prices": [
+        {
+          "duration": "30분",
+          "amount": "3,300円"
+        },
+        {
+          "duration": "60분",
+          "amount": "6,600円"
+        },
+        {
+          "duration": "90분",
+          "amount": "9,900円"
+        }
+      ],
+      "notice": "친구 추가 후 메시지를 보내 주세요\n※놓칠 수 있으니 참고해 주세요",
+      "trainers": [
+        {
+          "nameSei": "쿠사카",
+          "nameMei": "류타",
+          "kana": "クサカ リュウタ",
+          "highlightTitle": "현재 최고 기록",
+          "highlights": [
+            {
+              "label": "스쿼트",
+              "value": "230",
+              "unit": "kg"
+            },
+            {
+              "label": "벤치프레스",
+              "value": "180",
+              "unit": "kg"
+            },
+            {
+              "label": "데드리프트",
+              "value": "280",
+              "unit": "kg"
+            }
+          ],
+          "reco": [
+            "BIG3 중량을 늘리고 싶다",
+            "프리웨이트 사용법을 알고 싶다",
+            "근육량을 늘리고 싶다"
+          ]
+        },
+        {
+          "nameSei": "이시다",
+          "nameMei": "미에",
+          "kana": "イシダ ミエ",
+          "highlightTitle": "취득 자격",
+          "highlights": [
+            {
+              "label": "YOGA RYT200"
+            },
+            {
+              "label": "Core Functional Yoga"
+            },
+            {
+              "label": "美しい骨盤"
+            }
+          ],
+          "recoTags": [
+            "FW 구역을 써보고 싶다",
+            "덤벨 트레이닝을 해보고 싶다"
+          ],
+          "reco": [
+            "팔뚝 탄력",
+            "힙업",
+            "자세 개선"
+          ]
+        }
+      ],
+      "footnote": "트레이너는 JOYFIT24 경당 스태프입니다.\n입회 후 직접 말씀해 주셔도 됩니다."
+    },
+    "creditCard": {
+      "infoPanels": [
+        {
+          "title": "신용카드 변경 안내",
+          "bullets": [
+            "다음 청구부터 적용됩니다"
+          ]
+        },
+        {
+          "title": "휴회 안내",
+          "bullets": [
+            "휴회는 월 2,000엔（세금 포함 2,200엔）",
+            "1개월부터 3개월까지 선택 가능",
+            "최대 3개월"
+          ],
+          "cautionNotice": {
+            "headline": "휴회 월에는 탈퇴할 수 없습니다",
+            "exampleTitle": "예）3월에 휴회한 경우",
+            "timeline": [
+              {
+                "month": "3월",
+                "label": "휴회 중",
+                "status": "탈퇴 불가",
+                "statusTone": "no"
+              },
+              {
+                "month": "4월",
+                "label": "일반 회원 복귀",
+                "status": "복귀 월",
+                "statusTone": "mid"
+              },
+              {
+                "month": "4월",
+                "label": "4월 중 탈퇴 절차",
+                "status": "탈퇴 가능",
+                "statusTone": "yes"
+              }
+            ],
+            "summary": "가장 빠른 탈퇴일은 4월 말입니다"
+          },
+          "feeGroups": [
+            {
+              "badge": "휴회 중에도 전액 부담",
+              "items": [
+                {
+                  "label": "계약 락커",
+                  "exTax": "1,500円",
+                  "incTax": "1,650円"
+                },
+                {
+                  "label": "요가 매트 락커",
+                  "exTax": "1,000円",
+                  "incTax": "1,100円"
+                }
+              ]
+            },
+            {
+              "badge": "반액 부담",
+              "items": [
+                {
+                  "label": "안심 서포트",
+                  "exTax": "500円",
+                  "incTax": "550円"
+                },
+                {
+                  "label": "안심 서포트 VIP",
+                  "exTax": "750円",
+                  "incTax": "825円"
+                }
+              ]
+            }
+          ],
+          "footnote": "기타 옵션 서비스 요금은 발생하지 않습니다",
+          "feeExample": {
+            "title": "부담 금액 참고",
+            "subtitle": "안심 서포트 VIP＋요가 매트 락커 계약 중인 경우",
+            "lines": [
+              {
+                "label": "휴회 비용",
+                "amount": "2,200円"
+              },
+              {
+                "label": "안심 서포트 VIP（반액）",
+                "amount": "412円"
+              },
+              {
+                "label": "요가 매트 락커（전액）",
+                "amount": "1,100円"
+              }
+            ],
+            "total": "3,712円",
+            "note": "계약 옵션에 따라 금액이 다릅니다"
+          }
+        }
+      ],
+      "steps": [
+        {
+          "num": "1",
+          "title": "홈 화면 우측 상단 「서비스」 탭"
+        },
+        {
+          "num": "2",
+          "title": "「각종 절차」 탭"
+        },
+        {
+          "num": "3",
+          "title": "「계약 변경」 탭"
+        },
+        {
+          "num": "4",
+          "title": "「신용카드 변경」「휴회」 탭"
+        }
+      ]
+    },
+    "option": {
+      "steps": [
+        {
+          "num": "1",
+          "title": "홈 화면 우측 상단 「서비스」 탭"
+        },
+        {
+          "num": "2",
+          "title": "「앱 전용 절차」 탭"
+        },
+        {
+          "num": "3",
+          "title": "「계약 변경」 탭"
+        },
+        {
+          "num": "4",
+          "title": "「옵션 추가」 또는 「옵션 해지」 탭",
+          "titleHtml": "「옵션 추가」 또는<br>「옵션 해지」 탭"
+        }
+      ],
+      "infoPanels": [
+        {
+          "title": "옵션 해지 안내",
+          "noteHtml": "각 옵션은 당월 말 해지됩니다.<br>해지 후에도 월말까지 이용 가능합니다."
+        }
+      ],
+      "optionPricing": {
+        "title": "옵션 요금 일람",
+        "items": [
+          {
+            "label": "필라테스 리포머",
+            "exTax": "3,000円",
+            "incTax": "3,300円"
+          },
+          {
+            "label": "체성분계",
+            "exTax": "500円",
+            "incTax": "550円"
+          },
+          {
+            "label": "JOYFIT 온라인 레슨",
+            "exTax": "1,000円",
+            "incTax": "1,100円",
+            "panelLink": {
+              "label": "온라인 레슨 상세는 여기"
+            }
+          },
+          {
+            "label": "안심 서포트 VIP",
+            "exTax": "750円",
+            "incTax": "825円",
+            "linkLabel": "안심 서포트 상세는 여기"
+          },
+          {
+            "label": "안심 서포트",
+            "exTax": "500円",
+            "incTax": "550円"
+          },
+          {
+            "label": "핫 스튜디오",
+            "exTax": "1,000円",
+            "incTax": "1,100円"
+          },
+          {
+            "label": "수소수",
+            "exTax": "1,000円",
+            "incTax": "1,080円"
+          },
+          {
+            "label": "프라이빗 락커",
+            "exTax": "1,500円",
+            "incTax": "1,650円"
+          },
+          {
+            "label": "요가 매트 락커",
+            "exTax": "1,000円",
+            "incTax": "1,100円"
+          },
+          {
+            "label": "태닝",
+            "exTax": "5,000円",
+            "incTax": "5,500円",
+            "tag": "남성 회원 한정"
+          },
+          {
+            "label": "셀프 에스테",
+            "exTax": "3,000円",
+            "incTax": "3,300円",
+            "tag": "여성 회원 한정"
+          },
+          {
+            "label": "렌탈 타월",
+            "exTax": "1,500円",
+            "incTax": "1,650円"
+          },
+          {
+            "label": "렌탈 매트",
+            "exTax": "1,000円",
+            "incTax": "1,100円"
+          },
+          {
+            "label": "수소수＆프로틴",
+            "exTax": "3,000円",
+            "incTax": "3,240円",
+            "note": "6잔/1일"
+          }
+        ]
+      }
+    },
+    "crowd": {
+      "steps": [
+        {
+          "num": "1",
+          "title": "「즐겨찾는 매장」 탭"
+        },
+        {
+          "num": "2",
+          "title": "「추가」 탭"
+        },
+        {
+          "num": "3",
+          "title": "「도쿄 23구」「경당」의 ＋ 탭"
+        },
+        {
+          "num": "4",
+          "title": "방문 인원으로 혼잡도 확인"
+        }
+      ]
+    },
+    "corporate": {
+      "noticeHtml": "<span class=\"guide-notice-u\">12자리 프로모션 코드가 필수입니다</span><br>기업마다 코드가 다르므로 소속 기업에 미리 문의해 주세요",
+      "blocks": [
+        {
+          "blockTitle": "JOYFIT App 설치",
+          "actionBanner": {
+            "label": "여기서 APP 설치"
+          },
+          "steps": [
+            {
+              "num": "1",
+              "title": "「앱으로 입회」 탭"
+            },
+            {
+              "num": "2",
+              "title": "프로모션 코드 입력",
+              "textHtml": "프로모션 코드를 입력하고 「다음」 탭<br>이후 일반 입회와 동일한 절차입니다<br>필요 사항을 입력해 입회해 주세요",
+              "closing": "얼굴 사진 촬영 시\n반드시 카메라 권한을 허용해 주세요",
+              "closingHtml": "얼굴 사진 촬영 시<br>반드시 <span class=\"guide-perm-em\">카메라 권한을 허용</span>해 주세요",
+              "afterClosing": {
+                "panelLink": {
+                  "label": "여기서 APP 등록으로 진행"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "rejoin": {
+      "blocks": [
+        {
+          "leadPanel": {
+            "introHtml": "<span class=\"guide-notice-u\">과거 JOYFIT 회원이셨던 분은</span><br>신규 회원으로 재입회해 주세요<br>매장에서 재입회 절차는 불가합니다",
+            "campaignNote": "캠페인 내용은 수시로 변경됩니다<br>반드시 매장 HP에서 확인해 주세요",
+            "bannerCaption": "위 배너를 탭하여 확인해 주세요",
+            "campaignBanner": {
+              "main": "캠페인 진행 중!",
+              "sub": "여기서 확인!"
+            }
+          },
+          "steps": [
+            {
+              "num": "1",
+              "title": "홈 화면 우측 상단 「서비스」 탭"
+            },
+            {
+              "num": "2",
+              "title": "「앱 설정」 탭"
+            },
+            {
+              "num": "3",
+              "title": "「앱 등록 해제」 탭"
+            },
+            {
+              "num": "4",
+              "title": "「앱으로 입회」 탭"
+            }
+          ],
+          "afterSteps": {
+            "promoNoteHtml": "프로모션 코드 입력은<br>법인 한정이므로 해당 없으면 건너뛰세요",
+            "closing": "얼굴 사진 촬영 시\n반드시 카메라 권한을 허용해 주세요",
+            "closingHtml": "얼굴 사진 촬영 시<br>반드시 <span class=\"guide-perm-em\">카메라 권한을 허용</span>해 주세요"
+          },
+          "icCardPanel": {
+            "title": "회원증（IC 카드）안내",
+            "bodyHtml": "이전 회원증을 가지고 계신 분은 <span class=\"guide-iccard-free\">무료</span>로 재등록합니다<br><br>버리신 분도 재발급 가능합니다<br>재발급 1,000엔（세금 포함 1,100엔）<br><br>자세한 내용은 매장 스태프에게 문의해 주세요"
+          }
+        }
+      ]
+    },
+    "campaign": {
+      "notice": "추가 혜택은 신규 입회자 한정입니다\n입회 월 말까지 반드시 신청해 주세요\n※기간 외 혜택 부여는 불가합니다",
+      "applyLabel": "여기서 신청해 주세요"
+    },
+    "unpaid": {
+      "introBullets": [
+        "미납금이 있는 동안 시설을 이용할 수 없습니다",
+        "월회비 2개월 연체 시 규약에 따라 탈퇴됩니다",
+        "APP 입금 후 다시 시설을 이용할 수 있습니다"
+      ],
+      "cardUpdateNote": "결제 후 신용카드 정보는 갱신되지 않으므로 별도 재등록이 필요합니다",
+      "cardUpdateLink": {
+        "label": "여기서 신용카드 변경"
+      },
+      "flowTitle": "JOYFIT 앱 결제 절차",
+      "flowItems": [
+        {
+          "title": "JOYFIT APP 푸시 알림 탭"
+        },
+        {
+          "title": "표시된 미납 배너 탭"
+        },
+        {
+          "title": "결제 내용 확인 후 「다음」"
+        },
+        {
+          "title": "카드 정보 입력 후 「확인」으로 완료"
+        }
+      ],
+      "altPath": {
+        "blockTitle": "푸시 알림이나 배너가 보이지 않는 경우",
+        "steps": [
+          {
+            "num": "1",
+            "title": "홈 화면 우측 상단 「서비스」 탭"
+          },
+          {
+            "num": "2",
+            "title": "「앱 전용 절차」 탭"
+          },
+          {
+            "num": "3",
+            "title": "「미납금 결제」 탭"
+          }
+        ]
+      }
+    },
+    "onlineLesson": {
+      "introBullets": [
+        "JOYFIT 온라인 레슨은 옵션 계약과 APP 등록이 필요합니다",
+        "앱 우측 상단 「서비스」에서 Online Lesson 사이트로 이동합니다"
+      ],
+      "steps": [
+        {
+          "num": "1",
+          "title": "홈 화면 우측 상단 「서비스」 탭"
+        },
+        {
+          "num": "2",
+          "title": "「온라인 레슨」 탭"
+        },
+        {
+          "num": "3",
+          "title": "이메일・비밀번호로 로그인",
+          "text": "처음에는 신규 등록부터 진행합니다"
+        },
+        {
+          "num": "4",
+          "title": "메일 내 URL 접속으로 등록 완료",
+          "text": "【JOYFIT Online Lesson】확인 메일이 도착합니다"
+        },
+        {
+          "num": "5",
+          "title": "온라인 레슨 등록 완료",
+          "text": "「동영상 레슨」 탭을 추천합니다"
+        },
+        {
+          "num": "6",
+          "title": "원하는 장르 선택",
+          "text": "장르를 선택하면 아카이브를 볼 수 있습니다"
+        },
+        {
+          "num": "7",
+          "title": "「시청하기」 탭",
+          "text": "시청하기를 탭하여 시청해 주세요"
+        }
+      ]
+    },
+    "cameraPermission": {
+      "closing": "얼굴 사진 촬영 시\n반드시 카메라 권한을 허용해 주세요",
+      "closingHtml": "얼굴 사진 촬영 시<br>반드시 <span class=\"guide-perm-em\">카메라 권한을 허용</span>해 주세요"
+    }
+  }
+}

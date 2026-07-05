@@ -1,0 +1,586 @@
+{
+  "meta": {
+    "title": "JOYFIT24 Kyodo | Q&A",
+    "description": "JOYFIT24 Kyodo Q&A — App registration, PT booking, credit card changes, options, corporate membership, rejoining, and campaign applications"
+  },
+  "ui": {
+    "placeholder": "Tap a category to view content",
+    "tapAction": "Tap",
+    "tapSuffix": " to tap",
+    "taxInc": "Tax incl.",
+    "taxIncPrefix": "Tax incl. ",
+    "totalTaxInc": "Total (tax incl.)",
+    "detailsLink": "View details",
+    "hereFrom": "Apply here",
+    "viewSteps": "View steps",
+    "hereFromGeneric": "From here",
+    "pageNav": "On this page",
+    "ptPriceTitle": "Personal training fees (tax incl.)",
+    "ptRecoTitle": "Recommended for",
+    "ptLineAdd": "Add friend here",
+    "ptRole": "PERSONAL TRAINER",
+    "campaignMain": "Campaign ongoing!",
+    "campaignSub": "Check here!",
+    "storeHp": "Store website",
+    "appInstall": "Install APP",
+    "applyHere": "Apply here",
+    "flowAlt": "Unpaid payment flow",
+    "toc": "Table of contents",
+    "tapSearchHtml": "Tap <span class=\"guide-search-btn\">{action}</span>",
+    "trainerSuffix": " Trainer"
+  },
+  "sections": {
+    "app": {
+      "title": "How to Register for the JOYFIT App"
+    },
+    "crowd": {
+      "title": "Checking Crowd Levels in the App"
+    },
+    "pt": {
+      "title": "About Personal Training"
+    },
+    "card": {
+      "title": "Credit Card Change & Membership Hold"
+    },
+    "option": {
+      "title": "Adding & Canceling Options"
+    },
+    "corporate": {
+      "title": "Corporate Membership",
+      "items": [
+        {
+          "q": "Can corporate members combine campaigns?",
+          "a": "Campaigns cannot be combined with corporate membership.\nIf you wish to join with a campaign,\nplease enroll as a regular member."
+        }
+      ]
+    },
+    "rejoin": {
+      "title": "Rejoining"
+    },
+    "campaign": {
+      "title": "Student Discount / Transfer / Referral Applications"
+    },
+    "unpaid": {
+      "title": "Unpaid Balances"
+    },
+    "onlineLesson": {
+      "title": "About Online Lessons"
+    }
+  },
+  "guides": {
+    "registration": {
+      "registrationSteps": [
+        {
+          "num": "1",
+          "title": "App Login Setup",
+          "linkLabel": "Tap here for app login",
+          "instructionBox": {
+            "lead": "Enter the same information used when joining via the app",
+            "fields": [
+              "Full name",
+              "Date of birth",
+              "Phone number"
+            ],
+            "action": "Search"
+          }
+        },
+        {
+          "num": "2",
+          "title": "Complete registration with App Activate",
+          "textHtml": "Tap the light-blue <span class=\"guide-cyan-btn\">App Activate</span> button"
+        },
+        {
+          "num": "3",
+          "title": "Go to the home screen",
+          "text": "The JOYFIT app will launch and take you to the home screen",
+          "closing": "Please allow location and camera access"
+        }
+      ]
+    },
+    "ptLine": {
+      "hero": {
+        "eyebrow": "PERSONAL TRAINER",
+        "brand": "JOYFIT24 Kyodo",
+        "lead": "Apply via LINE friend add"
+      },
+      "prices": [
+        {
+          "duration": "30 min",
+          "amount": "3,300円"
+        },
+        {
+          "duration": "60 min",
+          "amount": "6,600円"
+        },
+        {
+          "duration": "90 min",
+          "amount": "9,900円"
+        }
+      ],
+      "notice": "Please send us a message after adding us as a friend\n※Messages may be missed",
+      "trainers": [
+        {
+          "nameSei": "Kusaka",
+          "nameMei": "Ryuta",
+          "kana": "KUSAKA RYUTA",
+          "highlightTitle": "Current personal records",
+          "highlights": [
+            {
+              "label": "Squat",
+              "value": "230",
+              "unit": "kg"
+            },
+            {
+              "label": "Bench press",
+              "value": "180",
+              "unit": "kg"
+            },
+            {
+              "label": "Deadlift",
+              "value": "280",
+              "unit": "kg"
+            }
+          ],
+          "reco": [
+            "Want to increase your BIG3 lifts",
+            "Want to learn how to use free weights",
+            "Want to build muscle mass"
+          ]
+        },
+        {
+          "nameSei": "Ishida",
+          "nameMei": "Mie",
+          "kana": "ISHIDA MIE",
+          "highlightTitle": "Certifications",
+          "highlights": [
+            {
+              "label": "YOGA RYT200"
+            },
+            {
+              "label": "Core Functional Yoga"
+            },
+            {
+              "label": "Beautiful Pelvis"
+            }
+          ],
+          "recoTags": [
+            "Want to try the FW area",
+            "Want to try dumbbell training"
+          ],
+          "reco": [
+            "Toning upper arms",
+            "Hip lift",
+            "Posture improvement"
+          ]
+        }
+      ],
+      "footnote": "Trainers are JOYFIT24 Kyodo staff.\nYou may also speak to them directly after joining."
+    },
+    "creditCard": {
+      "infoPanels": [
+        {
+          "title": "About changing your credit card",
+          "bullets": [
+            "Takes effect from the next billing cycle"
+          ]
+        },
+        {
+          "title": "About membership hold",
+          "bullets": [
+            "Membership hold costs 2,000 yen/month (2,200 yen tax incl.)",
+            "You can select 1 to 3 months",
+            "Maximum 3 months"
+          ],
+          "cautionNotice": {
+            "headline": "You cannot cancel during a hold month",
+            "exampleTitle": "Example: If you were on hold in March",
+            "timeline": [
+              {
+                "month": "March",
+                "label": "On hold",
+                "status": "Cannot cancel",
+                "statusTone": "no"
+              },
+              {
+                "month": "April",
+                "label": "Return to regular membership",
+                "status": "Return month",
+                "statusTone": "mid"
+              },
+              {
+                "month": "April",
+                "label": "Cancel during April",
+                "status": "Can cancel",
+                "statusTone": "yes"
+              }
+            ],
+            "summary": "The earliest you can cancel is the end of April"
+          },
+          "feeGroups": [
+            {
+              "badge": "Full charge during hold",
+              "items": [
+                {
+                  "label": "Contract locker",
+                  "exTax": "1,500円",
+                  "incTax": "1,650円"
+                },
+                {
+                  "label": "Yoga mat locker",
+                  "exTax": "1,000円",
+                  "incTax": "1,100円"
+                }
+              ]
+            },
+            {
+              "badge": "Half charge",
+              "items": [
+                {
+                  "label": "Anshin Support",
+                  "exTax": "500円",
+                  "incTax": "550円"
+                },
+                {
+                  "label": "Anshin Support VIP",
+                  "exTax": "750円",
+                  "incTax": "825円"
+                }
+              ]
+            }
+          ],
+          "footnote": "No charges apply for other optional services",
+          "feeExample": {
+            "title": "Sample charges",
+            "subtitle": "With Anshin Support VIP + yoga mat locker",
+            "lines": [
+              {
+                "label": "Hold fee",
+                "amount": "2,200円"
+              },
+              {
+                "label": "Anshin Support VIP (half)",
+                "amount": "412円"
+              },
+              {
+                "label": "Yoga mat locker (full)",
+                "amount": "1,100円"
+              }
+            ],
+            "total": "3,712円",
+            "note": "Amount varies depending on your options"
+          }
+        }
+      ],
+      "steps": [
+        {
+          "num": "1",
+          "title": "Tap \"Services\" at the top right of the home screen"
+        },
+        {
+          "num": "2",
+          "title": "Tap \"Various Procedures\""
+        },
+        {
+          "num": "3",
+          "title": "Tap \"Contract Changes\""
+        },
+        {
+          "num": "4",
+          "title": "Tap \"Change Credit Card\" or \"Membership Hold\""
+        }
+      ]
+    },
+    "option": {
+      "steps": [
+        {
+          "num": "1",
+          "title": "Tap \"Services\" at the top right of the home screen"
+        },
+        {
+          "num": "2",
+          "title": "Tap \"App-Only Procedures\""
+        },
+        {
+          "num": "3",
+          "title": "Tap \"Contract Changes\""
+        },
+        {
+          "num": "4",
+          "title": "Tap \"Add Option\" or \"Cancel Option\"",
+          "titleHtml": "Tap \"Add Option\" or<br>\"Cancel Option\""
+        }
+      ],
+      "infoPanels": [
+        {
+          "title": "About canceling options",
+          "noteHtml": "Options are canceled at the end of the current month.<br>You can continue using them until month-end after canceling."
+        }
+      ],
+      "optionPricing": {
+        "title": "Option fee list",
+        "items": [
+          {
+            "label": "Pilates Reformer",
+            "exTax": "3,000円",
+            "incTax": "3,300円"
+          },
+          {
+            "label": "Body composition monitor",
+            "exTax": "500円",
+            "incTax": "550円"
+          },
+          {
+            "label": "JOYFIT Online Lesson",
+            "exTax": "1,000円",
+            "incTax": "1,100円",
+            "panelLink": {
+              "label": "Online lesson details here"
+            }
+          },
+          {
+            "label": "Anshin Support VIP",
+            "exTax": "750円",
+            "incTax": "825円",
+            "linkLabel": "Anshin Support details here"
+          },
+          {
+            "label": "Anshin Support",
+            "exTax": "500円",
+            "incTax": "550円"
+          },
+          {
+            "label": "Hot Studio",
+            "exTax": "1,000円",
+            "incTax": "1,100円"
+          },
+          {
+            "label": "Hydrogen water",
+            "exTax": "1,000円",
+            "incTax": "1,080円"
+          },
+          {
+            "label": "Private locker",
+            "exTax": "1,500円",
+            "incTax": "1,650円"
+          },
+          {
+            "label": "Yoga mat locker",
+            "exTax": "1,000円",
+            "incTax": "1,100円"
+          },
+          {
+            "label": "Tanning",
+            "exTax": "5,000円",
+            "incTax": "5,500円",
+            "tag": "Male members only"
+          },
+          {
+            "label": "Self esthetic",
+            "exTax": "3,000円",
+            "incTax": "3,300円",
+            "tag": "Female members only"
+          },
+          {
+            "label": "Rental towel",
+            "exTax": "1,500円",
+            "incTax": "1,650円"
+          },
+          {
+            "label": "Rental mat",
+            "exTax": "1,000円",
+            "incTax": "1,100円"
+          },
+          {
+            "label": "Hydrogen water & protein",
+            "exTax": "3,000円",
+            "incTax": "3,240円",
+            "note": "6 cups/day"
+          }
+        ]
+      }
+    },
+    "crowd": {
+      "steps": [
+        {
+          "num": "1",
+          "title": "Tap \"Favorite Stores\""
+        },
+        {
+          "num": "2",
+          "title": "Tap \"Add\""
+        },
+        {
+          "num": "3",
+          "title": "Tap + next to \"Kyodo\" in \"Tokyo 23 wards\""
+        },
+        {
+          "num": "4",
+          "title": "Check crowd levels by visitor count"
+        }
+      ]
+    },
+    "corporate": {
+      "noticeHtml": "<span class=\"guide-notice-u\">A 12-digit promotion code is required</span><br>Codes differ by company — please contact your employer in advance",
+      "blocks": [
+        {
+          "blockTitle": "Install the JOYFIT App",
+          "actionBanner": {
+            "label": "Install the app here"
+          },
+          "steps": [
+            {
+              "num": "1",
+              "title": "Tap \"Join via App\""
+            },
+            {
+              "num": "2",
+              "title": "Enter your promotion code",
+              "textHtml": "Enter your promotion code and tap \"Next\"<br>Then follow the same steps as regular enrollment<br>Fill in the required information to join",
+              "closing": "When taking your profile photo\nplease be sure to allow camera access",
+              "closingHtml": "When taking your profile photo<br>please be sure to <span class=\"guide-perm-em\">allow camera access</span>",
+              "afterClosing": {
+                "panelLink": {
+                  "label": "Continue to app registration here"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "rejoin": {
+      "blocks": [
+        {
+          "leadPanel": {
+            "introHtml": "<span class=\"guide-notice-u\">Former JOYFIT members</span><br>must rejoin as new members<br>In-store rejoining is not available",
+            "campaignNote": "Campaign details change from time to time<br>Please check the store website",
+            "bannerCaption": "Tap the banner above to check",
+            "campaignBanner": {
+              "main": "Campaign ongoing!",
+              "sub": "Check here!"
+            }
+          },
+          "steps": [
+            {
+              "num": "1",
+              "title": "Tap \"Services\" at the top right of the home screen"
+            },
+            {
+              "num": "2",
+              "title": "Tap \"App Settings\""
+            },
+            {
+              "num": "3",
+              "title": "Tap \"Unregister App\""
+            },
+            {
+              "num": "4",
+              "title": "Tap \"Join via App\""
+            }
+          ],
+          "afterSteps": {
+            "promoNoteHtml": "Promotion code entry is<br>for corporate members only — skip if not applicable",
+            "closing": "When taking your profile photo\nplease be sure to allow camera access",
+            "closingHtml": "When taking your profile photo<br>please be sure to <span class=\"guide-perm-em\">allow camera access</span>"
+          },
+          "icCardPanel": {
+            "title": "About membership card (IC card)",
+            "bodyHtml": "If you still have your previous card, we will re-register it <span class=\"guide-iccard-free\">free of charge</span><br><br>If you discarded it, reissue is available<br>Reissue: 1,000 yen (1,100 yen tax incl.)<br><br>Please ask store staff for details"
+          }
+        }
+      ]
+    },
+    "campaign": {
+      "notice": "Bonus perks are for new members only\nPlease apply by the end of your enrollment month\n※Perks cannot be granted outside the eligible period",
+      "applyLabel": "Apply here"
+    },
+    "unpaid": {
+      "introBullets": [
+        "You cannot use the facility while you have unpaid balances",
+        "Two months of unpaid monthly fees will result in cancellation per terms",
+        "After paying via the app, you can use the facility again"
+      ],
+      "cardUpdateNote": "Credit card information is not updated after payment — you must register it again separately",
+      "cardUpdateLink": {
+        "label": "Change credit card here"
+      },
+      "flowTitle": "JOYFIT app payment steps",
+      "flowItems": [
+        {
+          "title": "Tap the JOYFIT app push notification"
+        },
+        {
+          "title": "Tap the unpaid banner shown"
+        },
+        {
+          "title": "Review payment details and tap \"Next\""
+        },
+        {
+          "title": "Enter card details and tap \"Confirm\" to complete"
+        }
+      ],
+      "altPath": {
+        "blockTitle": "If you cannot find a push notification or banner",
+        "steps": [
+          {
+            "num": "1",
+            "title": "Tap \"Services\" at the top right of the home screen"
+          },
+          {
+            "num": "2",
+            "title": "Tap \"App-Only Procedures\""
+          },
+          {
+            "num": "3",
+            "title": "Tap \"Pay Unpaid Balance\""
+          }
+        ]
+      }
+    },
+    "onlineLesson": {
+      "introBullets": [
+        "JOYFIT Online Lesson requires an option contract and app registration",
+        "From \"Services\" at the top right of the app, go to the Online Lesson site"
+      ],
+      "steps": [
+        {
+          "num": "1",
+          "title": "Tap \"Services\" at the top right of the home screen"
+        },
+        {
+          "num": "2",
+          "title": "Tap \"Online Lesson\""
+        },
+        {
+          "num": "3",
+          "title": "Log in with email and password",
+          "text": "First-time users should register as new users"
+        },
+        {
+          "num": "4",
+          "title": "Open the URL in the email to complete registration",
+          "text": "You will receive a [JOYFIT Online Lesson] confirmation email"
+        },
+        {
+          "num": "5",
+          "title": "Online lesson registration complete",
+          "text": "We recommend tapping \"Video Lessons\""
+        },
+        {
+          "num": "6",
+          "title": "Choose your preferred genre",
+          "text": "Select a genre to browse the archive"
+        },
+        {
+          "num": "7",
+          "title": "Tap \"Watch\"",
+          "text": "Tap Watch to view the lesson"
+        }
+      ]
+    },
+    "cameraPermission": {
+      "closing": "When taking your profile photo\nplease be sure to allow camera access",
+      "closingHtml": "When taking your profile photo<br>please be sure to <span class=\"guide-perm-em\">allow camera access</span>"
+    }
+  }
+}

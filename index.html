@@ -11,7 +11,8 @@
     <meta property="og:locale" content="ja_JP">
     <meta name="theme-color" content="#FFFFFF">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Sans+SC:wght@400;500;700;900&family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="i18n.css">
     <style>
         :root {
             --page-bg: #FFFFFF;
@@ -2064,6 +2065,23 @@
 </head>
 <body class="antialiased">
 
+    <div class="lang-switcher" id="lang-switcher">
+        <button type="button" class="lang-switcher__btn" id="lang-toggle" aria-expanded="false" aria-haspopup="listbox">
+            <span class="lang-switcher__icon" aria-hidden="true">🌐</span>
+            <span class="lang-switcher__label">Language</span>
+            <span class="lang-switcher__sep" aria-hidden="true">|</span>
+            <span class="lang-switcher__current" id="lang-current">日本語</span>
+            <span class="lang-switcher__caret" aria-hidden="true">▼</span>
+        </button>
+        <div class="lang-switcher__menu" id="lang-menu" role="listbox" aria-label="Language">
+            <button type="button" class="lang-switcher__item is-active" data-lang="ja" role="option">日本語</button>
+            <button type="button" class="lang-switcher__item" data-lang="en" role="option">English</button>
+            <button type="button" class="lang-switcher__item" data-lang="zh-CN" role="option">简体中文</button>
+            <button type="button" class="lang-switcher__item" data-lang="zh-TW" role="option">繁體中文</button>
+            <button type="button" class="lang-switcher__item" data-lang="ko" role="option">한국어</button>
+        </div>
+    </div>
+
     <header class="w-full">
         <div class="page-shell header-shell">
             <h1 class="hero-brand-line">
@@ -2089,6 +2107,9 @@
     <script src="site-links.js"></script>
     <script src="app-guide.js"></script>
     <script src="qa-content.js"></script>
+    <script src="locales.bundle.js"></script>
+    <script src="i18n.js"></script>
+    <script src="qa-i18n.js"></script>
     <script>
         (function () {
             var nav = document.getElementById('qa-nav');
@@ -2156,7 +2177,7 @@
                     var btn = document.createElement('button');
                     btn.type = 'button';
                     btn.className = 'guide-action-banner';
-                    btn.textContent = config.panelLink.label || 'こちらから';
+                    btn.textContent = config.panelLink.label || qaUi('hereFromGeneric', 'こちらから');
                     btn.addEventListener('click', function () {
                         navigateToGuideStep(config.panelLink.panel, config.panelLink.stepId);
                     });
@@ -2178,7 +2199,7 @@
                     btn.className = config.panelLink.bannerStyle === 'action'
                         ? 'guide-action-banner'
                         : 'guide-cross-link';
-                    btn.textContent = config.panelLink.label || '手順を見る';
+                    btn.textContent = config.panelLink.label || qaUi('viewSteps', '手順を見る');
                     btn.addEventListener('click', function () {
                         navigateToGuideStep(config.panelLink.panel, config.panelLink.stepId);
                     });
@@ -2243,7 +2264,7 @@
                     if (step.instructionBox.action) {
                         var action = document.createElement('p');
                         action.className = 'guide-instruction-action';
-                        action.innerHTML = '<span class="guide-search-btn">' + step.instructionBox.action + '</span>をタップ';
+                        action.innerHTML = qaFormatTapAction(step.instructionBox.action);
                         box.appendChild(action);
                     }
                     article.appendChild(box);
@@ -2288,9 +2309,10 @@
             }
 
             function renderAppRegistrationGuide(container) {
+                var guide = getQAGuide('APP_REGISTRATION_GUIDE');
                 var stepsSection = document.createElement('div');
                 stepsSection.className = 'guide-anchor-section';
-                APP_REGISTRATION_GUIDE.registrationSteps.forEach(function (step, index) {
+                guide.registrationSteps.forEach(function (step, index) {
                     stepsSection.appendChild(buildGuideStep(Object.assign({ cardStyle: true }, step), index));
                 });
                 container.appendChild(stepsSection);
@@ -2359,7 +2381,7 @@
                         ex.textContent = item.exTax;
                         var inc = document.createElement('span');
                         inc.className = 'guide-fee-inc';
-                        inc.textContent = '税込 ' + item.incTax;
+                        inc.textContent = qaUi('taxIncPrefix', '税込 ') + item.incTax;
                         price.appendChild(ex);
                         price.appendChild(inc);
                         row.appendChild(label);
@@ -2406,10 +2428,10 @@
                     total.className = 'guide-fee-example-total';
                     var totalLabel = document.createElement('span');
                     totalLabel.className = 'guide-fee-example-total-label';
-                    totalLabel.textContent = '合計（税込）';
+                    totalLabel.textContent = qaUi('totalTaxInc', '合計（税込）');
                     var totalAmount = document.createElement('span');
                     totalAmount.className = 'guide-fee-example-total-amount';
-                    totalAmount.innerHTML = '<small>税込</small>' + example.total;
+                    totalAmount.innerHTML = '<small>' + qaUi('taxInc', '税込') + '</small>' + example.total;
                     total.appendChild(totalLabel);
                     total.appendChild(totalAmount);
                     box.appendChild(total);
@@ -2437,7 +2459,7 @@
                 inner.className = 'guide-option-pricing-inner';
                 var head = document.createElement('div');
                 head.className = 'guide-option-pricing-head';
-                head.textContent = pricing.title || 'オプション料金一覧表';
+                head.textContent = pricing.title || qaUi('optionPricingTitle', 'オプション料金一覧表');
                 inner.appendChild(head);
                 if (pricing.lead) {
                     var lead = document.createElement('p');
@@ -2485,7 +2507,7 @@
                         var panelBtn = document.createElement('button');
                         panelBtn.type = 'button';
                         panelBtn.className = 'guide-option-link';
-                        panelBtn.textContent = item.panelLink.label || '詳細はこちら';
+                        panelBtn.textContent = item.panelLink.label || qaUi('detailsLink', '詳細はこちら');
                         panelBtn.addEventListener('click', function () {
                             navigateToGuideStep(item.panelLink.panel, item.panelLink.stepId);
                         });
@@ -2500,7 +2522,7 @@
                             var link = document.createElement('a');
                             link.className = 'guide-option-link';
                             link.href = linkUrl;
-                            link.textContent = '※' + (item.linkLabel || '詳細はこちら');
+                            link.textContent = '※' + (item.linkLabel || qaUi('detailsLink', '詳細はこちら'));
                             link.target = '_blank';
                             link.rel = 'noopener';
                             sub.appendChild(link);
@@ -2608,7 +2630,7 @@
                 if (!anchors || anchors.length < 2) return;
                 var nav = document.createElement('nav');
                 nav.className = 'guide-anchor-nav';
-                nav.setAttribute('aria-label', 'ページ内目次');
+                nav.setAttribute('aria-label', qaUi('pageNav', 'ページ内目次'));
                 anchors.forEach(function (a) {
                     var link = document.createElement('a');
                     link.className = 'guide-anchor-link';
@@ -2664,7 +2686,7 @@
                             var panelLink = document.createElement('a');
                             panelLink.className = 'guide-info-link';
                             panelLink.href = panelLinkUrl;
-                            panelLink.textContent = panel.linkLabel || '詳細はこちら';
+                            panelLink.textContent = panel.linkLabel || qaUi('detailsLink', '詳細はこちら');
                             panelLink.target = '_blank';
                             panelLink.rel = 'noopener';
                             linkWrap.appendChild(panelLink);
@@ -2737,7 +2759,7 @@
                         var cardActionBtn = document.createElement('button');
                         cardActionBtn.type = 'button';
                         cardActionBtn.className = 'guide-action-banner';
-                        cardActionBtn.textContent = guide.cardUpdateLink.label || 'こちらから';
+                        cardActionBtn.textContent = guide.cardUpdateLink.label || qaUi('hereFromGeneric', 'こちらから');
                         cardActionBtn.addEventListener('click', function () {
                             navigateToGuideStep(guide.cardUpdateLink.panel, guide.cardUpdateLink.stepId);
                         });
@@ -2749,7 +2771,7 @@
                         var crossBtn = document.createElement('button');
                         crossBtn.type = 'button';
                         crossBtn.className = 'guide-cross-link';
-                        crossBtn.textContent = guide.cardUpdateLink.label || '手順を見る';
+                        crossBtn.textContent = guide.cardUpdateLink.label || qaUi('viewSteps', '手順を見る');
                         crossBtn.addEventListener('click', function () {
                             navigateToGuideStep(guide.cardUpdateLink.panel, guide.cardUpdateLink.stepId);
                         });
@@ -2788,7 +2810,7 @@
                     flowFig.className = 'guide-flowchart-wrap';
                     var flowImg = document.createElement('img');
                     flowImg.src = guide.flowchart;
-                    flowImg.alt = '未納金フロー';
+                    flowImg.alt = qaUi('flowAlt', '未納金フロー');
                     flowImg.loading = 'lazy';
                     flowFig.appendChild(flowImg);
                     stepsHost.appendChild(flowFig);
@@ -2895,7 +2917,7 @@
                     hero.appendChild(brand);
                     var eyebrow = document.createElement('p');
                     eyebrow.className = 'pt-hero-eyebrow';
-                    eyebrow.textContent = guide.hero.eyebrow || 'PERSONAL TRAINER';
+                    eyebrow.textContent = guide.hero.eyebrow || qaUi('ptRole', 'PERSONAL TRAINER');
                     hero.appendChild(eyebrow);
                     var lead = document.createElement('p');
                     lead.className = 'pt-hero-lead';
@@ -2907,7 +2929,7 @@
                     var priceTitle = document.createElement('h3');
                     priceTitle.className = 'guide-section-head pt-animate-in';
                     priceTitle.style.marginTop = '0';
-                    priceTitle.textContent = 'パーソナル料金（税込）';
+                    priceTitle.textContent = qaUi('ptPriceTitle', 'パーソナル料金（税込）');
                     container.appendChild(priceTitle);
                     var pricePanel = document.createElement('div');
                     pricePanel.className = 'pt-price-panel pt-animate-in';
@@ -2919,7 +2941,7 @@
                         pill.innerHTML =
                             '<span class="pt-price-duration">' + price.duration + '</span>' +
                             '<span class="pt-price-amount">' + price.amount + '</span>' +
-                            '<span class="pt-price-tax">税込</span>';
+                            '<span class="pt-price-tax">' + qaUi('taxInc', '税込') + '</span>';
                         priceStrip.appendChild(pill);
                     });
                     pricePanel.appendChild(priceStrip);
@@ -2951,14 +2973,14 @@
                     identity.appendChild(name);
                     var role = document.createElement('p');
                     role.className = 'pt-trainer-role';
-                    role.textContent = 'PERSONAL TRAINER';
+                    role.textContent = qaUi('ptRole', 'PERSONAL TRAINER');
                     identity.appendChild(role);
                     head.appendChild(identity);
                     var photoWrap = document.createElement('div');
                     photoWrap.className = 'pt-trainer-photo';
                     var photo = document.createElement('img');
                     photo.src = trainer.photo;
-                    photo.alt = trainer.nameSei + ' ' + trainer.nameMei + 'トレーナー';
+                    photo.alt = qaTrainerAlt(trainer.nameSei, trainer.nameMei);
                     photo.loading = 'lazy';
                     photoWrap.appendChild(photo);
                     head.appendChild(photoWrap);
@@ -2995,7 +3017,7 @@
                         recoBox.className = 'pt-reco-box';
                         var recoTitle = document.createElement('p');
                         recoTitle.className = 'pt-reco-title';
-                        recoTitle.textContent = 'こんな方にオススメです';
+                        recoTitle.textContent = qaUi('ptRecoTitle', 'こんな方にオススメです');
                         recoBox.appendChild(recoTitle);
                         if (trainer.recoTags && trainer.recoTags.length) {
                             var tags = document.createElement('div');
@@ -3027,7 +3049,7 @@
                         var lineBtn = document.createElement('a');
                         lineBtn.className = 'pt-line-banner';
                         lineBtn.href = lineUrl;
-                        lineBtn.textContent = 'こちらから友だち追加';
+                        lineBtn.textContent = qaUi('ptLineAdd', 'こちらから友だち追加');
                         lineBtn.target = '_blank';
                         lineBtn.rel = 'noopener';
                         cta.appendChild(lineBtn);
@@ -3058,7 +3080,7 @@
                 var banner = document.createElement('a');
                 banner.className = 'guide-action-banner';
                 banner.href = linkUrl;
-                banner.textContent = guide.applyLabel || 'こちらから申請してください';
+                banner.textContent = guide.applyLabel || qaUi('applyHere', 'こちらから申請してください');
                 banner.target = '_blank';
                 banner.rel = 'noopener';
                 box.appendChild(banner);
@@ -3082,9 +3104,9 @@
                 var text = document.createElement('span');
                 text.className = 'joyfit-campaign-banner__text';
                 var main = document.createElement('span');
-                main.textContent = banner.main || 'キャンペーン実施中！';
+                main.textContent = banner.main || qaUi('campaignMain', 'キャンペーン実施中！');
                 var sub = document.createElement('span');
-                sub.textContent = banner.sub || 'こちらをチェック！';
+                sub.textContent = banner.sub || qaUi('campaignSub', 'こちらをチェック！');
                 text.appendChild(main);
                 text.appendChild(sub);
                 var chev = document.createElement('span');
@@ -3176,7 +3198,7 @@
                             var link = document.createElement('a');
                             link.className = 'guide-rejoin-hp-link';
                             link.href = linkUrl;
-                            link.textContent = panel.linkLabel || '店舗HPはこちら';
+                            link.textContent = panel.linkLabel || qaUi('storeHp', '店舗HPはこちら');
                             link.target = '_blank';
                             link.rel = 'noopener';
                             wrap.appendChild(link);
@@ -3275,7 +3297,7 @@
                             var actionBtn = document.createElement('a');
                             actionBtn.className = 'guide-action-banner';
                             actionBtn.href = actionUrl;
-                            actionBtn.textContent = block.actionBanner.label || 'APPインストール';
+                            actionBtn.textContent = block.actionBanner.label || qaUi('appInstall', 'APPインストール');
                             actionBtn.target = '_blank';
                             actionBtn.rel = 'noopener';
                             actionBox.appendChild(actionBtn);
@@ -3348,7 +3370,20 @@
                 document.head.appendChild(canonical);
             }
 
-            QA_MASTER.sections.forEach(function (section) {
+            function updateStaticUI() {
+                if (placeholderEl) {
+                    placeholderEl.textContent = qaUi('placeholder', '項目をタップして内容を表示');
+                }
+            }
+
+            function buildQAPage() {
+                nav.innerHTML = '';
+                panelsEl.innerHTML = '';
+                tabs = [];
+                panels = [];
+                var savedActive = activeId;
+
+                getQASections().forEach(function (section) {
                 var tab = document.createElement('button');
                 tab.type = 'button';
                 tab.className = 'qa-tab';
@@ -3384,39 +3419,39 @@
                 }
 
                 if (section.visualGuide === 'ptLine' && typeof APP_PT_LINE_GUIDE !== 'undefined') {
-                    renderPtLineGuide(body, APP_PT_LINE_GUIDE);
+                    renderPtLineGuide(body, getQAGuide('APP_PT_LINE_GUIDE'));
                 }
 
                 if (section.visualGuide === 'creditCard' && typeof APP_CREDIT_CARD_GUIDE !== 'undefined') {
-                    renderNavGuide(body, APP_CREDIT_CARD_GUIDE);
+                    renderNavGuide(body, getQAGuide('APP_CREDIT_CARD_GUIDE'));
                 }
 
                 if (section.visualGuide === 'optionMenu' && typeof APP_OPTION_GUIDE !== 'undefined') {
-                    renderNavGuide(body, APP_OPTION_GUIDE);
+                    renderNavGuide(body, getQAGuide('APP_OPTION_GUIDE'));
                 }
 
                 if (section.visualGuide === 'crowdStatus' && typeof APP_CROWD_STATUS_GUIDE !== 'undefined') {
-                    renderNavGuide(body, APP_CROWD_STATUS_GUIDE);
+                    renderNavGuide(body, getQAGuide('APP_CROWD_STATUS_GUIDE'));
                 }
 
                 if (section.visualGuide === 'corporateJoin' && typeof APP_CORPORATE_SECTION !== 'undefined') {
-                    renderCorporateSection(body, APP_CORPORATE_SECTION);
+                    renderCorporateSection(body, getQAGuide('APP_CORPORATE_SECTION'));
                 }
 
                 if (section.visualGuide === 'rejoin' && typeof APP_REJOIN_SECTION !== 'undefined') {
-                    renderCorporateSection(body, APP_REJOIN_SECTION);
+                    renderCorporateSection(body, getQAGuide('APP_REJOIN_SECTION'));
                 }
 
                 if (section.visualGuide === 'campaignApply' && typeof APP_CAMPAIGN_APPLY_GUIDE !== 'undefined') {
-                    renderCampaignApply(body, APP_CAMPAIGN_APPLY_GUIDE);
+                    renderCampaignApply(body, getQAGuide('APP_CAMPAIGN_APPLY_GUIDE'));
                 }
 
                 if (section.visualGuide === 'unpaidPayment' && typeof APP_UNPAID_GUIDE !== 'undefined') {
-                    renderNavGuide(body, APP_UNPAID_GUIDE);
+                    renderNavGuide(body, getQAGuide('APP_UNPAID_GUIDE'));
                 }
 
                 if (section.visualGuide === 'onlineLesson' && typeof APP_ONLINE_LESSON_GUIDE !== 'undefined') {
-                    renderNavGuide(body, APP_ONLINE_LESSON_GUIDE);
+                    renderNavGuide(body, getQAGuide('APP_ONLINE_LESSON_GUIDE'));
                 }
 
                 section.items.forEach(function (item) {
@@ -3434,7 +3469,7 @@
                         var link = document.createElement('a');
                         link.className = 'qa-link';
                         link.href = hrefFor(item);
-                        link.textContent = item.linkLabel || '詳細はこちら';
+                        link.textContent = item.linkLabel || qaUi('detailsLink', '詳細はこちら');
                         if (link.href.indexOf('http') === 0) {
                             link.target = '_blank';
                             link.rel = 'noopener';
@@ -3467,16 +3502,31 @@
                 panels.push(panel);
             });
 
-            var hash = location.hash.replace('#', '');
-            if (hash) {
-                var found = QA_MASTER.sections.some(function (s) { return s.id === hash; });
-                if (found) switchPanel(hash, false);
+                if (savedActive) {
+                    var stillThere = getQASections().some(function (s) { return s.id === savedActive; });
+                    if (stillThere) switchPanel(savedActive, false);
+                }
             }
+
+            var hash = location.hash.replace('#', '');
+            JoyfitI18n.init('qa').then(function () {
+                updateStaticUI();
+                buildQAPage();
+                if (hash) {
+                    var found = getQASections().some(function (s) { return s.id === hash; });
+                    if (found) switchPanel(hash, false);
+                }
+            });
+
+            window.addEventListener('joyfit:langchange', function () {
+                updateStaticUI();
+                buildQAPage();
+            });
 
             window.addEventListener('hashchange', function () {
                 var h = location.hash.replace('#', '');
                 if (h && h !== activeId) {
-                    var ok = QA_MASTER.sections.some(function (s) { return s.id === h; });
+                    var ok = getQASections().some(function (s) { return s.id === h; });
                     if (ok) switchPanel(h, false);
                 }
             });

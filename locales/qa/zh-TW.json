@@ -1,0 +1,586 @@
+{
+  "meta": {
+    "title": "JOYFIT24 經堂 | 常見問題",
+    "description": "JOYFIT24 經堂常見問題 — 應用程式註冊、私教預約、信用卡變更、選項、法人入會、再入會及優惠活動申請"
+  },
+  "ui": {
+    "placeholder": "點選分類查看內容",
+    "tapAction": "點選",
+    "tapSuffix": "",
+    "taxInc": "含稅",
+    "taxIncPrefix": "含稅 ",
+    "totalTaxInc": "合計（含稅）",
+    "detailsLink": "查看詳情",
+    "hereFrom": "由此申請",
+    "viewSteps": "查看步驟",
+    "hereFromGeneric": "由此進入",
+    "pageNav": "本頁目錄",
+    "ptPriceTitle": "私教費用（含稅）",
+    "ptRecoTitle": "推薦給",
+    "ptLineAdd": "由此新增好友",
+    "ptRole": "PERSONAL TRAINER",
+    "campaignMain": "優惠活動進行中！",
+    "campaignSub": "點此查看！",
+    "storeHp": "門市官網",
+    "appInstall": "安裝 APP",
+    "applyHere": "由此申請",
+    "flowAlt": "未付款支付流程",
+    "toc": "目錄",
+    "tapSearchHtml": "點擊<span class=\"guide-search-btn\">{action}</span>",
+    "trainerSuffix": "教練"
+  },
+  "sections": {
+    "app": {
+      "title": "JOYFIT APP 註冊方法"
+    },
+    "crowd": {
+      "title": "APP 擁擠狀況查詢"
+    },
+    "pt": {
+      "title": "關於私教"
+    },
+    "card": {
+      "title": "信用卡變更・休會方法"
+    },
+    "option": {
+      "title": "選項新增・解約方法"
+    },
+    "corporate": {
+      "title": "關於法人入會",
+      "items": [
+        {
+          "q": "法人會員可以併用優惠活動嗎？",
+          "a": "優惠活動與法人會員不可同時使用。\n如需透過優惠活動入會，\n請以一般會員身分入會。"
+        }
+      ]
+    },
+    "rejoin": {
+      "title": "關於再入會"
+    },
+    "campaign": {
+      "title": "學生優惠・轉籍・好友介紹申請"
+    },
+    "unpaid": {
+      "title": "關於未付款"
+    },
+    "onlineLesson": {
+      "title": "關於線上課程"
+    }
+  },
+  "guides": {
+    "registration": {
+      "registrationSteps": [
+        {
+          "num": "1",
+          "title": "APP 登入設定",
+          "linkLabel": "點此進行 APP 登入",
+          "instructionBox": {
+            "lead": "輸入與 APP 入會時相同的資訊",
+            "fields": [
+              "姓名",
+              "出生日期",
+              "電話號碼"
+            ],
+            "action": "搜尋"
+          }
+        },
+        {
+          "num": "2",
+          "title": "透過應用程式啟用完成註冊",
+          "textHtml": "請點選淺藍色的<span class=\"guide-cyan-btn\">應用程式啟用</span>"
+        },
+        {
+          "num": "3",
+          "title": "前往首頁",
+          "text": "JOYFIT 應用程式將啟動並進入首頁",
+          "closing": "請允許位置資訊與相機權限"
+        }
+      ]
+    },
+    "ptLine": {
+      "hero": {
+        "eyebrow": "PERSONAL TRAINER",
+        "brand": "JOYFIT24 經堂",
+        "lead": "請透過 LINE 新增好友申請"
+      },
+      "prices": [
+        {
+          "duration": "30分鐘",
+          "amount": "3,300円"
+        },
+        {
+          "duration": "60分鐘",
+          "amount": "6,600円"
+        },
+        {
+          "duration": "90分鐘",
+          "amount": "9,900円"
+        }
+      ],
+      "notice": "新增好友後請傳送訊息\n※可能會遺漏訊息",
+      "trainers": [
+        {
+          "nameSei": "日下",
+          "nameMei": "竜太",
+          "kana": "クサカ リュウタ",
+          "highlightTitle": "目前最高紀錄",
+          "highlights": [
+            {
+              "label": "深蹲",
+              "value": "230",
+              "unit": "kg"
+            },
+            {
+              "label": "臥推",
+              "value": "180",
+              "unit": "kg"
+            },
+            {
+              "label": "硬舉",
+              "value": "280",
+              "unit": "kg"
+            }
+          ],
+          "reco": [
+            "想提高三大項重量",
+            "想了解自由重量器材用法",
+            "想增加肌肉量"
+          ]
+        },
+        {
+          "nameSei": "石田",
+          "nameMei": "美絵",
+          "kana": "イシダ ミエ",
+          "highlightTitle": "取得資格",
+          "highlights": [
+            {
+              "label": "YOGA RYT200"
+            },
+            {
+              "label": "Core Functional Yoga"
+            },
+            {
+              "label": "美しい骨盤"
+            }
+          ],
+          "recoTags": [
+            "想試試 FW 區域",
+            "想試試啞鈴訓練"
+          ],
+          "reco": [
+            "緊實上臂",
+            "翹臀",
+            "改善體態"
+          ]
+        }
+      ],
+      "footnote": "教練均為 JOYFIT24 經堂員工。\n入會後直接諮詢也可以。"
+    },
+    "creditCard": {
+      "infoPanels": [
+        {
+          "title": "關於信用卡變更",
+          "bullets": [
+            "自下次帳單起生效"
+          ]
+        },
+        {
+          "title": "關於休會",
+          "bullets": [
+            "休會費用為月額 2,000 円（含稅 2,200 円）",
+            "可選擇 1 至 3 個月",
+            "最長 3 個月"
+          ],
+          "cautionNotice": {
+            "headline": "休會當月無法退會",
+            "exampleTitle": "例）3 月休會的情況",
+            "timeline": [
+              {
+                "month": "3月",
+                "label": "休會中",
+                "status": "不可退會",
+                "statusTone": "no"
+              },
+              {
+                "month": "4月",
+                "label": "恢復一般會員",
+                "status": "恢復月",
+                "statusTone": "mid"
+              },
+              {
+                "month": "4月",
+                "label": "4 月內辦理退會",
+                "status": "可退會",
+                "statusTone": "yes"
+              }
+            ],
+            "summary": "最早可在 4 月末退會"
+          },
+          "feeGroups": [
+            {
+              "badge": "休會期間全額負擔",
+              "items": [
+                {
+                  "label": "合約置物櫃",
+                  "exTax": "1,500円",
+                  "incTax": "1,650円"
+                },
+                {
+                  "label": "瑜伽墊置物櫃",
+                  "exTax": "1,000円",
+                  "incTax": "1,100円"
+                }
+              ]
+            },
+            {
+              "badge": "半額負擔",
+              "items": [
+                {
+                  "label": "安心サポート",
+                  "exTax": "500円",
+                  "incTax": "550円"
+                },
+                {
+                  "label": "安心サポートVIP",
+                  "exTax": "750円",
+                  "incTax": "825円"
+                }
+              ]
+            }
+          ],
+          "footnote": "其他可選服務不產生費用",
+          "feeExample": {
+            "title": "負擔金額參考",
+            "subtitle": "簽約安心サポートVIP＋瑜伽墊置物櫃的情況",
+            "lines": [
+              {
+                "label": "休會費",
+                "amount": "2,200円"
+              },
+              {
+                "label": "安心サポートVIP（半額）",
+                "amount": "412円"
+              },
+              {
+                "label": "瑜伽墊置物櫃（全額）",
+                "amount": "1,100円"
+              }
+            ],
+            "total": "3,712円",
+            "note": "金額因所簽選項而異"
+          }
+        }
+      ],
+      "steps": [
+        {
+          "num": "1",
+          "title": "點選首頁右上角的「服務」"
+        },
+        {
+          "num": "2",
+          "title": "點選「各種手續」"
+        },
+        {
+          "num": "3",
+          "title": "點選「合約變更」"
+        },
+        {
+          "num": "4",
+          "title": "點選「信用卡變更」「休會」"
+        }
+      ]
+    },
+    "option": {
+      "steps": [
+        {
+          "num": "1",
+          "title": "點選首頁右上角的「服務」"
+        },
+        {
+          "num": "2",
+          "title": "點選「APP 專用手續」"
+        },
+        {
+          "num": "3",
+          "title": "點選「合約變更」"
+        },
+        {
+          "num": "4",
+          "title": "點選「新增選項」或「解約選項」",
+          "titleHtml": "點選「新增選項」或<br>「解約選項」"
+        }
+      ],
+      "infoPanels": [
+        {
+          "title": "關於選項解約",
+          "noteHtml": "各選項於當月末解約。<br>解約後仍可使用至月末。"
+        }
+      ],
+      "optionPricing": {
+        "title": "選項費用一覽",
+        "items": [
+          {
+            "label": "皮拉提斯核心床",
+            "exTax": "3,000円",
+            "incTax": "3,300円"
+          },
+          {
+            "label": "體成分儀",
+            "exTax": "500円",
+            "incTax": "550円"
+          },
+          {
+            "label": "JOYFIT 線上課程",
+            "exTax": "1,000円",
+            "incTax": "1,100円",
+            "panelLink": {
+              "label": "線上課程詳情點此"
+            }
+          },
+          {
+            "label": "安心サポートVIP",
+            "exTax": "750円",
+            "incTax": "825円",
+            "linkLabel": "安心サポート詳情點此"
+          },
+          {
+            "label": "安心サポート",
+            "exTax": "500円",
+            "incTax": "550円"
+          },
+          {
+            "label": "熱瑜伽工作室",
+            "exTax": "1,000円",
+            "incTax": "1,100円"
+          },
+          {
+            "label": "氫水",
+            "exTax": "1,000円",
+            "incTax": "1,080円"
+          },
+          {
+            "label": "私人置物櫃",
+            "exTax": "1,500円",
+            "incTax": "1,650円"
+          },
+          {
+            "label": "瑜伽墊置物櫃",
+            "exTax": "1,000円",
+            "incTax": "1,100円"
+          },
+          {
+            "label": "美黑",
+            "exTax": "5,000円",
+            "incTax": "5,500円",
+            "tag": "限男性會員"
+          },
+          {
+            "label": "自助美容",
+            "exTax": "3,000円",
+            "incTax": "3,300円",
+            "tag": "限女性會員"
+          },
+          {
+            "label": "毛巾租借",
+            "exTax": "1,500円",
+            "incTax": "1,650円"
+          },
+          {
+            "label": "瑜伽墊租借",
+            "exTax": "1,000円",
+            "incTax": "1,100円"
+          },
+          {
+            "label": "氫水＆蛋白粉",
+            "exTax": "3,000円",
+            "incTax": "3,240円",
+            "note": "6杯/天"
+          }
+        ]
+      }
+    },
+    "crowd": {
+      "steps": [
+        {
+          "num": "1",
+          "title": "點選「收藏門市」"
+        },
+        {
+          "num": "2",
+          "title": "點選「新增」"
+        },
+        {
+          "num": "3",
+          "title": "點選「東京23區」「經堂」旁的＋"
+        },
+        {
+          "num": "4",
+          "title": "將來館人數確認擁擠狀況"
+        }
+      ]
+    },
+    "corporate": {
+      "noticeHtml": "<span class=\"guide-notice-u\">必須輸入 12 位優惠碼</span><br>各企業代碼不同，請事先向所屬企業諮詢",
+      "blocks": [
+        {
+          "blockTitle": "安裝 JOYFIT App",
+          "actionBanner": {
+            "label": "由此安裝 APP"
+          },
+          "steps": [
+            {
+              "num": "1",
+              "title": "點選「透過應用程式入會」"
+            },
+            {
+              "num": "2",
+              "title": "輸入優惠碼",
+              "textHtml": "輸入優惠碼後點選「下一步」<br>之後與一般入會步驟相同<br>請填寫必要資訊完成入會",
+              "closing": "拍攝大頭照時\n請務必允許相機權限",
+              "closingHtml": "拍攝大頭照時<br>請務必<span class=\"guide-perm-em\">允許相機權限</span>",
+              "afterClosing": {
+                "panelLink": {
+                  "label": "由此繼續 APP 註冊"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "rejoin": {
+      "blocks": [
+        {
+          "leadPanel": {
+            "introHtml": "<span class=\"guide-notice-u\">曾為 JOYFIT 會員者</span><br>需以新會員身分再入會<br>無法在門市辦理再入會",
+            "campaignNote": "優惠內容隨時變更<br>請務必在門市官網確認",
+            "bannerCaption": "請點選上方橫幅確認",
+            "campaignBanner": {
+              "main": "優惠活動進行中！",
+              "sub": "點此查看！"
+            }
+          },
+          "steps": [
+            {
+              "num": "1",
+              "title": "點選首頁右上角的「服務」"
+            },
+            {
+              "num": "2",
+              "title": "點選「應用程式設定」"
+            },
+            {
+              "num": "3",
+              "title": "點選「解除應用程式註冊」"
+            },
+            {
+              "num": "4",
+              "title": "點選「透過應用程式入會」"
+            }
+          ],
+          "afterSteps": {
+            "promoNoteHtml": "優惠碼輸入<br>僅限法人會員，不適用請跳過",
+            "closing": "拍攝大頭照時\n請務必允許相機權限",
+            "closingHtml": "拍攝大頭照時<br>請務必<span class=\"guide-perm-em\">允許相機權限</span>"
+          },
+          "icCardPanel": {
+            "title": "關於會員卡（IC 卡）",
+            "bodyHtml": "持有舊會員證者可免費<span class=\"guide-iccard-free\">重新註冊</span><br><br>遺失也可補發<br>補發 1,000 円（含稅 1,100 円）<br><br>詳情請諮詢門市員工"
+          }
+        }
+      ]
+    },
+    "campaign": {
+      "notice": "追加特典僅限新入會者\n請務必在入會當月末前申請\n※逾期無法發放特典",
+      "applyLabel": "由此申請"
+    },
+    "unpaid": {
+      "introBullets": [
+        "有未付款期間無法使用設施",
+        "月會費拖欠 2 個月將依規約退會",
+        "透過 APP 付款後可再次使用設施"
+      ],
+      "cardUpdateNote": "付款後信用卡資訊不會更新，需另行重新登記",
+      "cardUpdateLink": {
+        "label": "由此變更信用卡"
+      },
+      "flowTitle": "JOYFIT 應用程式付款步驟",
+      "flowItems": [
+        {
+          "title": "點選 JOYFIT APP 推播通知"
+        },
+        {
+          "title": "點選顯示的未付款橫幅"
+        },
+        {
+          "title": "確認付款內容後點選「下一步」"
+        },
+        {
+          "title": "輸入卡資訊點選「確認」完成"
+        }
+      ],
+      "altPath": {
+        "blockTitle": "找不到推播通知或橫幅時",
+        "steps": [
+          {
+            "num": "1",
+            "title": "點選首頁右上角的「服務」"
+          },
+          {
+            "num": "2",
+            "title": "點選「APP 專用手續」"
+          },
+          {
+            "num": "3",
+            "title": "點選「未付款支付」"
+          }
+        ]
+      }
+    },
+    "onlineLesson": {
+      "introBullets": [
+        "JOYFIT 線上課程需簽約選項並完成 APP 註冊",
+        "從應用程式右上角「服務」進入 Online Lesson 網站"
+      ],
+      "steps": [
+        {
+          "num": "1",
+          "title": "點選首頁右上角的「服務」"
+        },
+        {
+          "num": "2",
+          "title": "點選「線上課程」"
+        },
+        {
+          "num": "3",
+          "title": "使用電子郵件與密碼登入",
+          "text": "首次請從新用戶註冊開始"
+        },
+        {
+          "num": "4",
+          "title": "開啟郵件中的 URL 完成註冊",
+          "text": "將收到【JOYFIT Online Lesson】確認郵件"
+        },
+        {
+          "num": "5",
+          "title": "線上課程註冊完成",
+          "text": "推薦點選「影片課程」"
+        },
+        {
+          "num": "6",
+          "title": "選擇喜歡的類型",
+          "text": "選擇類型後可瀏覽存檔"
+        },
+        {
+          "num": "7",
+          "title": "點選「觀看」",
+          "text": "點選觀看即可瀏覽"
+        }
+      ]
+    },
+    "cameraPermission": {
+      "closing": "拍攝大頭照時\n請務必允許相機權限",
+      "closingHtml": "拍攝大頭照時<br>請務必<span class=\"guide-perm-em\">允許相機權限</span>"
+    }
+  }
+}
