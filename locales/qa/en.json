@@ -581,14 +581,6 @@
         }
       ]
     },
-    "dokodemoJoy": {
-      "lead": "Rules, fees, and transfer conditions for Dokodemo JOY — use JOYFIT locations nationwide.",
-      "sheets": [
-        { "caption": "Dokodemo JOY overview" },
-        { "caption": "Fees for other stores & paid areas" },
-        { "caption": "Transfer conditions" }
-      ]
-    },
     "cameraPermission": {
       "closing": "When taking your profile photo\nplease be sure to allow camera access",
       "closingHtml": "When taking your profile photo<br>please be sure to <span class=\"guide-perm-em\">allow camera access</span>"

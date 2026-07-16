@@ -581,14 +581,6 @@
         }
       ]
     },
-    "dokodemoJoy": {
-      "lead": "可在全国JOYFIT相互利用的「哪里都能JOY」规约・费用・转籍条件说明。",
-      "sheets": [
-        { "caption": "哪里都能JOY介绍" },
-        { "caption": "他店利用费用・付费区域" },
-        { "caption": "转籍条件" }
-      ]
-    },
     "cameraPermission": {
       "closing": "拍摄头像时\n请务必允许相机权限",
       "closingHtml": "拍摄头像时<br>请务必<span class=\"guide-perm-em\">允许相机权限</span>"

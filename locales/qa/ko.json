@@ -581,14 +581,6 @@
         }
       ]
     },
-    "dokodemoJoy": {
-      "lead": "전국 JOYFIT을 상호 이용할 수 있는 「어디서나 JOY」 규약・요금・이적 조건 안내입니다.",
-      "sheets": [
-        { "caption": "어디서나 JOY 안내" },
-        { "caption": "타 매장 이용 요금・유료 구역" },
-        { "caption": "이적 조건" }
-      ]
-    },
     "cameraPermission": {
       "closing": "얼굴 사진 촬영 시\n반드시 카메라 권한을 허용해 주세요",
       "closingHtml": "얼굴 사진 촬영 시<br>반드시 <span class=\"guide-perm-em\">카메라 권한을 허용</span>해 주세요"

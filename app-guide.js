@@ -503,19 +503,9 @@ var APP_ONLINE_LESSON_GUIDE = {
 };
 
 var APP_DOKODEMO_JOY_GUIDE = {
-  lead: '全国のJOYFITを相互利用できる「どこでもJOY」の規約・料金・移籍条件です。',
   sheets: [
-    {
-      image: 'images/dokodemo-joy/01-overview.png',
-      caption: 'どこでもJOYのご案内'
-    },
-    {
-      image: 'images/dokodemo-joy/02-fees.png',
-      caption: '他店舗利用料金・有料エリアについて'
-    },
-    {
-      image: 'images/dokodemo-joy/03-transfer.png',
-      caption: '移籍の条件について'
-    }
+    { image: 'images/dokodemo-joy/01-overview.png' },
+    { image: 'images/dokodemo-joy/02-fees.png' },
+    { image: 'images/dokodemo-joy/03-transfer.png' }
   ]
 };

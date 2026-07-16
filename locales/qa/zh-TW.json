@@ -581,14 +581,6 @@
         }
       ]
     },
-    "dokodemoJoy": {
-      "lead": "可在全國JOYFIT相互利用的「哪裡都能JOY」規約・費用・轉籍條件說明。",
-      "sheets": [
-        { "caption": "哪裡都能JOY介紹" },
-        { "caption": "他店利用費用・付費區域" },
-        { "caption": "轉籍條件" }
-      ]
-    },
     "cameraPermission": {
       "closing": "拍攝大頭照時\n請務必允許相機權限",
       "closingHtml": "拍攝大頭照時<br>請務必<span class=\"guide-perm-em\">允許相機權限</span>"
