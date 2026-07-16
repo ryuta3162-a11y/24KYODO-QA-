@@ -65,6 +65,9 @@
     },
     "onlineLesson": {
       "title": "關於線上課程"
+    },
+    "dokodemoJoy": {
+      "title": "關於哪裡都能JOY（相互利用）"
     }
   },
   "guides": {
@@ -576,6 +579,14 @@
           "title": "點選「觀看」",
           "text": "點選觀看即可瀏覽"
         }
+      ]
+    },
+    "dokodemoJoy": {
+      "lead": "可在全國JOYFIT相互利用的「哪裡都能JOY」規約・費用・轉籍條件說明。",
+      "sheets": [
+        { "caption": "哪裡都能JOY介紹" },
+        { "caption": "他店利用費用・付費區域" },
+        { "caption": "轉籍條件" }
       ]
     },
     "cameraPermission": {

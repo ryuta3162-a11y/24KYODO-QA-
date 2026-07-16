@@ -89,6 +89,14 @@ var QA_MASTER = {
       visualGuide: 'onlineLesson',
       items: [],
       links: []
+    },
+    {
+      id: 'dokodemoJoy',
+      number: '11',
+      title: 'どこでもJOY（相互利用）について',
+      visualGuide: 'dokodemoJoy',
+      items: [],
+      links: []
     }
   ]
 };

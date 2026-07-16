@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JOYFIT24経堂 | Q&A</title>
-    <meta name="description" content="JOYFIT24経堂のQ&A アプリ登録・PT予約・クレジットカード変更・オプション・法人入会・再入会・キャンペーン申請について">
+    <meta name="description" content="JOYFIT24経堂のQ&A アプリ登録・PT予約・クレジットカード変更・オプション・法人入会・再入会・キャンペーン申請・どこでもJOYについて">
     <meta property="og:title" content="JOYFIT24経堂 | Q&A">
     <meta property="og:description" content="JOYFIT24経堂のQ&Aページです">
     <meta property="og:type" content="website">
@@ -1276,6 +1276,41 @@
             box-shadow:
                 0 2px 0 rgba(255, 255, 255, 0.8) inset,
                 0 6px 22px rgba(17, 24, 39, 0.1);
+        }
+        .guide-sheet-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+        .guide-sheet-lead {
+            margin: 0 0 0.25rem;
+            font-size: 0.92rem;
+            font-weight: 700;
+            line-height: 1.65;
+            color: #374151;
+        }
+        .guide-sheet-card {
+            margin: 0;
+            padding: 0;
+        }
+        .guide-sheet-card figcaption {
+            margin: 0.65rem 0 0;
+            font-size: 0.82rem;
+            font-weight: 800;
+            letter-spacing: 0.02em;
+            color: #111827;
+            text-align: center;
+        }
+        .guide-sheet-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: calc(var(--radius) - 2px);
+            border: 1px solid rgba(17, 24, 39, 0.06);
+            box-shadow:
+                0 2px 0 rgba(255, 255, 255, 0.8) inset,
+                0 6px 22px rgba(17, 24, 39, 0.1);
+            background: #fff;
         }
         .guide-step-card .guide-step-head {
             margin-bottom: 0.75rem;
@@ -3067,6 +3102,34 @@
                 }
             }
 
+            function renderDokodemoJoyGuide(container, guide) {
+                if (!guide) return;
+                var stack = document.createElement('div');
+                stack.className = 'guide-sheet-stack';
+                if (guide.lead) {
+                    var lead = document.createElement('p');
+                    lead.className = 'guide-sheet-lead';
+                    lead.textContent = guide.lead;
+                    stack.appendChild(lead);
+                }
+                (guide.sheets || []).forEach(function (sheet) {
+                    var fig = document.createElement('figure');
+                    fig.className = 'guide-sheet-card';
+                    var img = document.createElement('img');
+                    img.src = sheet.image;
+                    img.alt = sheet.caption || '';
+                    img.loading = 'lazy';
+                    fig.appendChild(img);
+                    if (sheet.caption) {
+                        var cap = document.createElement('figcaption');
+                        cap.textContent = sheet.caption;
+                        fig.appendChild(cap);
+                    }
+                    stack.appendChild(fig);
+                });
+                container.appendChild(stack);
+            }
+
             function renderCampaignApply(container, guide) {
                 if (guide.notice) {
                     renderProminentNotice(container, guide.notice, {
@@ -3452,6 +3515,10 @@
 
                 if (section.visualGuide === 'onlineLesson' && typeof APP_ONLINE_LESSON_GUIDE !== 'undefined') {
                     renderNavGuide(body, getQAGuide('APP_ONLINE_LESSON_GUIDE'));
+                }
+
+                if (section.visualGuide === 'dokodemoJoy' && typeof APP_DOKODEMO_JOY_GUIDE !== 'undefined') {
+                    renderDokodemoJoyGuide(body, getQAGuide('APP_DOKODEMO_JOY_GUIDE'));
                 }
 
                 section.items.forEach(function (item) {

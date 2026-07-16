@@ -11,7 +11,8 @@ var QA_GUIDE_MAP = {
   APP_REJOIN_SECTION: 'rejoin',
   APP_CAMPAIGN_APPLY_GUIDE: 'campaign',
   APP_UNPAID_GUIDE: 'unpaid',
-  APP_ONLINE_LESSON_GUIDE: 'onlineLesson'
+  APP_ONLINE_LESSON_GUIDE: 'onlineLesson',
+  APP_DOKODEMO_JOY_GUIDE: 'dokodemoJoy'
 };
 
 function qaCatalogPath(path) {

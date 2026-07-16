@@ -67,6 +67,9 @@ window.JOYFIT_LOCALES = {
         },
         "onlineLesson": {
           "title": "About Online Lessons"
+        },
+        "dokodemoJoy": {
+          "title": "About Dokodemo JOY (Mutual Use)"
         }
       },
       "guides": {
@@ -580,6 +583,20 @@ window.JOYFIT_LOCALES = {
             }
           ]
         },
+        "dokodemoJoy": {
+          "lead": "Rules, fees, and transfer conditions for Dokodemo JOY — use JOYFIT locations nationwide.",
+          "sheets": [
+            {
+              "caption": "Dokodemo JOY overview"
+            },
+            {
+              "caption": "Fees for other stores & paid areas"
+            },
+            {
+              "caption": "Transfer conditions"
+            }
+          ]
+        },
         "cameraPermission": {
           "closing": "When taking your profile photo\nplease be sure to allow camera access",
           "closingHtml": "When taking your profile photo<br>please be sure to <span class=\"guide-perm-em\">allow camera access</span>"
@@ -653,6 +670,9 @@ window.JOYFIT_LOCALES = {
         },
         "onlineLesson": {
           "title": "온라인 레슨 안내"
+        },
+        "dokodemoJoy": {
+          "title": "어디서나 JOY(상호 이용) 안내"
         }
       },
       "guides": {
@@ -1166,6 +1186,20 @@ window.JOYFIT_LOCALES = {
             }
           ]
         },
+        "dokodemoJoy": {
+          "lead": "전국 JOYFIT을 상호 이용할 수 있는 「어디서나 JOY」 규약・요금・이적 조건 안내입니다.",
+          "sheets": [
+            {
+              "caption": "어디서나 JOY 안내"
+            },
+            {
+              "caption": "타 매장 이용 요금・유료 구역"
+            },
+            {
+              "caption": "이적 조건"
+            }
+          ]
+        },
         "cameraPermission": {
           "closing": "얼굴 사진 촬영 시\n반드시 카메라 권한을 허용해 주세요",
           "closingHtml": "얼굴 사진 촬영 시<br>반드시 <span class=\"guide-perm-em\">카메라 권한을 허용</span>해 주세요"
@@ -1239,6 +1273,9 @@ window.JOYFIT_LOCALES = {
         },
         "onlineLesson": {
           "title": "关于在线课程"
+        },
+        "dokodemoJoy": {
+          "title": "关于哪里都能JOY（相互利用）"
         }
       },
       "guides": {
@@ -1752,6 +1789,20 @@ window.JOYFIT_LOCALES = {
             }
           ]
         },
+        "dokodemoJoy": {
+          "lead": "可在全国JOYFIT相互利用的「哪里都能JOY」规约・费用・转籍条件说明。",
+          "sheets": [
+            {
+              "caption": "哪里都能JOY介绍"
+            },
+            {
+              "caption": "他店利用费用・付费区域"
+            },
+            {
+              "caption": "转籍条件"
+            }
+          ]
+        },
         "cameraPermission": {
           "closing": "拍摄头像时\n请务必允许相机权限",
           "closingHtml": "拍摄头像时<br>请务必<span class=\"guide-perm-em\">允许相机权限</span>"
@@ -1825,6 +1876,9 @@ window.JOYFIT_LOCALES = {
         },
         "onlineLesson": {
           "title": "關於線上課程"
+        },
+        "dokodemoJoy": {
+          "title": "關於哪裡都能JOY（相互利用）"
         }
       },
       "guides": {
@@ -2335,6 +2389,20 @@ window.JOYFIT_LOCALES = {
               "num": "7",
               "title": "點選「觀看」",
               "text": "點選觀看即可瀏覽"
+            }
+          ]
+        },
+        "dokodemoJoy": {
+          "lead": "可在全國JOYFIT相互利用的「哪裡都能JOY」規約・費用・轉籍條件說明。",
+          "sheets": [
+            {
+              "caption": "哪裡都能JOY介紹"
+            },
+            {
+              "caption": "他店利用費用・付費區域"
+            },
+            {
+              "caption": "轉籍條件"
             }
           ]
         },

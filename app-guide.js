@@ -33,6 +33,11 @@
  *   13-online-lesson-genre.png        … オンラインレッスン・ジャンル選択
  *   13-online-lesson-watch.png        … オンラインレッスン・視聴する
  *
+ * images/dokodemo-joy/
+ *   01-overview.png   … どこでもJOYのご案内
+ *   02-fees.png       … 他店舗利用料金・有料エリア
+ *   03-transfer.png   … 移籍の条件について
+ *
  * images/trainers/
  *   kusaka.png    … 日下トレーナー写真（背景透過）
  *   ishida.png    … 石田トレーナー写真（背景透過）
@@ -493,6 +498,24 @@ var APP_ONLINE_LESSON_GUIDE = {
       text: '視聴するをタップしてご覧ください',
       image: 'images/app-guide/13-online-lesson-watch.png',
       cardStyle: true
+    }
+  ]
+};
+
+var APP_DOKODEMO_JOY_GUIDE = {
+  lead: '全国のJOYFITを相互利用できる「どこでもJOY」の規約・料金・移籍条件です。',
+  sheets: [
+    {
+      image: 'images/dokodemo-joy/01-overview.png',
+      caption: 'どこでもJOYのご案内'
+    },
+    {
+      image: 'images/dokodemo-joy/02-fees.png',
+      caption: '他店舗利用料金・有料エリアについて'
+    },
+    {
+      image: 'images/dokodemo-joy/03-transfer.png',
+      caption: '移籍の条件について'
     }
   ]
 };

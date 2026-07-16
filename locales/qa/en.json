@@ -65,6 +65,9 @@
     },
     "onlineLesson": {
       "title": "About Online Lessons"
+    },
+    "dokodemoJoy": {
+      "title": "About Dokodemo JOY (Mutual Use)"
     }
   },
   "guides": {
@@ -576,6 +579,14 @@
           "title": "Tap \"Watch\"",
           "text": "Tap Watch to view the lesson"
         }
+      ]
+    },
+    "dokodemoJoy": {
+      "lead": "Rules, fees, and transfer conditions for Dokodemo JOY — use JOYFIT locations nationwide.",
+      "sheets": [
+        { "caption": "Dokodemo JOY overview" },
+        { "caption": "Fees for other stores & paid areas" },
+        { "caption": "Transfer conditions" }
       ]
     },
     "cameraPermission": {

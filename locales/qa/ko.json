@@ -65,6 +65,9 @@
     },
     "onlineLesson": {
       "title": "온라인 레슨 안내"
+    },
+    "dokodemoJoy": {
+      "title": "어디서나 JOY(상호 이용) 안내"
     }
   },
   "guides": {
@@ -576,6 +579,14 @@
           "title": "「시청하기」 탭",
           "text": "시청하기를 탭하여 시청해 주세요"
         }
+      ]
+    },
+    "dokodemoJoy": {
+      "lead": "전국 JOYFIT을 상호 이용할 수 있는 「어디서나 JOY」 규약・요금・이적 조건 안내입니다.",
+      "sheets": [
+        { "caption": "어디서나 JOY 안내" },
+        { "caption": "타 매장 이용 요금・유료 구역" },
+        { "caption": "이적 조건" }
       ]
     },
     "cameraPermission": {
