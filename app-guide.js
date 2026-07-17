@@ -33,10 +33,7 @@
  *   13-online-lesson-genre.png        … オンラインレッスン・ジャンル選択
  *   13-online-lesson-watch.png        … オンラインレッスン・視聴する
  *
- * images/dokodemo-joy/
- *   01-overview.png   … どこでもJOYのご案内
- *   02-fees.png       … 他店舗利用料金・有料エリア
- *   03-transfer.png   … 移籍の条件について
+ * images/dokodemo-joy/  … （テキスト版に移行済み・画像は未使用）
  *
  * images/trainers/
  *   kusaka.png    … 日下トレーナー写真（背景透過）
@@ -503,9 +500,84 @@ var APP_ONLINE_LESSON_GUIDE = {
 };
 
 var APP_DOKODEMO_JOY_GUIDE = {
-  sheets: [
-    { image: 'images/dokodemo-joy/01-overview.png' },
-    { image: 'images/dokodemo-joy/02-fees.png' },
-    { image: 'images/dokodemo-joy/03-transfer.png' }
+  blocks: [
+    {
+      title: 'どこでもJOYとは',
+      paragraphs: [
+        'どの店舗で入会しても、全国のJOYFIT・JOYFIT24・JOYFIT YOGA・JOYFIT+をご利用いただけます。',
+        '利用開始には登録店舗での簡単な手続きが必要です（無料）。'
+      ],
+      bullets: [
+        '会社帰り・出張先・帰省先など、どこからでも利用可能',
+        '店舗ごとのプログラムや24時間ジムも利用できる店舗があります',
+        '一部店舗は利用不可、または別途料金がかかる場合があります。事前に利用店舗へご確認ください'
+      ],
+      notes: [
+        'タイム会員・ジムLITE会員は対象外です',
+        '既存会員：登録店舗で手続き／新規会員：入会手続きの際に手続き'
+      ]
+    },
+    {
+      title: '他店舗の利用料金',
+      paragraphs: [
+        '登録店舗のブランドによって、他店舗の利用料金が異なります。'
+      ],
+      feeRows: [
+        { from: 'JOYFIT / JOYFIT24', toJoy: '無料', toYoga: '1日3,300円（税込）※女性限定', toPlus: '不可' },
+        { from: 'JOYFIT YOGA', toJoy: '無料', toYoga: '無料', toPlus: '不可' },
+        { from: 'JOYFIT+', toJoy: '無料', toYoga: '無料 ※女性限定', toPlus: '契約による（登録店舗へ確認）' }
+      ],
+      feeHeaders: {
+        from: '登録店舗',
+        toJoy: 'JOYFIT / JOYFIT24',
+        toYoga: 'JOYFIT YOGA',
+        toPlus: 'JOYFIT+'
+      }
+    },
+    {
+      title: '有料エリアのご利用',
+      paragraphs: [
+        '一部施設の有料エリアは、ICカードリーダーにタッチすると都度料金が発生します。料金は翌月の月会費と一緒に引き落とされます。'
+      ],
+      priceList: [
+        { name: '女性専用エリア', price: '1日550円（税込）※女性限定' },
+        { name: 'JOYFIT YOGA（女性専用ヨガスタジオ）', price: '1日3,300円（税込）※女性限定' },
+        { name: 'ホットスタジオ', price: '1日550円（税込）' },
+        { name: '特別有料エリア（J+など）', price: '1日3,300円（税込）' }
+      ],
+      notes: [
+        '「どこでもJOY 有料エリア OK」のアイコンがある施設が対象です',
+        '利用開始日の23:59までが1日の期限です',
+        'オリコ・りそな銀行・FD引き落としの会員様は都度課金をご利用できません',
+        'オープンから半年未満の店舗は、どこでもJOY自体が使えない場合があります'
+      ]
+    },
+    {
+      title: '移籍の条件',
+      paragraphs: [
+        '登録店舗より他店の利用が多い場合、登録店舗が移籍されることがあります。',
+        '入会後満6ヶ月未満は移籍対象外です。調査期間は累計2ヶ月以上（1ヶ月単位）です。'
+      ],
+      conditions: [
+        {
+          num: '1',
+          text: 'いちばん多く利用した店舗が、登録店舗ではない'
+        },
+        {
+          num: '2',
+          text: 'いちばん多く利用した他店の利用が、月5回以上'
+        },
+        {
+          num: '3',
+          text: 'その他店の利用時間が、全体の51%以上'
+        }
+      ],
+      paragraphsAfter: [
+        '上記3つをすべて満たした会員様が移籍対象です。JOYFITからハガキまたはDMでお知らせします。'
+      ],
+      notes: [
+        '移籍時のオプション：あんしんサポートは移籍先で自動継続／それ以外のオプションは自動解除'
+      ]
+    }
   ]
 };
