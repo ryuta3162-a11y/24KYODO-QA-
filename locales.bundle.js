@@ -584,111 +584,59 @@ window.JOYFIT_LOCALES = {
           ]
         },
         "dokodemoJoy": {
-          "blocks": [
-            {
-              "title": "What is Dokodemo JOY?",
-              "paragraphs": [
-                "No matter which store you join, you can use JOYFIT, JOYFIT24, JOYFIT YOGA, and JOYFIT+ locations nationwide.",
-                "A simple free procedure at your registered store is required to start."
-              ],
-              "bullets": [
-                "Use near work, on business trips, or while visiting home",
-                "Some stores offer unique programs and 24-hour gym access",
-                "Some stores may be unavailable or require extra fees — please check with the store in advance"
-              ],
-              "notes": [
-                "Time members and Gym LITE members are not eligible",
-                "Existing members: complete at your registered store / New members: during enrollment"
-              ]
-            },
+          "introBullets": [
+            "Use JOYFIT-brand stores nationwide",
+            "A simple free procedure at your registered store is required",
+            "Time members and Gym LITE members are not eligible"
+          ],
+          "sections": [
             {
               "title": "Fees for other stores",
-              "paragraphs": [
-                "Fees for other stores depend on the brand of your registered store."
-              ],
-              "feeHeaders": {
-                "from": "Registered store",
-                "toJoy": "JOYFIT / JOYFIT24",
-                "toYoga": "JOYFIT YOGA",
-                "toPlus": "JOYFIT+"
-              },
-              "feeRows": [
+              "flowItems": [
                 {
-                  "from": "JOYFIT / JOYFIT24",
-                  "toJoy": "Free",
-                  "toYoga": "¥3,300/day (tax incl.) *Women only",
-                  "toPlus": "Not available"
+                  "title": "Between JOYFIT / JOYFIT24",
+                  "detail": "Free"
                 },
                 {
-                  "from": "JOYFIT YOGA",
-                  "toJoy": "Free",
-                  "toYoga": "Free",
-                  "toPlus": "Not available"
+                  "title": "Using JOYFIT YOGA",
+                  "detail": "¥3,300/day tax incl. (women only) *Free between YOGA members"
                 },
                 {
-                  "from": "JOYFIT+",
-                  "toJoy": "Free",
-                  "toYoga": "Free *Women only",
-                  "toPlus": "Per contract (ask your store)"
+                  "title": "Using JOYFIT+",
+                  "detail": "Generally not available (ask your store)"
                 }
-              ]
+              ],
+              "note": "Some stores may be unavailable or require extra fees. Check with the store first"
             },
             {
               "title": "Paid areas",
-              "paragraphs": [
-                "At some facilities, tapping your IC card on a paid-area reader charges a one-time fee, billed with the next month’s membership fee."
-              ],
-              "priceList": [
+              "flowItems": [
                 {
-                  "name": "Women-only area",
-                  "price": "¥550/day (tax incl.) *Women only"
+                  "title": "Women-only area / Hot studio",
+                  "detail": "¥550/day tax incl."
                 },
                 {
-                  "name": "JOYFIT YOGA (women-only yoga studio)",
-                  "price": "¥3,300/day (tax incl.) *Women only"
-                },
-                {
-                  "name": "Hot studio",
-                  "price": "¥550/day (tax incl.)"
-                },
-                {
-                  "name": "Special paid area (J+ etc.)",
-                  "price": "¥3,300/day (tax incl.)"
+                  "title": "JOYFIT YOGA / Special paid area",
+                  "detail": "¥3,300/day tax incl."
                 }
               ],
-              "notes": [
-                "Facilities with the “Dokodemo JOY Paid Area OK” icon are eligible",
-                "Daily use ends at 23:59 on the day you start",
-                "Members billed via Orico, Resona Bank, or FD cannot use per-use charging",
-                "Stores open less than 6 months may not offer Dokodemo JOY"
-              ]
+              "note": "Charged by IC tap (billed next month). Only facilities marked Paid Area OK"
             },
             {
               "title": "Transfer conditions",
-              "paragraphs": [
-                "If you use other stores more than your registered store, your registration may be transferred.",
-                "Members within 6 months of joining are not subject to transfer. The review period is 2 months or more (in 1-month units)."
-              ],
-              "conditions": [
+              "lead": "Heavy use of other stores may transfer your registration (not within 6 months of joining)",
+              "flowItems": [
                 {
-                  "num": "1",
-                  "text": "Your most-used store is not your registered store"
+                  "title": "Most-used store is not your registered store"
                 },
                 {
-                  "num": "2",
-                  "text": "Your most-used other store is used 5+ times per month"
+                  "title": "That other store is used 5+ times per month"
                 },
                 {
-                  "num": "3",
-                  "text": "Time at that other store is 51% or more of your total usage"
+                  "title": "Time there is 51%+ of total usage"
                 }
               ],
-              "paragraphsAfter": [
-                "Members who meet all three conditions are subject to transfer. JOYFIT will notify you by postcard or direct mail."
-              ],
-              "notes": [
-                "On transfer: Anshin Support continues at the new store / other options are automatically canceled"
-              ]
+              "note": "All 3 conditions required. Options other than Anshin Support are auto-canceled"
             }
           ]
         },
@@ -1282,111 +1230,59 @@ window.JOYFIT_LOCALES = {
           ]
         },
         "dokodemoJoy": {
-          "blocks": [
-            {
-              "title": "어디서나 JOY란?",
-              "paragraphs": [
-                "어느 매장에서 입회해도 전국의 JOYFIT, JOYFIT24, JOYFIT YOGA, JOYFIT+를 이용할 수 있습니다.",
-                "이용 시작에는 등록 매장에서의 간단한 절차가 필요합니다(무료)."
-              ],
-              "bullets": [
-                "퇴근길·출장지·귀성지 등 어디서나 이용 가능",
-                "매장별 프로그램이나 24시간 짐이 있는 매장도 있습니다",
-                "일부 매장은 이용 불가이거나 별도 요금이 필요할 수 있으니 이용 매장에 미리 확인해 주세요"
-              ],
-              "notes": [
-                "타임 회원·짐 LITE 회원은 대상 외입니다",
-                "기존 회원: 등록 매장에서 절차 / 신규 회원: 입회 절차 시 함께 진행"
-              ]
-            },
+          "introBullets": [
+            "전국 JOYFIT 계열 매장을 상호 이용할 수 있습니다",
+            "등록 매장에서 간단한 절차가 필요합니다(무료)",
+            "타임 회원·짐 LITE 회원은 대상 외입니다"
+          ],
+          "sections": [
             {
               "title": "다른 매장 이용 요금",
-              "paragraphs": [
-                "등록 매장 브랜드에 따라 다른 매장 이용 요금이 달라집니다."
-              ],
-              "feeHeaders": {
-                "from": "등록 매장",
-                "toJoy": "JOYFIT / JOYFIT24",
-                "toYoga": "JOYFIT YOGA",
-                "toPlus": "JOYFIT+"
-              },
-              "feeRows": [
+              "flowItems": [
                 {
-                  "from": "JOYFIT / JOYFIT24",
-                  "toJoy": "무료",
-                  "toYoga": "1일 3,300엔(세금 포함) ※여성 한정",
-                  "toPlus": "불가"
+                  "title": "JOYFIT / JOYFIT24 간",
+                  "detail": "무료"
                 },
                 {
-                  "from": "JOYFIT YOGA",
-                  "toJoy": "무료",
-                  "toYoga": "무료",
-                  "toPlus": "불가"
+                  "title": "JOYFIT YOGA 이용",
+                  "detail": "세금 포함 3,300엔/일(여성 한정) ※YOGA 회원 간 무료"
                 },
                 {
-                  "from": "JOYFIT+",
-                  "toJoy": "무료",
-                  "toYoga": "무료 ※여성 한정",
-                  "toPlus": "계약에 따름(등록 매장에 확인)"
+                  "title": "JOYFIT+ 이용",
+                  "detail": "원칙적으로 불가(등록 매장에 확인)"
                 }
-              ]
+              ],
+              "note": "일부 매장은 이용 불가·별도 요금이 있을 수 있으니 미리 확인해 주세요"
             },
             {
-              "title": "유료 구역 이용",
-              "paragraphs": [
-                "일부 시설의 유료 구역은 IC카드 리더에 터치하면 회차별 요금이 발생하며, 다음 달 회비와 함께 출금됩니다."
-              ],
-              "priceList": [
+              "title": "유료 구역",
+              "flowItems": [
                 {
-                  "name": "여성 전용 구역",
-                  "price": "1일 550엔(세금 포함) ※여성 한정"
+                  "title": "여성 전용 구역·핫 스튜디오",
+                  "detail": "세금 포함 550엔/일"
                 },
                 {
-                  "name": "JOYFIT YOGA(여성 전용 요가 스튜디오)",
-                  "price": "1일 3,300엔(세금 포함) ※여성 한정"
-                },
-                {
-                  "name": "핫 스튜디오",
-                  "price": "1일 550엔(세금 포함)"
-                },
-                {
-                  "name": "특별 유료 구역(J+ 등)",
-                  "price": "1일 3,300엔(세금 포함)"
+                  "title": "JOYFIT YOGA·특별 유료 구역",
+                  "detail": "세금 포함 3,300엔/일"
                 }
               ],
-              "notes": [
-                "「어디서나 JOY 유료 구역 OK」 아이콘이 있는 시설이 대상입니다",
-                "이용 시작일과 관계없이 당일 23:59까지가 1일 기한입니다",
-                "오리코·리소나은행·FD 출금 회원은 회차별 과금을 이용할 수 없습니다",
-                "오픈 후 6개월 미만 매장은 어디서나 JOY 자체를 이용하지 못할 수 있습니다"
-              ]
+              "note": "IC 터치로 회차 과금(다음 달 출금). 「유료 구역 OK」 표시 시설만 대상"
             },
             {
               "title": "이적 조건",
-              "paragraphs": [
-                "등록 매장보다 다른 매장 이용이 많을 경우 등록 매장이 이적될 수 있습니다.",
-                "입회 후 만 6개월 미만은 이적 대상이 아닙니다. 조사 기간은 누계 2개월 이상(1개월 단위)입니다."
-              ],
-              "conditions": [
+              "lead": "다른 매장 이용이 많으면 등록 매장이 이적될 수 있습니다(입회 6개월 미만 제외)",
+              "flowItems": [
                 {
-                  "num": "1",
-                  "text": "가장 많이 이용한 매장이 등록 매장이 아님"
+                  "title": "가장 많이 이용한 곳이 등록 매장이 아님"
                 },
                 {
-                  "num": "2",
-                  "text": "가장 많이 이용한 다른 매장의 이용이 월 5회 이상"
+                  "title": "해당 다른 매장 이용이 월 5회 이상"
                 },
                 {
-                  "num": "3",
-                  "text": "해당 다른 매장의 이용 시간이 전체의 51% 이상"
+                  "title": "이용 시간이 전체의 51% 이상"
                 }
               ],
-              "paragraphsAfter": [
-                "위 3가지를 모두 충족한 회원이 이적 대상입니다. JOYFIT에서 엽서 또는 DM으로 안내합니다."
-              ],
-              "notes": [
-                "이적 시 옵션: 안심 서포트는 이적 매장에서 자동 계속 / 그 외 옵션은 자동 해지"
-              ]
+              "note": "3가지 조건 모두 해당 시 이적 대상. 안심 서포트 외 옵션은 자동 해지"
             }
           ]
         },
@@ -1980,111 +1876,59 @@ window.JOYFIT_LOCALES = {
           ]
         },
         "dokodemoJoy": {
-          "blocks": [
+          "introBullets": [
+            "可在全国JOYFIT系列门店相互使用",
+            "需在注册门店办理简单手续（免费）",
+            "时段会员・健身房LITE会员不适用"
+          ],
+          "sections": [
             {
-              "title": "什么是「哪里都能JOY」？",
-              "paragraphs": [
-                "无论在哪家店入会，都可使用全国的 JOYFIT、JOYFIT24、JOYFIT YOGA、JOYFIT+。",
-                "开始使用需在注册门店办理简单手续（免费）。"
-              ],
-              "bullets": [
-                "下班途中、出差地、回乡等地均可使用",
-                "部分门店提供独有课程或24小时健身房",
-                "部分门店可能无法使用或需另行收费，请事先向使用门店确认"
-              ],
-              "notes": [
-                "时段会员、健身房LITE会员不适用",
-                "现有会员：在注册门店办理／新会员：入会时一并办理"
-              ]
-            },
-            {
-              "title": "其他门店的使用费用",
-              "paragraphs": [
-                "其他门店的费用因注册门店品牌而异。"
-              ],
-              "feeHeaders": {
-                "from": "注册门店",
-                "toJoy": "JOYFIT / JOYFIT24",
-                "toYoga": "JOYFIT YOGA",
-                "toPlus": "JOYFIT+"
-              },
-              "feeRows": [
+              "title": "其他门店费用",
+              "flowItems": [
                 {
-                  "from": "JOYFIT / JOYFIT24",
-                  "toJoy": "免费",
-                  "toYoga": "1日3,300日元（含税）※仅限女性",
-                  "toPlus": "不可"
+                  "title": "JOYFIT / JOYFIT24之间",
+                  "detail": "免费"
                 },
                 {
-                  "from": "JOYFIT YOGA",
-                  "toJoy": "免费",
-                  "toYoga": "免费",
-                  "toPlus": "不可"
+                  "title": "使用JOYFIT YOGA",
+                  "detail": "含税3,300日元/日（仅限女性）※YOGA会员之间免费"
                 },
                 {
-                  "from": "JOYFIT+",
-                  "toJoy": "免费",
-                  "toYoga": "免费 ※仅限女性",
-                  "toPlus": "按合同（请向注册门店确认）"
-                }
-              ]
-            },
-            {
-              "title": "付费区域的使用",
-              "paragraphs": [
-                "部分设施的付费区域，在IC卡读卡器上轻触后会产生按次费用，与次月会费一并扣款。"
-              ],
-              "priceList": [
-                {
-                  "name": "女性专用区域",
-                  "price": "1日550日元（含税）※仅限女性"
-                },
-                {
-                  "name": "JOYFIT YOGA（女性专用瑜伽工作室）",
-                  "price": "1日3,300日元（含税）※仅限女性"
-                },
-                {
-                  "name": "热瑜伽工作室",
-                  "price": "1日550日元（含税）"
-                },
-                {
-                  "name": "特别付费区域（J+等）",
-                  "price": "1日3,300日元（含税）"
+                  "title": "使用JOYFIT+",
+                  "detail": "原则上不可（请向注册门店确认）"
                 }
               ],
-              "notes": [
-                "带有「哪里都能JOY 付费区域 OK」图标的设施为适用对象",
-                "不论开始时间，使用开始当日23:59为1日期限",
-                "通过Orico、里索那银行、FD扣款的会员无法使用按次计费",
-                "开业未满半年的门店，可能无法使用「哪里都能JOY」"
-              ]
+              "note": "部分门店可能无法使用或需另行收费，请事先确认"
+            },
+            {
+              "title": "付费区域",
+              "flowItems": [
+                {
+                  "title": "女性专用区・热瑜伽工作室",
+                  "detail": "含税550日元/日"
+                },
+                {
+                  "title": "JOYFIT YOGA・特别付费区域",
+                  "detail": "含税3,300日元/日"
+                }
+              ],
+              "note": "IC轻触按次计费（次月扣款）。仅限标注「付费区域OK」的设施"
             },
             {
               "title": "转籍条件",
-              "paragraphs": [
-                "若其他门店的使用多于注册门店，注册门店可能会被转籍。",
-                "入会后未满6个月不在转籍对象内。调查期间为累计2个月以上（按1个月为单位）。"
-              ],
-              "conditions": [
+              "lead": "其他门店使用较多时，注册门店可能转籍（入会未满6个月除外）",
+              "flowItems": [
                 {
-                  "num": "1",
-                  "text": "使用最多的门店不是注册门店"
+                  "title": "使用最多的不是注册门店"
                 },
                 {
-                  "num": "2",
-                  "text": "使用最多的其他门店每月使用5次以上"
+                  "title": "该其他门店每月使用5次以上"
                 },
                 {
-                  "num": "3",
-                  "text": "该其他门店的使用时间占整体51%以上"
+                  "title": "该门店使用时间占整体51%以上"
                 }
               ],
-              "paragraphsAfter": [
-                "同时满足以上3项的会员为转籍对象。JOYFIT将以明信片或DM通知。"
-              ],
-              "notes": [
-                "转籍时选项处理：安心支持在转籍后门店自动延续／其他选项自动解除"
-              ]
+              "note": "需同时满足3项。安心支持以外的选项会自动解除"
             }
           ]
         },
@@ -2678,111 +2522,59 @@ window.JOYFIT_LOCALES = {
           ]
         },
         "dokodemoJoy": {
-          "blocks": [
+          "introBullets": [
+            "可在全國JOYFIT系列門市相互使用",
+            "需在註冊門市辦理簡單手續（免費）",
+            "時段會員・健身房LITE會員不適用"
+          ],
+          "sections": [
             {
-              "title": "什麼是「哪裡都能JOY」？",
-              "paragraphs": [
-                "無論在哪家店入會，皆可使用全國的 JOYFIT、JOYFIT24、JOYFIT YOGA、JOYFIT+。",
-                "開始使用需在註冊門市辦理簡單手續（免費）。"
-              ],
-              "bullets": [
-                "下班途中、出差地、返鄉等地皆可使用",
-                "部分門市提供獨有課程或24小時健身房",
-                "部分門市可能無法使用或需另行收費，請事先向使用門市確認"
-              ],
-              "notes": [
-                "時段會員、健身房LITE會員不適用",
-                "現有會員：在註冊門市辦理／新會員：入會時一併辦理"
-              ]
-            },
-            {
-              "title": "其他門市的使用費用",
-              "paragraphs": [
-                "其他門市的費用依註冊門市品牌而異。"
-              ],
-              "feeHeaders": {
-                "from": "註冊門市",
-                "toJoy": "JOYFIT / JOYFIT24",
-                "toYoga": "JOYFIT YOGA",
-                "toPlus": "JOYFIT+"
-              },
-              "feeRows": [
+              "title": "其他門市費用",
+              "flowItems": [
                 {
-                  "from": "JOYFIT / JOYFIT24",
-                  "toJoy": "免費",
-                  "toYoga": "1日3,300日圓（含稅）※僅限女性",
-                  "toPlus": "不可"
+                  "title": "JOYFIT / JOYFIT24之間",
+                  "detail": "免費"
                 },
                 {
-                  "from": "JOYFIT YOGA",
-                  "toJoy": "免費",
-                  "toYoga": "免費",
-                  "toPlus": "不可"
+                  "title": "使用JOYFIT YOGA",
+                  "detail": "含稅3,300日圓/日（僅限女性）※YOGA會員之間免費"
                 },
                 {
-                  "from": "JOYFIT+",
-                  "toJoy": "免費",
-                  "toYoga": "免費 ※僅限女性",
-                  "toPlus": "依合約（請向註冊門市確認）"
-                }
-              ]
-            },
-            {
-              "title": "付費區域的使用",
-              "paragraphs": [
-                "部分設施的付費區域，在IC卡讀卡機上感應後會產生單次費用，與次月會費一併扣款。"
-              ],
-              "priceList": [
-                {
-                  "name": "女性專用區域",
-                  "price": "1日550日圓（含稅）※僅限女性"
-                },
-                {
-                  "name": "JOYFIT YOGA（女性專用瑜珈工作室）",
-                  "price": "1日3,300日圓（含稅）※僅限女性"
-                },
-                {
-                  "name": "熱瑜珈工作室",
-                  "price": "1日550日圓（含稅）"
-                },
-                {
-                  "name": "特別付費區域（J+等）",
-                  "price": "1日3,300日圓（含稅）"
+                  "title": "使用JOYFIT+",
+                  "detail": "原則上不可（請向註冊門市確認）"
                 }
               ],
-              "notes": [
-                "帶有「哪裡都能JOY 付費區域 OK」圖示的設施為適用對象",
-                "不論開始時間，使用開始當日23:59為1日期限",
-                "透過Orico、里索那銀行、FD扣款的會員無法使用單次計費",
-                "開業未滿半年的門市，可能無法使用「哪裡都能JOY」"
-              ]
+              "note": "部分門市可能無法使用或需另行收費，請事先確認"
+            },
+            {
+              "title": "付費區域",
+              "flowItems": [
+                {
+                  "title": "女性專用區・熱瑜珈工作室",
+                  "detail": "含稅550日圓/日"
+                },
+                {
+                  "title": "JOYFIT YOGA・特別付費區域",
+                  "detail": "含稅3,300日圓/日"
+                }
+              ],
+              "note": "IC感應按次計費（次月扣款）。僅限標示「付費區域OK」的設施"
             },
             {
               "title": "轉籍條件",
-              "paragraphs": [
-                "若其他門市的使用多於註冊門市，註冊門市可能會被轉籍。",
-                "入會後未滿6個月不在轉籍對象內。調查期間為累計2個月以上（以1個月為單位）。"
-              ],
-              "conditions": [
+              "lead": "其他門市使用較多時，註冊門市可能轉籍（入會未滿6個月除外）",
+              "flowItems": [
                 {
-                  "num": "1",
-                  "text": "使用最多的門市不是註冊門市"
+                  "title": "使用最多的不是註冊門市"
                 },
                 {
-                  "num": "2",
-                  "text": "使用最多的其他門市每月使用5次以上"
+                  "title": "該其他門市每月使用5次以上"
                 },
                 {
-                  "num": "3",
-                  "text": "該其他門市的使用時間佔整體51%以上"
+                  "title": "該門市使用時間佔整體51%以上"
                 }
               ],
-              "paragraphsAfter": [
-                "同時滿足以上3項的會員為轉籍對象。JOYFIT將以明信片或DM通知。"
-              ],
-              "notes": [
-                "轉籍時選項處理：安心支援在轉籍後門市自動延續／其他選項自動解除"
-              ]
+              "note": "需同時符合3項。安心支援以外的選項會自動解除"
             }
           ]
         },

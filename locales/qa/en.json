@@ -582,75 +582,59 @@
       ]
     },
     "dokodemoJoy": {
-      "blocks": [
-        {
-          "title": "What is Dokodemo JOY?",
-          "paragraphs": [
-            "No matter which store you join, you can use JOYFIT, JOYFIT24, JOYFIT YOGA, and JOYFIT+ locations nationwide.",
-            "A simple free procedure at your registered store is required to start."
-          ],
-          "bullets": [
-            "Use near work, on business trips, or while visiting home",
-            "Some stores offer unique programs and 24-hour gym access",
-            "Some stores may be unavailable or require extra fees — please check with the store in advance"
-          ],
-          "notes": [
-            "Time members and Gym LITE members are not eligible",
-            "Existing members: complete at your registered store / New members: during enrollment"
-          ]
-        },
+      "introBullets": [
+        "Use JOYFIT-brand stores nationwide",
+        "A simple free procedure at your registered store is required",
+        "Time members and Gym LITE members are not eligible"
+      ],
+      "sections": [
         {
           "title": "Fees for other stores",
-          "paragraphs": [
-            "Fees for other stores depend on the brand of your registered store."
+          "flowItems": [
+            {
+              "title": "Between JOYFIT / JOYFIT24",
+              "detail": "Free"
+            },
+            {
+              "title": "Using JOYFIT YOGA",
+              "detail": "¥3,300/day tax incl. (women only) *Free between YOGA members"
+            },
+            {
+              "title": "Using JOYFIT+",
+              "detail": "Generally not available (ask your store)"
+            }
           ],
-          "feeHeaders": {
-            "from": "Registered store",
-            "toJoy": "JOYFIT / JOYFIT24",
-            "toYoga": "JOYFIT YOGA",
-            "toPlus": "JOYFIT+"
-          },
-          "feeRows": [
-            { "from": "JOYFIT / JOYFIT24", "toJoy": "Free", "toYoga": "¥3,300/day (tax incl.) *Women only", "toPlus": "Not available" },
-            { "from": "JOYFIT YOGA", "toJoy": "Free", "toYoga": "Free", "toPlus": "Not available" },
-            { "from": "JOYFIT+", "toJoy": "Free", "toYoga": "Free *Women only", "toPlus": "Per contract (ask your store)" }
-          ]
+          "note": "Some stores may be unavailable or require extra fees. Check with the store first"
         },
         {
           "title": "Paid areas",
-          "paragraphs": [
-            "At some facilities, tapping your IC card on a paid-area reader charges a one-time fee, billed with the next month’s membership fee."
+          "flowItems": [
+            {
+              "title": "Women-only area / Hot studio",
+              "detail": "¥550/day tax incl."
+            },
+            {
+              "title": "JOYFIT YOGA / Special paid area",
+              "detail": "¥3,300/day tax incl."
+            }
           ],
-          "priceList": [
-            { "name": "Women-only area", "price": "¥550/day (tax incl.) *Women only" },
-            { "name": "JOYFIT YOGA (women-only yoga studio)", "price": "¥3,300/day (tax incl.) *Women only" },
-            { "name": "Hot studio", "price": "¥550/day (tax incl.)" },
-            { "name": "Special paid area (J+ etc.)", "price": "¥3,300/day (tax incl.)" }
-          ],
-          "notes": [
-            "Facilities with the “Dokodemo JOY Paid Area OK” icon are eligible",
-            "Daily use ends at 23:59 on the day you start",
-            "Members billed via Orico, Resona Bank, or FD cannot use per-use charging",
-            "Stores open less than 6 months may not offer Dokodemo JOY"
-          ]
+          "note": "Charged by IC tap (billed next month). Only facilities marked Paid Area OK"
         },
         {
           "title": "Transfer conditions",
-          "paragraphs": [
-            "If you use other stores more than your registered store, your registration may be transferred.",
-            "Members within 6 months of joining are not subject to transfer. The review period is 2 months or more (in 1-month units)."
+          "lead": "Heavy use of other stores may transfer your registration (not within 6 months of joining)",
+          "flowItems": [
+            {
+              "title": "Most-used store is not your registered store"
+            },
+            {
+              "title": "That other store is used 5+ times per month"
+            },
+            {
+              "title": "Time there is 51%+ of total usage"
+            }
           ],
-          "conditions": [
-            { "num": "1", "text": "Your most-used store is not your registered store" },
-            { "num": "2", "text": "Your most-used other store is used 5+ times per month" },
-            { "num": "3", "text": "Time at that other store is 51% or more of your total usage" }
-          ],
-          "paragraphsAfter": [
-            "Members who meet all three conditions are subject to transfer. JOYFIT will notify you by postcard or direct mail."
-          ],
-          "notes": [
-            "On transfer: Anshin Support continues at the new store / other options are automatically canceled"
-          ]
+          "note": "All 3 conditions required. Options other than Anshin Support are auto-canceled"
         }
       ]
     },

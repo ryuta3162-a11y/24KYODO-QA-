@@ -1277,177 +1277,27 @@
                 0 2px 0 rgba(255, 255, 255, 0.8) inset,
                 0 6px 22px rgba(17, 24, 39, 0.1);
         }
-        .dokodemo-stack {
-            display: flex;
-            flex-direction: column;
-            gap: 1.15rem;
+        .dokodemo-section {
+            margin-bottom: 1.35rem;
         }
-        .dokodemo-block {
-            padding: 1.1rem 1rem 1.15rem;
-            border-radius: calc(var(--radius) - 2px);
-            border: 1px solid rgba(17, 24, 39, 0.08);
-            background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
-            box-shadow: var(--shadow-soft);
+        .dokodemo-section:last-child {
+            margin-bottom: 0;
         }
-        .dokodemo-block__title {
+        .dokodemo-section .guide-section-head {
+            margin-bottom: 0.75rem;
+        }
+        .dokodemo-section .guide-flow-items {
+            margin-bottom: 0.65rem;
+        }
+        .dokodemo-lead {
             margin: 0 0 0.75rem;
-            padding-bottom: 0.55rem;
-            border-bottom: 2px solid rgba(220, 38, 38, 0.35);
-            font-size: 1.02rem;
-            font-weight: 900;
-            letter-spacing: 0.03em;
-            color: #111827;
-            line-height: 1.4;
-        }
-        .dokodemo-block__p {
-            margin: 0 0 0.55rem;
-            font-size: 0.9rem;
+            font-size: var(--text-body);
             font-weight: 600;
-            line-height: 1.7;
             color: #374151;
+            line-height: var(--leading-body);
         }
-        .dokodemo-block__p:last-child { margin-bottom: 0; }
-        .dokodemo-list {
-            margin: 0.35rem 0 0.65rem;
-            padding: 0;
-            list-style: none;
-        }
-        .dokodemo-list li {
-            position: relative;
-            margin: 0 0 0.45rem;
-            padding: 0 0 0 1.15rem;
-            font-size: 0.88rem;
-            font-weight: 600;
-            line-height: 1.65;
-            color: #374151;
-        }
-        .dokodemo-list li::before {
-            content: "";
-            position: absolute;
-            left: 0.15rem;
-            top: 0.55rem;
-            width: 0.42rem;
-            height: 0.42rem;
-            border-radius: 50%;
-            background: var(--brand-red);
-        }
-        .dokodemo-list li:last-child { margin-bottom: 0; }
-        .dokodemo-notes {
-            margin: 0.7rem 0 0;
-            padding: 0.7rem 0.8rem;
-            border-radius: 0.55rem;
-            background: rgba(254, 242, 242, 0.65);
-            border: 1px solid rgba(220, 38, 38, 0.12);
-        }
-        .dokodemo-notes p {
-            margin: 0 0 0.35rem;
-            font-size: 0.8rem;
-            font-weight: 700;
-            line-height: 1.55;
-            color: #7f1d1d;
-        }
-        .dokodemo-notes p:last-child { margin-bottom: 0; }
-        .dokodemo-notes p::before { content: "※"; }
-        .dokodemo-fee-table {
-            width: 100%;
-            margin: 0.55rem 0 0.35rem;
-            border-collapse: collapse;
-            font-size: 0.78rem;
-            line-height: 1.45;
-        }
-        .dokodemo-fee-table th,
-        .dokodemo-fee-table td {
-            padding: 0.55rem 0.4rem;
-            border: 1px solid rgba(17, 24, 39, 0.1);
-            text-align: left;
-            vertical-align: top;
-            font-weight: 700;
-            color: #111827;
-        }
-        .dokodemo-fee-table th {
-            background: #111827;
-            color: #fff;
-            font-size: 0.72rem;
-            letter-spacing: 0.02em;
-        }
-        .dokodemo-fee-table td:first-child {
-            background: #f3f4f6;
-            white-space: nowrap;
-        }
-        .dokodemo-price-list {
-            margin: 0.45rem 0 0.55rem;
-            padding: 0;
-            list-style: none;
-        }
-        .dokodemo-price-list li {
-            display: flex;
-            flex-direction: column;
-            gap: 0.15rem;
-            margin: 0 0 0.5rem;
-            padding: 0.65rem 0.75rem;
-            border-radius: 0.5rem;
-            background: #fff;
-            border: 1px solid rgba(17, 24, 39, 0.08);
-        }
-        .dokodemo-price-list li:last-child { margin-bottom: 0; }
-        .dokodemo-price-name {
-            font-size: 0.86rem;
-            font-weight: 800;
-            color: #111827;
-        }
-        .dokodemo-price-value {
-            font-size: 0.84rem;
-            font-weight: 700;
-            color: var(--brand-red);
-        }
-        .dokodemo-conditions {
-            margin: 0.45rem 0 0.65rem;
-            padding: 0;
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-        .dokodemo-condition {
-            display: flex;
-            gap: 0.7rem;
-            align-items: flex-start;
-            padding: 0.7rem 0.75rem;
-            border-radius: 0.55rem;
-            background: #fff;
-            border: 1px solid rgba(17, 24, 39, 0.08);
-        }
-        .dokodemo-condition__num {
-            flex-shrink: 0;
-            width: 1.7rem;
-            height: 1.7rem;
-            border-radius: 50%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--brand-red);
-            color: #fff;
-            font-size: 0.82rem;
-            font-weight: 900;
-        }
-        .dokodemo-condition__text {
-            margin: 0.15rem 0 0;
-            font-size: 0.88rem;
-            font-weight: 700;
-            line-height: 1.55;
-            color: #111827;
-        }
-        @media (max-width: 480px) {
-            .dokodemo-fee-scroll {
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
-                margin: 0.45rem -0.15rem 0.35rem;
-                padding: 0 0.15rem;
-            }
-            .dokodemo-fee-table {
-                min-width: 28rem;
-                font-size: 0.74rem;
-            }
+        .dokodemo-section .guide-card-update-note {
+            margin: 0;
         }
         .guide-step-card .guide-step-head {
             margin-bottom: 0.75rem;
@@ -3240,128 +3090,50 @@
             }
 
             function renderDokodemoJoyGuide(container, guide) {
-                if (!guide || !guide.blocks || !guide.blocks.length) return;
-                var stack = document.createElement('div');
-                stack.className = 'dokodemo-stack';
-
-                guide.blocks.forEach(function (block) {
-                    var card = document.createElement('section');
-                    card.className = 'dokodemo-block';
-
-                    if (block.title) {
-                        var title = document.createElement('h3');
-                        title.className = 'dokodemo-block__title';
-                        title.textContent = block.title;
-                        card.appendChild(title);
+                if (!guide) return;
+                renderGuideIntroPanel(container, guide);
+                (guide.sections || []).forEach(function (section) {
+                    var wrap = document.createElement('div');
+                    wrap.className = 'dokodemo-section';
+                    if (section.title) {
+                        var head = document.createElement('h3');
+                        head.className = 'guide-section-head is-flush';
+                        head.textContent = section.title;
+                        wrap.appendChild(head);
                     }
-
-                    (block.paragraphs || []).forEach(function (text) {
-                        var p = document.createElement('p');
-                        p.className = 'dokodemo-block__p';
-                        p.textContent = text;
-                        card.appendChild(p);
-                    });
-
-                    if (block.bullets && block.bullets.length) {
-                        var ul = document.createElement('ul');
-                        ul.className = 'dokodemo-list';
-                        block.bullets.forEach(function (item) {
+                    if (section.lead) {
+                        var lead = document.createElement('p');
+                        lead.className = 'dokodemo-lead';
+                        lead.textContent = section.lead;
+                        wrap.appendChild(lead);
+                    }
+                    if (section.flowItems && section.flowItems.length) {
+                        var list = document.createElement('ol');
+                        list.className = 'guide-flow-items';
+                        section.flowItems.forEach(function (item) {
                             var li = document.createElement('li');
-                            li.textContent = item;
-                            ul.appendChild(li);
+                            var itemTitle = document.createElement('p');
+                            itemTitle.className = 'guide-flow-item-title';
+                            itemTitle.textContent = item.title;
+                            li.appendChild(itemTitle);
+                            if (item.detail) {
+                                var itemDetail = document.createElement('p');
+                                itemDetail.className = 'guide-flow-item-detail';
+                                itemDetail.textContent = item.detail;
+                                li.appendChild(itemDetail);
+                            }
+                            list.appendChild(li);
                         });
-                        card.appendChild(ul);
+                        wrap.appendChild(list);
                     }
-
-                    if (block.feeRows && block.feeRows.length) {
-                        var scroll = document.createElement('div');
-                        scroll.className = 'dokodemo-fee-scroll';
-                        var table = document.createElement('table');
-                        table.className = 'dokodemo-fee-table';
-                        var headers = block.feeHeaders || {};
-                        var thead = document.createElement('thead');
-                        var headRow = document.createElement('tr');
-                        ['from', 'toJoy', 'toYoga', 'toPlus'].forEach(function (key) {
-                            var th = document.createElement('th');
-                            th.textContent = headers[key] || key;
-                            headRow.appendChild(th);
-                        });
-                        thead.appendChild(headRow);
-                        table.appendChild(thead);
-                        var tbody = document.createElement('tbody');
-                        block.feeRows.forEach(function (row) {
-                            var tr = document.createElement('tr');
-                            ['from', 'toJoy', 'toYoga', 'toPlus'].forEach(function (key) {
-                                var td = document.createElement('td');
-                                td.textContent = row[key] || '';
-                                tr.appendChild(td);
-                            });
-                            tbody.appendChild(tr);
-                        });
-                        table.appendChild(tbody);
-                        scroll.appendChild(table);
-                        card.appendChild(scroll);
+                    if (section.note) {
+                        var note = document.createElement('p');
+                        note.className = 'guide-card-update-note';
+                        note.textContent = '※' + section.note;
+                        wrap.appendChild(note);
                     }
-
-                    if (block.priceList && block.priceList.length) {
-                        var prices = document.createElement('ul');
-                        prices.className = 'dokodemo-price-list';
-                        block.priceList.forEach(function (item) {
-                            var li = document.createElement('li');
-                            var name = document.createElement('span');
-                            name.className = 'dokodemo-price-name';
-                            name.textContent = item.name;
-                            var price = document.createElement('span');
-                            price.className = 'dokodemo-price-value';
-                            price.textContent = item.price;
-                            li.appendChild(name);
-                            li.appendChild(price);
-                            prices.appendChild(li);
-                        });
-                        card.appendChild(prices);
-                    }
-
-                    if (block.conditions && block.conditions.length) {
-                        var condList = document.createElement('ol');
-                        condList.className = 'dokodemo-conditions';
-                        block.conditions.forEach(function (cond) {
-                            var li = document.createElement('li');
-                            li.className = 'dokodemo-condition';
-                            var num = document.createElement('span');
-                            num.className = 'dokodemo-condition__num';
-                            num.textContent = cond.num;
-                            var text = document.createElement('p');
-                            text.className = 'dokodemo-condition__text';
-                            text.textContent = cond.text;
-                            li.appendChild(num);
-                            li.appendChild(text);
-                            condList.appendChild(li);
-                        });
-                        card.appendChild(condList);
-                    }
-
-                    (block.paragraphsAfter || []).forEach(function (text) {
-                        var p = document.createElement('p');
-                        p.className = 'dokodemo-block__p';
-                        p.textContent = text;
-                        card.appendChild(p);
-                    });
-
-                    if (block.notes && block.notes.length) {
-                        var notes = document.createElement('div');
-                        notes.className = 'dokodemo-notes';
-                        block.notes.forEach(function (note) {
-                            var p = document.createElement('p');
-                            p.textContent = note;
-                            notes.appendChild(p);
-                        });
-                        card.appendChild(notes);
-                    }
-
-                    stack.appendChild(card);
+                    container.appendChild(wrap);
                 });
-
-                container.appendChild(stack);
             }
 
             function renderCampaignApply(container, guide) {
