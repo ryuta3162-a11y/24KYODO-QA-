@@ -54,14 +54,14 @@ var APP_REGISTRATION_GUIDE = {
         action: '検索'
       },
       cardStyle: true,
-      image: 'images/app-guide/07-member-search.png'
+      image: 'images/app-guide/07-member-search.webp'
     },
     {
       num: '2',
       title: 'アプリアクティベートで登録完了',
       textHtml: '水色の<span class="guide-cyan-btn">アプリアクティベート</span>をタップしてください',
       cardStyle: true,
-      image: 'images/app-guide/08-app-link-qr.png'
+      image: 'images/app-guide/08-app-link-qr.webp'
     },
     {
       num: '3',
@@ -70,7 +70,7 @@ var APP_REGISTRATION_GUIDE = {
       closing: '位置情報・カメラの使用を許可してください',
       closingPermission: ['location', 'camera'],
       cardStyle: true,
-      image: 'images/app-guide/01-home-top.png'
+      image: 'images/app-guide/01-home-top.webp'
     }
   ]
 };
@@ -93,7 +93,7 @@ var APP_PT_LINE_GUIDE = {
       nameSei: '日下',
       nameMei: '竜太',
       kana: 'クサカ リュウタ',
-      photo: 'images/trainers/kusaka.png',
+      photo: 'images/trainers/kusaka.webp',
       lineKey: 'lineKusaka',
       highlightTitle: '現在の最高記録',
       highlights: [
@@ -112,7 +112,7 @@ var APP_PT_LINE_GUIDE = {
       nameSei: '石田',
       nameMei: '美絵',
       kana: 'イシダ ミエ',
-      photo: 'images/trainers/ishida.png',
+      photo: 'images/trainers/ishida.webp',
       lineKey: 'lineIshida',
       highlightTitle: '取得資格',
       highlights: [
@@ -195,22 +195,22 @@ var APP_CREDIT_CARD_GUIDE = {
     {
       num: '1',
       title: 'ホーム画面右上の「サービス」をタップ',
-      image: 'images/app-guide/01-home.png'
+      image: 'images/app-guide/01-home.webp'
     },
     {
       num: '2',
       title: '「各種お手続き」をタップ',
-      image: 'images/app-guide/02-service-list.png'
+      image: 'images/app-guide/02-service-list.webp'
     },
     {
       num: '3',
       title: '「ご契約変更について」をタップ',
-      image: 'images/app-guide/05-contract-entry.png'
+      image: 'images/app-guide/05-contract-entry.webp'
     },
     {
       num: '4',
       title: '「クレジットカード変更」「休会」をタップ',
-      image: 'images/app-guide/05-credit-card-change.png',
+      image: 'images/app-guide/05-credit-card-change.webp',
       stepId: 'guide-card-step-4'
     }
   ]
@@ -236,7 +236,7 @@ var APP_CORPORATE_SECTION = {
         {
           num: '1',
           title: '「アプリで入会」をタップ',
-          image: 'images/app-guide/11-corporate-app-top.png',
+          image: 'images/app-guide/11-corporate-app-top.webp',
           cardStyle: true
         },
         {
@@ -253,7 +253,7 @@ var APP_CORPORATE_SECTION = {
               bannerStyle: 'action'
             }
           },
-          image: 'images/app-guide/11-corporate-promo-code.png',
+          image: 'images/app-guide/11-corporate-promo-code.webp',
           cardStyle: true
         }
       ]
@@ -280,22 +280,22 @@ var APP_REJOIN_SECTION = {
         {
           num: '1',
           title: 'ホーム画面右上の「サービス」をタップ',
-          image: 'images/app-guide/01-home.png'
+          image: 'images/app-guide/01-home.webp'
         },
         {
           num: '2',
           title: '「アプリ設定」をタップ',
-          image: 'images/app-guide/11-reopen-app-settings.png'
+          image: 'images/app-guide/11-reopen-app-settings.webp'
         },
         {
           num: '3',
           title: '「アプリの登録を解除」をタップ',
-          image: 'images/app-guide/11-reopen-unregister.png'
+          image: 'images/app-guide/11-reopen-unregister.webp'
         },
         {
           num: '4',
           title: '「アプリで入会」をタップ',
-          image: 'images/app-guide/11-rejoin-app-top.png'
+          image: 'images/app-guide/11-rejoin-app-top.webp'
         }
       ],
       afterSteps: {
@@ -318,23 +318,23 @@ var APP_OPTION_GUIDE = {
     {
       num: '1',
       title: 'ホーム画面右上の「サービス」をタップ',
-      image: 'images/app-guide/01-home.png'
+      image: 'images/app-guide/01-home.webp'
     },
     {
       num: '2',
       title: '「アプリ専用手続き」をタップ',
-      image: 'images/app-guide/02-service-list-app-only.png'
+      image: 'images/app-guide/02-service-list-app-only.webp'
     },
     {
       num: '3',
       title: '「ご契約変更について」をタップ',
-      image: 'images/app-guide/05-contract-entry.png'
+      image: 'images/app-guide/05-contract-entry.webp'
     },
     {
       num: '4',
       title: '「オプション追加」または「オプションの解約」をタップ',
       titleHtml: '「オプション追加」または<br>「オプションの解約」をタップ',
-      image: 'images/app-guide/09-option-menu.png'
+      image: 'images/app-guide/09-option-menu.webp'
     }
   ],
   infoPanels: [
@@ -348,20 +348,20 @@ var APP_OPTION_GUIDE = {
     anchorId: 'guide-option-pricing',
     title: 'オプション料金一覧表',
     items: [
-      { label: 'ピラティスリフォーマー', exTax: '3,000円', incTax: '3,300円', image: 'images/options/pilates-reformer.png' },
-      { label: '体組成計', exTax: '500円', incTax: '550円', image: 'images/options/body-composition.png' },
-      { label: 'JOYFITオンラインレッスン', exTax: '1,000円', incTax: '1,100円', image: 'images/options/online-lesson.png', panelLink: { panel: 'onlineLesson', label: 'オンラインレッスンの詳細はこちら' } },
-      { label: '安心サポートVIP', exTax: '750円', incTax: '825円', linkKey: 'anshinSupport', linkLabel: '安心サポートの詳細はこちら', image: 'images/options/anshin-support-vip.png' },
-      { label: '安心サポート', exTax: '500円', incTax: '550円', image: 'images/options/anshin-support-vip.png' },
-      { label: 'ホットスタジオ', exTax: '1,000円', incTax: '1,100円', image: 'images/options/hot-studio.png' },
-      { label: '水素水', exTax: '1,000円', incTax: '1,080円', image: 'images/options/hydrogen-water.png' },
-      { label: 'プライベートロッカー', exTax: '1,500円', incTax: '1,650円', image: 'images/options/private-locker.png' },
-      { label: 'ヨガマットロッカー', exTax: '1,000円', incTax: '1,100円', image: 'images/options/yoga-mat-locker.png' },
-      { label: 'タンニング', exTax: '5,000円', incTax: '5,500円', tag: '男性会員様限定', image: 'images/options/tanning.png' },
-      { label: 'セルフエステ', exTax: '3,000円', incTax: '3,300円', tag: '女性会員様限定', image: 'images/options/self-esthe.png' },
-      { label: 'レンタルタオル', exTax: '1,500円', incTax: '1,650円', image: 'images/options/rental-towel.png' },
-      { label: 'レンタルマット', exTax: '1,000円', incTax: '1,100円', image: 'images/options/rental-mat.png' },
-      { label: '水素水&プロテイン', exTax: '3,000円', incTax: '3,240円', note: '6杯/1日', image: 'images/options/hydrogen-water.png' }
+      { label: 'ピラティスリフォーマー', exTax: '3,000円', incTax: '3,300円', image: 'images/options/pilates-reformer.webp' },
+      { label: '体組成計', exTax: '500円', incTax: '550円', image: 'images/options/body-composition.webp' },
+      { label: 'JOYFITオンラインレッスン', exTax: '1,000円', incTax: '1,100円', image: 'images/options/online-lesson.webp', panelLink: { panel: 'onlineLesson', label: 'オンラインレッスンの詳細はこちら' } },
+      { label: '安心サポートVIP', exTax: '750円', incTax: '825円', linkKey: 'anshinSupport', linkLabel: '安心サポートの詳細はこちら', image: 'images/options/anshin-support-vip.webp' },
+      { label: '安心サポート', exTax: '500円', incTax: '550円', image: 'images/options/anshin-support-vip.webp' },
+      { label: 'ホットスタジオ', exTax: '1,000円', incTax: '1,100円', image: 'images/options/hot-studio.webp' },
+      { label: '水素水', exTax: '1,000円', incTax: '1,080円', image: 'images/options/hydrogen-water.webp' },
+      { label: 'プライベートロッカー', exTax: '1,500円', incTax: '1,650円', image: 'images/options/private-locker.webp' },
+      { label: 'ヨガマットロッカー', exTax: '1,000円', incTax: '1,100円', image: 'images/options/yoga-mat-locker.webp' },
+      { label: 'タンニング', exTax: '5,000円', incTax: '5,500円', tag: '男性会員様限定', image: 'images/options/tanning.webp' },
+      { label: 'セルフエステ', exTax: '3,000円', incTax: '3,300円', tag: '女性会員様限定', image: 'images/options/self-esthe.webp' },
+      { label: 'レンタルタオル', exTax: '1,500円', incTax: '1,650円', image: 'images/options/rental-towel.webp' },
+      { label: 'レンタルマット', exTax: '1,000円', incTax: '1,100円', image: 'images/options/rental-mat.webp' },
+      { label: '水素水&プロテイン', exTax: '3,000円', incTax: '3,240円', note: '6杯/1日', image: 'images/options/hydrogen-water.webp' }
     ]
   }
 };
@@ -371,22 +371,22 @@ var APP_CROWD_STATUS_GUIDE = {
     {
       num: '1',
       title: '「お気に入り店舗」をタップ',
-      image: 'images/app-guide/10-crowd-favorite-tab.png'
+      image: 'images/app-guide/10-crowd-favorite-tab.webp'
     },
     {
       num: '2',
       title: '「追加」をタップ',
-      image: 'images/app-guide/10-crowd-favorite-add.png'
+      image: 'images/app-guide/10-crowd-favorite-add.webp'
     },
     {
       num: '3',
       title: '「東京23区」の「経堂」の＋をタップ',
-      image: 'images/app-guide/10-crowd-store-search.png'
+      image: 'images/app-guide/10-crowd-store-search.webp'
     },
     {
       num: '4',
       title: '来館人数で混雑状況を確認',
-      image: 'images/app-guide/10-crowd-status-kyodo.png'
+      image: 'images/app-guide/10-crowd-status-kyodo.webp'
     }
   ]
 };
@@ -405,7 +405,7 @@ var APP_UNPAID_GUIDE = {
     label: 'こちらからクレジットカード変更',
     bannerStyle: 'action'
   },
-  flowchart: 'images/app-guide/12-unpaid-flowchart.png',
+  flowchart: 'images/app-guide/12-unpaid-flowchart.webp',
   flowTitle: 'JOYFITアプリお支払い手順',
   flowItems: [
     { title: 'JOYFIT APPプッシュ通知をタップ' },
@@ -419,17 +419,17 @@ var APP_UNPAID_GUIDE = {
       {
         num: '1',
         title: 'ホーム画面右上の「サービス」をタップ',
-        image: 'images/app-guide/01-home.png'
+        image: 'images/app-guide/01-home.webp'
       },
       {
         num: '2',
         title: '「アプリ専用手続き」をタップ',
-        image: 'images/app-guide/02-service-list-app-only.png'
+        image: 'images/app-guide/02-service-list-app-only.webp'
       },
       {
         num: '3',
         title: '「未納金のお支払い」をタップ',
-        image: 'images/app-guide/12-unpaid-app-only.png'
+        image: 'images/app-guide/12-unpaid-app-only.webp'
       }
     ]
   }
@@ -452,48 +452,48 @@ var APP_ONLINE_LESSON_GUIDE = {
     {
       num: '1',
       title: 'ホーム画面右上の「サービス」をタップ',
-      image: 'images/app-guide/01-home.png',
+      image: 'images/app-guide/01-home.webp',
       cardStyle: true
     },
     {
       num: '2',
       title: '「オンラインレッスン」をタップ',
-      image: 'images/app-guide/13-online-lesson-service-list.png',
+      image: 'images/app-guide/13-online-lesson-service-list.webp',
       cardStyle: true
     },
     {
       num: '3',
       title: 'メールアドレス・パスワードでログイン',
       text: '初回は新規登録から進みます',
-      image: 'images/app-guide/13-online-lesson-login.png',
+      image: 'images/app-guide/13-online-lesson-login.webp',
       cardStyle: true
     },
     {
       num: '4',
       title: 'メール内URLにアクセスして登録完了',
       text: '【JOYFIT Online Lesson】確認メールが届きます',
-      image: 'images/app-guide/13-online-lesson-email.png',
+      image: 'images/app-guide/13-online-lesson-email.webp',
       cardStyle: true
     },
     {
       num: '5',
       title: 'オンラインレッスン登録完了',
       text: 'おすすめは「動画レッスン」をタップ',
-      image: 'images/app-guide/13-online-lesson-top.png',
+      image: 'images/app-guide/13-online-lesson-top.webp',
       cardStyle: true
     },
     {
       num: '6',
       title: '好きなジャンルを選択',
       text: 'ジャンルを選ぶとアーカイブが閲覧可能です',
-      image: 'images/app-guide/13-online-lesson-genre.png',
+      image: 'images/app-guide/13-online-lesson-genre.webp',
       cardStyle: true
     },
     {
       num: '7',
       title: '「視聴する」をタップ',
       text: '視聴するをタップしてご覧ください',
-      image: 'images/app-guide/13-online-lesson-watch.png',
+      image: 'images/app-guide/13-online-lesson-watch.webp',
       cardStyle: true
     }
   ]
@@ -536,3 +536,4 @@ var APP_DOKODEMO_JOY_GUIDE = {
     }
   ]
 };
+

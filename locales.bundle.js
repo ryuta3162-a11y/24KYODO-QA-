@@ -2586,3 +2586,4 @@ window.JOYFIT_LOCALES = {
     }
   }
 };
+

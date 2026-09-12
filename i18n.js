@@ -207,3 +207,4 @@
     getLanguage: () => currentLang,
   };
 })(window);
+

@@ -97,3 +97,4 @@ function qaTrainerAlt(nameSei, nameMei) {
   var suffix = qaUi('trainerSuffix', 'トレーナー');
   return nameSei + ' ' + nameMei + suffix;
 }
+

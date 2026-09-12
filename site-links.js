@@ -63,3 +63,4 @@ var RELATED_PAGES = [
   { key: 'specialPlan', label: '追加特典申請' },
   { key: 'machine', label: 'マシン一覧' }
 ];
+
